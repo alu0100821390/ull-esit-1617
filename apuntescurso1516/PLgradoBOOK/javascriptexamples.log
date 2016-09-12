@@ -1,0 +1,2161 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  5 FEB 2016 10:06
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**javascriptexamples.tex
+(./javascriptexamples.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
+ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
+.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen107
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2009/07/02 v2.20.1
+\thm@style=\toks17
+\thm@bodyfont=\toks18
+\thm@headfont=\toks19
+\thm@notefont=\toks20
+\thm@headpunct=\toks21
+\thm@preskip=\skip43
+\thm@postskip=\skip44
+\thm@headsep=\skip45
+\dth@everypar=\toks22
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count88
+\float@exts=\toks23
+\float@box=\box26
+\@float@everytoks=\toks24
+\@floatcapt=\box27
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip46
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen108
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen109
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks25
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks26
+\eqnshift@=\dimen110
+\alignsep@=\dimen111
+\tagshift@=\dimen112
+\tagwidth@=\dimen113
+\totwidth@=\dimen114
+\lineht@=\dimen115
+\@envbody=\toks27
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks28
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/babel/spanish.ldf
+Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count101
+\U@D=\dimen116
+)
+\es@datefmt=\count102
+\es@quottoks=\toks29
+\es@quotdepth=\count103
+Package babel Info: Making " an active character on input line 492.
+Package babel Info: Making . an active character on input line 585.
+Package babel Info: Making < an active character on input line 630.
+Package babel Info: Making > an active character on input line 630.
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2004/10/17 UCS: Unicode input support
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2004/10/17 UCS: Unicode global data
+)
+\uc@secondtry=\count104
+\uc@combtoks=\toks30
+\uc@combtoksb=\toks31
+\uc@temptokena=\toks32
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks33
+\inpenc@posthook=\toks34
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/Users/casiano/Library/texmf/tex/latex/html.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2011/04/17 v6.82g Hypertext links for LaTeX
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
+Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
+Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provides unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/01/30 v1.0 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/04/23 v1.7 Hooks at very end of document (HO)
+Package atveryend Info: \enddocument detected (standard).
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
+Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+)
+\@linkdim=\dimen117
+\Hy@linkcounter=\count105
+\Hy@pagecounter=\count106
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2011/04/17 v6.82g Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count107
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4026.
+Package hyperref Info: Link nesting OFF on input line 4031.
+Package hyperref Info: Hyper index ON on input line 4034.
+Package hyperref Info: Plain pages OFF on input line 4041.
+Package hyperref Info: Backreferencing OFF on input line 4046.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4264.
+\c@Hy@tempcnt=\count108
+
+(/Users/casiano/Library/texmf/tex/latex/html/url.sty
+Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
+ names
+)
+LaTeX Info: Redefining \url on input line 4617.
+\Fld@menulength=\count109
+\Field@Width=\dimen118
+\Fld@charsize=\dimen119
+Package hyperref Info: Hyper figures OFF on input line 5701.
+Package hyperref Info: Link nesting OFF on input line 5706.
+Package hyperref Info: Hyper index ON on input line 5709.
+Package hyperref Info: backreferencing OFF on input line 5716.
+Package hyperref Info: Link coloring OFF on input line 5721.
+Package hyperref Info: Link coloring with OCG OFF on input line 5726.
+Package hyperref Info: PDF/A mode OFF on input line 5731.
+LaTeX Info: Redefining \ref on input line 5771.
+LaTeX Info: Redefining \pageref on input line 5775.
+\Hy@abspage=\count110
+\c@Item=\count111
+\c@Hfootnote=\count112
+)
+
+Package hyperref Message: Driver (default): hdvips.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hdvips.def
+File: hdvips.def 2011/04/17 v6.82g Hyperref driver for dvips
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/pdfmark.def
+File: pdfmark.def 2011/04/17 v6.82g Hyperref definitions for pdfmark specials
+\pdf@docset=\toks35
+\pdf@box=\box30
+\pdf@toks=\toks36
+\pdf@defaulttoks=\toks37
+\Fld@listcount=\count113
+\c@bookmark@seq@number=\count114
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip49
+))
+Package: html 1999/07/19 v1.38 hypertext commands for latex2html (nd, hws, rrm)
+
+\c@lpart=\count115
+\c@lchapter=\count116
+\c@lsection=\count117
+\c@lsubsection=\count118
+\c@lsubsubsection=\count119
+\c@lparagraph=\count120
+\c@lsubparagraph=\count121
+\c@lsubsubparagraph=\count122
+\ptrfile=\write3
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: dvips.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count123
+\lst@gtempboxa=\box31
+\lst@token=\toks38
+\lst@length=\count124
+\lst@currlwidth=\dimen120
+\lst@column=\count125
+\lst@pos=\count126
+\lst@lostspace=\dimen121
+\lst@width=\dimen122
+\lst@newlines=\count127
+\lst@lineno=\count128
+\lst@maxwidth=\dimen123
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count129
+\lst@skipnumbers=\count130
+\lst@framebox=\box32
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+(./booktt/commontex/commands.tex
+\c@definition=\count131
+\c@theorem=\count132
+\c@algorithm=\count133
+\c@program=\count134
+\c@exercise=\count135
+\c@example=\count136
+\c@execution=\count137
+\c@listing=\count138
+\c@advice=\count139
+\c@scheme=\count140
+)
+\@indexfile=\write4
+\openout4 = `javascriptexamples.idx'.
+
+
+Writing index file javascriptexamples.idx
+(./javascriptexamples.aux
+
+LaTeX Warning: Label `section:conceptos' multiply defined.
+
+
+LaTeX Warning: Label `definition:lenguajegenerado' multiply defined.
+
+
+LaTeX Warning: Label `definition:arbolconcreto' multiply defined.
+
+
+LaTeX Warning: Label `ejercicio:tutugrammar' multiply defined.
+
+
+LaTeX Warning: Label `ejer:arbol' multiply defined.
+
+
+LaTeX Warning: Label `fig:dfa' multiply defined.
+
+)
+\openout1 = `javascriptexamples.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
+)
+\AtBeginShipoutBox=\box33
+Package hyperref Info: Link coloring OFF on input line 138.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count141
+)
+LaTeX Info: Redefining \ref on input line 138.
+LaTeX Info: Redefining \pageref on input line 138.
+LaTeX Info: Redefining \nameref on input line 138.
+
+(./javascriptexamples.out) (./javascriptexamples.out)
+\@outlinefile=\write5
+\openout5 = `javascriptexamples.out'.
+
+\c@lstlisting=\count142
+LaTeX Font Info:    Try loading font information for U+lasy on input line 142.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 142.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 142.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
+) [1
+
+
+]
+(./javascriptexamples.toc [1
+
+]
+Overfull \hbox (70.95178pt too wide) in paragraph at lines 187--187
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (56.07799pt too wide) in paragraph at lines 191--191
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (1.45999pt too wide) detected at line 263
+\OT1/cmr/m/n/10.95 5.13.10. 
+ []
+
+
+Overfull \hbox (1.45999pt too wide) detected at line 264
+\OT1/cmr/m/n/10.95 5.13.11. 
+ []
+
+[2] [3])
+\tf@toc=\write6
+\openout6 = `javascriptexamples.toc'.
+
+ [4] (./javascriptexamples.lof)
+\tf@lof=\write7
+\openout7 = `javascriptexamples.lof'.
+
+ [5
+
+] (./javascriptexamples.lot)
+\tf@lot=\write8
+\openout8 = `javascriptexamples.lot'.
+
+ [6
+
+]
+[7
+
+] [8
+
+] [9
+
+] (./chapter2/regexp.tex
+Cap\'{\i }tulo 1.
+
+Overfull \hbox (22.18768pt too wide) in paragraph at lines 38--38
+[]\OT1/cmtt/m/n/10.95 github  git@github.com:crguezl/ull-etsii-grado-pl-1213-te
+mperature-converter.git (fetch)[] 
+ []
+
+
+Overfull \hbox (16.439pt too wide) in paragraph at lines 38--38
+[]\OT1/cmtt/m/n/10.95 github  git@github.com:crguezl/ull-etsii-grado-pl-1213-te
+mperature-converter.git (push)[] 
+ []
+
+[10
+
+]
+Overfull \hbox (91.17194pt too wide) in paragraph at lines 107--107
+[]        \OT1/cmtt/m/n/10.95 <td><input id="original" autofocus onchange="calc
+ulate();" placeholder="32F" size="50"></td>[] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 127.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 127.
+ [11] [12]
+Overfull \hbox (137.16144pt too wide) in paragraph at lines 245--245
+[]\OT1/cmtt/m/n/10.95 th, td      { vertical-align: top; text-align: right; fon
+t-size:large; }     /* Don't center table cells  */[] 
+ []
+
+
+Overfull \hbox (137.16144pt too wide) in paragraph at lines 245--245
+[]\OT1/cmtt/m/n/10.95 #converted  { color: red; font-weight: bold; font-size:la
+rge;          }     /* Calculated values in bold */[] 
+ []
+
+
+Overfull \hbox (114.16669pt too wide) in paragraph at lines 245--245
+[] \OT1/cmtt/m/n/10.95 font-family: "Lucida Sans Typewriter", "Lucida Console",
+ Monaco, "Bitstream Vera Sans Mono", monospace;[] 
+ []
+
+
+Overfull \hbox (137.16144pt too wide) in paragraph at lines 251--251
+[]\OT1/cmtt/m/n/10.95 th, td      { vertical-align: top; text-align: right; fon
+t-size:large; }     /* Don't center table cells  */[] 
+ []
+
+[13]
+Overfull \hbox (89.80356pt too wide) in paragraph at lines 287--287
+ []\OT1/cmtt/m/n/10.95 #converted  { color: red; font-weight: bold; font-size:l
+arge; } /* Calculated values in bold */[] 
+ []
+
+[14] [15] [16]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2004/10/17 UCS: Unicode data U+2000..U+20FF
+) [17]
+Overfull \hbox (16.59697pt too wide) in paragraph at lines 599--600
+[][][][][] \OT1/cmr/m/n/10.95 en You-
+ []
+
+[18] (./chapter11/package_json.tex [19]
+Overfull \hbox (21.18906pt too wide) in paragraph at lines 62--62
+[]  \OT1/cmtt/m/n/10.95 "description": "ULL ESIT Grado de Inform^^Satica. 3$[]$
+. PL. Lab \"Temperature Converter\"",[] 
+ []
+
+[20]
+Overfull \hbox (16.439pt too wide) in paragraph at lines 75--75
+[]\OT1/cmtt/m/n/10.95 > pl-grado-temperature-converter@0.0.1 test /private/tmp/
+pl-grado-temperature-converter[] 
+ []
+
+) (./chapter11/mocha_chai.tex
+Overfull \hbox (18.23663pt too wide) in paragraph at lines 8--11
+[]\OT1/cmr/m/n/10.95 It is open sour-ce (MIT li-cen-sed), and we can learn mo-r
+e about it at [][][][] 
+ []
+
+[21]
+Overfull \hbox (94.7658pt too wide) in paragraph at lines 86--88
+[]\OT1/cmr/m/n/10.95 If you pre-fer to host your-self, use the []\OT1/cmtt/m/n/
+10.95 chai.js \OT1/cmr/m/n/10.95 fi-le from the root of the [][][][]. 
+ []
+
+[22] [23]
+Overfull \hbox (17.01651pt too wide) in paragraph at lines 203--204
+[]\OT1/cmr/m/n/10.95 The []\OT1/cmr/m/it/10.95 BDD \OT1/cmr/m/n/10.95 in-ter-fa
+-ce pro-vi-des []\OT1/cmtt/m/n/10.95 describe()\OT1/cmr/m/n/10.95 , []\OT1/cmtt
+/m/n/10.95 it()\OT1/cmr/m/n/10.95 , []\OT1/cmtt/m/n/10.95 before()\OT1/cmr/m/n/
+10.95 , []\OT1/cmtt/m/n/10.95 after()\OT1/cmr/m/n/10.95 , []\OT1/cmtt/m/n/10.95
+ beforeEach()\OT1/cmr/m/n/10.95 , and []\OT1/cmtt/m/n/10.95 afterEach()\OT1/cmr
+/m/n/10.95 : 
+ []
+
+[24]) (./chapter11/gulp.tex [25] [26]) [27]
+Overfull \hbox (51.21124pt too wide) in paragraph at lines 751--756
+\OT1/cmr/m/n/10.95 me-work Mo-cha y Chai en el re-po-si-to-rio [][][][]:
+ []
+
+
+Overfull \hbox (122.75133pt too wide) in paragraph at lines 751--756
+[][][][] 
+ []
+
+(./chapter11/karma.tex [28]
+Overfull \hbox (55.65074pt too wide) in paragraph at lines 20--22
+[]\OT1/cmr/m/n/10.95 manually, by vi-si-ting the URL whe-re the Kar-ma ser-ver 
+is lis-te-ning (ty-pi-cally []\OT1/cmtt/m/n/10.95 http://localhost:9876/\OT1/cm
+r/m/n/10.95 ) 
+ []
+
+
+Overfull \hbox (21.09865pt too wide) in paragraph at lines 44--46
+[][][][][] \OT1/cmr/m/n/10.95 You-
+ []
+
+
+Overfull \hbox (14.19405pt too wide) in paragraph at lines 48--49
+[][][][][] \OT1/cmr/m/n/10.95 Voj-ta J^^S^^Pna.
+ []
+
+[29]
+Overfull \hbox (91.17194pt too wide) in paragraph at lines 119--119
+[]\OT1/cmtt/m/n/10.95 Config file generated at "/Users/casiano/local/src/javasc
+ript/PLgrado/mocha-tutorial/karma.conf.js".[] 
+ []
+
+[30]
+Overfull \hbox (206.14569pt too wide) in paragraph at lines 197--197
+[]    \OT1/cmtt/m/n/10.95 // possible values: config.LOG_DISABLE || config.LOG_
+ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG[] 
+ []
+
+
+Overfull \hbox (22.18768pt too wide) in paragraph at lines 197--197
+[]    \OT1/cmtt/m/n/10.95 // - Safari (only Mac; has to be installed with `npm 
+install karma-safari-launcher`)[] 
+ []
+
+[31]
+Overfull \hbox (56.67981pt too wide) in paragraph at lines 238--238
+[]  \OT1/cmtt/m/n/10.95 --reporters           List of reporters (available: dot
+s, progress, junit, growl, coverage).[] 
+ []
+
+
+Overfull \hbox (62.4285pt too wide) in paragraph at lines 238--238
+[]  \OT1/cmtt/m/n/10.95 --browsers            List of browsers to start (eg. --
+browsers Chrome,ChromeCanary,Firefox).[] 
+ []
+
+
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 238--238
+[]  \OT1/cmtt/m/n/10.95 --capture-timeout     <integer> Kill browser if does no
+t capture in given time [ms].[] 
+ []
+
+[32] [33]
+Overfull \hbox (206.14569pt too wide) in paragraph at lines 352--352
+[]    \OT1/cmtt/m/n/10.95 // possible values: config.LOG_DISABLE || config.LOG_
+ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG[] 
+ []
+
+
+Overfull \hbox (22.18768pt too wide) in paragraph at lines 352--352
+[]    \OT1/cmtt/m/n/10.95 // - Safari (only Mac; has to be installed with `npm 
+install karma-safari-launcher`)[] 
+ []
+
+
+Overfull \hbox (134.37062pt too wide) in paragraph at lines 353--355
+\OT1/cmr/m/n/10.95 Another exam-ple can be found at ([][][][]). 
+ []
+
+[34] [35] [36] [37]
+Overfull \hbox (44.90933pt too wide) in paragraph at lines 571--571
+ []   \OT1/cmtt/m/n/10.95 'test': './node_modules/karma/bin/karma start --singl
+e-run --browsers PhantomJS'[] 
+ []
+
+
+Overfull \hbox (16.99908pt too wide) in paragraph at lines 580--581
+[]\OT1/cmr/m/n/10.95 Travis sup-ports run-ning a real brow-ser (Fi-re-fox) with
+ a vir-tual screen. Just up-da-te your []\OT1/cmtt/m/n/10.95 .travis.yml
+ []
+
+) [38]
+File: chapter2/csv.eps Graphic file (type eps)
+ <chapter2/csv.eps> [39] [40] [41]
+Overfull \hbox (193.63884pt too wide) in paragraph at lines 1119--1131
+[][] 
+ []
+
+[42]
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 1188--1188
+[]     \OT1/cmtt/m/n/10.95 <script type="text/javascript" src="../../jquery/sta
+rterkit/jquery.js"></script>[] 
+ []
+
+
+Overfull \hbox (142.91013pt too wide) in paragraph at lines 1188--1188
+[]      \OT1/cmtt/m/n/10.95 <i>Write a CSV string. Click the table button. The 
+program outputs a table with the specified data.</i>[] 
+ []
+
+
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 1188--1188
+[]        \OT1/cmtt/m/n/10.95 <td><textarea autofocus cols = "80" rows = "5" id
+="original"></textarea></td>[] 
+ []
+
+(./chapter11/jquery.tex [43]
+Overfull \hbox (2.48462pt too wide) in paragraph at lines 84--90
+\OT1/cmr/m/n/10.95 For []\OT1/cmtt/m/n/10.95 click \OT1/cmr/m/n/10.95 and most 
+ot-her events, you can pre-vent the de-fault beha-vior by ca-lling [][][][]
+ []
+
+[44] [45] (./chapter11/expressheroku.tex [46]
+Overfull \hbox (20.33292pt too wide) in paragraph at lines 45--47
+[][]\OT1/cmtt/m/n/10.95 jQuery.get( url [, data ] [, success(data, textStatus, 
+jqXHR) ] [, dataType ] ) \OT1/cmr/m/n/10.95 load
+ []
+
+[47] [48]
+Overfull \hbox (102.66931pt too wide) in paragraph at lines 168--168
+[]           \OT1/cmtt/m/n/10.95 pipe(shell("open https://github.com/crguezl/ho
+w-jquery-works-tutorial/tree/getallparams"));[] 
+ []
+
+) (./chapter11/sinatraheroku.tex [49]
+Overfull \hbox (20.33292pt too wide) in paragraph at lines 67--69
+[][]\OT1/cmtt/m/n/10.95 jQuery.get( url [, data ] [, success(data, textStatus, 
+jqXHR) ] [, dataType ] ) \OT1/cmr/m/n/10.95 load
+ []
+
+[50] [51])) (./chapter11/jsonstringify.tex) (./chapter11/underscore.tex
+[52] [53] [54]
+Overfull \hbox (113.89359pt too wide) in paragraph at lines 233--233
+ []    \OT1/cmtt/m/n/10.95 var __t,__p=\'\',__j=Array.prototype.join,print=func
+tion(){__p+=__j.call(arguments,\'\');};[] 
+ []
+
+
+Overfull \hbox (44.90933pt too wide) in paragraph at lines 241--241
+ []\OT1/cmtt/m/n/10.95 _.template("Using 'with': <%= data.answer %>", {answer: 
+'no'}, {variable: 'data'});[] 
+ []
+
+[55]
+Overfull \hbox (1039.43231pt too wide) in paragraph at lines 310--310
+ []  \OT1/cmtt/m/n/10.95 source: 'function(obj){\nvar __t,__p=\'\',__j=Array.pr
+ototype.join,print=function(){__p+=__j.call(arguments,\'\');};\nwith(obj||{}){\
+n__p+=\'Escaped: \'+\n((__t=( value ))==null?\'\':_.escape(__t))+\n\'\\nNot esc
+aped: {{ value }}\';\n}\nreturn __p;\n}' }[] 
+ []
+
+[56]
+Overfull \hbox (20.8193pt too wide) in paragraph at lines 350--350
+ []\OT1/cmtt/m/n/10.95 _.template("Using 'with': <%= data.answer %>", {answer: 
+'no'}, {variable: 'data'});[] 
+ []
+
+)
+Overfull \hbox (223.39175pt too wide) in paragraph at lines 1204--1204
+[]\OT1/cmtt/m/n/10.95 <script type="text/javascript" src="https://cdnjs.cloudfl
+are.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>[] 
+ []
+
+
+Overfull \hbox (27.93637pt too wide) in paragraph at lines 1204--1204
+[]\OT1/cmtt/m/n/10.95 <script src="https://ajax.googleapis.com/ajax/libs/jquery
+/1.10.2/jquery.min.js"></script>[] 
+ []
+
+
+Overfull \hbox (119.81203pt too wide) in paragraph at lines 1221--1223
+[]\OT1/cmr/m/n/10.95 Google pro-vee tam-bi^^Sen un ser-vi-cio CDN pa-ra los des
+a-rro-lla-do-res en [][][][]. 
+ []
+
+[57] (./chapter11/localstorage.tex
+Overfull \hbox (13.02234pt too wide) in paragraph at lines 56--58
+[][][][][] \OT1/cmr/m/n/10.95 Chap-
+ []
+
+[58])
+Overfull \hbox (194.64832pt too wide) in paragraph at lines 1288--1288
+[]   \OT1/cmtt/m/n/10.95 /* The !important ensures that nothing can override wh
+at you've set in this style (unless it is also important). */[] 
+ []
+
+
+Overfull \hbox (45.18243pt too wide) in paragraph at lines 1288--1288
+[]\OT1/cmtt/m/n/10.95 input        { text-align: right;  border: none;       } 
+    /* Align input to the right  */[] 
+ []
+
+[59] [60] [61] (./chapter11/expressheroku.tex [62]
+Overfull \hbox (20.33292pt too wide) in paragraph at lines 45--47
+[][]\OT1/cmtt/m/n/10.95 jQuery.get( url [, data ] [, success(data, textStatus, 
+jqXHR) ] [, dataType ] ) \OT1/cmr/m/n/10.95 load
+ []
+
+[63] [64]
+Overfull \hbox (102.66931pt too wide) in paragraph at lines 168--168
+[]           \OT1/cmtt/m/n/10.95 pipe(shell("open https://github.com/crguezl/ho
+w-jquery-works-tutorial/tree/getallparams"));[] 
+ []
+
+) [65] [66] [67]
+Overfull \hbox (118.547pt too wide) in paragraph at lines 1778--1778
+ []      \OT1/cmtt/m/n/10.95 <input id="phone"><button onclick="testInfo(docume
+nt.getElementById('phone'));">Check</button>[] 
+ []
+
+[68] [69]
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 1945--1945
+[]     \OT1/cmtt/m/n/10.95 <script type="text/javascript" src="../../jquery/sta
+rterkit/jquery.js"></script>[] 
+ []
+
+[70]
+Overfull \hbox (45.18243pt too wide) in paragraph at lines 1993--1993
+[]\OT1/cmtt/m/n/10.95 input        { text-align: right;  border: none;       } 
+    /* Align input to the right  */[] 
+ []
+
+
+Overfull \hbox (27.93637pt too wide) in paragraph at lines 2050--2050
+[]  \OT1/cmtt/m/n/10.95 return contents.replace(/____________________/__,'_____
+_____________________________');[] 
+ []
+
+[71] [72] [73]
+Overfull \hbox (98.93854pt too wide) in paragraph at lines 2162--2164
+[]\OT1/cmr/m/n/10.95 Repositorio con-te-nien-do el c^^Sodi-go (ini-cial) del an
+a-li-za-dor de fi-che-ros []\OT1/cmtt/m/n/10.95 ini\OT1/cmr/m/n/10.95 : [][][][
+] 
+ []
+
+
+Overfull \hbox (252.1352pt too wide) in paragraph at lines 2205--2205
+[]     \OT1/cmtt/m/n/10.95 <script type="text/javascript" src="https://cdnjs.cl
+oudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>[] 
+ []
+
+
+Overfull \hbox (56.67981pt too wide) in paragraph at lines 2205--2205
+[]     \OT1/cmtt/m/n/10.95 <script src="https://ajax.googleapis.com/ajax/libs/j
+query/1.10.2/jquery.min.js"></script>[] 
+ []
+
+[74] [75] [76]
+Overfull \hbox (194.64832pt too wide) in paragraph at lines 2481--2481
+[]   \OT1/cmtt/m/n/10.95 /* The !important ensures that nothing can override wh
+at you've set in this style (unless it is also important). */[] 
+ []
+
+[77]
+Overfull \hbox (45.18243pt too wide) in paragraph at lines 2481--2481
+[]\OT1/cmtt/m/n/10.95 input        { text-align: right;  border: none;       } 
+    /* Align input to the right  */[] 
+ []
+
+[78] [79] [80]
+Overfull \hbox (924.73166pt too wide) in paragraph at lines 2668--2668
+[]  \OT1/cmtt/m/n/10.95 "[section_one]\none = 1\ntwo = 2\n\n[section_two]\nthre
+e =         3\nmulti = multiline \\\nsupport\n\n; comments should be ignored\n[
+section three]\nfour   =4\nfive=5\nsix =6\n\n[section_four]\n   [section_five]\
+n seven and eight= 7 & 8\n\n",[] 
+ []
+
+[81] [82]
+Overfull \hbox (242.69109pt too wide) in paragraph at lines 2772--2776
+\OT1/cmr/m/n/10.95 usan-do []\OT1/cmtt/m/n/10.95 lastIndex\OT1/cmr/m/n/10.95 . 
+Par-ta de la so-lu-ci^^Sonda-da por el pro-fe-sor en [][][][] 
+ []
+
+
+Overfull \hbox (79.40146pt too wide) in paragraph at lines 2788--2788
+ []\OT1/cmtt/m/n/10.95 ~/javascript/jquery/loadfileontotexarea/expressloadfileo
+ntotextarea(master)]$ npm install[] 
+ []
+
+
+Overfull \hbox (85.15015pt too wide) in paragraph at lines 2793--2793
+ []\OT1/cmtt/m/n/10.95 [~/javascript/jquery/loadfileontotexarea/expressloadfile
+ontotextarea(master)]$ node app.js[] 
+ []
+
+
+Overfull \hbox (38.61879pt too wide) in paragraph at lines 2826--2830
+\OT1/cmr/m/n/10.95 ejem-plo de co-mo ha-cer-lo en el fi-che-ro [][][][]
+ []
+
+
+LaTeX Warning: Reference `chapter:heroku' on page 83 undefined on input line 28
+79.
+
+[83]
+Overfull \hbox (16.1659pt too wide) in paragraph at lines 2895--2895
+ []\OT1/cmtt/m/n/10.95 [~/srcPLgrado/lexical_analysis_top_down_operator_precede
+nce(gh-pages)]$ pwd -P[] 
+ []
+
+
+Overfull \hbox (79.40146pt too wide) in paragraph at lines 2895--2895
+ []\OT1/cmtt/m/n/10.95 /Users/casiano/local/src/javascript/PLgrado/lexical_anal
+ysis_top_down_operator_precedence[] 
+ []
+
+
+Overfull \hbox (0.68916pt too wide) in paragraph at lines 2900--2903
+[]\OT1/cmr/m/n/10.95 Mejore la so-lu-ci^^Son en [][][][] 
+ []
+
+) [84]
+Cap\'{\i }tulo 2.
+(./chapter_descendente/predictive_parser.tex [85
+
+] [86] [87] [88] [89] [90]
+[91] [92] [93] [94]
+Overfull \hbox (105.56305pt too wide) in paragraph at lines 765--771
+[]\OT1/cmr/m/n/10.95 As^^S^^P pues una t^^Secni-ca es eli-mi-nar la re-cur-si^^
+Son por la iz-quier-da en []\OT1/cmtt/m/n/10.95 expression -> expression ADDOP 
+term | term
+ []
+
+[95]
+Overfull \hbox (80.51787pt too wide) in paragraph at lines 868--872
+[]\OT1/cmr/m/n/10.95 css2sass en Git-Hub ([][][][]) y des-plie-gue en He-ro-ku 
+([][][][]) 
+ []
+
+) [96]
+Cap\'{\i }tulo 3.
+(./chapter_descendente/calculadora.tex)
+(./chapter_descendente/topdownprecedence.tex) [97
+
+]
+Cap\'{\i }tulo 4.
+(./chapter_descendente/pegjs.tex [98
+
+] [99] [100] [101] [102] [103]
+Overfull \hbox (50.93112pt too wide) in paragraph at lines 467--467
+[]\OT1/cmtt/m/n/10.95 [~/Dropbox/src/javascript/PLgrado/pegjs/examples(master)]
+$ npm install -g pegjs-coffee-plugin[] 
+ []
+
+
+Overfull \hbox (27.93637pt too wide) in paragraph at lines 491--491
+[]\OT1/cmtt/m/n/10.95 [~/Dropbox/src/javascript/PLgrado/pegjs-coffee-plugin/exa
+mples(master)]$ cat simple.pegjs[] 
+ []
+
+
+Overfull \hbox (62.4285pt too wide) in paragraph at lines 498--498
+[]\OT1/cmtt/m/n/10.95 [~/Dropbox/src/javascript/PLgrado/pegjs-coffee-plugin/exa
+mples(master)]$  cat use_simple.coffee[] 
+ []
+
+
+Overfull \hbox (142.91013pt too wide) in paragraph at lines 506--506
+[]\OT1/cmtt/m/n/10.95 [~/srcPLgrado/pegjs/examples/coffee-plugin-examples(maste
+r)]$ pegjs --plugin pegjs-coffee-plugin simple.pegjs[] 
+ []
+
+[104]
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 506--506
+[]\OT1/cmtt/m/n/10.95 [~/srcPLgrado/pegjs/examples/coffee-plugin-examples(maste
+r)]$ coffee use_simple.coffee[] 
+ []
+
+[105] [106] [107]
+Overfull \hbox (38.06537pt too wide) in paragraph at lines 786--786
+ []\OT1/cmtt/m/n/10.95 "       / &   { console.log('inside predicate: '+g); ret
+urn true; } 'b' { return 2; }"[] 
+ []
+
+[108]
+Overfull \hbox (26.568pt too wide) in paragraph at lines 805--805
+ []       \OT1/cmtt/m/n/10.95 / &   { console.log('inside predicate: '+g); retu
+rn true; } 'b' { return 2; }[] 
+ []
+
+[109] [110] [111] [112]
+Overfull \hbox (21.91458pt too wide) in paragraph at lines 1212--1212
+ []                       \OT1/cmtt/m/n/10.95 console.log("inside predicate: @g
+ = '#{@g}' c = '#{c}'")[] 
+ []
+
+[113] [114] [115] [116] [117] [118] [119] [120] [121]
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 1766--1766
+[]      \OT1/cmtt/m/n/10.95 $('#output').html('<div class="error"><pre>\n' + St
+ring(e) + '\n</pre></div>');[] 
+ []
+
+[122]
+Overfull \hbox (56.67981pt too wide) in paragraph at lines 1849--1849
+[]    \OT1/cmtt/m/n/10.95 <link rel="stylesheet" href="global.css" type="text/c
+ss" media="screen" charset="utf-8" />[] 
+ []
+
+
+Overfull \hbox (62.4285pt too wide) in paragraph at lines 1849--1849
+[]      \OT1/cmtt/m/n/10.95 <script src="https://ajax.googleapis.com/ajax/libs/
+jquery/1.10.2/jquery.min.js"></script>[] 
+ []
+
+[123]
+File: chapter_descendente/pegjs.eps Graphic file (type eps)
+ <chapter_descendente/pegjs.eps> [124] [125]
+Overfull \hbox (91.17194pt too wide) in paragraph at lines 1999--1999
+[]\OT1/cmtt/m/n/10.95 [~/pegjs-coffee-remove-left(master)]$ pegjs --plugin pegj
+s-coffee-plugin remove_left_recursive.pegjs[] 
+ []
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/ucs/data/uni-33.def
+File: uni-33.def 2004/10/17 UCS: Unicode data U+2100..U+21FF
+) [126]
+[127] [128] [129]
+Overfull \hbox (211.89438pt too wide) in paragraph at lines 2311--2311
+[]\OT1/cmtt/m/n/10.95 sum     = first:value &{ return initsum(first); } (op:[+-
+] product:value & { return add(op, product); })* { return sum; }[] 
+ []
+
+
+Overfull \hbox (138.10797pt too wide) in paragraph at lines 2312--2316
+\OT1/cmr/m/n/10.95 y apro-ve-chan-do el cie-rre []\OT1/cmtt/m/n/10.95 * \OT1/cm
+r/m/n/10.95 se eje-cu-ta en bu-cle el se-gun-do pre-di-ca-do []\OT1/cmtt/m/n/10
+.95 (op:[+-] product:value & { return add(op, product); })
+ []
+
+[130]
+Overfull \hbox (234.88913pt too wide) in paragraph at lines 2364--2364
+[]\OT1/cmtt/m/n/10.95 sum     = first:value &{ return sum.s(first); } (op:[+-] 
+product:value & { return sum.a(op, product); })* { return sum.g(); }[] 
+ []
+
+[131]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 2414.
+
+[132] [133] [134] [135] [136]
+
+LaTeX Warning: Reference `chapter:heroku' on page 137 undefined on input line 2
+757.
+
+
+LaTeX Warning: Reference `chapter:datamapper' on page 137 undefined on input li
+ne 2760.
+
+
+Overfull \hbox (3.89174pt too wide) in paragraph at lines 2796--2796
+[]\OT1/cmtt/m/n/10.95 type_spec(i,3)<<d;[] 
+ []
+
+
+Overfull \hbox (9.64043pt too wide) in paragraph at lines 2796--2796
+[]\OT1/cmtt/m/n/10.95 type_spec(i)->l=24;[] 
+ []
+
+
+Overfull \hbox (9.9311pt too wide) in paragraph at lines 2807--2807
+[]\OT1/cmtt/m/n/10.95 type_spec(m) = { 1, 2 };[] 
+ []
+
+[137]
+Overfull \hbox (73.92587pt too wide) in paragraph at lines 2900--2900
+[]\OT1/cmtt/m/n/10.95 [~/Dropbox/src/javascript/PLgrado/pegjs-coffee-plugin/exa
+mples(master)]$ cat use_cplusplus.coffee[] 
+ []
+
+[138]
+Overfull \hbox (105.73312pt too wide) in paragraph at lines 2920--2929
+[][][][]\OT1/cmr/m/n/10.95 . Pa-ra ello lea el cap^^S^^Ptu-lo [][][][] del [][]
+[][]
+ []
+
+) [139]
+Cap\'{\i }tulo 5.
+(./chapter_bottomup/jison.tex [140
+
+] [141]
+Overfull \hbox (56.67981pt too wide) in paragraph at lines 202--202
+[]    \OT1/cmtt/m/n/10.95 <link rel="stylesheet" href="global.css" type="text/c
+ss" media="screen" charset="utf-8" />[] 
+ []
+
+[142]
+Overfull \hbox (103.28044pt too wide) in paragraph at lines 240--248
+\OT1/cmr/m/n/10.95 en Git-Hub en [][][][]. Pue-de pro-bar-se en: [][][][] 
+ []
+
+
+Overfull \hbox (46.8313pt too wide) in paragraph at lines 254--255
+[][][][][] 
+ []
+
+
+Overfull \hbox (194.64832pt too wide) in paragraph at lines 302--302
+[]   \OT1/cmtt/m/n/10.95 /* The !important ensures that nothing can override wh
+at you've set in this style (unless it is also important). */[] 
+ []
+
+[143]
+Overfull \hbox (45.18243pt too wide) in paragraph at lines 302--302
+[]\OT1/cmtt/m/n/10.95 input        { text-align: right;  border: none;       } 
+    /* Align input to the right  */[] 
+ []
+
+
+Overfull \hbox (103.28044pt too wide) in paragraph at lines 314--322
+\OT1/cmr/m/n/10.95 en Git-Hub en [][][][]. Pue-de pro-bar-se en: [][][][] 
+ []
+
+
+Overfull \hbox (46.8313pt too wide) in paragraph at lines 326--327
+[][][][][] 
+ []
+
+
+Overfull \hbox (18.96765pt too wide) in paragraph at lines 330--333
+\OT1/cmr/m/n/10.95 for-ma []\OT1/cmtt/m/n/10.95 ID = expression \OT1/cmr/m/n/10
+.95 se-pa-ra-das por pun-tos y co-mas, por ejem-plo []\OT1/cmtt/m/n/10.95 a = 4
+; b = a+4.56; c = -8.57e34\OT1/cmr/m/n/10.95 . 
+ []
+
+
+Overfull \hbox (12.7962pt too wide) in paragraph at lines 336--339
+[]\OT1/cmr/m/n/10.95 Como pun-to de arran-que, clo-ne el re-po-si-to-rio en [][
+][][]. 
+ []
+
+[144]
+Overfull \hbox (49.56274pt too wide) in paragraph at lines 366--366
+ []\OT1/cmtt/m/n/10.95 bitbucket       ssh://git@bitbucket.org/casiano/ull-etsi
+i-grado-pl-jisoncalc.git (fetch)[] 
+ []
+
+
+Overfull \hbox (43.81406pt too wide) in paragraph at lines 366--366
+ []\OT1/cmtt/m/n/10.95 bitbucket       ssh://git@bitbucket.org/casiano/ull-etsi
+i-grado-pl-jisoncalc.git (push)[] 
+ []
+
+
+Overfull \hbox (101.30093pt too wide) in paragraph at lines 386--386
+ []\OT1/cmtt/m/n/10.95 /Users/casiano/local/src/javascript/PLgrado/jison/jison-
+compiler/jison/examples/html_calc_example[] 
+ []
+
+
+Overfull \hbox (9.32193pt too wide) in paragraph at lines 386--386
+ []\OT1/cmtt/m/n/10.95 [~/jison/jison-compiler/jison/examples/html_calc_example
+(develop)]$ git branch -a[] 
+ []
+
+
+Overfull \hbox (49.56274pt too wide) in paragraph at lines 416--416
+ []\OT1/cmtt/m/n/10.95 bitbucket       ssh://git@bitbucket.org/casiano/ull-etsi
+i-grado-pl-jisoncalc.git (fetch)[] 
+ []
+
+[145] [146]
+Overfull \hbox (56.67981pt too wide) in paragraph at lines 534--534
+[]    \OT1/cmtt/m/n/10.95 <link rel="stylesheet" href="global.css" type="text/c
+ss" media="screen" charset="utf-8" />[] 
+ []
+
+[147]
+Overfull \hbox (27.93637pt too wide) in paragraph at lines 555--555
+[]  \OT1/cmtt/m/n/10.95 sh "jison calculator.jison calculator.l -o calculator.j
+s; mv calculator.js calcugly.js"[] 
+ []
+
+
+Overfull \hbox (194.64832pt too wide) in paragraph at lines 603--603
+[]   \OT1/cmtt/m/n/10.95 /* The !important ensures that nothing can override wh
+at you've set in this style (unless it is also important). */[] 
+ []
+
+[148]
+Overfull \hbox (45.18243pt too wide) in paragraph at lines 603--603
+[]\OT1/cmtt/m/n/10.95 input        { text-align: right;  border: none;       } 
+    /* Align input to the right  */[] 
+ []
+
+[149]
+Overfull \hbox (602.80515pt too wide) in paragraph at lines 670--670
+[]      \OT1/cmtt/m/n/10.95 See the NetTuts+ tutorial at <a href="http://net.tu
+tsplus.com/tutorials/javascript-ajax/quick-tip-quick-and-easy-javascript-testin
+g-with-assert/">Quick and Easy JavaScript Testing</a>[] 
+ []
+
+
+LaTeX Warning: Reference `section:tstingfacil' on page 150 undefined on input l
+ine 699.
+
+
+Overfull \hbox (145.06862pt too wide) in paragraph at lines 698--701
+[]\OT1/cmr/m/n/10.95 Introduzca prue-bas uni-ta-rias co-mo las des-cri-tas en l
+a sec-ci^^Son [] ([][][][]) 
+ []
+
+[150] [151] [152] [153]
+Overfull \hbox (1.75449pt too wide) in paragraph at lines 958--963
+[]\OT1/cmr/m/n/10.95 Esto es, es el len-gua-je de los pre-fi-jos via-bles es el
+ con-jun-to de fra-ses que son pre-fi-jos de $\OML/cmm/m/it/10.95 handle[]\OT1/
+cmr/m/n/10.95 (\OML/cmm/m/it/10.95 \OT1/cmr/m/n/10.95 )) =
+ []
+
+[154]
+File: chapter_bottomup/nfa.eps Graphic file (type eps)
+ <chapter_bottomup/nfa.eps> [155] [156]
+
+LaTeX Warning: Reference `table:tablaslalr' on page 157 undefined on input line
+ 1209.
+
+File: chapter_bottomup/dfa.eps Graphic file (type eps)
+<chapter_bottomup/dfa.eps> [157] [158] [159]
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 1456--1456
+[]   \OT1/cmtt/m/n/10.95 -o FILE, --outfile FILE       Filename and base module
+ name of the generated parser[] 
+ []
+
+[160] [161] [162]
+
+LaTeX Warning: Reference `chapter:googleoauth' on page 163 undefined on input l
+ine 1652.
+
+
+LaTeX Warning: Reference `chapter:heroku' on page 163 undefined on input line 1
+666.
+
+[163]
+
+LaTeX Warning: Reference `chapter:datamapper' on page 164 undefined on input li
+ne 1669.
+
+
+Overfull \hbox (81.55026pt too wide) in paragraph at lines 1718--1721
+[]\OT1/cmr/m/n/10.95 Un pro-gra-ma []\OT1/cmtt/m/n/10.95 belongs_to \OT1/cmr/m/
+n/10.95 un usua-rio. Un usua-rio []\OT1/cmtt/m/n/10.95 has n \OT1/cmr/m/n/10.95
+ pro-gra-mas. Vea la sec-ci^^Son [][][][]. 
+ []
+
+[164] [165] [166]
+Overfull \hbox (64.97968pt too wide) in paragraph at lines 1936--1936
+[]  \OT1/cmtt/m/n/10.95 var d, e; # esta "d" tapa la d anterior[] 
+ []
+
+
+Overfull \hbox (7.4928pt too wide) in paragraph at lines 1936--1936
+[]  \OT1/cmtt/m/n/10.95 def f(u, v) { a + u + v + d }[] 
+ []
+
+
+Overfull \hbox (18.99017pt too wide) in paragraph at lines 1960--1960
+[]        \OT1/cmtt/m/n/10.95 # global:       var c,d,e[] 
+ []
+
+
+Overfull \hbox (133.96393pt too wide) in paragraph at lines 1960--1960
+[]        \OT1/cmtt/m/n/10.95 d, 0     # acceder a la d en el ^^Sambito actual[
+] 
+ []
+
+[167]
+Overfull \hbox (7.4928pt too wide) in paragraph at lines 2093--2093
+[]  \OT1/cmtt/m/n/10.95 def f(u, v) { a + u + v + d }[] 
+ []
+
+
+Overfull \hbox (18.99017pt too wide) in paragraph at lines 2147--2147
+[]        \OT1/cmtt/m/n/10.95 # global:       var c,d,e[] 
+ []
+
+
+Overfull \hbox (60.31636pt too wide) in paragraph at lines 2076--2150
+[]\OT1/cmr/m/n/10.95 Sigue un ejem-plo de tra-duc-ci^^Son: [] 
+ []
+
+[168] [169]
+Overfull \hbox (16.1659pt too wide) in paragraph at lines 2174--2174
+ []\OT1/cmtt/m/n/10.95 bitbucket       ssh://git@bitbucket.org/casiano/jisoninf
+ix2postfix.git (fetch)[] 
+ []
+
+
+Overfull \hbox (10.4172pt too wide) in paragraph at lines 2174--2174
+ []\OT1/cmtt/m/n/10.95 bitbucket       ssh://git@bitbucket.org/casiano/jisoninf
+ix2postfix.git (push)[] 
+ []
+
+[170] (./chapter_bottomup/aSb.tex [171]
+File: chapter_bottomup/aSb.eps Graphic file (type eps)
+ <chapter_bottomup/aSb.eps>
+Overfull \hbox (101.30093pt too wide) in paragraph at lines 95--95
+ []\OT1/cmtt/m/n/10.95 r = this.performAction.call(yyval, yytext, yyleng, yylin
+eno, this.yy, action[1], vstack, lstack);[] 
+ []
+
+
+LaTeX Warning: Reference `subsection:callyapply' on page 172 undefined on input
+ line 99.
+
+[172] [173]
+Overfull \hbox (44.90933pt too wide) in paragraph at lines 189--189
+ []            \OT1/cmtt/m/n/10.95 1: [2, 1],    /* En estado 0 viendo $end(1) 
+reducir(2) por S : vacio */[] 
+ []
+
+
+Overfull \hbox (27.66327pt too wide) in paragraph at lines 189--189
+ []            \OT1/cmtt/m/n/10.95 3: 1,         /* En el estado 0 viendo S(3) 
+ir (goto) al estado 1 */[] 
+ []
+
+[174]
+Overfull \hbox (165.90488pt too wide) in paragraph at lines 284--284
+[]                \OT1/cmtt/m/n/10.95 r = this.performAction.call(yyval, yytext
+, yyleng, yylineno, this.yy, action[1], vstack, lstack);[] 
+ []
+
+
+Overfull \hbox (62.4285pt too wide) in paragraph at lines 284--284
+[]                    \OT1/cmtt/m/n/10.95 return r; /* un return de algo distin
+to de undefined nos saca del parser */[] 
+ []
+
+
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 284--284
+[]                \OT1/cmtt/m/n/10.95 if (len) {                               
+   /* retirar de las pilas */[] 
+ []
+
+
+Overfull \hbox (102.66931pt too wide) in paragraph at lines 284--284
+[]                    \OT1/cmtt/m/n/10.95 stack = stack.slice(0, - 1 * len * 2)
+;  /* simbolo, estado, simbolo, estado ... */[] 
+ []
+
+[175]
+Overfull \hbox (22.18768pt too wide) in paragraph at lines 284--284
+[]                    \OT1/cmtt/m/n/10.95 lstack = lstack.slice(0, - 1 * len); 
+   /* retirar localizaciones */[] 
+ []
+
+
+Overfull \hbox (16.439pt too wide) in paragraph at lines 284--284
+[]                \OT1/cmtt/m/n/10.95 stack.push(this.productions_[action[1]][0
+]); /* empujemos el s^^S^^Pmbolo */[] 
+ []
+
+
+Overfull \hbox (45.18243pt too wide) in paragraph at lines 284--284
+[]                \OT1/cmtt/m/n/10.95 vstack.push(yyval.$);                    
+    /* empujemos valor semantico */[] 
+ []
+
+
+Overfull \hbox (27.93637pt too wide) in paragraph at lines 284--284
+[]                \OT1/cmtt/m/n/10.95 lstack.push(yyval._$);                   
+    /* empujemos localizaci^^Son */[] 
+ []
+
+
+Overfull \hbox (22.18768pt too wide) in paragraph at lines 284--284
+[]                \OT1/cmtt/m/n/10.95 stack.push(newState);                    
+    /* empujemos goto[top][A]*/[] 
+ []
+
+
+Overfull \hbox (114.16669pt too wide) in paragraph at lines 334--334
+[]            \OT1/cmtt/m/n/10.95 action = table[state] && table[state][symbol]
+; /* obtener la acci^^Son para el estado actual */[] 
+ []
+
+
+Overfull \hbox (160.15619pt too wide) in paragraph at lines 334--334
+[]            \OT1/cmtt/m/n/10.95 throw new Error("Parse Error: multiple action
+s possible at state: " + state + ", token: " + symbol);[] 
+ []
+
+
+Overfull \hbox (22.18768pt too wide) in paragraph at lines 334--334
+[]                \OT1/cmtt/m/n/10.95 vstack.push(this.lexer.yytext);    /* emp
+ujamos el atributo del token */[] 
+ []
+
+
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 334--334
+[]                \OT1/cmtt/m/n/10.95 lstack.push(this.lexer.yylloc);    /* sal
+vamos la localizaci^^Son del token */[] 
+ []
+
+
+Overfull \hbox (85.42325pt too wide) in paragraph at lines 334--334
+[]                    \OT1/cmtt/m/n/10.95 if (recovering > 0) recovering--; /* 
+las cosas van mejor si hubieron errores */[] 
+ []
+
+[176]
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 381--381
+[]            \OT1/cmtt/m/n/10.95 expected = [];                       /* compu
+temos los tokens esperados */[] 
+ []
+
+
+Overfull \hbox (33.68506pt too wide) in paragraph at lines 381--381
+[]            \OT1/cmtt/m/n/10.95 for (p in table[state])              /* si el
+ estado "state" transita con p */[] 
+ []
+
+
+Overfull \hbox (16.439pt too wide) in paragraph at lines 381--381
+[]              \OT1/cmtt/m/n/10.95 if (this.terminals_[p] && p > 2) { /* y "p"
+ es un terminal no especial */[] 
+ []
+
+
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 381--381
+[]                  \OT1/cmtt/m/n/10.95 expected.push("'" + this.terminals_[p] 
++ "'"); /* entonces es esperado */[] 
+ []
+
+
+Overfull \hbox (27.93637pt too wide) in paragraph at lines 381--381
+[]            \OT1/cmtt/m/n/10.95 if (this.lexer.showPosition) { /* si esta def
+inida la funci^^Son showPosition */[] 
+ []
+
+
+Overfull \hbox (85.42325pt too wide) in paragraph at lines 381--381
+[]                         \OT1/cmtt/m/n/10.95 (this.terminals_[symbol] || symb
+ol) + /* terminals_ es el array inverso */[] 
+ []
+
+
+Overfull \hbox (85.42325pt too wide) in paragraph at lines 381--381
+[]                         \OT1/cmtt/m/n/10.95 "'";                            
+      /* numero -> terminal             */[] 
+ []
+
+
+Overfull \hbox (16.439pt too wide) in paragraph at lines 381--381
+[]                \OT1/cmtt/m/n/10.95 text: this.lexer.match,  /* hash/objeto c
+onteniendo los detalles del */[] 
+ []
+
+
+Overfull \hbox (16.439pt too wide) in paragraph at lines 381--381
+[]                \OT1/cmtt/m/n/10.95 token: this.terminals_[symbol] || symbol,
+                   /* error */[] 
+ []
+
+
+Overfull \hbox (137.16144pt too wide) in paragraph at lines 381--381
+[]        \OT1/cmtt/m/n/10.95 throw new Error("Parse Error: multiple actions po
+ssible at state: " + state + ", token: " + symbol);[] 
+ []
+
+[177]
+Overfull \hbox (68.17719pt too wide) in paragraph at lines 389--389
+[]            \OT1/cmtt/m/n/10.95 throw new Error(str); /* El hash contiene inf
+o sobre el error: token, linea, etc. */[] 
+ []
+
+
+Overfull \hbox (16.439pt too wide) in paragraph at lines 503--503
+[]        \OT1/cmtt/m/n/10.95 parseError: function parseError(str, hash) { /* m
+anejo de errores l^^Sexicos */ },[] 
+ []
+
+
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 503--503
+[]        \OT1/cmtt/m/n/10.95 setInput: function(input) { /* inicializar la ent
+rada para el analizadorl^^Sexico */},[] 
+ []
+
+
+Overfull \hbox (27.93637pt too wide) in paragraph at lines 503--503
+[]                    \OT1/cmtt/m/n/10.95 if (tempMatch && (!match || tempMatch
+[0].length > match[0].length)) {[] 
+ []
+
+[178]
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 503--503
+[]                        \OT1/cmtt/m/n/10.95 this.yylloc.range = [this.offset,
+ this.offset += this.yyleng];[] 
+ []
+
+
+Overfull \hbox (16.439pt too wide) in paragraph at lines 503--503
+[]        \OT1/cmtt/m/n/10.95 performAction: function anonymous(yy, yy_, $avoid
+ing_name_collisions, YY_START)[] 
+ []
+
+[179]
+Overfull \hbox (45.18243pt too wide) in paragraph at lines 543--543
+[]        \OT1/cmtt/m/n/10.95 var source = require('fs').readFileSync(require('
+path').normalize(args[1]), "utf8");[] 
+ []
+
+[180] [181])
+
+LaTeX Warning: Reference `section:ejemplodeuso' on page 182 undefined on input 
+line 2320.
+
+[182] [183] [184] [185] [186] [187]
+File: chapter_bottomup/wrongtranslationscheme.eps Graphic file (type eps)
+
+<chapter_bottomup/wrongtranslationscheme.eps> [188] [189] [190] [191] [192]
+[193] [194]
+Overfull \hbox (68.63791pt too wide) in paragraph at lines 3194--3194
+[]\OT1/cmtt/m/n/10.95 [~/srcPLgrado/jison/jison-reducereduceconflict]$ cat redu
+cereduceconflictPPCR2.y[] 
+ []
+
+[195] [196] [197] [198] [199]
+Overfull \hbox (9.45038pt too wide) in paragraph at lines 3454--3455
+[]\OT1/cmr/m/n/10.95 In this par-ti-cu-lar exam-ple, the-re is anot-her way to 
+sol-ve the pro-blem: rew-ri-te the ru-le for []\OT1/cmtt/m/n/10.95 return_spec
+ []
+
+[200]
+Overfull \hbox (125.66406pt too wide) in paragraph at lines 3540--3540
+[]\OT1/cmtt/m/n/10.95 >>                _handle_error: if (typeof action === 'u
+ndefined' || !action.length || !  ...action[0]) {[] 
+ []
+
+[201]
+Overfull \hbox (9.85393pt too wide) in paragraph at lines 3596--3604
+[]\OT1/cmr/m/n/10.95 Si seg^^Sun el in-for-me de []\OT1/cmtt/m/n/10.95 jison \O
+T1/cmr/m/n/10.95 el con-flic-to se pro-du-ce an-te un ter-mi-nal $\OML/cmm/m/it
+/10.95 a$\OT1/cmr/m/n/10.95 , es por-que $\OML/cmm/m/it/10.95 a \OMS/cmsy/m/n/1
+0.95 2 \OML/cmm/m/it/10.95 FOLLOW\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A\OT1/
+cmr/m/n/10.95 )$
+ []
+
+) [202]
+Cap\'{\i }tulo 6.
+(./chapter_bottomup/analisis_bottomup_en_ruby.tex [203
+
+] [204] [205]) [206]
+Cap\'{\i }tulo 7.
+(./chapter_tree_transformations/treetransformations.tex
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 13.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+) [207
+
+]
+[208]
+
+LaTeX Warning: Reference `example:listtreegrammar' on page 209 undefined on inp
+ut line 224.
+
+
+LaTeX Warning: Reference `example:tututreegrammar' on page 209 undefined on inp
+ut line 225.
+
+[209] [210]
+
+LaTeX Warning: Citation `Proebsting' on page 211 undefined on input line 454.
+
+[211]
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 588.
+
+
+LaTeX Warning: Reference `definition:dewey' on page 212 undefined on input line
+ 596.
+
+[212]
+
+LaTeX Warning: Reference `example:tutuast' on page 213 undefined on input line 
+620.
+
+[213]
+Overfull \hbox (2.43697pt too wide) in paragraph at lines 709--711
+[]$\OML/cmm/m/it/10.95 t \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 TIMES\OT1/cmr
+/m/n/10.95 (\OML/cmm/m/it/10.95 PLUS\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 NUM
+; NUM\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; TIMES\OT1/cmr/m/n/10.95 (\OML/cm
+m/m/it/10.95 ID; ID\OT1/cmr/m/n/10.95 )) = \OML/cmm/m/it/10.95 ^^\\OMS/cmsy/m/n
+/10.95 f\OML/cmm/m/it/10.95 x=t[]; y=t[]\OMS/cmsy/m/n/10.95 g \OT1/cmr/m/n/10.9
+5 = \OML/cmm/m/it/10.95 PLUS\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; y\OT1/cm
+r/m/n/10.95 )\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 x=t[]; y=t[]\OMS/cmsy/m/n
+/10.95 g$ 
+ []
+
+
+Overfull \hbox (0.72804pt too wide) in paragraph at lines 727--727
+[]\OT1/cmr/bx/n/14.4 Ejemplo de Trans-for-ma-cio-nes []Arbol: Par-se::Eyapp::Tr
+eeRegexp 
+ []
+
+
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 801--801
+[]  \OT1/cmtt/m/n/10.95 %left   '-' '+' # + and - have more precedence than = D
+isambiguate a-b-c as (a-b)-c[] 
+ []
+
+
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 801--801
+[]  \OT1/cmtt/m/n/10.95 %left   '*' '/' # * and / have more precedence than + D
+isambiguate a/b/c as (a/b)/c[] 
+ []
+
+[214] [215]
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 850--850
+[]    \OT1/cmtt/m/n/10.95 zero_times_whatever: TIMES(NUM($x), .) and { $x->{att
+r} == 0 } => { $_[0] = $NUM }[] 
+ []
+
+
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 850--850
+[]    \OT1/cmtt/m/n/10.95 whatever_times_zero: TIMES(., NUM($x)) and { $x->{att
+r} == 0 } => { $_[0] = $NUM }[] 
+ []
+
+
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 952--952
+[]  \OT1/cmtt/m/n/10.95 %left   '-' '+' # + and - have more precedence than = D
+isambiguate a-b-c as (a-b)-c[] 
+ []
+
+
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 952--952
+[]  \OT1/cmtt/m/n/10.95 %left   '*' '/' # * and / have more precedence than + D
+isambiguate a/b/c as (a/b)/c[] 
+ []
+
+[216] [217]
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 952--952
+[]    \OT1/cmtt/m/n/10.95 zero_times_whatever: TIMES(NUM($x), .) and { $x->{att
+r} == 0 } => { $_[0] = $NUM }[] 
+ []
+
+
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 952--952
+[]    \OT1/cmtt/m/n/10.95 whatever_times_zero: TIMES(., NUM($x)) and { $x->{att
+r} == 0 } => { $_[0] = $NUM }[] 
+ []
+
+[218]
+Overfull \hbox (125.66406pt too wide) in paragraph at lines 1063--1063
+[]      \OT1/cmtt/m/n/10.95 <td><textarea id="ast" rows="15" cols="42" readonly
+ style="background-color: #eee;"></textarea></td>[] 
+ []
+
+
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 1063--1063
+[]      \OT1/cmtt/m/n/10.95 <td><textarea id="analysis" rows="15" cols="42">var
+ declared = {console: true};[] 
+ []
+
+[219]
+Overfull \hbox (142.91013pt too wide) in paragraph at lines 1063--1063
+[]      \OT1/cmtt/m/n/10.95 <td><textarea id="output" rows="15" cols="42" reado
+nly style="background-color: #eee;"></textarea></td>[] 
+ []
+
+[220]
+Overfull \hbox (316.77948pt too wide) in paragraph at lines 1121--1123
+[][][][][] 
+ []
+
+
+Overfull \hbox (102.23044pt too wide) in paragraph at lines 1146--1153
+[]$\OML/cmm/m/it/10.95 PLUS\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 NUM[]; NUM[]
+\OT1/cmr/m/n/10.95 ) =[]\OMS/cmsy/m/n/10.95 ) \OML/cmm/m/it/10.95 NUM[]$ []\OT1
+/cmtt/m/n/10.95 { $NUM_3{VAL} = $NUM_1{VAL} + $NUM_2{VAL} } $\OML/cmm/m/it/10.9
+5 MINUS\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 NUM[]; NUM[]\OT1/cmr/m/n/10.95 )
+ =[]\OMS/cmsy/m/n/10.95 )
+ []
+
+
+Overfull \hbox (232.70866pt too wide) in paragraph at lines 1146--1153
+\OML/cmm/m/it/10.95 NUM[]$ []\OT1/cmtt/m/n/10.95 { $NUM_3{VAL} = $NUM_1{VAL} - 
+$NUM_2{VAL} } $\OML/cmm/m/it/10.95 TIMES\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95
+ NUM[]; NUM[]\OT1/cmr/m/n/10.95 ) =[]\OMS/cmsy/m/n/10.95 ) \OML/cmm/m/it/10.95 
+NUM[]$ []\OT1/cmtt/m/n/10.95 { $NUM_3{VAL} = $NUM_1{VAL} * $NUM_2{VAL} }
+ []
+
+) [221] [222
+
+] (./PL101/pl101.tex [223]
+Cap\'{\i }tulo 8.
+(./PL101/jsreview.tex) [224
+
+]
+Cap\'{\i }tulo 9.
+[225
+
+]
+Cap\'{\i }tulo 10.
+[226
+
+]
+Cap\'{\i }tulo 11.
+(./PL101/scheem.tex (./chapter11/mocha.tex [227
+
+]
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 62--62
+[]    \OT1/cmtt/m/n/10.95 --debug-brk                     enable node's debugge
+r breaking on the first line[] 
+ []
+
+
+Overfull \hbox (73.92587pt too wide) in paragraph at lines 62--62
+[]    \OT1/cmtt/m/n/10.95 --inline-diffs                  display actual/expect
+ed differences inline within each string[] 
+ []
+
+
+Overfull \hbox (160.15619pt too wide) in paragraph at lines 62--62
+[]    \OT1/cmtt/m/n/10.95 --no-exit                       require a clean shutd
+own of the event loop: mocha will not call process.exit[] 
+ []
+
+
+Overfull \hbox (131.41275pt too wide) in paragraph at lines 101--101
+[]      \OT1/cmtt/m/n/10.95 at Context.<anonymous> (/Users/casiano/local/src/ja
+vascript/PLgrado/mocha-tutorial/test/test.js:7:14)[] 
+ []
+
+[228] [229]) [230] [231] [232] [233] [234]) [235]
+Cap\'{\i }tulo 12.
+[236
+
+]
+Cap\'{\i }tulo 13.
+) [237
+
+] [238
+
+]
+Cap\'{\i }tulo 14.
+(./coffeescript/coffeescript.tex [239
+
+] [240]) [241]
+Cap\'{\i }tulo 15.
+(./coffeescript/coffeepress.tex [242
+
+] [243]
+Overfull \hbox (96.92062pt too wide) in paragraph at lines 160--160
+[]    \OT1/cmtt/m/n/10.95 -c, --css <engine>  add stylesheet <engine> support (
+less|stylus|compass) (defaults to plain css)[] 
+ []
+
+[244] [245] [246] [247] [248]
+Overfull \hbox (12.61398pt too wide) in paragraph at lines 499--503
+[]\OT1/cmr/m/n/10.95 If you don't call []\OT1/cmtt/m/n/10.95 next()\OT1/cmr/m/n
+/10.95 , you should send a res-pon-se to the client ([]\OT1/cmtt/m/n/10.95 res.
+send\OT1/cmr/m/n/10.95 , []\OT1/cmtt/m/n/10.95 res.json\OT1/cmr/m/n/10.95 , []\
+OT1/cmtt/m/n/10.95 res.render\OT1/cmr/m/n/10.95 ,
+ []
+
+[249] [250] [251] [252]
+Overfull \hbox (33.68506pt too wide) in paragraph at lines 719--719
+[]\OT1/cmtt/m/n/10.95 bin/www:37:6: [warning] Variable shadowing ('port') is no
+t fully supported in CoffeeScript[] 
+ []
+
+
+Overfull \hbox (27.93637pt too wide) in paragraph at lines 734--734
+[]  \OT1/cmtt/m/n/10.95 at Object.<anonymous> (/Users/casiano/local/src/coffee/
+coffeepress/bin/www.coffee:15:8)[] 
+ []
+
+
+Overfull \hbox (22.18768pt too wide) in paragraph at lines 734--734
+[]  \OT1/cmtt/m/n/10.95 at Object.<anonymous> (/Users/casiano/local/src/coffee/
+coffeepress/bin/www.coffee:3:1)[] 
+ []
+
+[253] [254]
+Overfull \hbox (95.92769pt too wide) in paragraph at lines 873--877
+[]\OT1/cmr/m/n/10.95 This flag []\OT1/cmtt/m/n/10.95 -R \OT1/cmr/m/n/10.95 may 
+al-so be used to uti-li-ze third-party re-por-ters. For exam-ple if you []\OT1/
+cmtt/m/n/10.95 npm install mocha-lcov-reporter
+ []
+
+[255]
+Overfull \hbox (33.41196pt too wide) in paragraph at lines 977--977
+ []\OT1/cmtt/m/n/10.95 // if a callback is specified, the rendered HTML string 
+has to be sent explicitly[] 
+ []
+
+[256]
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 1024--1024
+[]\OT1/cmtt/m/n/10.95 [~/src/coffee/coffeepress(master)]$ mocha --compilers cof
+fee:coffee-script/register -R spec[] 
+ []
+
+
+Overfull \hbox (102.66931pt too wide) in paragraph at lines 1024--1024
+[]    \OT1/cmtt/m/n/10.95 at Context.<anonymous> (/Users/casiano/local/src/coff
+ee/coffeepress/test/routes-test.coffee:13:14)[] 
+ []
+
+
+Overfull \hbox (8.01674pt too wide) in paragraph at lines 1026--1029
+ []\OT1/cmr/bx/n/10.95 Should dis-play in-dex with posts: green[] []  \OT1/cmr/
+m/n/10.95 Se que-ja de que []\OT1/cmtt/m/n/10.95 routes = require "../routes/in
+dex"
+ []
+
+
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 1048--1048
+[]\OT1/cmtt/m/n/10.95 [~/src/coffee/coffeepress(master)]$ mocha --compilers cof
+fee:coffee-script/register -R spec[] 
+ []
+
+[257]
+Overfull \hbox (10.4893pt too wide) in paragraph at lines 1075--1077
+\OT1/cmr/m/n/10.95 Obs^^Serve-se que he-mos usa-do el m^^Seto-do []\OT1/cmtt/m/
+n/10.95 deep\OT1/cmr/m/n/10.95 . Tam-bi^^Sen podr^^S^^Pamos ha-ber usa-do []\OT
+1/cmtt/m/n/10.95 eql \OT1/cmr/m/n/10.95 en vez de []\OT1/cmtt/m/n/10.95 .deep.e
+qual\OT1/cmr/m/n/10.95 . 
+ []
+
+
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 1093--1093
+[]\OT1/cmtt/m/n/10.95 [~/src/coffee/coffeepress(master)]$ mocha --compilers cof
+fee:coffee-script/register -R spec[] 
+ []
+
+[258]
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 1117--1117
+[]\OT1/cmtt/m/n/10.95 [~/src/coffee/coffeepress(master)]$ mocha --compilers cof
+fee:coffee-script/register -R spec[] 
+ []
+
+
+Overfull \hbox (119.91537pt too wide) in paragraph at lines 1158--1158
+[]    \OT1/cmtt/m/n/10.95 //link(rel="stylesheet", href="http://maxcdn.bootstra
+pcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")[] 
+ []
+
+
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 1158--1158
+[]    \OT1/cmtt/m/n/10.95 //script(src="https://ajax.googleapis.com/ajax/libs/j
+query/1.11.1/jquery.min.js")[] 
+ []
+
+
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 1158--1158
+[]    \OT1/cmtt/m/n/10.95 //script(src="http://maxcdn.bootstrapcdn.com/bootstra
+p/3.2.0/js/bootstrap.min.js")[] 
+ []
+
+[259]
+Overfull \hbox (177.40225pt too wide) in paragraph at lines 1239--1239
+[]\OT1/cmtt/m/n/10.95 [~/src/coffee/coffeepress(master)]$ mocha --compilers cof
+fee:coffee-script/register -R spec test/routes-test.coffee[] 
+ []
+
+[260]
+Overfull \hbox (177.40225pt too wide) in paragraph at lines 1268--1268
+[]\OT1/cmtt/m/n/10.95 [~/src/coffee/coffeepress(master)]$ mocha --compilers cof
+fee:coffee-script/register -R spec test/routes-test.coffee[] 
+ []
+
+[261]
+Overfull \hbox (177.40225pt too wide) in paragraph at lines 1346--1346
+[]\OT1/cmtt/m/n/10.95 [~/src/coffee/coffeepress(master)]$ mocha --compilers cof
+fee:coffee-script/register -R spec test/routes-test.coffee[] 
+ []
+
+[262]
+Overfull \hbox (177.40225pt too wide) in paragraph at lines 1445--1445
+[]\OT1/cmtt/m/n/10.95 [~/src/coffee/coffeepress(master)]$ mocha --compilers cof
+fee:coffee-script/register -R spec test/routes-test.coffee[] 
+ []
+
+[263]
+Overfull \hbox (123.23448pt too wide) in paragraph at lines 1449--1452
+[]\OT1/cmr/m/n/10.95 Vamos a crear un []\OT1/cmtt/m/n/10.95 gulpfile \OT1/cmr/m
+/n/10.95 pa-ra eje-cu-tar las ta-reas mas co-mu-nes (v^^Sease el post [][][][])
+: 
+ []
+
+
+Overfull \hbox (10.6903pt too wide) in paragraph at lines 1472--1472
+[]  \OT1/cmtt/m/n/10.95 gulp.src('').pipe shell(['mocha --compilers coffee:coff
+ee-script/register -R spec'])[] 
+ []
+
+
+Overfull \hbox (160.15619pt too wide) in paragraph at lines 1517--1517
+[]\OT1/cmtt/m/n/10.95 posts = [ {id:0, title: "hi", body: "Hola todo el mundo"}
+, {id:1, title: "world", body: "I like <b>coffee</b>"}][] 
+ []
+
+[264] [265]
+Overfull \hbox (35.30377pt too wide) in paragraph at lines 1594--1597
+[]\OT1/cmr/m/n/10.95 For exam-ple, if you ha-ve the rou-te []\OT1/cmtt/m/n/10.9
+5 /user/:name\OT1/cmr/m/n/10.95 , then the []\OT1/cmtt/m/n/10.95 name \OT1/cmr/
+m/n/10.95 pro-perty is avai-la-ble as []\OT1/cmtt/m/n/10.95 req.params.name 
+ []
+
+[266]
+Overfull \hbox (41.26994pt too wide) in paragraph at lines 1644--1647
+[]\OT1/cmr/m/n/10.95 MongoDB (from hu-mon-gous: hu-ge; enor-mous) is one of man
+y cross-platform [][][][] 
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1688.
+
+[267]
+Overfull \hbox (34.66pt too wide) in paragraph at lines 1721--1727
+\OT1/cmr/m/n/10.95 and []\OT1/cmtt/m/n/10.95 IMAGE \OT1/cmr/m/n/10.95 fields, w
+hi-le the []\OT1/cmtt/m/n/10.95 PHONE_NUMBER \OT1/cmr/m/n/10.95 ta-ble might in
+-clu-de []\OT1/cmtt/m/n/10.95 COUNTRY_CODE\OT1/cmr/m/n/10.95 , []\OT1/cmtt/m/n/
+10.95 AREA_CODE\OT1/cmr/m/n/10.95 , []\OT1/cmtt/m/n/10.95 PHONE_NUMBER
+ []
+
+[268]
+Overfull \hbox (211.89438pt too wide) in paragraph at lines 1864--1864
+[]\OT1/cmtt/m/n/10.95 Mon Apr 13 21:53:16.204 [initandlisten] ** WARNING: soft 
+rlimits too low. Number of files is 256, should be at least 1000[] 
+ []
+
+[269]
+Overfull \hbox (50.93112pt too wide) in paragraph at lines 1919--1919
+[]        \OT1/cmtt/m/n/10.95 show profile                 show most recent sys
+tem.profile entries with time >= 1ms[] 
+ []
+
+
+Overfull \hbox (102.66931pt too wide) in paragraph at lines 1919--1919
+[]        \OT1/cmtt/m/n/10.95 show log [name]              prints out the last 
+segment of log in memory, 'global' is default[] 
+ []
+
+
+Overfull \hbox (56.67981pt too wide) in paragraph at lines 1919--1919
+[]        \OT1/cmtt/m/n/10.95 it                           result of the last l
+ine evaluated; use to further iterate[] 
+ []
+
+[270] [271] [272] [273] [274]
+Overfull \hbox (33.68506pt too wide) in paragraph at lines 2253--2253
+[]\OT1/cmtt/m/n/10.95 ~/javascript/expressjs/clase-express-coffee(preparapl2004
+2015)]$ cat test/post-test.coffee[] 
+ []
+
+[275] [276]
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 2333--2333
+[]\OT1/cmtt/m/n/10.95 [11:05:16] Using gulpfile ~/local/src/javascript/expressj
+s/clase-express-coffee/gulpfile.js[] 
+ []
+
+
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 2387--2387
+[]\OT1/cmtt/m/n/10.95 [11:34:22] Using gulpfile ~/local/src/javascript/expressj
+s/clase-express-coffee/gulpfile.js[] 
+ []
+
+[277]
+Overfull \hbox (68.17719pt too wide) in paragraph at lines 2387--2387
+[]     \OT1/cmtt/m/n/10.95 Error: timeout of 2000ms exceeded. Ensure the done()
+ callback is being called in this test.[] 
+ []
+
+
+Overfull \hbox (4.94162pt too wide) in paragraph at lines 2425--2425
+[]\OT1/cmtt/m/n/10.95 [~/javascript/expressjs/clase-express-coffee(preparapl200
+42015)]$ cat gulpfile.coffee[] 
+ []
+
+
+Overfull \hbox (85.42325pt too wide) in paragraph at lines 2425--2425
+[]    \OT1/cmtt/m/n/10.95 .pipe shell "mocha --compilers coffee:coffee-script/r
+egister --invert --grep 'feature' -R spec"[] 
+ []
+
+
+Overfull \hbox (22.18768pt too wide) in paragraph at lines 2425--2425
+[]    \OT1/cmtt/m/n/10.95 .pipe shell([ 'mongod --config mongod.conf 2>1 > /usr
+/local/var/mongodb/salida &' ])[] 
+ []
+
+[278]
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 2451--2451
+[]\OT1/cmtt/m/n/10.95 [14:23:52] Using gulpfile ~/local/src/javascript/expressj
+s/clase-express-coffee/gulpfile.js[] 
+ []
+
+
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 2458--2458
+[]\OT1/cmtt/m/n/10.95 [14:23:59] Using gulpfile ~/local/src/javascript/expressj
+s/clase-express-coffee/gulpfile.js[] 
+ []
+
+
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 2468--2468
+[]\OT1/cmtt/m/n/10.95 [14:24:11] Using gulpfile ~/local/src/javascript/expressj
+s/clase-express-coffee/gulpfile.js[] 
+ []
+
+
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 2490--2490
+[]\OT1/cmtt/m/n/10.95 [14:24:21] Using gulpfile ~/local/src/javascript/expressj
+s/clase-express-coffee/gulpfile.js[] 
+ []
+
+
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 2500--2500
+[]\OT1/cmtt/m/n/10.95 [14:24:42] Using gulpfile ~/local/src/javascript/expressj
+s/clase-express-coffee/gulpfile.js[] 
+ []
+
+[279]
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 2509--2509
+[]\OT1/cmtt/m/n/10.95 [14:24:45] Using gulpfile ~/local/src/javascript/expressj
+s/clase-express-coffee/gulpfile.js[] 
+ []
+
+
+Overfull \hbox (27.93637pt too wide) in paragraph at lines 2552--2552
+[]\OT1/cmtt/m/n/10.95 [~/javascript/expressjs/clase-express-coffee(preparapl200
+42015)]$ cat routes/index.coffee[] 
+ []
+
+
+Overfull \hbox (50.93112pt too wide) in paragraph at lines 2605--2605
+[]\OT1/cmtt/m/n/10.95 [~/javascript/expressjs/clase-express-coffee(preparapl200
+42015)]$ cat test/routes-test.coffee[] 
+ []
+
+[280]
+Overfull \hbox (39.43375pt too wide) in paragraph at lines 2629--2629
+[]\OT1/cmtt/m/n/10.95 [22:14:06] Using gulpfile ~/local/src/javascript/expressj
+s/clase-express-coffee/gulpfile.js[] 
+ []
+
+[281]) [282] (./javascriptexamples.toc)
+\tf@toc=\write9
+\openout9 = `javascriptexamples.toc'.
+
+ [283
+
+] (./javascriptexamples.lof)
+\tf@lof=\write10
+\openout10 = `javascriptexamples.lof'.
+
+
+[284
+
+] (./javascriptexamples.lot)
+\tf@lot=\write11
+\openout11 = `javascriptexamples.lot'.
+
+ (./javascriptexamples.ind [285
+
+]
+Overfull \hbox (10.05792pt too wide) in paragraph at lines 34--36
+[]\OT1/cmr/m/n/10.95 aut^^Soma-ta fi-ni-to no de-ter-mi-nis-ta con $\OML/cmm/m/
+it/10.95 ^^O$\OT1/cmr/m/n/10.95 -transiciones,
+ []
+
+[286
+
+]
+Overfull \hbox (6.73969pt too wide) in paragraph at lines 180--181
+[]| \OT1/cmr/m/n/10.95 Ana-li-za-dor de PL0 Am-plia-do Usan-do PEG.js,
+ []
+
+
+Overfull \hbox (4.8447pt too wide) in paragraph at lines 193--194
+[]| \OT1/cmr/m/n/10.95 Com-ma Se-pa-ra-ted Va-lues. CSV usan-do Ajax,
+ []
+
+[287] [288
+
+]) (./javascriptexamples.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 296.
+ [289
+
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 296.
+ (./javascriptexamples.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 296.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 296.
+Package rerunfilecheck Info: File `javascriptexamples.out' has not changed.
+(rerunfilecheck)             Checksum: 79DDA3A65C0BB63D25D37223FF70BACA;12775.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 296.
+ ) 
+Here is how much of TeX's memory you used:
+ 10230 strings out of 493634
+ 143193 string characters out of 3143401
+ 278049 words of memory out of 3000000
+ 13261 multiletter control sequences out of 15000+200000
+ 19683 words of font info for 84 fonts, out of 3000000 for 9000
+ 831 hyphenation exceptions out of 8191
+ 36i,16n,38p,597b,679s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on javascriptexamples.dvi (290 pages, 1238228 bytes).

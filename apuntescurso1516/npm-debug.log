@@ -1,0 +1,1205 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'canvas' ]
+2 info using npm@3.3.12
+3 info using node@v5.5.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData canvas
+8 silly fetchNamedPackageData canvas
+9 silly mapToRegistry name canvas
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/canvas
+13 verbose request uri https://registry.npmjs.org/canvas
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 16:13:39
+16 verbose request using bearer token for auth
+17 verbose request id 0d13c22496f6f30f
+18 verbose etag "4D100HF398RQFEPWHK1UW253O"
+19 http request GET https://registry.npmjs.org/canvas
+20 http 304 https://registry.npmjs.org/canvas
+21 verbose headers { 'cache-control': 'max-age=300',
+21 verbose headers   'accept-ranges': 'bytes',
+21 verbose headers   date: 'Sat, 21 May 2016 15:13:40 GMT',
+21 verbose headers   via: '1.1 varnish',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'x-served-by': 'cache-ams4138-AMS',
+21 verbose headers   'x-cache': 'MISS',
+21 verbose headers   'x-cache-hits': '0',
+21 verbose headers   'x-timer': 'S1463843620.098636,VS0,VE719',
+21 verbose headers   vary: 'Accept-Encoding' }
+22 silly get cb [ 304,
+22 silly get   { 'cache-control': 'max-age=300',
+22 silly get     'accept-ranges': 'bytes',
+22 silly get     date: 'Sat, 21 May 2016 15:13:40 GMT',
+22 silly get     via: '1.1 varnish',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-served-by': 'cache-ams4138-AMS',
+22 silly get     'x-cache': 'MISS',
+22 silly get     'x-cache-hits': '0',
+22 silly get     'x-timer': 'S1463843620.098636,VS0,VE719',
+22 silly get     vary: 'Accept-Encoding' } ]
+23 verbose etag https://registry.npmjs.org/canvas from cache
+24 verbose get saving canvas to /Users/casiano/.npm/registry.npmjs.org/canvas/.cache.json
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly resolveWithNewModule canvas@1.3.15 checking installable status
+38 silly cache add args [ 'canvas', null ]
+39 verbose cache add spec canvas
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'canvas',
+40 silly cache add   scope: null,
+40 silly cache add   name: 'canvas',
+40 silly cache add   rawSpec: '',
+40 silly cache add   spec: '*',
+40 silly cache add   type: 'range' }
+41 silly addNamed canvas@*
+42 verbose addNamed "*" is a valid semver range for canvas
+43 silly addNameRange { name: 'canvas', range: '*', hasData: false }
+44 silly mapToRegistry name canvas
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry uri https://registry.npmjs.org/canvas
+48 verbose addNameRange registry:https://registry.npmjs.org/canvas not in flight; fetching
+49 verbose get https://registry.npmjs.org/canvas not expired, no request
+50 silly addNameRange number 2 { name: 'canvas', range: '*', hasData: true }
+51 silly addNameRange versions [ 'canvas',
+51 silly addNameRange   [ '0.0.1',
+51 silly addNameRange     '0.0.2',
+51 silly addNameRange     '0.0.3',
+51 silly addNameRange     '0.0.4',
+51 silly addNameRange     '0.0.5',
+51 silly addNameRange     '0.0.6',
+51 silly addNameRange     '0.0.7',
+51 silly addNameRange     '0.0.8',
+51 silly addNameRange     '0.1.0',
+51 silly addNameRange     '0.2.0',
+51 silly addNameRange     '0.2.1',
+51 silly addNameRange     '0.3.0',
+51 silly addNameRange     '0.3.1',
+51 silly addNameRange     '0.3.2',
+51 silly addNameRange     '0.3.3',
+51 silly addNameRange     '0.4.0',
+51 silly addNameRange     '0.4.1',
+51 silly addNameRange     '0.4.2',
+51 silly addNameRange     '0.4.3',
+51 silly addNameRange     '0.5.0',
+51 silly addNameRange     '0.5.1',
+51 silly addNameRange     '0.5.2',
+51 silly addNameRange     '0.5.3',
+51 silly addNameRange     '0.5.4',
+51 silly addNameRange     '0.6.0',
+51 silly addNameRange     '0.7.0',
+51 silly addNameRange     '0.7.1',
+51 silly addNameRange     '0.7.2',
+51 silly addNameRange     '0.7.3',
+51 silly addNameRange     '0.8.0',
+51 silly addNameRange     '0.8.1',
+51 silly addNameRange     '0.8.2',
+51 silly addNameRange     '0.8.3',
+51 silly addNameRange     '0.9.0',
+51 silly addNameRange     '0.10.0',
+51 silly addNameRange     '0.10.1',
+51 silly addNameRange     '0.10.2',
+51 silly addNameRange     '0.10.3',
+51 silly addNameRange     '0.11.0',
+51 silly addNameRange     '0.11.1',
+51 silly addNameRange     '0.11.2',
+51 silly addNameRange     '0.11.3',
+51 silly addNameRange     '0.12.0',
+51 silly addNameRange     '0.12.1',
+51 silly addNameRange     '0.13.0',
+51 silly addNameRange     '0.13.1',
+51 silly addNameRange     '1.0.0',
+51 silly addNameRange     '1.0.1',
+51 silly addNameRange     '1.0.2',
+51 silly addNameRange     '1.0.3',
+51 silly addNameRange     '1.0.4',
+51 silly addNameRange     '1.1.0',
+51 silly addNameRange     '1.1.1',
+51 silly addNameRange     '1.1.2',
+51 silly addNameRange     '1.1.3',
+51 silly addNameRange     '1.1.4',
+51 silly addNameRange     '1.1.5',
+51 silly addNameRange     '1.1.6',
+51 silly addNameRange     '1.2.0',
+51 silly addNameRange     '1.2.1',
+51 silly addNameRange     '1.2.2',
+51 silly addNameRange     '1.2.3',
+51 silly addNameRange     '1.2.4',
+51 silly addNameRange     '1.2.5',
+51 silly addNameRange     '1.2.6',
+51 silly addNameRange     '1.2.7',
+51 silly addNameRange     '1.2.8',
+51 silly addNameRange     '1.2.9',
+51 silly addNameRange     '1.2.10',
+51 silly addNameRange     '1.2.11',
+51 silly addNameRange     '1.3.0',
+51 silly addNameRange     '1.3.1',
+51 silly addNameRange     '1.3.2',
+51 silly addNameRange     '1.3.3',
+51 silly addNameRange     '1.3.4',
+51 silly addNameRange     '1.3.5',
+51 silly addNameRange     '1.3.6',
+51 silly addNameRange     '1.3.7',
+51 silly addNameRange     '1.3.8',
+51 silly addNameRange     '1.3.9',
+51 silly addNameRange     '1.3.10',
+51 silly addNameRange     '1.3.11',
+51 silly addNameRange     '1.3.12',
+51 silly addNameRange     '1.3.13',
+51 silly addNameRange     '1.3.14',
+51 silly addNameRange     '1.3.15' ] ]
+52 silly addNamed canvas@1.3.15
+53 verbose addNamed "1.3.15" is a plain semver version for canvas
+54 silly cache afterAdd canvas@1.3.15
+55 verbose afterAdd /Users/casiano/.npm/canvas/1.3.15/package/package.json not in flight; writing
+56 verbose afterAdd /Users/casiano/.npm/canvas/1.3.15/package/package.json written
+57 silly fetchNamedPackageData nan
+58 silly mapToRegistry name nan
+59 silly mapToRegistry using default registry
+60 silly mapToRegistry registry https://registry.npmjs.org/
+61 silly mapToRegistry uri https://registry.npmjs.org/nan
+62 verbose request uri https://registry.npmjs.org/nan
+63 verbose request no auth needed
+64 info attempt registry request try #1 at 16:13:41
+65 verbose request using bearer token for auth
+66 verbose etag "24B26O57Z0ASCDVIYEYKA8KVW"
+67 http request GET https://registry.npmjs.org/nan
+68 http 304 https://registry.npmjs.org/nan
+69 verbose headers { 'cache-control': 'max-age=300',
+69 verbose headers   'accept-ranges': 'bytes',
+69 verbose headers   date: 'Sat, 21 May 2016 15:13:41 GMT',
+69 verbose headers   via: '1.1 varnish',
+69 verbose headers   connection: 'keep-alive',
+69 verbose headers   'x-served-by': 'cache-ams4127-AMS',
+69 verbose headers   'x-cache': 'MISS',
+69 verbose headers   'x-cache-hits': '0',
+69 verbose headers   'x-timer': 'S1463843621.487872,VS0,VE174',
+69 verbose headers   vary: 'Accept-Encoding' }
+70 silly get cb [ 304,
+70 silly get   { 'cache-control': 'max-age=300',
+70 silly get     'accept-ranges': 'bytes',
+70 silly get     date: 'Sat, 21 May 2016 15:13:41 GMT',
+70 silly get     via: '1.1 varnish',
+70 silly get     connection: 'keep-alive',
+70 silly get     'x-served-by': 'cache-ams4127-AMS',
+70 silly get     'x-cache': 'MISS',
+70 silly get     'x-cache-hits': '0',
+70 silly get     'x-timer': 'S1463843621.487872,VS0,VE174',
+70 silly get     vary: 'Accept-Encoding' } ]
+71 verbose etag https://registry.npmjs.org/nan from cache
+72 verbose get saving nan to /Users/casiano/.npm/registry.npmjs.org/nan/.cache.json
+73 silly resolveWithNewModule nan@2.3.3 checking installable status
+74 silly cache add args [ 'nan@^2.3.2', null ]
+75 verbose cache add spec nan@^2.3.2
+76 silly cache add parsed spec Result {
+76 silly cache add   raw: 'nan@^2.3.2',
+76 silly cache add   scope: null,
+76 silly cache add   name: 'nan',
+76 silly cache add   rawSpec: '^2.3.2',
+76 silly cache add   spec: '>=2.3.2 <3.0.0',
+76 silly cache add   type: 'range' }
+77 silly addNamed nan@>=2.3.2 <3.0.0
+78 verbose addNamed ">=2.3.2 <3.0.0" is a valid semver range for nan
+79 silly addNameRange { name: 'nan', range: '>=2.3.2 <3.0.0', hasData: false }
+80 silly mapToRegistry name nan
+81 silly mapToRegistry using default registry
+82 silly mapToRegistry registry https://registry.npmjs.org/
+83 silly mapToRegistry uri https://registry.npmjs.org/nan
+84 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+85 verbose get https://registry.npmjs.org/nan not expired, no request
+86 silly addNameRange number 2 { name: 'nan', range: '>=2.3.2 <3.0.0', hasData: true }
+87 silly addNameRange versions [ 'nan',
+87 silly addNameRange   [ '0.3.0-wip',
+87 silly addNameRange     '0.3.0-wip2',
+87 silly addNameRange     '0.3.0',
+87 silly addNameRange     '0.3.1',
+87 silly addNameRange     '0.3.2',
+87 silly addNameRange     '0.4.0',
+87 silly addNameRange     '0.4.1',
+87 silly addNameRange     '0.4.2',
+87 silly addNameRange     '0.4.3',
+87 silly addNameRange     '0.4.4',
+87 silly addNameRange     '0.5.0',
+87 silly addNameRange     '0.5.1',
+87 silly addNameRange     '0.5.2',
+87 silly addNameRange     '0.6.0',
+87 silly addNameRange     '0.7.0',
+87 silly addNameRange     '0.7.1',
+87 silly addNameRange     '0.8.0',
+87 silly addNameRange     '1.0.0',
+87 silly addNameRange     '1.1.0',
+87 silly addNameRange     '1.1.1',
+87 silly addNameRange     '1.1.2',
+87 silly addNameRange     '1.2.0',
+87 silly addNameRange     '1.3.0',
+87 silly addNameRange     '1.4.0',
+87 silly addNameRange     '1.4.1',
+87 silly addNameRange     '1.5.0',
+87 silly addNameRange     '1.4.2',
+87 silly addNameRange     '1.4.3',
+87 silly addNameRange     '1.5.1',
+87 silly addNameRange     '1.5.2',
+87 silly addNameRange     '1.6.0',
+87 silly addNameRange     '1.5.3',
+87 silly addNameRange     '1.6.1',
+87 silly addNameRange     '1.6.2',
+87 silly addNameRange     '1.7.0',
+87 silly addNameRange     '1.8.0',
+87 silly addNameRange     '1.8.1',
+87 silly addNameRange     '1.8.2',
+87 silly addNameRange     '1.8.3',
+87 silly addNameRange     '1.8.4',
+87 silly addNameRange     '1.9.0',
+87 silly addNameRange     '2.0.0',
+87 silly addNameRange     '2.0.1',
+87 silly addNameRange     '2.0.2',
+87 silly addNameRange     '2.0.3',
+87 silly addNameRange     '2.0.4',
+87 silly addNameRange     '2.0.5',
+87 silly addNameRange     '2.0.6',
+87 silly addNameRange     '2.0.7',
+87 silly addNameRange     '2.0.8',
+87 silly addNameRange     '2.0.9',
+87 silly addNameRange     '2.1.0',
+87 silly addNameRange     '2.2.0',
+87 silly addNameRange     '2.2.1',
+87 silly addNameRange     '2.3.0',
+87 silly addNameRange     '2.3.1',
+87 silly addNameRange     '2.3.2',
+87 silly addNameRange     '2.3.3' ] ]
+88 silly addNamed nan@2.3.3
+89 verbose addNamed "2.3.3" is a plain semver version for nan
+90 silly cache afterAdd nan@2.3.3
+91 verbose afterAdd /Users/casiano/.npm/nan/2.3.3/package/package.json not in flight; writing
+92 verbose afterAdd /Users/casiano/.npm/nan/2.3.3/package/package.json written
+93 silly loadAllDepsIntoIdealTree Finishing
+94 silly idealTree:prePrune pl1516
+94 silly idealTree:prePrune ├── abbrev@1.0.7
+94 silly idealTree:prePrune ├── amdefine@1.0.0
+94 silly idealTree:prePrune ├── ansi-regex@0.2.1
+94 silly idealTree:prePrune ├── ansi-styles@1.1.0
+94 silly idealTree:prePrune ├─┬ argparse@0.1.16
+94 silly idealTree:prePrune │ └── underscore.string@2.4.0
+94 silly idealTree:prePrune ├── asn1@0.1.11
+94 silly idealTree:prePrune ├── assert-plus@0.1.5
+94 silly idealTree:prePrune ├── async@0.1.22
+94 silly idealTree:prePrune ├── aws-sign2@0.5.0
+94 silly idealTree:prePrune ├── boom@0.4.2
+94 silly idealTree:prePrune ├── canvas@1.3.15
+94 silly idealTree:prePrune ├── chalk@0.5.1
+94 silly idealTree:prePrune ├── clean-css@2.2.23
+94 silly idealTree:prePrune ├── coffee-script@1.3.3
+94 silly idealTree:prePrune ├── colors@0.6.2
+94 silly idealTree:prePrune ├── combined-stream@0.0.7
+94 silly idealTree:prePrune ├── commander@2.2.0
+94 silly idealTree:prePrune ├── concat-stream@1.5.1
+94 silly idealTree:prePrune ├── core-util-is@1.0.2
+94 silly idealTree:prePrune ├── cryptiles@0.2.2
+94 silly idealTree:prePrune ├── ctype@0.5.3
+94 silly idealTree:prePrune ├── dateformat@1.0.2-1.2.3
+94 silly idealTree:prePrune ├── deep-equal@0.0.0
+94 silly idealTree:prePrune ├── defined@0.0.0
+94 silly idealTree:prePrune ├── delayed-stream@0.0.5
+94 silly idealTree:prePrune ├── escape-string-regexp@1.0.5
+94 silly idealTree:prePrune ├── esprima@1.0.4
+94 silly idealTree:prePrune ├── eventemitter2@0.4.14
+94 silly idealTree:prePrune ├── exit@0.1.2
+94 silly idealTree:prePrune ├─┬ findup-sync@0.1.3
+94 silly idealTree:prePrune │ ├── glob@3.2.11
+94 silly idealTree:prePrune │ ├── lodash@2.4.2
+94 silly idealTree:prePrune │ └── minimatch@0.3.0
+94 silly idealTree:prePrune ├── forever-agent@0.5.2
+94 silly idealTree:prePrune ├─┬ form-data@0.1.4
+94 silly idealTree:prePrune │ └── async@0.9.2
+94 silly idealTree:prePrune ├── getobject@0.1.0
+94 silly idealTree:prePrune ├─┬ gitbook-plugin-ace@0.2.1
+94 silly idealTree:prePrune │ ├── highlight.js@9.3.0
+94 silly idealTree:prePrune │ └── html-escape@1.0.2
+94 silly idealTree:prePrune ├─┬ gitbook-plugin-autocover@1.2.1
+94 silly idealTree:prePrune │ ├─┬ canvas@1.1.6
+94 silly idealTree:prePrune │ │ └── nan@1.2.0
+94 silly idealTree:prePrune │ ├── lodash@2.4.1
+94 silly idealTree:prePrune │ └── q@1.0.1
+94 silly idealTree:prePrune ├── gitbook-plugin-code-highlighter@1.0.6
+94 silly idealTree:prePrune ├── gitbook-plugin-copy-code-button@0.0.2
+94 silly idealTree:prePrune ├── gitbook-plugin-emphasize@1.1.0
+94 silly idealTree:prePrune ├─┬ gitbook-plugin-include@0.1.0
+94 silly idealTree:prePrune │ └── q@1.4.1
+94 silly idealTree:prePrune ├─┬ gitbook-plugin-jazer@1.0.52
+94 silly idealTree:prePrune │ ├── lodash@4.12.0
+94 silly idealTree:prePrune │ └── marked@0.3.5
+94 silly idealTree:prePrune ├── gitbook-plugin-latex-codecogs@1.0.1
+94 silly idealTree:prePrune ├── gitbook-plugin-responsive-iframes@1.0.2
+94 silly idealTree:prePrune ├─┬ gitbook-plugin-toc@0.0.1
+94 silly idealTree:prePrune │ └─┬ marked-toc@0.2.8
+94 silly idealTree:prePrune │   ├─┬ fs-utils@0.5.0
+94 silly idealTree:prePrune │   │ ├── async@0.9.2
+94 silly idealTree:prePrune │   │ ├─┬ delete@0.1.5
+94 silly idealTree:prePrune │   │ │ ├── is-path-cwd@0.1.0
+94 silly idealTree:prePrune │   │ │ ├─┬ is-path-in-cwd@0.1.1
+94 silly idealTree:prePrune │   │ │ │ └─┬ is-path-inside@0.1.0
+94 silly idealTree:prePrune │   │ │ │   └── path-is-inside@1.0.1
+94 silly idealTree:prePrune │   │ │ └─┬ rimraf@2.5.2
+94 silly idealTree:prePrune │   │ │   └─┬ glob@7.0.3
+94 silly idealTree:prePrune │   │ │     ├─┬ inflight@1.0.4
+94 silly idealTree:prePrune │   │ │     │ └── wrappy@1.0.1
+94 silly idealTree:prePrune │   │ │     ├── inherits@2.0.1
+94 silly idealTree:prePrune │   │ │     ├─┬ minimatch@3.0.0
+94 silly idealTree:prePrune │   │ │     │ └─┬ brace-expansion@1.1.3
+94 silly idealTree:prePrune │   │ │     │   ├── balanced-match@0.3.0
+94 silly idealTree:prePrune │   │ │     │   └── concat-map@0.0.1
+94 silly idealTree:prePrune │   │ │     ├─┬ once@1.3.3
+94 silly idealTree:prePrune │   │ │     │ └── wrappy@1.0.1
+94 silly idealTree:prePrune │   │ │     └── path-is-absolute@1.0.0
+94 silly idealTree:prePrune │   │ ├─┬ extend-shallow@0.1.1
+94 silly idealTree:prePrune │   │ │ └── array-slice@0.2.3
+94 silly idealTree:prePrune │   │ ├─┬ globby@0.1.1
+94 silly idealTree:prePrune │   │ │ ├── array-differ@0.1.0
+94 silly idealTree:prePrune │   │ │ ├─┬ array-union@0.1.0
+94 silly idealTree:prePrune │   │ │ │ └── array-uniq@0.1.1
+94 silly idealTree:prePrune │   │ │ └─┬ glob@4.5.3
+94 silly idealTree:prePrune │   │ │   ├─┬ inflight@1.0.4
+94 silly idealTree:prePrune │   │ │   │ └── wrappy@1.0.1
+94 silly idealTree:prePrune │   │ │   ├── inherits@2.0.1
+94 silly idealTree:prePrune │   │ │   ├─┬ minimatch@2.0.10
+94 silly idealTree:prePrune │   │ │   │ └─┬ brace-expansion@1.1.3
+94 silly idealTree:prePrune │   │ │   │   ├── balanced-match@0.3.0
+94 silly idealTree:prePrune │   │ │   │   └── concat-map@0.0.1
+94 silly idealTree:prePrune │   │ │   └─┬ once@1.3.3
+94 silly idealTree:prePrune │   │ │     └── wrappy@1.0.1
+94 silly idealTree:prePrune │   │ ├── graceful-fs@3.0.8
+94 silly idealTree:prePrune │   │ ├─┬ is-absolute@0.1.7
+94 silly idealTree:prePrune │   │ │ └── is-relative@0.1.3
+94 silly idealTree:prePrune │   │ ├─┬ js-yaml@3.5.5
+94 silly idealTree:prePrune │   │ │ ├─┬ argparse@1.0.7
+94 silly idealTree:prePrune │   │ │ │ └── sprintf-js@1.0.3
+94 silly idealTree:prePrune │   │ │ └── esprima@2.7.2
+94 silly idealTree:prePrune │   │ ├── kind-of@0.1.2
+94 silly idealTree:prePrune │   │ └─┬ relative@0.1.6
+94 silly idealTree:prePrune │   │   └── normalize-path@0.1.1
+94 silly idealTree:prePrune │   ├─┬ gray-matter@0.5.3
+94 silly idealTree:prePrune │   │ ├── coffee-script@1.10.0
+94 silly idealTree:prePrune │   │ ├─┬ delims@0.4.2
+94 silly idealTree:prePrune │   │ │ ├─┬ arrayify-compact@0.1.0
+94 silly idealTree:prePrune │   │ │ │ └── array-flatten@2.0.0
+94 silly idealTree:prePrune │   │ │ └── object-pick@0.1.2
+94 silly idealTree:prePrune │   │ ├─┬ js-yaml@3.5.5
+94 silly idealTree:prePrune │   │ │ ├─┬ argparse@1.0.7
+94 silly idealTree:prePrune │   │ │ │ └── sprintf-js@1.0.3
+94 silly idealTree:prePrune │   │ │ └── esprima@2.7.2
+94 silly idealTree:prePrune │   │ ├─┬ mixin-deep@0.1.0
+94 silly idealTree:prePrune │   │ │ ├─┬ for-own@0.1.4
+94 silly idealTree:prePrune │   │ │ │ └── for-in@0.1.5
+94 silly idealTree:prePrune │   │ │ └── is-plain-object@0.1.0
+94 silly idealTree:prePrune │   │ ├── toml@2.3.0
+94 silly idealTree:prePrune │   │ └─┬ verbalize@0.1.2
+94 silly idealTree:prePrune │   │   └─┬ chalk@0.4.0
+94 silly idealTree:prePrune │   │     ├── ansi-styles@1.0.0
+94 silly idealTree:prePrune │   │     ├── has-color@0.1.7
+94 silly idealTree:prePrune │   │     └── strip-ansi@0.1.1
+94 silly idealTree:prePrune │   ├── lodash@2.4.2
+94 silly idealTree:prePrune │   ├── marked@0.3.0
+94 silly idealTree:prePrune │   ├─┬ template@0.1.8
+94 silly idealTree:prePrune │   │ ├── delims@0.1.4
+94 silly idealTree:prePrune │   │ ├─┬ fs-utils@0.4.3
+94 silly idealTree:prePrune │   │ │ ├── async@0.6.2
+94 silly idealTree:prePrune │   │ │ ├─┬ globule@0.2.0
+94 silly idealTree:prePrune │   │ │ │ ├─┬ glob@3.2.11
+94 silly idealTree:prePrune │   │ │ │ │ ├── inherits@2.0.1
+94 silly idealTree:prePrune │   │ │ │ │ └─┬ minimatch@0.3.0
+94 silly idealTree:prePrune │   │ │ │ │   ├── lru-cache@2.7.3
+94 silly idealTree:prePrune │   │ │ │ │   └── sigmund@1.0.1
+94 silly idealTree:prePrune │   │ │ │ └─┬ minimatch@0.2.14
+94 silly idealTree:prePrune │   │ │ │   ├── lru-cache@2.7.3
+94 silly idealTree:prePrune │   │ │ │   └── sigmund@1.0.1
+94 silly idealTree:prePrune │   │ │ ├── graceful-fs@2.0.3
+94 silly idealTree:prePrune │   │ │ ├─┬ js-yaml@3.0.2
+94 silly idealTree:prePrune │   │ │ │ ├─┬ argparse@0.1.16
+94 silly idealTree:prePrune │   │ │ │ │ ├── underscore.string@2.4.0
+94 silly idealTree:prePrune │   │ │ │ │ └── underscore@1.7.0
+94 silly idealTree:prePrune │   │ │ │ └── esprima@1.0.4
+94 silly idealTree:prePrune │   │ │ ├── mkdirp@0.3.5
+94 silly idealTree:prePrune │   │ │ └── rimraf@2.2.8
+94 silly idealTree:prePrune │   │ └── underscore.string@2.3.3
+94 silly idealTree:prePrune │   └─┬ uslug@1.0.4
+94 silly idealTree:prePrune │     └── unorm@1.4.1
+94 silly idealTree:prePrune ├─┬ gitbook-plugin-youtube@1.1.0
+94 silly idealTree:prePrune │ └── get-youtube-id@0.1.3
+94 silly idealTree:prePrune ├── gitbook-theme-clarity@0.0.2
+94 silly idealTree:prePrune ├─┬ glob@3.1.21
+94 silly idealTree:prePrune │ └── inherits@1.0.2
+94 silly idealTree:prePrune ├── graceful-fs@1.2.3
+94 silly idealTree:prePrune ├── grunt-cli@0.1.13
+94 silly idealTree:prePrune ├─┬ grunt-contrib-less@0.11.4
+94 silly idealTree:prePrune │ ├── async@0.2.10
+94 silly idealTree:prePrune │ └── lodash@2.4.2
+94 silly idealTree:prePrune ├── grunt-contrib-requirejs@0.4.4
+94 silly idealTree:prePrune ├─┬ grunt-legacy-log-utils@0.1.1
+94 silly idealTree:prePrune │ ├── lodash@2.4.2
+94 silly idealTree:prePrune │ └── underscore.string@2.3.3
+94 silly idealTree:prePrune ├─┬ grunt-legacy-log@0.1.3
+94 silly idealTree:prePrune │ ├── lodash@2.4.2
+94 silly idealTree:prePrune │ └── underscore.string@2.3.3
+94 silly idealTree:prePrune ├── grunt-legacy-util@0.2.0
+94 silly idealTree:prePrune ├── grunt@0.4.5
+94 silly idealTree:prePrune ├── gzip-size@0.1.1
+94 silly idealTree:prePrune ├── has-ansi@0.1.0
+94 silly idealTree:prePrune ├── has-color@0.1.7
+94 silly idealTree:prePrune ├── hawk@1.1.1
+94 silly idealTree:prePrune ├── hoek@0.9.1
+94 silly idealTree:prePrune ├── hooker@0.2.3
+94 silly idealTree:prePrune ├── http-signature@0.10.1
+94 silly idealTree:prePrune ├── iconv-lite@0.2.11
+94 silly idealTree:prePrune ├── inherits@2.0.1
+94 silly idealTree:prePrune ├── isarray@1.0.0
+94 silly idealTree:prePrune ├── js-yaml@2.0.5
+94 silly idealTree:prePrune ├── json-stringify-safe@5.0.1
+94 silly idealTree:prePrune ├── jsonify@0.0.0
+94 silly idealTree:prePrune ├─┬ less@1.7.5
+94 silly idealTree:prePrune │ └── graceful-fs@3.0.8
+94 silly idealTree:prePrune ├── lodash@0.9.2
+94 silly idealTree:prePrune ├── lru-cache@2.7.3
+94 silly idealTree:prePrune ├── lunr@0.5.12
+94 silly idealTree:prePrune ├─┬ maxmin@0.1.0
+94 silly idealTree:prePrune │ ├── ansi-styles@1.0.0
+94 silly idealTree:prePrune │ ├── chalk@0.4.0
+94 silly idealTree:prePrune │ └── strip-ansi@0.1.1
+94 silly idealTree:prePrune ├── mime-types@1.0.2
+94 silly idealTree:prePrune ├── mime@1.2.11
+94 silly idealTree:prePrune ├── minimatch@0.2.14
+94 silly idealTree:prePrune ├── minimist@0.0.8
+94 silly idealTree:prePrune ├── mkdirp@0.5.1
+94 silly idealTree:prePrune ├── nan@2.3.3
+94 silly idealTree:prePrune ├── node-uuid@1.4.7
+94 silly idealTree:prePrune ├── nopt@1.0.10
+94 silly idealTree:prePrune ├── oauth-sign@0.3.0
+94 silly idealTree:prePrune ├── pretty-bytes@0.1.2
+94 silly idealTree:prePrune ├── process-nextick-args@1.0.7
+94 silly idealTree:prePrune ├── qs@1.0.2
+94 silly idealTree:prePrune ├── readable-stream@2.0.6
+94 silly idealTree:prePrune ├── request@2.40.0
+94 silly idealTree:prePrune ├── requirejs@2.1.22
+94 silly idealTree:prePrune ├── resolve@0.3.1
+94 silly idealTree:prePrune ├── rimraf@2.2.8
+94 silly idealTree:prePrune ├── sigmund@1.0.1
+94 silly idealTree:prePrune ├── sntp@0.2.4
+94 silly idealTree:prePrune ├── source-map@0.1.43
+94 silly idealTree:prePrune ├── string_decoder@0.10.31
+94 silly idealTree:prePrune ├── stringstream@0.0.5
+94 silly idealTree:prePrune ├── strip-ansi@0.3.0
+94 silly idealTree:prePrune ├── supports-color@0.2.0
+94 silly idealTree:prePrune ├── tape@0.2.2
+94 silly idealTree:prePrune ├── tough-cookie@2.2.2
+94 silly idealTree:prePrune ├── tunnel-agent@0.4.3
+94 silly idealTree:prePrune ├── typedarray@0.0.6
+94 silly idealTree:prePrune ├── underscore.string@2.2.1
+94 silly idealTree:prePrune ├── underscore@1.7.0
+94 silly idealTree:prePrune ├── util-deprecate@1.0.2
+94 silly idealTree:prePrune ├── which@1.0.9
+94 silly idealTree:prePrune └── zlib-browserify@0.0.3
+95 silly loadIdealTree Finishing
+96 silly currentTree pl1516
+96 silly currentTree ├── abbrev@1.0.7
+96 silly currentTree ├── amdefine@1.0.0
+96 silly currentTree ├── ansi-regex@0.2.1
+96 silly currentTree ├── ansi-styles@1.1.0
+96 silly currentTree ├─┬ argparse@0.1.16
+96 silly currentTree │ └── underscore.string@2.4.0
+96 silly currentTree ├── asn1@0.1.11
+96 silly currentTree ├── assert-plus@0.1.5
+96 silly currentTree ├── async@0.1.22
+96 silly currentTree ├── aws-sign2@0.5.0
+96 silly currentTree ├── boom@0.4.2
+96 silly currentTree ├── chalk@0.5.1
+96 silly currentTree ├── clean-css@2.2.23
+96 silly currentTree ├── coffee-script@1.3.3
+96 silly currentTree ├── colors@0.6.2
+96 silly currentTree ├── combined-stream@0.0.7
+96 silly currentTree ├── commander@2.2.0
+96 silly currentTree ├── concat-stream@1.5.1
+96 silly currentTree ├── core-util-is@1.0.2
+96 silly currentTree ├── cryptiles@0.2.2
+96 silly currentTree ├── ctype@0.5.3
+96 silly currentTree ├── dateformat@1.0.2-1.2.3
+96 silly currentTree ├── deep-equal@0.0.0
+96 silly currentTree ├── defined@0.0.0
+96 silly currentTree ├── delayed-stream@0.0.5
+96 silly currentTree ├── escape-string-regexp@1.0.5
+96 silly currentTree ├── esprima@1.0.4
+96 silly currentTree ├── eventemitter2@0.4.14
+96 silly currentTree ├── exit@0.1.2
+96 silly currentTree ├─┬ findup-sync@0.1.3
+96 silly currentTree │ ├── glob@3.2.11
+96 silly currentTree │ ├── lodash@2.4.2
+96 silly currentTree │ └── minimatch@0.3.0
+96 silly currentTree ├── forever-agent@0.5.2
+96 silly currentTree ├─┬ form-data@0.1.4
+96 silly currentTree │ └── async@0.9.2
+96 silly currentTree ├── getobject@0.1.0
+96 silly currentTree ├─┬ gitbook-plugin-ace@0.2.1
+96 silly currentTree │ ├── highlight.js@9.3.0
+96 silly currentTree │ └── html-escape@1.0.2
+96 silly currentTree ├─┬ gitbook-plugin-autocover@1.2.1
+96 silly currentTree │ ├─┬ canvas@1.1.6
+96 silly currentTree │ │ └── nan@1.2.0
+96 silly currentTree │ ├── lodash@2.4.1
+96 silly currentTree │ └── q@1.0.1
+96 silly currentTree ├── gitbook-plugin-code-highlighter@1.0.6
+96 silly currentTree ├── gitbook-plugin-copy-code-button@0.0.2
+96 silly currentTree ├── gitbook-plugin-emphasize@1.1.0
+96 silly currentTree ├─┬ gitbook-plugin-include@0.1.0
+96 silly currentTree │ └── q@1.4.1
+96 silly currentTree ├─┬ gitbook-plugin-jazer@1.0.52
+96 silly currentTree │ ├── lodash@4.12.0
+96 silly currentTree │ └── marked@0.3.5
+96 silly currentTree ├── gitbook-plugin-latex-codecogs@1.0.1
+96 silly currentTree ├── gitbook-plugin-responsive-iframes@1.0.2
+96 silly currentTree ├─┬ gitbook-plugin-toc@0.0.1
+96 silly currentTree │ └─┬ marked-toc@0.2.8
+96 silly currentTree │   ├─┬ fs-utils@0.5.0
+96 silly currentTree │   │ ├── async@0.9.2
+96 silly currentTree │   │ ├─┬ delete@0.1.5
+96 silly currentTree │   │ │ ├── is-path-cwd@0.1.0
+96 silly currentTree │   │ │ ├─┬ is-path-in-cwd@0.1.1
+96 silly currentTree │   │ │ │ └─┬ is-path-inside@0.1.0
+96 silly currentTree │   │ │ │   └── path-is-inside@1.0.1
+96 silly currentTree │   │ │ └─┬ rimraf@2.5.2
+96 silly currentTree │   │ │   └─┬ glob@7.0.3
+96 silly currentTree │   │ │     ├─┬ inflight@1.0.4
+96 silly currentTree │   │ │     │ └── wrappy@1.0.1
+96 silly currentTree │   │ │     ├── inherits@2.0.1
+96 silly currentTree │   │ │     ├─┬ minimatch@3.0.0
+96 silly currentTree │   │ │     │ └─┬ brace-expansion@1.1.3
+96 silly currentTree │   │ │     │   ├── balanced-match@0.3.0
+96 silly currentTree │   │ │     │   └── concat-map@0.0.1
+96 silly currentTree │   │ │     ├─┬ once@1.3.3
+96 silly currentTree │   │ │     │ └── wrappy@1.0.1
+96 silly currentTree │   │ │     └── path-is-absolute@1.0.0
+96 silly currentTree │   │ ├─┬ extend-shallow@0.1.1
+96 silly currentTree │   │ │ └── array-slice@0.2.3
+96 silly currentTree │   │ ├─┬ globby@0.1.1
+96 silly currentTree │   │ │ ├── array-differ@0.1.0
+96 silly currentTree │   │ │ ├─┬ array-union@0.1.0
+96 silly currentTree │   │ │ │ └── array-uniq@0.1.1
+96 silly currentTree │   │ │ └─┬ glob@4.5.3
+96 silly currentTree │   │ │   ├─┬ inflight@1.0.4
+96 silly currentTree │   │ │   │ └── wrappy@1.0.1
+96 silly currentTree │   │ │   ├── inherits@2.0.1
+96 silly currentTree │   │ │   ├─┬ minimatch@2.0.10
+96 silly currentTree │   │ │   │ └─┬ brace-expansion@1.1.3
+96 silly currentTree │   │ │   │   ├── balanced-match@0.3.0
+96 silly currentTree │   │ │   │   └── concat-map@0.0.1
+96 silly currentTree │   │ │   └─┬ once@1.3.3
+96 silly currentTree │   │ │     └── wrappy@1.0.1
+96 silly currentTree │   │ ├── graceful-fs@3.0.8
+96 silly currentTree │   │ ├─┬ is-absolute@0.1.7
+96 silly currentTree │   │ │ └── is-relative@0.1.3
+96 silly currentTree │   │ ├─┬ js-yaml@3.5.5
+96 silly currentTree │   │ │ ├─┬ argparse@1.0.7
+96 silly currentTree │   │ │ │ └── sprintf-js@1.0.3
+96 silly currentTree │   │ │ └── esprima@2.7.2
+96 silly currentTree │   │ ├── kind-of@0.1.2
+96 silly currentTree │   │ └─┬ relative@0.1.6
+96 silly currentTree │   │   └── normalize-path@0.1.1
+96 silly currentTree │   ├─┬ gray-matter@0.5.3
+96 silly currentTree │   │ ├── coffee-script@1.10.0
+96 silly currentTree │   │ ├─┬ delims@0.4.2
+96 silly currentTree │   │ │ ├─┬ arrayify-compact@0.1.0
+96 silly currentTree │   │ │ │ └── array-flatten@2.0.0
+96 silly currentTree │   │ │ └── object-pick@0.1.2
+96 silly currentTree │   │ ├─┬ js-yaml@3.5.5
+96 silly currentTree │   │ │ ├─┬ argparse@1.0.7
+96 silly currentTree │   │ │ │ └── sprintf-js@1.0.3
+96 silly currentTree │   │ │ └── esprima@2.7.2
+96 silly currentTree │   │ ├─┬ mixin-deep@0.1.0
+96 silly currentTree │   │ │ ├─┬ for-own@0.1.4
+96 silly currentTree │   │ │ │ └── for-in@0.1.5
+96 silly currentTree │   │ │ └── is-plain-object@0.1.0
+96 silly currentTree │   │ ├── toml@2.3.0
+96 silly currentTree │   │ └─┬ verbalize@0.1.2
+96 silly currentTree │   │   └─┬ chalk@0.4.0
+96 silly currentTree │   │     ├── ansi-styles@1.0.0
+96 silly currentTree │   │     ├── has-color@0.1.7
+96 silly currentTree │   │     └── strip-ansi@0.1.1
+96 silly currentTree │   ├── lodash@2.4.2
+96 silly currentTree │   ├── marked@0.3.0
+96 silly currentTree │   ├─┬ template@0.1.8
+96 silly currentTree │   │ ├── delims@0.1.4
+96 silly currentTree │   │ ├─┬ fs-utils@0.4.3
+96 silly currentTree │   │ │ ├── async@0.6.2
+96 silly currentTree │   │ │ ├─┬ globule@0.2.0
+96 silly currentTree │   │ │ │ ├─┬ glob@3.2.11
+96 silly currentTree │   │ │ │ │ ├── inherits@2.0.1
+96 silly currentTree │   │ │ │ │ └─┬ minimatch@0.3.0
+96 silly currentTree │   │ │ │ │   ├── lru-cache@2.7.3
+96 silly currentTree │   │ │ │ │   └── sigmund@1.0.1
+96 silly currentTree │   │ │ │ └─┬ minimatch@0.2.14
+96 silly currentTree │   │ │ │   ├── lru-cache@2.7.3
+96 silly currentTree │   │ │ │   └── sigmund@1.0.1
+96 silly currentTree │   │ │ ├── graceful-fs@2.0.3
+96 silly currentTree │   │ │ ├─┬ js-yaml@3.0.2
+96 silly currentTree │   │ │ │ ├─┬ argparse@0.1.16
+96 silly currentTree │   │ │ │ │ ├── underscore.string@2.4.0
+96 silly currentTree │   │ │ │ │ └── underscore@1.7.0
+96 silly currentTree │   │ │ │ └── esprima@1.0.4
+96 silly currentTree │   │ │ ├── mkdirp@0.3.5
+96 silly currentTree │   │ │ └── rimraf@2.2.8
+96 silly currentTree │   │ └── underscore.string@2.3.3
+96 silly currentTree │   └─┬ uslug@1.0.4
+96 silly currentTree │     └── unorm@1.4.1
+96 silly currentTree ├─┬ gitbook-plugin-youtube@1.1.0
+96 silly currentTree │ └── get-youtube-id@0.1.3
+96 silly currentTree ├── gitbook-theme-clarity@0.0.2
+96 silly currentTree ├─┬ glob@3.1.21
+96 silly currentTree │ └── inherits@1.0.2
+96 silly currentTree ├── graceful-fs@1.2.3
+96 silly currentTree ├── grunt-cli@0.1.13
+96 silly currentTree ├─┬ grunt-contrib-less@0.11.4
+96 silly currentTree │ ├── async@0.2.10
+96 silly currentTree │ └── lodash@2.4.2
+96 silly currentTree ├── grunt-contrib-requirejs@0.4.4
+96 silly currentTree ├─┬ grunt-legacy-log-utils@0.1.1
+96 silly currentTree │ ├── lodash@2.4.2
+96 silly currentTree │ └── underscore.string@2.3.3
+96 silly currentTree ├─┬ grunt-legacy-log@0.1.3
+96 silly currentTree │ ├── lodash@2.4.2
+96 silly currentTree │ └── underscore.string@2.3.3
+96 silly currentTree ├── grunt-legacy-util@0.2.0
+96 silly currentTree ├── grunt@0.4.5
+96 silly currentTree ├── gzip-size@0.1.1
+96 silly currentTree ├── has-ansi@0.1.0
+96 silly currentTree ├── has-color@0.1.7
+96 silly currentTree ├── hawk@1.1.1
+96 silly currentTree ├── hoek@0.9.1
+96 silly currentTree ├── hooker@0.2.3
+96 silly currentTree ├── http-signature@0.10.1
+96 silly currentTree ├── iconv-lite@0.2.11
+96 silly currentTree ├── inherits@2.0.1
+96 silly currentTree ├── isarray@1.0.0
+96 silly currentTree ├── js-yaml@2.0.5
+96 silly currentTree ├── json-stringify-safe@5.0.1
+96 silly currentTree ├── jsonify@0.0.0
+96 silly currentTree ├─┬ less@1.7.5
+96 silly currentTree │ └── graceful-fs@3.0.8
+96 silly currentTree ├── lodash@0.9.2
+96 silly currentTree ├── lru-cache@2.7.3
+96 silly currentTree ├── lunr@0.5.12
+96 silly currentTree ├─┬ maxmin@0.1.0
+96 silly currentTree │ ├── ansi-styles@1.0.0
+96 silly currentTree │ ├── chalk@0.4.0
+96 silly currentTree │ └── strip-ansi@0.1.1
+96 silly currentTree ├── mime-types@1.0.2
+96 silly currentTree ├── mime@1.2.11
+96 silly currentTree ├── minimatch@0.2.14
+96 silly currentTree ├── minimist@0.0.8
+96 silly currentTree ├── mkdirp@0.5.1
+96 silly currentTree ├── node-uuid@1.4.7
+96 silly currentTree ├── nopt@1.0.10
+96 silly currentTree ├── oauth-sign@0.3.0
+96 silly currentTree ├── pretty-bytes@0.1.2
+96 silly currentTree ├── process-nextick-args@1.0.7
+96 silly currentTree ├── qs@1.0.2
+96 silly currentTree ├── readable-stream@2.0.6
+96 silly currentTree ├── request@2.40.0
+96 silly currentTree ├── requirejs@2.1.22
+96 silly currentTree ├── resolve@0.3.1
+96 silly currentTree ├── rimraf@2.2.8
+96 silly currentTree ├── sigmund@1.0.1
+96 silly currentTree ├── sntp@0.2.4
+96 silly currentTree ├── source-map@0.1.43
+96 silly currentTree ├── string_decoder@0.10.31
+96 silly currentTree ├── stringstream@0.0.5
+96 silly currentTree ├── strip-ansi@0.3.0
+96 silly currentTree ├── supports-color@0.2.0
+96 silly currentTree ├── tape@0.2.2
+96 silly currentTree ├── tough-cookie@2.2.2
+96 silly currentTree ├── tunnel-agent@0.4.3
+96 silly currentTree ├── typedarray@0.0.6
+96 silly currentTree ├── underscore.string@2.2.1
+96 silly currentTree ├── underscore@1.7.0
+96 silly currentTree ├── util-deprecate@1.0.2
+96 silly currentTree ├── which@1.0.9
+96 silly currentTree └── zlib-browserify@0.0.3
+97 silly idealTree pl1516
+97 silly idealTree ├── abbrev@1.0.7
+97 silly idealTree ├── amdefine@1.0.0
+97 silly idealTree ├── ansi-regex@0.2.1
+97 silly idealTree ├── ansi-styles@1.1.0
+97 silly idealTree ├─┬ argparse@0.1.16
+97 silly idealTree │ └── underscore.string@2.4.0
+97 silly idealTree ├── asn1@0.1.11
+97 silly idealTree ├── assert-plus@0.1.5
+97 silly idealTree ├── async@0.1.22
+97 silly idealTree ├── aws-sign2@0.5.0
+97 silly idealTree ├── boom@0.4.2
+97 silly idealTree ├── canvas@1.3.15
+97 silly idealTree ├── chalk@0.5.1
+97 silly idealTree ├── clean-css@2.2.23
+97 silly idealTree ├── coffee-script@1.3.3
+97 silly idealTree ├── colors@0.6.2
+97 silly idealTree ├── combined-stream@0.0.7
+97 silly idealTree ├── commander@2.2.0
+97 silly idealTree ├── concat-stream@1.5.1
+97 silly idealTree ├── core-util-is@1.0.2
+97 silly idealTree ├── cryptiles@0.2.2
+97 silly idealTree ├── ctype@0.5.3
+97 silly idealTree ├── dateformat@1.0.2-1.2.3
+97 silly idealTree ├── deep-equal@0.0.0
+97 silly idealTree ├── defined@0.0.0
+97 silly idealTree ├── delayed-stream@0.0.5
+97 silly idealTree ├── escape-string-regexp@1.0.5
+97 silly idealTree ├── esprima@1.0.4
+97 silly idealTree ├── eventemitter2@0.4.14
+97 silly idealTree ├── exit@0.1.2
+97 silly idealTree ├─┬ findup-sync@0.1.3
+97 silly idealTree │ ├── glob@3.2.11
+97 silly idealTree │ ├── lodash@2.4.2
+97 silly idealTree │ └── minimatch@0.3.0
+97 silly idealTree ├── forever-agent@0.5.2
+97 silly idealTree ├─┬ form-data@0.1.4
+97 silly idealTree │ └── async@0.9.2
+97 silly idealTree ├── getobject@0.1.0
+97 silly idealTree ├─┬ gitbook-plugin-ace@0.2.1
+97 silly idealTree │ ├── highlight.js@9.3.0
+97 silly idealTree │ └── html-escape@1.0.2
+97 silly idealTree ├─┬ gitbook-plugin-autocover@1.2.1
+97 silly idealTree │ ├─┬ canvas@1.1.6
+97 silly idealTree │ │ └── nan@1.2.0
+97 silly idealTree │ ├── lodash@2.4.1
+97 silly idealTree │ └── q@1.0.1
+97 silly idealTree ├── gitbook-plugin-code-highlighter@1.0.6
+97 silly idealTree ├── gitbook-plugin-copy-code-button@0.0.2
+97 silly idealTree ├── gitbook-plugin-emphasize@1.1.0
+97 silly idealTree ├─┬ gitbook-plugin-include@0.1.0
+97 silly idealTree │ └── q@1.4.1
+97 silly idealTree ├─┬ gitbook-plugin-jazer@1.0.52
+97 silly idealTree │ ├── lodash@4.12.0
+97 silly idealTree │ └── marked@0.3.5
+97 silly idealTree ├── gitbook-plugin-latex-codecogs@1.0.1
+97 silly idealTree ├── gitbook-plugin-responsive-iframes@1.0.2
+97 silly idealTree ├─┬ gitbook-plugin-toc@0.0.1
+97 silly idealTree │ └─┬ marked-toc@0.2.8
+97 silly idealTree │   ├─┬ fs-utils@0.5.0
+97 silly idealTree │   │ ├── async@0.9.2
+97 silly idealTree │   │ ├─┬ delete@0.1.5
+97 silly idealTree │   │ │ ├── is-path-cwd@0.1.0
+97 silly idealTree │   │ │ ├─┬ is-path-in-cwd@0.1.1
+97 silly idealTree │   │ │ │ └─┬ is-path-inside@0.1.0
+97 silly idealTree │   │ │ │   └── path-is-inside@1.0.1
+97 silly idealTree │   │ │ └─┬ rimraf@2.5.2
+97 silly idealTree │   │ │   └─┬ glob@7.0.3
+97 silly idealTree │   │ │     ├─┬ inflight@1.0.4
+97 silly idealTree │   │ │     │ └── wrappy@1.0.1
+97 silly idealTree │   │ │     ├── inherits@2.0.1
+97 silly idealTree │   │ │     ├─┬ minimatch@3.0.0
+97 silly idealTree │   │ │     │ └─┬ brace-expansion@1.1.3
+97 silly idealTree │   │ │     │   ├── balanced-match@0.3.0
+97 silly idealTree │   │ │     │   └── concat-map@0.0.1
+97 silly idealTree │   │ │     ├─┬ once@1.3.3
+97 silly idealTree │   │ │     │ └── wrappy@1.0.1
+97 silly idealTree │   │ │     └── path-is-absolute@1.0.0
+97 silly idealTree │   │ ├─┬ extend-shallow@0.1.1
+97 silly idealTree │   │ │ └── array-slice@0.2.3
+97 silly idealTree │   │ ├─┬ globby@0.1.1
+97 silly idealTree │   │ │ ├── array-differ@0.1.0
+97 silly idealTree │   │ │ ├─┬ array-union@0.1.0
+97 silly idealTree │   │ │ │ └── array-uniq@0.1.1
+97 silly idealTree │   │ │ └─┬ glob@4.5.3
+97 silly idealTree │   │ │   ├─┬ inflight@1.0.4
+97 silly idealTree │   │ │   │ └── wrappy@1.0.1
+97 silly idealTree │   │ │   ├── inherits@2.0.1
+97 silly idealTree │   │ │   ├─┬ minimatch@2.0.10
+97 silly idealTree │   │ │   │ └─┬ brace-expansion@1.1.3
+97 silly idealTree │   │ │   │   ├── balanced-match@0.3.0
+97 silly idealTree │   │ │   │   └── concat-map@0.0.1
+97 silly idealTree │   │ │   └─┬ once@1.3.3
+97 silly idealTree │   │ │     └── wrappy@1.0.1
+97 silly idealTree │   │ ├── graceful-fs@3.0.8
+97 silly idealTree │   │ ├─┬ is-absolute@0.1.7
+97 silly idealTree │   │ │ └── is-relative@0.1.3
+97 silly idealTree │   │ ├─┬ js-yaml@3.5.5
+97 silly idealTree │   │ │ ├─┬ argparse@1.0.7
+97 silly idealTree │   │ │ │ └── sprintf-js@1.0.3
+97 silly idealTree │   │ │ └── esprima@2.7.2
+97 silly idealTree │   │ ├── kind-of@0.1.2
+97 silly idealTree │   │ └─┬ relative@0.1.6
+97 silly idealTree │   │   └── normalize-path@0.1.1
+97 silly idealTree │   ├─┬ gray-matter@0.5.3
+97 silly idealTree │   │ ├── coffee-script@1.10.0
+97 silly idealTree │   │ ├─┬ delims@0.4.2
+97 silly idealTree │   │ │ ├─┬ arrayify-compact@0.1.0
+97 silly idealTree │   │ │ │ └── array-flatten@2.0.0
+97 silly idealTree │   │ │ └── object-pick@0.1.2
+97 silly idealTree │   │ ├─┬ js-yaml@3.5.5
+97 silly idealTree │   │ │ ├─┬ argparse@1.0.7
+97 silly idealTree │   │ │ │ └── sprintf-js@1.0.3
+97 silly idealTree │   │ │ └── esprima@2.7.2
+97 silly idealTree │   │ ├─┬ mixin-deep@0.1.0
+97 silly idealTree │   │ │ ├─┬ for-own@0.1.4
+97 silly idealTree │   │ │ │ └── for-in@0.1.5
+97 silly idealTree │   │ │ └── is-plain-object@0.1.0
+97 silly idealTree │   │ ├── toml@2.3.0
+97 silly idealTree │   │ └─┬ verbalize@0.1.2
+97 silly idealTree │   │   └─┬ chalk@0.4.0
+97 silly idealTree │   │     ├── ansi-styles@1.0.0
+97 silly idealTree │   │     ├── has-color@0.1.7
+97 silly idealTree │   │     └── strip-ansi@0.1.1
+97 silly idealTree │   ├── lodash@2.4.2
+97 silly idealTree │   ├── marked@0.3.0
+97 silly idealTree │   ├─┬ template@0.1.8
+97 silly idealTree │   │ ├── delims@0.1.4
+97 silly idealTree │   │ ├─┬ fs-utils@0.4.3
+97 silly idealTree │   │ │ ├── async@0.6.2
+97 silly idealTree │   │ │ ├─┬ globule@0.2.0
+97 silly idealTree │   │ │ │ ├─┬ glob@3.2.11
+97 silly idealTree │   │ │ │ │ ├── inherits@2.0.1
+97 silly idealTree │   │ │ │ │ └─┬ minimatch@0.3.0
+97 silly idealTree │   │ │ │ │   ├── lru-cache@2.7.3
+97 silly idealTree │   │ │ │ │   └── sigmund@1.0.1
+97 silly idealTree │   │ │ │ └─┬ minimatch@0.2.14
+97 silly idealTree │   │ │ │   ├── lru-cache@2.7.3
+97 silly idealTree │   │ │ │   └── sigmund@1.0.1
+97 silly idealTree │   │ │ ├── graceful-fs@2.0.3
+97 silly idealTree │   │ │ ├─┬ js-yaml@3.0.2
+97 silly idealTree │   │ │ │ ├─┬ argparse@0.1.16
+97 silly idealTree │   │ │ │ │ ├── underscore.string@2.4.0
+97 silly idealTree │   │ │ │ │ └── underscore@1.7.0
+97 silly idealTree │   │ │ │ └── esprima@1.0.4
+97 silly idealTree │   │ │ ├── mkdirp@0.3.5
+97 silly idealTree │   │ │ └── rimraf@2.2.8
+97 silly idealTree │   │ └── underscore.string@2.3.3
+97 silly idealTree │   └─┬ uslug@1.0.4
+97 silly idealTree │     └── unorm@1.4.1
+97 silly idealTree ├─┬ gitbook-plugin-youtube@1.1.0
+97 silly idealTree │ └── get-youtube-id@0.1.3
+97 silly idealTree ├── gitbook-theme-clarity@0.0.2
+97 silly idealTree ├─┬ glob@3.1.21
+97 silly idealTree │ └── inherits@1.0.2
+97 silly idealTree ├── graceful-fs@1.2.3
+97 silly idealTree ├── grunt-cli@0.1.13
+97 silly idealTree ├─┬ grunt-contrib-less@0.11.4
+97 silly idealTree │ ├── async@0.2.10
+97 silly idealTree │ └── lodash@2.4.2
+97 silly idealTree ├── grunt-contrib-requirejs@0.4.4
+97 silly idealTree ├─┬ grunt-legacy-log-utils@0.1.1
+97 silly idealTree │ ├── lodash@2.4.2
+97 silly idealTree │ └── underscore.string@2.3.3
+97 silly idealTree ├─┬ grunt-legacy-log@0.1.3
+97 silly idealTree │ ├── lodash@2.4.2
+97 silly idealTree │ └── underscore.string@2.3.3
+97 silly idealTree ├── grunt-legacy-util@0.2.0
+97 silly idealTree ├── grunt@0.4.5
+97 silly idealTree ├── gzip-size@0.1.1
+97 silly idealTree ├── has-ansi@0.1.0
+97 silly idealTree ├── has-color@0.1.7
+97 silly idealTree ├── hawk@1.1.1
+97 silly idealTree ├── hoek@0.9.1
+97 silly idealTree ├── hooker@0.2.3
+97 silly idealTree ├── http-signature@0.10.1
+97 silly idealTree ├── iconv-lite@0.2.11
+97 silly idealTree ├── inherits@2.0.1
+97 silly idealTree ├── isarray@1.0.0
+97 silly idealTree ├── js-yaml@2.0.5
+97 silly idealTree ├── json-stringify-safe@5.0.1
+97 silly idealTree ├── jsonify@0.0.0
+97 silly idealTree ├─┬ less@1.7.5
+97 silly idealTree │ └── graceful-fs@3.0.8
+97 silly idealTree ├── lodash@0.9.2
+97 silly idealTree ├── lru-cache@2.7.3
+97 silly idealTree ├── lunr@0.5.12
+97 silly idealTree ├─┬ maxmin@0.1.0
+97 silly idealTree │ ├── ansi-styles@1.0.0
+97 silly idealTree │ ├── chalk@0.4.0
+97 silly idealTree │ └── strip-ansi@0.1.1
+97 silly idealTree ├── mime-types@1.0.2
+97 silly idealTree ├── mime@1.2.11
+97 silly idealTree ├── minimatch@0.2.14
+97 silly idealTree ├── minimist@0.0.8
+97 silly idealTree ├── mkdirp@0.5.1
+97 silly idealTree ├── nan@2.3.3
+97 silly idealTree ├── node-uuid@1.4.7
+97 silly idealTree ├── nopt@1.0.10
+97 silly idealTree ├── oauth-sign@0.3.0
+97 silly idealTree ├── pretty-bytes@0.1.2
+97 silly idealTree ├── process-nextick-args@1.0.7
+97 silly idealTree ├── qs@1.0.2
+97 silly idealTree ├── readable-stream@2.0.6
+97 silly idealTree ├── request@2.40.0
+97 silly idealTree ├── requirejs@2.1.22
+97 silly idealTree ├── resolve@0.3.1
+97 silly idealTree ├── rimraf@2.2.8
+97 silly idealTree ├── sigmund@1.0.1
+97 silly idealTree ├── sntp@0.2.4
+97 silly idealTree ├── source-map@0.1.43
+97 silly idealTree ├── string_decoder@0.10.31
+97 silly idealTree ├── stringstream@0.0.5
+97 silly idealTree ├── strip-ansi@0.3.0
+97 silly idealTree ├── supports-color@0.2.0
+97 silly idealTree ├── tape@0.2.2
+97 silly idealTree ├── tough-cookie@2.2.2
+97 silly idealTree ├── tunnel-agent@0.4.3
+97 silly idealTree ├── typedarray@0.0.6
+97 silly idealTree ├── underscore.string@2.2.1
+97 silly idealTree ├── underscore@1.7.0
+97 silly idealTree ├── util-deprecate@1.0.2
+97 silly idealTree ├── which@1.0.9
+97 silly idealTree └── zlib-browserify@0.0.3
+98 silly generateActionsToTake Starting
+99 silly install generateActionsToTake
+100 silly generateActionsToTake Finishing
+101 silly diffTrees action count 2
+102 silly diffTrees add nan@2.3.3
+103 silly diffTrees add canvas@1.3.15
+104 silly decomposeActions action count 16
+105 silly decomposeActions fetch nan@2.3.3
+106 silly decomposeActions extract nan@2.3.3
+107 silly decomposeActions preinstall nan@2.3.3
+108 silly decomposeActions build nan@2.3.3
+109 silly decomposeActions install nan@2.3.3
+110 silly decomposeActions postinstall nan@2.3.3
+111 silly decomposeActions test nan@2.3.3
+112 silly decomposeActions finalize nan@2.3.3
+113 silly decomposeActions fetch canvas@1.3.15
+114 silly decomposeActions extract canvas@1.3.15
+115 silly decomposeActions preinstall canvas@1.3.15
+116 silly decomposeActions build canvas@1.3.15
+117 silly decomposeActions install canvas@1.3.15
+118 silly decomposeActions postinstall canvas@1.3.15
+119 silly decomposeActions test canvas@1.3.15
+120 silly decomposeActions finalize canvas@1.3.15
+121 silly executeActions Starting
+122 silly install executeActions
+123 silly doSerial global-install 0
+124 silly doParallel fetch 2
+125 verbose lock using /Users/casiano/.npm/_locks/staging-a726e9e3e5f5f550.lock for /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging
+126 silly doParallel extract 2
+127 silly extract nan@2.3.3
+128 silly extract canvas@1.3.15
+129 verbose unbuild node_modules/.staging/nan-5e73fce1ee3bdc1ae2ba90c82862bb87
+130 verbose unbuild node_modules/.staging/canvas-9ea9a6437cb64e317a51dbd1784b4ac7
+131 silly gentlyRm /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/nan-5e73fce1ee3bdc1ae2ba90c82862bb87 is being purged from base /Users/casiano/local/src/githubclassroom/pl1516
+132 verbose gentlyRm don't care about contents; nuking /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/nan-5e73fce1ee3bdc1ae2ba90c82862bb87
+133 silly gentlyRm /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/canvas-9ea9a6437cb64e317a51dbd1784b4ac7 is being purged from base /Users/casiano/local/src/githubclassroom/pl1516
+134 verbose tar unpack /Users/casiano/.npm/nan/2.3.3/package.tgz
+135 verbose tar unpacking to /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/nan-5e73fce1ee3bdc1ae2ba90c82862bb87
+136 silly gentlyRm /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/nan-5e73fce1ee3bdc1ae2ba90c82862bb87 is being purged
+137 verbose gentlyRm don't care about contents; nuking /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/canvas-9ea9a6437cb64e317a51dbd1784b4ac7
+138 verbose gentlyRm don't care about contents; nuking /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/nan-5e73fce1ee3bdc1ae2ba90c82862bb87
+139 verbose tar unpack /Users/casiano/.npm/canvas/1.3.15/package.tgz
+140 verbose tar unpacking to /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/canvas-9ea9a6437cb64e317a51dbd1784b4ac7
+141 silly gentlyRm /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/canvas-9ea9a6437cb64e317a51dbd1784b4ac7 is being purged
+142 silly gunzTarPerm modes [ '755', '644' ]
+143 verbose gentlyRm don't care about contents; nuking /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/canvas-9ea9a6437cb64e317a51dbd1784b4ac7
+144 silly gunzTarPerm modes [ '755', '644' ]
+145 silly gunzTarPerm extractEntry package.json
+146 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+147 silly gunzTarPerm extractEntry package.json
+148 silly gunzTarPerm extractEntry README.md
+149 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+150 silly gunzTarPerm extractEntry include_dirs.js
+151 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
+152 silly gunzTarPerm extractEntry .npmignore
+153 silly gunzTarPerm extractEntry index.js
+154 silly gunzTarPerm extractEntry nan_converters.h
+155 silly gunzTarPerm modified mode [ 'nan_converters.h', 436, 420 ]
+156 silly gunzTarPerm extractEntry LICENSE.md
+157 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+158 silly gunzTarPerm extractEntry doc/node_misc.md
+159 silly gunzTarPerm modified mode [ 'doc/node_misc.md', 436, 420 ]
+160 silly gunzTarPerm extractEntry Readme.md
+161 silly gunzTarPerm extractEntry binding.gyp
+162 silly gunzTarPerm extractEntry doc/asyncworker.md
+163 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 420 ]
+164 silly gunzTarPerm extractEntry .travis.yml
+165 silly gunzTarPerm extractEntry doc/callback.md
+166 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 420 ]
+167 silly gunzTarPerm extractEntry doc/converters.md
+168 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 420 ]
+169 silly gunzTarPerm extractEntry lib/bindings.js
+170 silly gunzTarPerm extractEntry lib/canvas.js
+171 silly gunzTarPerm extractEntry doc/errors.md
+172 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 420 ]
+173 silly gunzTarPerm extractEntry doc/maybe_types.md
+174 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 420 ]
+175 silly gunzTarPerm extractEntry lib/context2d.js
+176 silly gunzTarPerm extractEntry lib/image.js
+177 silly gunzTarPerm extractEntry doc/methods.md
+178 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 420 ]
+179 silly gunzTarPerm extractEntry doc/new.md
+180 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 420 ]
+181 silly gunzTarPerm extractEntry lib/jpegstream.js
+182 silly gunzTarPerm extractEntry lib/pngstream.js
+183 silly gunzTarPerm extractEntry doc/buffers.md
+184 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 420 ]
+185 silly gunzTarPerm extractEntry doc/object_wrappers.md
+186 silly gunzTarPerm modified mode [ 'doc/object_wrappers.md', 436, 420 ]
+187 silly gunzTarPerm extractEntry History.md
+188 silly gunzTarPerm extractEntry src/Image.cc
+189 silly gunzTarPerm extractEntry doc/persistent.md
+190 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 420 ]
+191 silly gunzTarPerm extractEntry doc/scopes.md
+192 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 420 ]
+193 silly gunzTarPerm extractEntry src/Canvas.cc
+194 silly gunzTarPerm extractEntry src/CanvasGradient.cc
+195 silly gunzTarPerm extractEntry doc/script.md
+196 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 420 ]
+197 silly gunzTarPerm extractEntry doc/string_bytes.md
+198 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 420 ]
+199 silly gunzTarPerm extractEntry src/CanvasGradient.h
+200 silly gunzTarPerm extractEntry src/CanvasPattern.cc
+201 silly gunzTarPerm extractEntry doc/v8_internals.md
+202 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 420 ]
+203 silly gunzTarPerm extractEntry doc/v8_misc.md
+204 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 420 ]
+205 silly gunzTarPerm extractEntry src/CanvasPattern.h
+206 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.cc
+207 silly gunzTarPerm extractEntry nan.h
+208 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+209 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.h
+210 silly gunzTarPerm extractEntry src/FontFace.cc
+211 silly gunzTarPerm extractEntry nan_callbacks.h
+212 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 420 ]
+213 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+214 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 420 ]
+215 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+216 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 420 ]
+217 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+218 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 420 ]
+219 silly gunzTarPerm extractEntry src/FontFace.h
+220 silly gunzTarPerm extractEntry src/Canvas.h
+221 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+222 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 420 ]
+223 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+224 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+225 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+226 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+227 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+228 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 420 ]
+229 silly gunzTarPerm extractEntry src/Image.h
+230 silly gunzTarPerm extractEntry src/ImageData.cc
+231 silly gunzTarPerm extractEntry src/ImageData.h
+232 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+233 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 420 ]
+234 silly gunzTarPerm extractEntry nan_new.h
+235 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+236 silly gunzTarPerm extractEntry src/JPEGStream.h
+237 silly gunzTarPerm extractEntry src/PNG.h
+238 silly gunzTarPerm extractEntry src/Point.h
+239 silly gunzTarPerm extractEntry src/closure.h
+240 silly gunzTarPerm extractEntry nan_object_wrap.h
+241 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 420 ]
+242 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+243 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 420 ]
+244 silly gunzTarPerm extractEntry src/color.cc
+245 silly gunzTarPerm extractEntry src/color.h
+246 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+247 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 420 ]
+248 silly gunzTarPerm extractEntry nan_string_bytes.h
+249 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+250 silly gunzTarPerm extractEntry src/init.cc
+251 silly gunzTarPerm extractEntry util/has_lib.sh
+252 silly gunzTarPerm extractEntry nan_typedarray_contents.h
+253 silly gunzTarPerm modified mode [ 'nan_typedarray_contents.h', 436, 420 ]
+254 silly gunzTarPerm extractEntry nan_weak.h
+255 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 420 ]
+256 silly gunzTarPerm extractEntry CHANGELOG.md
+257 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+258 silly gunzTarPerm extractEntry tools/package.json
+259 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 420 ]
+260 silly gunzTarPerm extractEntry tools/README.md
+261 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 420 ]
+262 silly gunzTarPerm extractEntry tools/1to2.js
+263 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 493 ]
+264 silly doParallel preinstall 2
+265 silly preinstall nan@2.3.3 /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/nan-5e73fce1ee3bdc1ae2ba90c82862bb87
+266 info lifecycle nan@2.3.3~preinstall: nan@2.3.3
+267 silly preinstall canvas@1.3.15 /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/canvas-9ea9a6437cb64e317a51dbd1784b4ac7
+268 info lifecycle canvas@1.3.15~preinstall: canvas@1.3.15
+269 silly lifecycle nan@2.3.3~preinstall: no script for preinstall, continuing
+270 silly lifecycle canvas@1.3.15~preinstall: no script for preinstall, continuing
+271 silly doReverseSerial remove 0
+272 silly doSerial move 0
+273 silly doSerial finalize 2
+274 silly finalize /Users/casiano/local/src/githubclassroom/pl1516/node_modules/nan
+275 silly finalize /Users/casiano/local/src/githubclassroom/pl1516/node_modules/canvas
+276 silly doSerial build 2
+277 silly build nan@2.3.3
+278 info linkStuff nan@2.3.3
+279 silly linkStuff nan@2.3.3 has /Users/casiano/local/src/githubclassroom/pl1516/node_modules as its parent node_modules
+280 verbose linkBins nan@2.3.3
+281 verbose linkMans nan@2.3.3
+282 silly build canvas@1.3.15
+283 info linkStuff canvas@1.3.15
+284 silly linkStuff canvas@1.3.15 has /Users/casiano/local/src/githubclassroom/pl1516/node_modules as its parent node_modules
+285 verbose linkBins canvas@1.3.15
+286 verbose linkMans canvas@1.3.15
+287 silly doSerial global-link 0
+288 silly doParallel update-linked 0
+289 silly doSerial install 2
+290 silly install nan@2.3.3 /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/nan-5e73fce1ee3bdc1ae2ba90c82862bb87
+291 info lifecycle nan@2.3.3~install: nan@2.3.3
+292 silly lifecycle nan@2.3.3~install: no script for install, continuing
+293 silly install canvas@1.3.15 /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging/canvas-9ea9a6437cb64e317a51dbd1784b4ac7
+294 info lifecycle canvas@1.3.15~install: canvas@1.3.15
+295 verbose lifecycle canvas@1.3.15~install: unsafe-perm in lifecycle true
+296 verbose lifecycle canvas@1.3.15~install: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/casiano/local/src/githubclassroom/pl1516/node_modules/canvas/node_modules/.bin:/Users/casiano/local/src/githubclassroom/pl1516/node_modules/.bin:/Users/casiano/.rvm/gems/ruby-2.1.2/bin:/Users/casiano/.rvm/gems/ruby-2.1.2@global/bin:/Users/casiano/.rvm/rubies/ruby-2.1.2/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/casiano/Applications/adt-bundle-mac-x86_64-20130522/sdk/tools/:/Users/casiano/Applications/adt-bundle-mac-x86_64-20130522/sdk/platform-tools/:/opt/local/bin:/opt/local/sbin:/Users/casiano/perl5/perlbrew/bin:/Users/casiano/perl5/perlbrew/perls/current/bin:/usr/texbin:/usr/local/bin:/Users/casiano/src/scala/scala-2.9.0.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/texbin:/Users/casiano/bin:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:/Users/casiano/.rvm/bin
+297 verbose lifecycle canvas@1.3.15~install: CWD: /Users/casiano/local/src/githubclassroom/pl1516/node_modules/canvas
+298 silly lifecycle canvas@1.3.15~install: Args: [ '-c', 'node-gyp rebuild' ]
+299 silly lifecycle canvas@1.3.15~install: Returned: code: 1  signal: null
+300 info lifecycle canvas@1.3.15~install: Failed to exec install script
+301 verbose unlock done using /Users/casiano/.npm/_locks/staging-a726e9e3e5f5f550.lock for /Users/casiano/local/src/githubclassroom/pl1516/node_modules/.staging
+302 silly rollbackFailedOptional Starting
+303 silly rollbackFailedOptional Finishing
+304 silly runTopLevelLifecycles Starting
+305 silly runTopLevelLifecycles Finishing
+306 silly install printInstalled
+307 warn ENOENT ENOENT: no such file or directory, open '/Users/casiano/local/src/githubclassroom/pl1516/package.json'
+308 warn EPACKAGEJSON pl1516 No description
+309 warn EPACKAGEJSON pl1516 No repository field.
+310 warn EPACKAGEJSON pl1516 No README data
+311 warn EPACKAGEJSON pl1516 No license field.
+312 verbose stack Error: canvas@1.3.15 install: `node-gyp rebuild`
+312 verbose stack Exit status 1
+312 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:232:16)
+312 verbose stack     at emitTwo (events.js:100:13)
+312 verbose stack     at EventEmitter.emit (events.js:185:7)
+312 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+312 verbose stack     at emitTwo (events.js:100:13)
+312 verbose stack     at ChildProcess.emit (events.js:185:7)
+312 verbose stack     at maybeClose (internal/child_process.js:821:16)
+312 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+313 verbose pkgid canvas@1.3.15
+314 verbose cwd /Users/casiano/local/src/githubclassroom/pl1516
+315 error Darwin 15.4.0
+316 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "canvas"
+317 error node v5.5.0
+318 error npm  v3.3.12
+319 error code ELIFECYCLE
+320 error canvas@1.3.15 install: `node-gyp rebuild`
+320 error Exit status 1
+321 error Failed at the canvas@1.3.15 install script 'node-gyp rebuild'.
+321 error Make sure you have the latest version of node.js and npm installed.
+321 error If you do, this is most likely a problem with the canvas package,
+321 error not with npm itself.
+321 error Tell the author that this fails on your system:
+321 error     node-gyp rebuild
+321 error You can get their info via:
+321 error     npm owner ls canvas
+321 error There is likely additional logging output above.
+322 verbose exit [ 1, true ]
