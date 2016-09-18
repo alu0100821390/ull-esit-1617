@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Recursos · GitBook</title>
+        <title>Práctica: OOP · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../practicas/" />
     
-    
-    <link rel="prev" href="../section1/example2.md" />
+    <link rel="prev" href="practicagitbook.html" />
     
 
     </head>
@@ -147,9 +145,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../recursos/">
             
-                <a href="./">
+                <a href="../recursos/">
             
                     
                     Recursos
@@ -160,9 +158,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../practicas/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../practicas/">
+                <a href="./">
             
                     
                     Prácticas
@@ -174,9 +172,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../practicas/practicagitbook.html">
+        <li class="chapter " data-level="1.4.1" data-path="practicagitbook.html">
             
-                <a href="../practicas/practicagitbook.html">
+                <a href="practicagitbook.html">
             
                     
                     Práctica: Tareas Iniciales
@@ -187,9 +185,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../practicas/practicaoop.html">
+        <li class="chapter active" data-level="1.4.2" data-path="practicaoop.html">
             
-                <a href="../practicas/practicaoop.html">
+                <a href="practicaoop.html">
             
                     
                     Práctica: OOP
@@ -235,7 +233,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Recursos</a>
+        <a href=".." >Práctica: OOP</a>
     </h1>
 </div>
 
@@ -250,17 +248,26 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="recursos">RECURSOS</h1>
-<h2 id="servicios-en-la-nube">Servicios en la Nube</h2>
+                                <h2 id="pr&#xE1;ctica-programaci&#xF3;n-orientada-a-objetos-y-herencia-en-javascript">Pr&#xE1;ctica: Programaci&#xF3;n Orientada a Objetos y Herencia en JavaScript</h2>
 <ul>
-<li>SERVICIO IAAS de la ULL<ul>
-<li>Documento GoogleDoc describiendo el <a href="https://docs.google.com/document/d/1noIAcAEzX1PuxxSLWuiTKzkLurAm9fL6vUmZN-A-kpE/edit#heading=h.8phafd22zwrf" target="_blank">Servicio IaaS EULA y la Solicitud de servicio</a>. Se describe como hacer una solicitud para la docencia</li>
-<li><a href="https://docs.google.com/document/d/1BYVULfCekK4oJosWAPu8C1AEMUVbIvtztLjVziNHVjk/edit#heading=h.gppwv2l7qycn" target="_blank">Informaci&#xF3;n general del IaaS</a>. Se describe el proyecto y el producto.</li>
-<li><a href="https://docs.google.com/document/d/157fVaO7Stt9C8myr3_OKVpEGbo8psz_MFP7EUVkuuA4/edit" target="_blank">Manual de administraci&#xF3;n de Pools de m&#xE1;quinas</a></li>
-<li><a href="https://iaas.ull.es" target="_blank">Web del servicio https://iaas.ull.es</a></li>
-</ul>
+<li><p>Modifique la pr&#xE1;ctica anterior de la Temperatura para que use objetos y herencia.</p>
 </li>
-<li><a href="http://www.yellowcircle.net/" target="_blank">Yellow Circle</a>: Free cloud service for students</li>
+<li><p>Defina una clase <code>Medida</code> cuyos objetos tienen un <code>valor</code> num&#xE9;rico (p.  ej. <code>4.5e2</code>) y un tipo dado por una cadena (p. ej &quot;<code>Km</code>&quot; por Kil&#xF3;metros o &quot;<code>m3</code>&quot; por metros c&#xFA;bicos o &quot;<code>F</code>&quot; por grados Fahrenheit).</p>
+</li>
+<li><p>Las clase <code>Temperatura</code> hereda de <code>Medida</code>.</p>
+</li>
+<li>Las clases <code>Celsius</code>, <code>Fahrenheit</code>, <code>Kelvin</code>, etc. heredan de <code>Temperatura</code></li>
+<li>En la entrada se deber&#xE1;n admitir grados <code>Kelvin</code> adem&#xE1;s de los de la pr&#xE1;ctica anterior</li>
+<li>En la entrada se podr&#xE1;n escribir entradas como <code>32C to K</code> para convertir de Celsius a Kelvin o bien <code>-1.43e2f to C</code> para convertir de Fahrenheit a Celsius.</li>
+<li>La palabra <code>to</code>es opcional pudiendo omitirse. As&#xED; se aceptar&#xE1;n entradas como 
+<code>32C K</code> o bien <code>-1.43e2f  C</code></li>
+<li>S&#xF3;lo se muestra como resultado el solicitado. Si no se especifica el resultado se deber&#xE1; emitir un mensaje de error</li>
+<li>Use expresiones regulares extendidas</li>
+<li>Procure que el c&#xF3;digo quede bien encapsulado</li>
+<li>Reescriba el c&#xF3;digo para que use las clases.</li>
+<li>Opcionalmente, si se desea se puede hacer que permita otras conversiones (por ejemplo, <code>metros</code> a <code>pulgadas</code>)</li>
+<li>Puede encontrar la asignaci&#xF3;n de esta tarea en <a href="https://classroom.github.com/group-assignment-invitations/56f6b297702591e8713c6fae890b84bc" target="_blank">Github Classroom</a></li>
+<li>En esta tarea no se pide que use pruebas, ni cubrimiento, ni  Karma ni Travis.</li>
 </ul>
 
                                 
@@ -289,14 +296,10 @@
 
             
                 
-                <a href="../section1/example2.md" class="navigation navigation-prev " aria-label="Previous page: example 2">
+                <a href="practicagitbook.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Práctica: Tareas Iniciales">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../practicas/" class="navigation navigation-next " aria-label="Next page: Prácticas">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -305,7 +308,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Recursos","level":"1.3","depth":1,"next":{"title":"Prácticas","level":"1.4","depth":1,"path":"practicas/README.md","ref":"practicas/README.md","articles":[{"title":"Práctica: Tareas Iniciales","level":"1.4.1","depth":2,"path":"practicas/practicagitbook.md","ref":"practicas/practicagitbook.md","articles":[]},{"title":"Práctica: OOP","level":"1.4.2","depth":2,"path":"practicas/practicaoop.md","ref":"practicas/practicaoop.md","articles":[]}]},"previous":{"title":"example 2","level":"1.2.2","depth":2,"path":"section1/example2.md","ref":"section1/example2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"recursos/README.md","mtime":"2016-09-12T10:49:17.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-09-18T20:29:19.433Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: OOP","level":"1.4.2","depth":2,"previous":{"title":"Práctica: Tareas Iniciales","level":"1.4.1","depth":2,"path":"practicas/practicagitbook.md","ref":"practicas/practicagitbook.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"practicas/practicaoop.md","mtime":"2016-09-16T11:55:30.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-09-18T20:29:19.433Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
