@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Gulp · GitBook</title>
+        <title>Procesamiento de la línea de comandos · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="gulpghpages.html" />
+    <link rel="next" href="../colaboracion/" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../fs.html" />
     
 
     </head>
@@ -191,9 +191,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="./">
+        <li class="chapter " data-level="1.3.1" data-path="../gulp/">
             
-                <a href="./">
+                <a href="../gulp/">
             
                     
                     Gulp
@@ -205,9 +205,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1.1" data-path="gulpghpages.html">
+        <li class="chapter " data-level="1.3.1.1" data-path="../gulp/gulpghpages.html">
             
-                <a href="gulpghpages.html">
+                <a href="../gulp/gulpghpages.html">
             
                     
                     gulp gh pages
@@ -218,9 +218,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.2" data-path="gulplinting.html">
+        <li class="chapter " data-level="1.3.1.2" data-path="../gulp/gulplinting.html">
             
-                <a href="gulplinting.html">
+                <a href="../gulp/gulplinting.html">
             
                     
                     gulp-linting
@@ -275,9 +275,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="../argumentos/">
+        <li class="chapter active" data-level="1.3.5" data-path="./">
             
-                <a href="../argumentos/">
+                <a href="./">
             
                     
                     Procesamiento de la línea de comandos
@@ -510,7 +510,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Gulp</a>
+        <a href="../.." >Procesamiento de la línea de comandos</a>
     </h1>
 </div>
 
@@ -522,12 +522,29 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="gulp">GULP</h2>
+                                <h2 id="minimist">minimist</h2>
 <ul>
-<li><a href="gulpghpages.html">gulp gh pages</a></li>
-<li><a href="gulplinting.html">gulp linting</a></li>
-<li><a href="http://jpsierens.com/tutorial-livereload-nodemon-gulp/" target="_blank">Tutorial &#x2013; How to use Livereload with Nodemon in Gulp to Automatically Reload your Browser and Restart your App</a></li>
+<li><a href="https://www.npmjs.com/package/minimist" target="_blank">minimist</a></li>
 </ul>
+<pre><code class="lang-js"><span class="hljs-meta">#!/usr/bin/env node</span>
+
+<span class="hljs-built_in">console</span>.log(process.argv);
+<span class="hljs-built_in">console</span>.log(process.argv.slice(<span class="hljs-number">2</span>));
+<span class="hljs-keyword">var</span> argv = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;minimist&apos;</span>)(process.argv.slice(<span class="hljs-number">2</span>));
+<span class="hljs-built_in">console</span>.dir(argv);
+</code></pre>
+<p>Ejecuciones:</p>
+<pre><code class="lang-bash">[~/src/javascript/learning/minimist]$ ./example.js <span class="hljs-_">-d</span> a <span class="hljs-_">-d</span> b c
+[ <span class="hljs-string">&apos;/usr/local/bin/node&apos;</span>,
+  <span class="hljs-string">&apos;/Users/casiano/local/src/javascript/learning/minimist/example.js&apos;</span>,
+  <span class="hljs-string">&apos;-d&apos;</span>,
+  <span class="hljs-string">&apos;a&apos;</span>,
+  <span class="hljs-string">&apos;-d&apos;</span>,
+  <span class="hljs-string">&apos;b&apos;</span>,
+  <span class="hljs-string">&apos;c&apos;</span> ]
+[ <span class="hljs-string">&apos;-d&apos;</span>, <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;-d&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span> ]
+{ _: [ <span class="hljs-string">&apos;c&apos;</span> ], d: [ <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span> ] }
+</code></pre>
 
                                 
                                 </section>
@@ -539,12 +556,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Apuntes">
+                <a href="../fs.html" class="navigation navigation-prev " aria-label="Previous page: Sistema de Archivos">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="gulpghpages.html" class="navigation navigation-next " aria-label="Next page: gulp gh pages">
+                <a href="../colaboracion/" class="navigation navigation-next " aria-label="Next page: Colaboración">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -555,7 +572,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gulp","level":"1.3.1","depth":2,"next":{"title":"gulp gh pages","level":"1.3.1.1","depth":3,"path":"apuntes/gulp/gulpghpages.md","ref":"apuntes/gulp/gulpghpages.md","articles":[]},"previous":{"title":"Apuntes","level":"1.3","depth":1,"path":"apuntes/README.md","ref":"apuntes/README.md","articles":[{"title":"Gulp","level":"1.3.1","depth":2,"path":"apuntes/gulp/README.md","ref":"apuntes/gulp/README.md","articles":[{"title":"gulp gh pages","level":"1.3.1.1","depth":3,"path":"apuntes/gulp/gulpghpages.md","ref":"apuntes/gulp/gulpghpages.md","articles":[]},{"title":"gulp-linting","level":"1.3.1.2","depth":3,"path":"apuntes/gulp/gulplinting.md","ref":"apuntes/gulp/gulplinting.md","articles":[]}]},{"title":"Creación de Paquetes y Módulos en NodeJS","level":"1.3.2","depth":2,"path":"apuntes/nodejspackages.md","ref":"apuntes/nodejspackages.md","articles":[]},{"title":"Sobre GitBook","level":"1.3.3","depth":2,"path":"apuntes/gitbooknotes/README.md","ref":"apuntes/gitbooknotes/README.md","articles":[]},{"title":"Sistema de Archivos","level":"1.3.4","depth":2,"path":"apuntes/fs.md","ref":"apuntes/fs.md","articles":[]},{"title":"Procesamiento de la línea de comandos","level":"1.3.5","depth":2,"path":"apuntes/argumentos/README.md","ref":"apuntes/argumentos/README.md","articles":[]},{"title":"Colaboración","level":"1.3.6","depth":2,"path":"apuntes/colaboracion/README.md","ref":"apuntes/colaboracion/README.md","articles":[]},{"title":"Express","level":"1.3.7","depth":2,"path":"apuntes/express/README.md","ref":"apuntes/express/README.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-include","-autocover","-layout","youtube","highlight","code-highlighter","ace","-copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/gulp/README.md","mtime":"2016-09-27T16:58:38.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-05T09:14:42.330Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Procesamiento de la línea de comandos","level":"1.3.5","depth":2,"next":{"title":"Colaboración","level":"1.3.6","depth":2,"path":"apuntes/colaboracion/README.md","ref":"apuntes/colaboracion/README.md","articles":[]},"previous":{"title":"Sistema de Archivos","level":"1.3.4","depth":2,"path":"apuntes/fs.md","ref":"apuntes/fs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-include","-autocover","-layout","youtube","highlight","code-highlighter","ace","-copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/argumentos/README.md","mtime":"2016-10-03T08:34:47.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-05T09:14:42.330Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

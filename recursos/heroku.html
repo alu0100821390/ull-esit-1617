@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Yellow Circle · GitBook</title>
+        <title>Heroku · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../practicas/" />
+    <link rel="next" href="yellow.html" />
     
     
-    <link rel="prev" href="heroku.html" />
+    <link rel="prev" href="iaas.html" />
     
 
     </head>
@@ -373,7 +373,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2.2" data-path="heroku.html">
+        <li class="chapter active" data-level="1.4.2.2" data-path="heroku.html">
             
                 <a href="heroku.html">
             
@@ -386,7 +386,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.2.3" data-path="yellow.html">
+        <li class="chapter " data-level="1.4.2.3" data-path="yellow.html">
             
                 <a href="yellow.html">
             
@@ -510,7 +510,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Yellow Circle</a>
+        <a href=".." >Heroku</a>
     </h1>
 </div>
 
@@ -522,9 +522,52 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="yellow-circle">Yellow Circle</h3>
+                                <h2 id="heroku"><a href="https://devcenter.heroku.com/categories/nodejs" target="_blank">Heroku</a></h2>
 <ul>
-<li><a href="http://www.yellowcircle.net/" target="_blank">Yellow Circle</a>: Free cloud service for students</li>
+<li><a href="http://crguezl.github.io/pl-html/node11.html#SECTION041400100000000000000" target="_blank">Ejemplo de como Desplegar una Aplicaci&#xF3;n Express sobre Node.JS en Heroku</a></li>
+<li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction" target="_blank">Getting Started on Heroku with Node.js</a></li>
+<li><a href="https://github.com/crguezl/how-jquery-works-tutorial/tree/heroku" target="_blank">La rama heroku del repo how-jquery-works-tutorial</a></li>
+</ul>
+<p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/uLF_hmtxAsY"></iframe></div></p>
+<ul>
+<li><p>Every Heroku app runs in at least two environments: </p>
+<ol>
+<li>on the Heroku platform (we&#x2019;ll call that <code>production</code>) and </li>
+<li>on your local machine (<code>development</code>). </li>
+</ol>
+<p>En este art&#xED;culo <a href="https://devcenter.heroku.com/articles/multiple-environments" target="_blank">Managing Multiple Environments for an App</a> se habla de como ahcer mas f&#xE1;cil el proceso de despliegue:</p>
+<ul>
+<li>The solution is to have a staging environment that is as similar to <code>production</code> as is possible. </li>
+<li>This can be achieved by creating a second Heroku application that hosts your staging application. </li>
+<li>With staging, you can check your code in a <code>production</code>-like setting before having it affect your actual users. </li>
+<li>As you already deploy with git, setting up and managing these multiple remote environments is easy.</li>
+</ul>
+</li>
+<li><p>El art&#xED;culo <a href="https://devcenter.heroku.com/articles/collaborating" target="_blank">Collaborating with Other Developers on Your App</a> explica como poner a los otros miembros del equipo como colaboradores en tu app. B&#xE1;sicamente:</p>
+<ol>
+<li>Other developers can be invited to collaborate on your app by their email address:<pre><code class="lang-bash">$ heroku access:add joe@example.com
+Adding joe@example.com to myapp collaborators... <span class="hljs-keyword">done</span>
+</code></pre>
+</li>
+<li>Use the heroku access command to see the list of current collaborators:<pre><code class="lang-bash"> $ heroku access
+ === theirapp Collaborators
+ adam@example.com owner
+ joe@example.com  collaborator
+</code></pre>
+</li>
+<li>You can revoke a collaborator&#x2019;s access using the heroku access:remove command:<pre><code class="lang-bash"> $ heroku access:remove joe@example.com
+ Removing joe@example.com from theirapp collaborators... <span class="hljs-keyword">done</span>
+</code></pre>
+Como colaborador se debe:</li>
+<li>You should clone the app locally. The invitation email includes the name of the app. 
+In this example, the app name is <code>theirapp</code>.<pre><code class="lang-bash"> $ heroku git:<span class="hljs-built_in">clone</span> <span class="hljs-_">-a</span> theirapp
+</code></pre>
+</li>
+<li>It&#x2019;s strongly recommended that you get access to the canonical source code repository for the application (for instance on GitHub) and then use <pre><code class="lang-bash"> $ heroku git:remote
+</code></pre>
+to add a git remote to your checkout</li>
+</ol>
+</li>
 </ul>
 
                                 
@@ -537,12 +580,12 @@
 
             
                 
-                <a href="heroku.html" class="navigation navigation-prev " aria-label="Previous page: Heroku">
+                <a href="iaas.html" class="navigation navigation-prev " aria-label="Previous page: iaas.ull.es">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../practicas/" class="navigation navigation-next " aria-label="Next page: Prácticas">
+                <a href="yellow.html" class="navigation navigation-next " aria-label="Next page: Yellow Circle">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -553,7 +596,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Yellow Circle","level":"1.4.2.3","depth":3,"next":{"title":"Prácticas","level":"1.5","depth":1,"path":"practicas/README.md","ref":"practicas/README.md","articles":[{"title":"Práctica: Tareas Iniciales","level":"1.5.1","depth":2,"path":"practicas/practicagitbook.md","ref":"practicas/practicagitbook.md","articles":[]},{"title":"Práctica: OOP","level":"1.5.2","depth":2,"path":"practicas/practicaoop.md","ref":"practicas/practicaoop.md","articles":[]},{"title":"Práctica: Creación de un Paquete NPM","level":"1.5.3","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"path":"practicas/practicaiaas.md","ref":"practicas/practicaiaas.md","articles":[]}]},"previous":{"title":"Heroku","level":"1.4.2.2","depth":3,"path":"recursos/heroku.md","ref":"recursos/heroku.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-include","-autocover","-layout","youtube","highlight","code-highlighter","ace","-copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"recursos/yellow.md","mtime":"2016-09-21T09:46:46.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-05T09:14:42.330Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Heroku","level":"1.4.2.2","depth":3,"next":{"title":"Yellow Circle","level":"1.4.2.3","depth":3,"path":"recursos/yellow.md","ref":"recursos/yellow.md","articles":[]},"previous":{"title":"iaas.ull.es","level":"1.4.2.1","depth":3,"path":"recursos/iaas.md","ref":"recursos/iaas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-include","-autocover","-layout","youtube","highlight","code-highlighter","ace","-copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"recursos/heroku.md","mtime":"2016-09-21T19:27:40.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-05T09:14:42.330Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
