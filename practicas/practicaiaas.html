@@ -312,6 +312,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.8" data-path="../apuntes/processes/">
+            
+                <a href="../apuntes/processes/">
+            
+                    
+                    Procesos
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -522,33 +535,39 @@
                                 
                                 <h2 id="pr&#xE1;ctica-despliegues-en-iaas-y-heroku">Pr&#xE1;ctica: Despliegues en iaas y heroku</h2>
 <h3 id="descripci&#xF3;n">Descripci&#xF3;n</h3>
-<p>El objetivo de esta pr&#xE1;ctica  es crear un package NodeJS y publicarlo en <a href="https://www.npmjs.com" target="_blank">npm</a>. El paquete se construye a partir de
-el c&#xF3;digo que haya desarrollado en la pr&#xE1;ctica anterior.</p>
+<p>El objetivo de esta pr&#xE1;ctica  es proporcionar un mecanismo de despligue de un <a href="../apuntes/gitbooknotas/README.md">gitbook</a> de manera que
+un <code>deploy</code> a github produzca la actualizaci&#xF3;n
+autom&#xE1;tica de los otros sites de despliegue: <a href="https://help.gitbook.com/" target="_blank">gitboook.com</a>,
+<a href="../recursos/heroku.html">Heroku</a>
+  e <a href="../recursos/iaas.html">iaas.ull.es</a>.</p>
 <ul>
-<li>Se trata de a&#xF1;adir un ejecutable <code>gitbook-start</code> (V&#xE9;ase <a href="https://docs.npmjs.com/files/package.json#bin" target="_blank">seccion <code>bin</code>en <code>package.json</code></a>)</li>
-<li>Este ejecutable construye una plantilla con la estructura inicial del libro y provee a partir de los argumentos que se le pasen los mecanismos para su f&#xE1;cil despliegue en  <ol>
-<li>GitHub <code>gh-pages</code> y en</li>
-<li><a href="https://www.gitbook.com/" target="_blank"><code>https://www.gitbook.com/</code></a></li>
-</ol>
+<li><p>Para lograr este objetivo usaremos la t&#xE9;cnica descrita
+en el art&#xED;culo <a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a>.</p>
 </li>
-<li>Para analizar los argumentos pasados en l&#xED;nea de comandos un buen m&#xF3;dulo es <a href="https://github.com/substack/minimist" target="_blank">minimist</a></li>
-<li>Como deber&#xE1;n darse de alta en el site de <a href="https://www.npmjs.com" target="_blank">npm</a> aseg&#xFA;rense de ponerle a su paquete un nombre &#xFA;nico que no coincida con el de los otros alumnos, por ejemplo <code>gitbook-start-team-name</code></li>
-<li>A&#xF1;ada a los otros miembros del equipo como <code>contributors</code>. V&#xE9;ase <a href="https://docs.npmjs.com/files/package.json#people-fields-author-contributors" target="_blank">las seccion people fields de package.json</a></li>
-<li>Intente que su paquete funcione independientemente del Sistema Operativo (Linux, MacOS X, Windows, etc.)</li>
+<li><p>En el tutorial <a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a> se usa PHP para el c&#xF3;digo del servidor (que en nuestro caso vamos a hacer que se ejecute en Heroku e iaas). Utilice NodeJS y  <a href="../apuntes/express/">Express</a> para escribir el servidor.</p>
+</li>
 </ul>
+<p>Parta de los c&#xF3;digos escritos en las pr&#xE1;cticas anteriores.</p>
 <h3 id="referencias">Referencias</h3>
 <ul>
 <li><a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a><ul>
 <li><a href="https://code.tutsplus.com/tutorials/the-perfect-workflow-with-git-github-and-ssh--net-19564" target="_blank">The Perfect Workflow, with Git, GitHub, and SSH</a></li>
 </ul>
 </li>
-<li>V&#xE9;ase la secci&#xF3;n
-<a href="../apuntes/nodejspackages.html">Creaci&#xF3;n de Paquetes y M&#xF3;dulos en NodeJS</a></li>
-<li>V&#xE9;ase la secci&#xF3;n
-<a href="../apuntes/gulp/">Gulp</a></li>
+<li><a href="../apuntes/express/">Express</a></li>
+<li><a href="../apuntes/processes/">Procesos: Ejecutando comandos Unix</a></li>
+<li><a href="../recursos/heroku.html">Heroku</a></li>
+</ul>
+<p>Adem&#xE1;s repase las secciones utilizadas en las pr&#xE1;cticas anteriores:</p>
+<ul>
+<li><a href="../apuntes/nodejspackages.html">Creaci&#xF3;n de Paquetes y M&#xF3;dulos en NodeJS</a></li>
+<li><a href="../apuntes/gulp/">Gulp</a></li>
 <li>Estudie el paquete <a href="https://www.npmjs.com/package/ejs" target="_blank">ejs</a>
 para la creaci&#xF3;n de plantillas</li>
 <li>Estudie <a href="../apuntes/fs.html">los paquetes - como <code>fs</code> - para el manejo de archivos en Node.JS</a></li>
+<li>Como se usa el m&#xF3;dulo <a href="https://www.npmjs.com/package/gh-pages" target="_blank">gh-pages</a> para automatizar el despliegue en <code>gh-pages</code></li>
+<li>Como se despliega un libro en <a href="www.gitbook.com">www.gitbook.com</a>,</li>
+<li><a href="https://plugins.gitbook.com/" target="_blank">GitBook Plugins</a></li>
 </ul>
 
                                 
@@ -573,7 +592,7 @@ para la creaci&#xF3;n de plantillas</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"previous":{"title":"Práctica: Creación de un Paquete NPM","level":"1.5.3","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-include","-autocover","-layout","youtube","highlight","code-highlighter","ace","-copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaiaas.md","mtime":"2016-10-05T09:09:50.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-05T09:14:42.330Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"previous":{"title":"Práctica: Creación de un Paquete NPM","level":"1.5.3","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-include","-autocover","-layout","youtube","highlight","code-highlighter","ace","-copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaiaas.md","mtime":"2016-10-05T10:29:02.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-05T10:30:31.518Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
