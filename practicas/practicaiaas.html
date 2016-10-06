@@ -551,9 +551,9 @@ en el art&#xED;culo <a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Pe
 <a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a>
 no funciona.</p>
 </li>
+<li>Para sincronizar con <a href="../recursos/iaas.html">iaas.ull.es</a> disponga un script que utilice <code>ssh</code> y <code>scp</code> para enviar los ficheros necesarios
+al repositorio del libro en la m&#xE1;quina virtual.</li>
 </ul>
-<p>Para sincronizar con <a href="../recursos/iaas.html">iaas.ull.es</a> disponga un script que utilice <code>ssh</code> y <code>scp</code> para enviar los ficheros necesarios
-al repositorio del libro en la m&#xE1;quina virtual.</p>
 <p>Parta de los c&#xF3;digos escritos en las pr&#xE1;cticas anteriores.</p>
 <h3 id="referencias">Referencias</h3>
 <ul>
@@ -600,7 +600,7 @@ para la creaci&#xF3;n de plantillas</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"previous":{"title":"Práctica: Creación de un Paquete NPM","level":"1.5.3","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-include","-autocover","-layout","youtube","highlight","code-highlighter","ace","-copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaiaas.md","mtime":"2016-10-06T17:30:45.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-06T17:31:28.220Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"previous":{"title":"Práctica: Creación de un Paquete NPM","level":"1.5.3","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-include","-autocover","-layout","youtube","highlight","code-highlighter","ace","-copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaiaas.md","mtime":"2016-10-06T17:31:55.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-06T17:32:12.492Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -645,6 +645,15 @@ para la creaci&#xF3;n de plantillas</li>
         <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
+   
         
         <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
         
