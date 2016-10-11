@@ -678,11 +678,16 @@ se despliega el libro en la m&#xE1;quina virtual de <code>iaas.ull.es</code></li
 <li><p>Los plugins deben estar correctamente documentados.</p>
 <ul>
 <li>Por ejemplo, el plugin del <code>iaas-ull-es</code> necesita al menos saber la direcci&#xF3;n de la m&#xE1;quina virtual y el camino en dicha m&#xE1;quina hasta el repositorio que contiene el libro</li>
-<li>Pueden aceptar argumentos adicionales en l&#xED;nea de comandos para esta informaci&#xF3;n</li>
-</ul>
-<p><code>$ gitbook-start -d iaas-ull-es, --iaas-IP 127.0.25.5 --iaas-path src/chuchu</code></p>
-<ul>
-<li>O bien simplemente que el usuario las a&#xF1;ada en el <code>package.json</code>
+<li>Pueden optar por aceptar argumentos adicionales en l&#xED;nea de comandos para esta informaci&#xF3;n<pre><code class="lang-bash">$ gitbook-start <span class="hljs-_">-d</span> iaas-ull-es, --iaas-IP 127.0.25.5 --iaas-path src/chuchu
+</code></pre>
+</li>
+<li>O bien pueden optar porque simplemente el usuario a&#xF1;ada los correspondientes campos en el <code>package.json</code><pre><code class="lang-javascript">{
+...
+<span class="hljs-string">&quot;iaas-IP&quot;</span>, <span class="hljs-string">&quot;127.0.25.5&quot;</span>,
+<span class="hljs-string">&quot;iaas-path&quot;</span>, <span class="hljs-string">&quot;src/chuchu&quot;</span>,
+...
+}
+</code></pre>
 En cualquier caso debe aparecer en la documentaci&#xF3;n lo que hay que hacer</li>
 </ul>
 </li>
@@ -721,7 +726,7 @@ para la creaci&#xF3;n de plantillas</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Añadiendo plugins para los despliegues","level":"1.5.5","depth":2,"previous":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"path":"practicas/practicaiaas.md","ref":"practicas/practicaiaas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaplugin.md","mtime":"2016-10-11T18:28:46.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-11T18:29:12.055Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: Añadiendo plugins para los despliegues","level":"1.5.5","depth":2,"previous":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"path":"practicas/practicaiaas.md","ref":"practicas/practicaiaas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer","livereload"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"livereload":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaplugin.md","mtime":"2016-10-11T18:34:36.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-11T10:45:36.938Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -748,6 +753,10 @@ para la creaci&#xF3;n de plantillas</li>
     
         
         <script src="../gitbook/gitbook-plugin-page-toc/page-toc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
