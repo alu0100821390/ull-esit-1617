@@ -562,6 +562,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <!-- toc -->
+<!-- toc -->
 <h2 id="code-smells">Code Smells</h2>
 <h3 id="definici&#xF3;n-de-code-smell-de-la-wikipedia">Definici&#xF3;n de <em>Code Smell</em> de la Wikipedia:</h3>
 <p>According to Martin Fowler, <em>&quot;a <strong>code smell</strong> is a surface indication that usually corresponds to a deeper problem in the system&quot;</em>.</p>
@@ -604,6 +605,8 @@
 <p>Presta especial atenci&#xF3;n al <em>code smell</em> <strong>Switch Statement Smell</strong> desde el minuto 11:37 al 29:15.</p>
 <p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/JVlfj7mQZPo"></iframe></div></p>
 <p>Pueden encontrar las <a href="http://elijahmanor.com/talks/js-smells/#/" target="_blank">trasparencias</a> de la presentaci&#xF3;n en <a href="http://elijahmanor.com/talks/js-smells/#/" target="_blank">http://elijahmanor.com/talks/js-smells/#/</a>.</p>
+<h2 id="design-patterns">Design patterns</h2>
+<p>A design pattern is a general, reusable solution to a commonly occurring problem.</p>
 <h2 id="el-principio-openclosed">El principio <em>Open/Closed</em></h2>
 <ul>
 <li><em>&quot;software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification&quot;</em>;
@@ -624,7 +627,11 @@ Preste especial atenci&#xF3;n al <em>code smell</em> <strong>Switch Statement Sm
 <p>The dependencies of components being provided as input by a external entity</p>
 <ul>
 <li>Each dependency is received from the outside (instead of being hardcoded into the module)</li>
-<li>This means the module can be reused in different contexts<h2 id="inversion-of-control-pattern">Inversion of Control Pattern</h2>
+<li>This means the module can be reused in different contexts</li>
+</ul>
+<p>Dependency injection is a software design pattern in which one or more dependencies (or services) are injected, or passed by reference, into a dependent object.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">Wikipedia: Dependency Injection</a><h2 id="inversion-of-control-pattern">Inversion of Control Pattern</h2>
 </li>
 </ul>
 <p>There are mainly two approaches for extending the components of an application:</p>
@@ -636,6 +643,9 @@ Preste especial atenci&#xF3;n al <em>code smell</em> <strong>Switch Statement Sm
 <p><img src="inversionofcontrol.png" alt="inversion del control"></p>
 <p>Instead of the custom code controlling the infrastructure, the infrastructure controls the custom code.
 This is also known as the Hollywood principle or <em>&quot;don&apos;t call us, we&apos;ll call you&quot;</em>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Inversion_of_control" target="_blank">Wikipedia: Inversion of Control</a></li>
+</ul>
 
                                 
                                 </section>
@@ -663,7 +673,7 @@ This is also known as the Hollywood principle or <em>&quot;don&apos;t call us, w
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Patrones de Diseño","level":"1.3.9","depth":2,"next":{"title":"Recursos","level":"1.4","depth":1,"path":"recursos/README.md","ref":"recursos/README.md","articles":[{"title":"GitHub Education","level":"1.4.1","depth":2,"anchor":"#github-education","path":"recursos/README.md","ref":"recursos/README.md#github-education","articles":[]},{"title":"Servicios en la Nube","level":"1.4.2","depth":2,"ref":"","articles":[{"title":"iaas.ull.es","level":"1.4.2.1","depth":3,"path":"recursos/iaas.md","ref":"recursos/iaas.md","articles":[]},{"title":"Heroku","level":"1.4.2.2","depth":3,"path":"recursos/heroku.md","ref":"recursos/heroku.md","articles":[]},{"title":"Yellow Circle","level":"1.4.2.3","depth":3,"path":"recursos/yellow.md","ref":"recursos/yellow.md","articles":[]}]}]},"previous":{"title":"Procesos","level":"1.3.8","depth":2,"path":"apuntes/processes/README.md","ref":"apuntes/processes/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/patterns/README.md","mtime":"2016-10-11T11:12:31.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-11T11:27:55.205Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Patrones de Diseño","level":"1.3.9","depth":2,"next":{"title":"Recursos","level":"1.4","depth":1,"path":"recursos/README.md","ref":"recursos/README.md","articles":[{"title":"GitHub Education","level":"1.4.1","depth":2,"anchor":"#github-education","path":"recursos/README.md","ref":"recursos/README.md#github-education","articles":[]},{"title":"Servicios en la Nube","level":"1.4.2","depth":2,"ref":"","articles":[{"title":"iaas.ull.es","level":"1.4.2.1","depth":3,"path":"recursos/iaas.md","ref":"recursos/iaas.md","articles":[]},{"title":"Heroku","level":"1.4.2.2","depth":3,"path":"recursos/heroku.md","ref":"recursos/heroku.md","articles":[]},{"title":"Yellow Circle","level":"1.4.2.3","depth":3,"path":"recursos/yellow.md","ref":"recursos/yellow.md","articles":[]}]}]},"previous":{"title":"Procesos","level":"1.3.8","depth":2,"path":"apuntes/processes/README.md","ref":"apuntes/processes/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/patterns/README.md","mtime":"2016-10-11T12:25:48.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-11T12:36:34.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
