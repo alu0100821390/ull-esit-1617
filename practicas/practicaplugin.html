@@ -647,27 +647,37 @@ que permita el despliegue en diferentes plataformas via plugins externos.</p>
 </code></pre>
 o bien<pre><code class="lang-bash">$ gitbook-start -deploy ull-iaas-es --deploy heroku
 </code></pre>
-Que indica que nuestro usuario quiere que se le provea de tareas <code>gulp</code> denominadas <code>deploy-ull-iaas-es</code> y <code>deploy-heroku</code> que despliegan el libro en los diferentes  sites.</li>
+Que indica que nuestro usuario quiere que se le provea de tareas <code>gulp</code> denominadas <code>deploy-ull-iaas-es</code> y <code>deploy-heroku</code> que despliegan el libro en los diferentes  sites. Esto supone que existen m&#xF3;dulos <a href="https://www.npmjs.com/" target="_blank">npm</a> con nombres <code>gitbook-start-plugin-iaas-ull-es</code>  y <code>gitbook-start-plugin-heroku</code></li>
 </ul>
 <h4 id="sugerencias">Sugerencias</h4>
 <ul>
 <li>Para implementar la ejecuci&#xF3;n de la llamada en l&#xED;nea de comandos:<pre><code class="lang-bash">$ gitbook-start <span class="hljs-_">-d</span> ull-iaas-es -<span class="hljs-_">-d</span> heroku
 </code></pre>
-El ejecutable hace un <code>require</code> de los plugins que implementan los despliegues solicitados.
 Esto es, deber&#xE1;n existir plugins <code>gitbook-start-plugin-iaas-ull-es</code> y
 <code>gitbook-start-plugin-heroku</code> que exportan un objeto que dispone de un
-m&#xE9;todo <code>deploy()</code>, de manera que si desde el c&#xF3;digo principal se llama a un c&#xF3;digo como este:<pre><code class="lang-bash">var iaas = require(<span class="hljs-string">&quot;book-start-plugin-iaas-ull-es&quot;</span>);
+m&#xE9;todo <code>deploy()</code>, de manera que si desde un c&#xF3;digo principal se llama a un c&#xF3;digo como este:<pre><code class="lang-bash">var iaas = require(<span class="hljs-string">&quot;book-start-plugin-iaas-ull-es&quot;</span>);
 var result = iaas.deploy();
 </code></pre>
-despliega el libro en la m&#xE1;quina virtual de <code>iaas.ull.es</code></li>
-<li>El m&#xE9;todo <code>deploy()</code>prove&#xED;do por el plugin deber&#xE1; retornar un objeto describiendo los resultados del despliegue como<ul>
+se despliega el libro en la m&#xE1;quina virtual de <code>iaas.ull.es</code></li>
+<li>Observe que hay dos fases en este proceso:<ol>
+<li>cuando se construye por <code>gitbook-start</code> la estructura para el libro y</li>
+<li>cuando el autor escribe y despliega el libro</li>
+</ol>
+</li>
+</ul>
+<p>La llamada a <code>gulp deploy-...</code> ocurre en la segunda fase.</p>
+<p>El despliegue hace un <code>require</code> de los plugins que implementan los despliegues solicitados.</p>
+<ul>
+<li><p>Es conveniente que el m&#xE9;todo <code>deploy()</code> prove&#xED;do por el plugin retorne un objeto describiendo los resultados del despliegue como</p>
+<ul>
 <li>Salida por <code>stdout</code> en la m&#xE1;quina remota</li>
 <li>Salida por <code>stderr</code>en la m&#xE1;quina remota</li>
 <li>C&#xF3;digos de error si los hubiera</li>
-<li>etc.</li>
+<li>etc. Cualquier informaci&#xF3;n adicional que considere conveniente.</li>
 </ul>
 </li>
-<li>El m&#xE9;todo <code>deploy()</code> recibe un argumento con toda el estado: esto es, la informaci&#xF3;n que hayamos podido recopilar sobre el objeto libro (por ejemplo: autor, email, t&#xED;tulo, directorio del template, etc.) y que sea necesario para preparar el c&#xF3;digo de despliegue</li>
+<li><p>El m&#xE9;todo <code>deploy()</code> puede obtener informaci&#xF3;n sobre el libro a partir del <code>packag.json</code>generado. Tambi&#xE9;n si lo prefieren pueden pasarle un argumento con todo el estado del libro: esto es, la informaci&#xF3;n/estado que hayamos podido recopilar sobre el objeto libro (por ejemplo: autor, email, t&#xED;tulo, url de github, el directorio a desplegar, etc. en general, con todas las opciones que se pasaron por l&#xED;nea de comandos). Esto es, enviarle toda la informaci&#xF3;n que necesita para realizar el despliegue del libro al servidor</p>
+</li>
 </ul>
 <h3 id="referencias">Referencias</h3>
 <ul>
@@ -703,7 +713,7 @@ para la creaci&#xF3;n de plantillas</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Añadiendo plugins para los despliegues","level":"1.5.5","depth":2,"previous":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"path":"practicas/practicaiaas.md","ref":"practicas/practicaiaas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaplugin.md","mtime":"2016-10-11T14:17:52.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-11T14:19:01.788Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: Añadiendo plugins para los despliegues","level":"1.5.5","depth":2,"previous":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"path":"practicas/practicaiaas.md","ref":"practicas/practicaiaas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaplugin.md","mtime":"2016-10-11T15:55:51.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-11T15:58:27.024Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
