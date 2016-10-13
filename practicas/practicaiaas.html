@@ -646,23 +646,34 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="pr&#xE1;ctica-despliegues-en-iaas-y-heroku">Pr&#xE1;ctica: Despliegues en iaas y heroku</h2>
-<h3 id="descripci&#xF3;n">Descripci&#xF3;n</h3>
-<p>El objetivo de esta pr&#xE1;ctica  es proporcionar un mecanismo de despliegue de un libro <a href="../apuntes/gitbooknotas/README.md">gitbook</a> de manera que
-un <code>deploy</code> a github produzca la actualizaci&#xF3;n
-autom&#xE1;tica de los otros sites de despliegue:</p>
+<h3 id="objetivos">Objetivos</h3>
+<p>El objetivo de esta pr&#xE1;ctica  es proporcionar un mecanismo de despliegue de un libro <a href="../apuntes/gitbooknotas/README.md">gitbook</a>
+a otros sites.</p>
+<h3 id="despliegue-en-heroku-sincronizaci&#xF3;n-autom&#xE1;tica-con-las-gh-pages">Despliegue en Heroku: Sincronizaci&#xF3;n Autom&#xE1;tica con las gh-pages</h3>
+<p>Se busca que un <code>push</code> a github produzca la actualizaci&#xF3;n
+autom&#xE1;tica de <a href="https://help.gitbook.com/" target="_blank">Heroku](../recursos/heroku.md) de manera parecida a como ocurre con gitboook.com</a>.</p>
 <ul>
-<li><a href="https://help.gitbook.com/" target="_blank">gitboook.com</a>,</li>
-<li><p><a href="../recursos/heroku.html">Heroku</a></p>
-</li>
 <li><p>Para lograr este objetivo usaremos la t&#xE9;cnica descrita
 en el art&#xED;culo <a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a>.</p>
 </li>
 <li><p>En el tutorial <a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a> se usa PHP para el c&#xF3;digo del servidor (que en nuestro caso vamos a hacer que se ejecute en Heroku e iaas). Utilice NodeJS y  <a href="../apuntes/express/">Express</a> para escribir el servidor.</p>
 </li>
-<li><p>En <a href="../recursos/iaas.html">iaas.ull.es</a>, debido a que la IP de la m&#xE1;quina virtual es privada a la red de la ULL, la estrategia explicada en
-<a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a>
-no funciona.</p>
+<li><p>Escribiremos un servidor en express que sirve en Heroku los ficheros HTML est&#xE1;ticos generados a partir del libro y que adem&#xE1;s dispone de una ruta de sincronizaci&#xF3;n</p>
+<pre><code class="lang-javascript">app.post(<span class="hljs-string">&apos;/sync&apos;</span>, (request, response) =&gt; {
+...
+</code></pre>
 </li>
+<li>Este servidor se a&#xF1;ade al directorio <code>gh-pages</code> as&#xED; como el <code>Procfile</code> y un <code>package.json</code> adaptados a Heroku</li>
+<li><p>El directorio <code>gh-pages</code> se convierte as&#xED; en un repo separado con dos remotos: uno en GitHub y otro en Heroku</p>
+</li>
+<li><p>CAda vez que se hace un Es este segundo repositorio el que se sincroniza mediante un <code>webhook</code> que apunta a la ruta <code>/sync</code></p>
+</li>
+</ul>
+<h3 id="despliegue-en-iaasulles">Despliegue en iaas.ull.es</h3>
+<ul>
+<li>En <a href="../recursos/iaas.html">iaas.ull.es</a>, debido a que la IP de la m&#xE1;quina virtual es privada a la red de la ULL, la estrategia explicada en
+<a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a>
+no funciona.</li>
 <li><p>Para sincronizar con <a href="../recursos/iaas.html">iaas.ull.es</a> disponga un script que utilice <code>ssh</code> y/o <code>scp</code> para actualizar los ficheros necesarios al repositorio del libro en la m&#xE1;quina virtual.</p>
 </li>
 <li><p>Este ejemplo usando el comando <code>ssh</code> sugiere una forma de hacerlo:</p>
@@ -697,6 +708,11 @@ routes/public/images/kitten.jpg
 <li><a href="../apuntes/processes/">Procesos: Ejecutando comandos Unix</a></li>
 <li><a href="../recursos/heroku.html">Heroku</a></li>
 <li><a href="../recursos/iaas.html">iaas</a></li>
+<li>Webhooks<ul>
+<li><a href="https://help.github.com/articles/about-webhooks/" target="_blank">About Webhooks</a></li>
+<li><a href="https://developer.github.com/webhooks/" target="_blank">GitHub Developer: Webhooks</a></li>
+</ul>
+</li>
 </ul>
 <p>Adem&#xE1;s repase las secciones utilizadas en las pr&#xE1;cticas anteriores:</p>
 <ul>
@@ -727,6 +743,8 @@ para la creaci&#xF3;n de plantillas</li>
 <pre><code class="lang-javascript">app.get(<span class="hljs-string">&apos;/synchronize&apos;</span>, (request, response) =&gt; {
 <span class="hljs-comment">// ... call a bash process that makes a pull</span>
 <span class="hljs-comment">// to the gh-pages branch of the github repository</span>
+<span class="hljs-comment">// This is executed in the heroku servers, therefore</span>
+<span class="hljs-comment">// be sure the github remote is defined</span>
 });
 </code></pre>
 </li>
@@ -758,7 +776,7 @@ para la creaci&#xF3;n de plantillas</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"next":{"title":"Práctica: Añadiendo plugins para los despliegues","level":"1.5.5","depth":2,"path":"practicas/practicaplugin.md","ref":"practicas/practicaplugin.md","articles":[]},"previous":{"title":"Práctica: Creación de un Paquete NPM","level":"1.5.3","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaiaas.md","mtime":"2016-10-13T09:11:59.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-13T16:58:04.773Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"next":{"title":"Práctica: Añadiendo plugins para los despliegues","level":"1.5.5","depth":2,"path":"practicas/practicaplugin.md","ref":"practicas/practicaplugin.md","articles":[]},"previous":{"title":"Práctica: Creación de un Paquete NPM","level":"1.5.3","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaiaas.md","mtime":"2016-10-13T21:41:10.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-13T21:41:26.211Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
