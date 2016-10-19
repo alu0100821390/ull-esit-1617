@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Procesamiento de la línea de comandos · GitBook</title>
+        <title>Dependency Injection Pattern · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -73,10 +73,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../colaboracion/" />
+    <link rel="next" href="inversionofcontrolpattern.html" />
     
     
-    <link rel="prev" href="../fs.html" />
+    <link rel="prev" href="strategypattern.html" />
     
 
     </head>
@@ -283,9 +283,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.5" data-path="./">
+        <li class="chapter " data-level="1.3.5" data-path="../argumentos/">
             
-                <a href="./">
+                <a href="../argumentos/">
             
                     
                     Procesamiento de la línea de comandos
@@ -335,9 +335,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.9" data-path="../patterns/codesmell.html">
+        <li class="chapter " data-level="1.3.9" data-path="codesmell.html">
             
-                <a href="../patterns/codesmell.html">
+                <a href="codesmell.html">
             
                     
                     Code Smells
@@ -348,9 +348,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.10" data-path="../patterns/designprinciples.html">
+        <li class="chapter " data-level="1.3.10" data-path="designprinciples.html">
             
-                <a href="../patterns/designprinciples.html">
+                <a href="designprinciples.html">
             
                     
                     Principios de Diseño
@@ -361,9 +361,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.11" data-path="../patterns/">
+        <li class="chapter " data-level="1.3.11" data-path="./">
             
-                <a href="../patterns/">
+                <a href="./">
             
                     
                     Patrones de Diseño
@@ -375,9 +375,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.11.1" data-path="../patterns/strategypattern.html">
+        <li class="chapter " data-level="1.3.11.1" data-path="strategypattern.html">
             
-                <a href="../patterns/strategypattern.html">
+                <a href="strategypattern.html">
             
                     
                     Strategy Pattern
@@ -388,9 +388,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.11.2" data-path="../patterns/dependencyinjectionpattern.html">
+        <li class="chapter active" data-level="1.3.11.2" data-path="dependencyinjectionpattern.html">
             
-                <a href="../patterns/dependencyinjectionpattern.html">
+                <a href="dependencyinjectionpattern.html">
             
                     
                     Dependency Injection Pattern
@@ -401,9 +401,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.11.3" data-path="../patterns/inversionofcontrolpattern.html">
+        <li class="chapter " data-level="1.3.11.3" data-path="inversionofcontrolpattern.html">
             
-                <a href="../patterns/inversionofcontrolpattern.html">
+                <a href="inversionofcontrolpattern.html">
             
                     
                     Inversion of Control Pattern
@@ -686,7 +686,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Procesamiento de la línea de comandos</a>
+        <a href="../.." >Dependency Injection Pattern</a>
     </h1>
 </div>
 
@@ -698,29 +698,16 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="minimist">minimist</h2>
+                                <h2 id="dependency-injection-pattern">Dependency Injection Pattern</h2>
+<p>The dependencies of components being provided as input by a external entity</p>
 <ul>
-<li><a href="https://www.npmjs.com/package/minimist" target="_blank">minimist</a></li>
+<li>Each dependency is received from the outside (instead of being hardcoded into the module)</li>
+<li>This means the module can be reused in different contexts</li>
 </ul>
-<pre><code class="lang-js"><span class="hljs-meta">#!/usr/bin/env node</span>
-
-<span class="hljs-built_in">console</span>.log(process.argv);
-<span class="hljs-built_in">console</span>.log(process.argv.slice(<span class="hljs-number">2</span>));
-<span class="hljs-keyword">var</span> argv = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;minimist&apos;</span>)(process.argv.slice(<span class="hljs-number">2</span>));
-<span class="hljs-built_in">console</span>.dir(argv);
-</code></pre>
-<p>Ejecuciones:</p>
-<pre><code class="lang-bash">[~/src/javascript/learning/minimist]$ ./example.js <span class="hljs-_">-d</span> a <span class="hljs-_">-d</span> b c
-[ <span class="hljs-string">&apos;/usr/local/bin/node&apos;</span>,
-  <span class="hljs-string">&apos;/Users/casiano/local/src/javascript/learning/minimist/example.js&apos;</span>,
-  <span class="hljs-string">&apos;-d&apos;</span>,
-  <span class="hljs-string">&apos;a&apos;</span>,
-  <span class="hljs-string">&apos;-d&apos;</span>,
-  <span class="hljs-string">&apos;b&apos;</span>,
-  <span class="hljs-string">&apos;c&apos;</span> ]
-[ <span class="hljs-string">&apos;-d&apos;</span>, <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;-d&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span> ]
-{ _: [ <span class="hljs-string">&apos;c&apos;</span> ], d: [ <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span> ] }
-</code></pre>
+<p>Dependency injection is a software design pattern in which one or more dependencies (or services) are injected, or passed by reference, into a dependent object.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">Wikipedia: Dependency Injection</a></li>
+</ul>
 
                                 
                                 </section>
@@ -732,12 +719,12 @@
 
             
                 
-                <a href="../fs.html" class="navigation navigation-prev " aria-label="Previous page: Sistema de Archivos">
+                <a href="strategypattern.html" class="navigation navigation-prev " aria-label="Previous page: Strategy Pattern">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../colaboracion/" class="navigation navigation-next " aria-label="Next page: Colaboración">
+                <a href="inversionofcontrolpattern.html" class="navigation navigation-next " aria-label="Next page: Inversion of Control Pattern">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -748,7 +735,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Procesamiento de la línea de comandos","level":"1.3.5","depth":2,"next":{"title":"Colaboración","level":"1.3.6","depth":2,"path":"apuntes/colaboracion/README.md","ref":"apuntes/colaboracion/README.md","articles":[]},"previous":{"title":"Sistema de Archivos","level":"1.3.4","depth":2,"path":"apuntes/fs.md","ref":"apuntes/fs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/argumentos/README.md","mtime":"2016-10-03T08:34:47.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-19T11:13:31.928Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Dependency Injection Pattern","level":"1.3.11.2","depth":3,"next":{"title":"Inversion of Control Pattern","level":"1.3.11.3","depth":3,"path":"apuntes/patterns/inversionofcontrolpattern.md","ref":"apuntes/patterns/inversionofcontrolpattern.md","articles":[]},"previous":{"title":"Strategy Pattern","level":"1.3.11.1","depth":3,"path":"apuntes/patterns/strategypattern.md","ref":"apuntes/patterns/strategypattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/patterns/dependencyinjectionpattern.md","mtime":"2016-10-11T12:30:43.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-19T11:18:07.154Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
