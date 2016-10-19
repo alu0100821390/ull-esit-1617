@@ -1,0 +1,839 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Code Smells · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.1.1">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc/page-toc.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="designprinciples.html" />
+    
+    
+    <link rel="prev" href="../processes/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../instrucciones/">
+            
+                <a href="../../instrucciones/">
+            
+                    
+                    Instrucciones Generales
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../instrucciones/classroom.html">
+            
+                <a href="../../instrucciones/classroom.html">
+            
+                    
+                    Instrucciones para GitHub ClassRoom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../instrucciones/instruccionesparaelenvio.html">
+            
+                <a href="../../instrucciones/instruccionesparaelenvio.html">
+            
+                    
+                    Instrucciones para los envíos de tareas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../instrucciones/instruccionesparalaevaluacion.html">
+            
+                <a href="../../instrucciones/instruccionesparalaevaluacion.html">
+            
+                    
+                    Instrucciones para la evaluación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../instrucciones/instruccionesparalaspresentaciones.html">
+            
+                <a href="../../instrucciones/instruccionesparalaspresentaciones.html">
+            
+                    
+                    Instrucciones para las Presentaciones de SYTW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Apuntes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../gulp/">
+            
+                <a href="../gulp/">
+            
+                    
+                    Gulp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../gulp/gulpghpages.html">
+            
+                <a href="../gulp/gulpghpages.html">
+            
+                    
+                    gulp gh pages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../gulp/gulplinting.html">
+            
+                <a href="../gulp/gulplinting.html">
+            
+                    
+                    gulp-linting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../nodejspackages.html">
+            
+                <a href="../nodejspackages.html">
+            
+                    
+                    Creación de Paquetes y Módulos en NodeJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../gitbooknotes/">
+            
+                <a href="../gitbooknotes/">
+            
+                    
+                    Sobre GitBook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../fs.html">
+            
+                <a href="../fs.html">
+            
+                    
+                    Sistema de Archivos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../argumentos/">
+            
+                <a href="../argumentos/">
+            
+                    
+                    Procesamiento de la línea de comandos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../colaboracion/">
+            
+                <a href="../colaboracion/">
+            
+                    
+                    Colaboración
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../express/">
+            
+                <a href="../express/">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../processes/">
+            
+                <a href="../processes/">
+            
+                    
+                    Procesos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.9" data-path="codesmell.html">
+            
+                <a href="codesmell.html">
+            
+                    
+                    Code Smells
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="designprinciples.html">
+            
+                <a href="designprinciples.html">
+            
+                    
+                    Principios de Diseño
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Patrones de Diseño
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.11.1" data-path="strategypattern.html">
+            
+                <a href="strategypattern.html">
+            
+                    
+                    Strategy Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11.2" data-path="dependencyinjectionpattern.html">
+            
+                <a href="dependencyinjectionpattern.html">
+            
+                    
+                    Dependency Injection Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11.3" data-path="inversionofcontrolpattern.html">
+            
+                <a href="inversionofcontrolpattern.html">
+            
+                    
+                    Inversion of Control Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../rest/">
+            
+                <a href="../rest/">
+            
+                    
+                    Arquitectura REST y REST APIs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.12.1" data-path="../rest/githubapitutorial.html">
+            
+                <a href="../rest/githubapitutorial.html">
+            
+                    
+                    Getting Started with the GitHub API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../recursos/">
+            
+                <a href="../../recursos/">
+            
+                    
+                    Recursos
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../recursos/">
+            
+                <a href="../../recursos/#github-education">
+            
+                    
+                    GitHub Education
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    Servicios en la Nube
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../recursos/iaas.html">
+            
+                <a href="../../recursos/iaas.html">
+            
+                    
+                    iaas.ull.es
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../recursos/heroku.html">
+            
+                <a href="../../recursos/heroku.html">
+            
+                    
+                    Heroku
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../../recursos/yellow.html">
+            
+                <a href="../../recursos/yellow.html">
+            
+                    
+                    Yellow Circle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../practicas/">
+            
+                <a href="../../practicas/">
+            
+                    
+                    Prácticas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../practicas/practicagitbook.html">
+            
+                <a href="../../practicas/practicagitbook.html">
+            
+                    
+                    Práctica: Tareas Iniciales
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../practicas/practicaoop.html">
+            
+                <a href="../../practicas/practicaoop.html">
+            
+                    
+                    Práctica: OOP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../practicas/practicanm.html">
+            
+                <a href="../../practicas/practicanm.html">
+            
+                    
+                    Práctica: Creación de un Paquete NPM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../practicas/practicaiaas.html">
+            
+                <a href="../../practicas/practicaiaas.html">
+            
+                    
+                    Práctica: Despliegues en iaas y heroku
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../practicas/practicaplugin.html">
+            
+                <a href="../../practicas/practicaplugin.html">
+            
+                    
+                    Práctica: Añadiendo plugins para los despliegues. iaas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../practicas/practicaplugin2.html">
+            
+                <a href="../../practicas/practicaplugin2.html">
+            
+                    
+                    Práctica: gitbook-start. Plugin para heroku
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../practicas/practicagithubapi.html">
+            
+                <a href="../../practicas/practicagithubapi.html">
+            
+                    
+                    Práctica: Nueva funcionalidad para el Paquete NPM: crear repositorio en GitHub
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Code Smells</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <!-- toc -->
+<h2 id="code-smells">Code Smells</h2>
+<h3 id="definici&#xF3;n-de-code-smell-de-la-wikipedia">Definici&#xF3;n de <em>Code Smell</em> de la Wikipedia:</h3>
+<p>According to Martin Fowler, <em>&quot;a <strong>code smell</strong> is a surface indication that usually corresponds to a deeper problem in the system&quot;</em>.</p>
+<p>Smells are certain structures in the code that indicate violation of fundamental design principles and negatively impact design quality.</p>
+<p>Code smells <strong>are usually not bugs</strong>. They are not technically incorrect and do not currently prevent the program from functioning. Instead, <strong>they indicate weaknesses in design</strong> that may be slowing down development or increasing the risk of bugs or failures in the future.</p>
+<h3 id="clasificaci&#xF3;n-de-code-smells">Clasificaci&#xF3;n de Code Smells</h3>
+<h4 id="application-level-smells">Application-level smells:</h4>
+<ul>
+<li><strong>Duplicated code:</strong> identical or very similar code exists in more than one location.</li>
+<li><strong>Contrived complexity:</strong> forced usage of overcomplicated design patterns where simpler design would suffice.</li>
+</ul>
+<h4 id="class-level-smells">Class-level smells:</h4>
+<ul>
+<li><strong>Large class:</strong> a class that has grown too large. See God object.</li>
+<li><strong>Feature envy:</strong> a class that uses methods of another class excessively.</li>
+<li><strong>Inappropriate intimacy:</strong> a class that has dependencies on implementation details of another class.</li>
+<li><strong>Refused bequest:</strong> a class that overrides a method of a base class in such a way that the contract of the base class is not honored by the derived class. See Liskov substitution principle.</li>
+<li><strong>Lazy class / Freeloader:</strong> a class that does too little.</li>
+<li><strong>Excessive use of literals:</strong> these should be coded as named constants, to improve readability and to avoid programming errors. Additionally, literals can and should be externalized into resource files/scripts where possible, to facilitate localization of software if it is intended to be deployed in different regions.</li>
+<li><strong>Cyclomatic complexity:</strong> too many branches or loops; this may indicate a function needs to be broken up into smaller functions, or that it has potential for simplification.</li>
+<li><strong>Downcasting:</strong> a type cast which breaks the abstraction model; the abstraction may have to be refactored or eliminated.</li>
+<li><strong>Orphan Variable or Constant class:</strong> a class that typically has a collection of constants which belong elsewhere (typically a problem when using a Constants class ) where those constants should be owned by one of the other member classes.</li>
+</ul>
+<h4 id="method-level-smells">Method-level smells:</h4>
+<ul>
+<li><strong>Too many parameters:</strong> a long list of parameters is hard to read, and makes calling and testing the function complicated. It may indicate that the purpose of the function is ill-conceived and that the code should be refactored so responsibility is assigned in a more clean-cut way.</li>
+<li><strong>Long method:</strong> a method, function, or procedure that has grown too large.</li>
+<li><strong>Excessively long identifiers:</strong> in particular, the use of naming conventions to provide disambiguation that should be implicit in the software architecture.</li>
+<li><strong>Excessively short identifiers:</strong> the name of a variable should reflect its function unless the function is obvious.</li>
+<li><strong>Excessive return of data:</strong> a function or method that returns more than what each of its callers needs.</li>
+</ul>
+<h4 id="switch-smell">Switch Smell</h4>
+<ul>
+<li><p>El uso de un <code>switch</code> es siempre un punto d&#xE9;bil: si introducimos nuevas casos deberemos modificar el c&#xF3;digo de la clase original en la que est&#xE1; el switch introduciendo un nuevo <code>case</code>.</p>
+<p>Viola el principio <em>Open/Closed</em>.</p>
+</li>
+</ul>
+<h3 id="eliminate-javascript-code-smells">Eliminate JavaScript Code Smells</h3>
+<p>Vea el V&#xED;deo  de Elijah Manor.</p>
+<p>Presta especial atenci&#xF3;n al <em>code smell</em> <strong>Switch Statement Smell</strong> desde el minuto 11:37 al 29:15.</p>
+<p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/JVlfj7mQZPo"></iframe></div></p>
+<p>Pueden encontrar las <a href="http://elijahmanor.com/talks/js-smells/#/" target="_blank">trasparencias</a> de la presentaci&#xF3;n en <a href="http://elijahmanor.com/talks/js-smells/#/" target="_blank">http://elijahmanor.com/talks/js-smells/#/</a>.</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../processes/" class="navigation navigation-prev " aria-label="Previous page: Procesos">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="designprinciples.html" class="navigation navigation-next " aria-label="Next page: Principios de Diseño">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Code Smells","level":"1.3.9","depth":2,"next":{"title":"Principios de Diseño","level":"1.3.10","depth":2,"path":"apuntes/patterns/designprinciples.md","ref":"apuntes/patterns/designprinciples.md","articles":[]},"previous":{"title":"Procesos","level":"1.3.8","depth":2,"path":"apuntes/processes/README.md","ref":"apuntes/processes/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer","livereload"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"livereload":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/patterns/codesmell.md","mtime":"2016-10-11T10:56:30.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-19T08:48:27.939Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc/anchor-3.1.1.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc/page-toc.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

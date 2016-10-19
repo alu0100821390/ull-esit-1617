@@ -733,7 +733,7 @@ se despliega el libro en la m&#xE1;quina virtual de <code>iaas.ull.es</code></li
 <li>cuando el autor escribe y despliega el libro llamando a <code>gulp</code>. Las llamadas a <code>gulp deploy-...</code> ocurren en esta segunda fase. El despliegue hace un <code>require</code> de los plugins que implementan los despliegues solicitados.</li>
 </ol>
 </li>
-<li><p>Es conveniente que el m&#xE9;todo <code>deploy()</code> prove&#xED;do por el plugin retorne un objeto con atributos describiendo los resultados del despliegue como</p>
+<li><p>Es conveniente que el m&#xE9;todo <code>deploy()</code> (llamado en la Fase 2) prove&#xED;do por el plugin retorne un objeto con atributos describiendo los resultados del despliegue como</p>
 <ul>
 <li>Salida por <code>stdout</code> en la m&#xE1;quina remota</li>
 <li>Salida por <code>stderr</code>en la m&#xE1;quina remota</li>
@@ -762,14 +762,16 @@ se despliega el libro en la m&#xE1;quina virtual de <code>iaas.ull.es</code></li
 </code></pre>
 <p>En cualquier caso debe aparecer en la documentaci&#xF3;n lo que hay que hacer</p>
 </li>
-<li>El m&#xE9;todo <code>initialize</code> del objeto plugin.
-Es conveniente que el objeto  retornado por el <code>require</code> del plugin<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> iaas = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;book-start-plugin-iaas-ull-es&quot;</span>);
+<li>El m&#xE9;todo <code>initialize</code> del objeto plugin.<ul>
+<li>Es conveniente que el objeto  retornado por el <code>require</code> del plugin<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> iaas = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;book-start-plugin-iaas-ull-es&quot;</span>);
 <span class="hljs-keyword">var</span> result = iaas.initialize();
 </code></pre>
-disponga de un m&#xE9;todo <code>initialize</code> que es llamado por <code>gitbook-start</code> en el tiempo de construcci&#xF3;n de la jerarqu&#xED;a del libro. Este m&#xE9;todo puede ser usado para cosas como:</li>
-<li>En el caso del plugin <code>iaas</code> - si se quiere, no se pide - para construir el repositorio en la m&#xE1;quina remota, o bien - tampoco se pide - para generar e instalar la clave y publicarla en la m&#xE1;quina virtual, etc.</li>
+disponga de un m&#xE9;todo <code>initialize</code> que es llamado por <code>gitbook-start</code> en el tiempo de construcci&#xF3;n de la jerarqu&#xED;a del libro (Fase 1). Este m&#xE9;todo puede ser usado para cosas como:</li>
+<li>En el caso del plugin <code>iaas</code> - si se quiere, no se pide para esta pr&#xE1;ctica - para construir el repositorio en la m&#xE1;quina remota, o bien - tampoco se pide - para generar e instalar la clave y publicarla en la m&#xE1;quina virtual, etc.</li>
 <li>En el caso del plugin <code>heroku</code> para a&#xF1;adir un template con el servidor express que va a correr en la m&#xE1;quina de Heroku, etc.</li>
 <li>Modificar el <code>gulpfile</code> a conveniencia</li>
+</ul>
+</li>
 </ul>
 </div></div></div></sec>
 <sec data-title="Referencias" data-id="sectionreferencias" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="referencias">Referencias<a class="pull-right section atTitle btn btn-default" target="sectionreferencias"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="sectionreferencias"><div class="panel-body">
@@ -831,7 +833,7 @@ En esta pr&#xE1;ctica basta que lo hagan para el <code>iaas</code>. Dejamos el p
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Añadiendo plugins para los despliegues. iaas","level":"1.5.5","depth":2,"next":{"title":"Práctica: gitbook-start. Plugin para heroku","level":"1.5.6","depth":2,"path":"practicas/practicaplugin2.md","ref":"practicas/practicaplugin2.md","articles":[]},"previous":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"path":"practicas/practicaiaas.md","ref":"practicas/practicaiaas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaplugin.md","mtime":"2016-10-19T11:18:23.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-19T11:18:07.154Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: Añadiendo plugins para los despliegues. iaas","level":"1.5.5","depth":2,"next":{"title":"Práctica: gitbook-start. Plugin para heroku","level":"1.5.6","depth":2,"path":"practicas/practicaplugin2.md","ref":"practicas/practicaplugin2.md","articles":[]},"previous":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.5.4","depth":2,"path":"practicas/practicaiaas.md","ref":"practicas/practicaiaas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer","livereload"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"livereload":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaplugin.md","mtime":"2016-10-19T11:22:05.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-19T08:48:27.939Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -866,6 +868,10 @@ En esta pr&#xE1;ctica basta que lo hagan para el <code>iaas</code>. Dejamos el p
     
         
         <script src="../gitbook/gitbook-plugin-page-toc/page-toc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
