@@ -719,16 +719,16 @@
 </ul>
 <p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/uLF_hmtxAsY"></iframe></div></p>
 <ul>
-<li><p>Every Heroku app runs in at least two environments: </p>
+<li><p>Every Heroku app runs in at least two environments:</p>
 <ol>
-<li>on the Heroku platform (we&#x2019;ll call that <code>production</code>) and </li>
-<li>on your local machine (<code>development</code>). </li>
+<li>on the Heroku platform (we&#x2019;ll call that <code>production</code>) and</li>
+<li>on your local machine (<code>development</code>).</li>
 </ol>
-<p>En este art&#xED;culo <a href="https://devcenter.heroku.com/articles/multiple-environments" target="_blank">Managing Multiple Environments for an App</a> se habla de como ahcer mas f&#xE1;cil el proceso de despliegue:</p>
+<p>En este art&#xED;culo <a href="https://devcenter.heroku.com/articles/multiple-environments" target="_blank">Managing Multiple Environments for an App</a> se habla de como hacer mas f&#xE1;cil el proceso de despliegue:</p>
 <ul>
-<li>The solution is to have a staging environment that is as similar to <code>production</code> as is possible. </li>
-<li>This can be achieved by creating a second Heroku application that hosts your staging application. </li>
-<li>With staging, you can check your code in a <code>production</code>-like setting before having it affect your actual users. </li>
+<li>The solution is to have a staging environment that is as similar to <code>production</code> as is possible.</li>
+<li>This can be achieved by creating a second Heroku application that hosts your staging application.</li>
+<li>With staging, you can check your code in a <code>production</code>-like setting before having it affect your actual users.</li>
 <li>As you already deploy with git, setting up and managing these multiple remote environments is easy.</li>
 </ul>
 </li>
@@ -748,16 +748,25 @@ Adding joe@example.com to myapp collaborators... <span class="hljs-keyword">done
  Removing joe@example.com from theirapp collaborators... <span class="hljs-keyword">done</span>
 </code></pre>
 Como colaborador se debe:</li>
-<li>You should clone the app locally. The invitation email includes the name of the app. 
+<li>You should clone the app locally. The invitation email includes the name of the app.
 In this example, the app name is <code>theirapp</code>.<pre><code class="lang-bash"> $ heroku git:<span class="hljs-built_in">clone</span> <span class="hljs-_">-a</span> theirapp
 </code></pre>
 </li>
-<li>It&#x2019;s strongly recommended that you get access to the canonical source code repository for the application (for instance on GitHub) and then use <pre><code class="lang-bash"> $ heroku git:remote
+<li>It&#x2019;s strongly recommended that you get access to the canonical source code repository for the application (for instance on GitHub) and then use<pre><code class="lang-bash"> $ heroku git:remote
 </code></pre>
 to add a git remote to your checkout</li>
 </ol>
 </li>
 </ul>
+<h3 id="preguntas-y-respuestas">Preguntas y Respuestas</h3>
+<ol>
+<li>&#xBF;Como genero un token para hacer uso de la API de Heroku?<pre><code>$ heroku auth:token
+</code></pre></li>
+<li>&#xBF;C&#xF3;mo creo una app en Heroku usando la API de Heroku?<pre><code>$ curl -X POST https://api.heroku.com/apps \
+-H &quot;Accept: application/vnd.heroku+json; version=3&quot; \
+-H &quot;Authorization: Bearer $TUTORIAL_KEY&quot;
+</code></pre></li>
+</ol>
 
                                 
                                 </section>
@@ -785,7 +794,7 @@ to add a git remote to your checkout</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Heroku","level":"1.5.2.2","depth":3,"next":{"title":"Yellow Circle","level":"1.5.2.3","depth":3,"path":"recursos/yellow.md","ref":"recursos/yellow.md","articles":[]},"previous":{"title":"iaas.ull.es","level":"1.5.2.1","depth":3,"path":"recursos/iaas.md","ref":"recursos/iaas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"recursos/heroku.md","mtime":"2016-09-21T19:27:40.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-24T08:44:13.607Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Heroku","level":"1.5.2.2","depth":3,"next":{"title":"Yellow Circle","level":"1.5.2.3","depth":3,"path":"recursos/yellow.md","ref":"recursos/yellow.md","articles":[]},"previous":{"title":"iaas.ull.es","level":"1.5.2.1","depth":3,"path":"recursos/iaas.md","ref":"recursos/iaas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","-jazer","livereload"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"ace":{},"youtube":{},"livereload":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"recursos/heroku.md","mtime":"2016-10-25T08:55:27.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-10-25T08:56:50.435Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -820,6 +829,10 @@ to add a git remote to your checkout</li>
     
         
         <script src="../gitbook/gitbook-plugin-page-toc/page-toc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
