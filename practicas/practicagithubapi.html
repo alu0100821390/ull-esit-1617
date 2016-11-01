@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Práctica: Nueva funcionalidad para el Paquete NPM: crear repositorio en GitHub · GitBook</title>
+        <title>Práctica: GitHub API, Heroku API · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -682,7 +682,7 @@
                 <a href="practicagithubapi.html">
             
                     
-                    Práctica: Nueva funcionalidad para el Paquete NPM: crear repositorio en GitHub
+                    Práctica: GitHub API, Heroku API
             
                 </a>
             
@@ -764,7 +764,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Práctica: Nueva funcionalidad para el Paquete NPM: crear repositorio en GitHub</a>
+        <a href=".." >Práctica: GitHub API, Heroku API</a>
     </h1>
 </div>
 
@@ -793,6 +793,7 @@ que permita</p>
 <li>Generar el libro</li>
 <li>Hacer un push del repositorio inicial, incluyendo las <code>gh-pages</code></li>
 <li>Mejore el plugin <code>gitbook-start-heroku-...</code> para que haciendo uso de la API de Heroku cree la aplicaci&#xF3;n en Heroku, intentando prescindir del <a href="https://devcenter.heroku.com/articles/heroku-command-line" target="_blank"><code>heroku-toolbelt</code></a></li>
+<li>Mejore el plugin <code>gitbook-start-iaas-...</code> para que haga uso de versiones de <code>ssh</code> enteramente escritas en JavaScript intentando prescindir de OpenSSH y del uso de comandos de la <code>bash</code></li>
 </ul>
 <h4 id="punto-de-partida">Punto de partida</h4>
 <p>El paquete se construye a partir de</p>
@@ -841,7 +842,7 @@ para la creaci&#xF3;n de plantillas</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Nueva funcionalidad para el Paquete NPM: crear repositorio en GitHub","level":"1.6.7","depth":2,"next":{"title":"Práctica: Autenticación OAuth con Passport","level":"1.6.8","depth":2,"path":"practicas/practicapassport.md","ref":"practicas/practicapassport.md","articles":[]},"previous":{"title":"Práctica: gitbook-start. Plugin para heroku","level":"1.6.6","depth":2,"path":"practicas/practicaplugin2.md","ref":"practicas/practicaplugin2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicagithubapi.md","mtime":"2016-10-29T17:49:03.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-01T15:58:01.216Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: GitHub API, Heroku API","level":"1.6.7","depth":2,"next":{"title":"Práctica: Autenticación OAuth con Passport","level":"1.6.8","depth":2,"path":"practicas/practicapassport.md","ref":"practicas/practicapassport.md","articles":[]},"previous":{"title":"Práctica: gitbook-start. Plugin para heroku","level":"1.6.6","depth":2,"path":"practicas/practicaplugin2.md","ref":"practicas/practicaplugin2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicagithubapi.md","mtime":"2016-11-01T16:04:29.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-01T16:05:00.687Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
