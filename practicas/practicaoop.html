@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Práctica: Passport y Base de Datos: LocalStrategy · GitBook</title>
+        <title>Práctica: OOP · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -73,10 +73,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="practicassl.html" />
+    <link rel="next" href="practicanm.html" />
     
     
-    <link rel="prev" href="practicapassport.html" />
+    <link rel="prev" href="practicagitbook.html" />
     
 
     </head>
@@ -612,7 +612,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="practicaoop.html">
+        <li class="chapter active" data-level="1.6.2" data-path="practicaoop.html">
             
                 <a href="practicaoop.html">
             
@@ -703,7 +703,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.9" data-path="practicapassportlocal.html">
+        <li class="chapter " data-level="1.6.9" data-path="practicapassportlocal.html">
             
                 <a href="practicapassportlocal.html">
             
@@ -764,7 +764,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Práctica: Passport y Base de Datos: LocalStrategy</a>
+        <a href=".." >Práctica: OOP</a>
     </h1>
 </div>
 
@@ -776,16 +776,27 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="pr&#xE1;ctica-passport-y-base-de-datos-localstrategy">Pr&#xE1;ctica: Passport y Base de Datos: LocalStrategy</h2>
-<sec data-title="Descripci&#xF3;n" data-id="sectiondescripcion" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="descripci&#xF3;n">Descripci&#xF3;n<a class="pull-right section atTitle btn btn-default" target="sectiondescripcion"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="sectiondescripcion"><div class="panel-body">
-<h3 id="objetivo">Objetivo:</h3>
-<p>El servidor prove&#xED;do por el plugin (sea <code>iaas</code>o <code>heroku</code>) deber&#xE1; autenticar que el lector
-del libro  usando <code>LocalStrategy</code> y una base de datos</p>
-<h3 id="ejemplos">Ejemplos</h3>
+                                <h2 id="pr&#xE1;ctica-programaci&#xF3;n-orientada-a-objetos-y-herencia-en-javascript">Pr&#xE1;ctica: Programaci&#xF3;n Orientada a Objetos y Herencia en JavaScript</h2>
 <ul>
-<li><a href="https://github.com/ULL-ESIT-SYTW-1617/express-4.x-github-example" target="_blank">GitHub repo demonstrating how to use Express 4.x and Passport to authenticate users using GitHub</a></li>
+<li><p>Modifique la pr&#xE1;ctica anterior de la Temperatura para que use objetos y herencia.</p>
+</li>
+<li><p>Defina una clase <code>Medida</code> cuyos objetos tienen un <code>valor</code> num&#xE9;rico (p.  ej. <code>4.5e2</code>) y un tipo dado por una cadena (p. ej &quot;<code>Km</code>&quot; por Kil&#xF3;metros o &quot;<code>m3</code>&quot; por metros c&#xFA;bicos o &quot;<code>F</code>&quot; por grados Fahrenheit).</p>
+</li>
+<li><p>Las clase <code>Temperatura</code> hereda de <code>Medida</code>.</p>
+</li>
+<li>Las clases <code>Celsius</code>, <code>Fahrenheit</code>, <code>Kelvin</code>, etc. heredan de <code>Temperatura</code></li>
+<li>En la entrada se deber&#xE1;n admitir grados <code>Kelvin</code> adem&#xE1;s de los de la pr&#xE1;ctica anterior</li>
+<li>En la entrada se podr&#xE1;n escribir entradas como <code>32C to K</code> para convertir de Celsius a Kelvin o bien <code>-1.43e2f to C</code> para convertir de Fahrenheit a Celsius.</li>
+<li>La palabra <code>to</code>es opcional pudiendo omitirse. As&#xED; se aceptar&#xE1;n entradas como 
+<code>32C K</code> o bien <code>-1.43e2f  C</code></li>
+<li>S&#xF3;lo se muestra como resultado el solicitado. Si no se especifica el resultado se deber&#xE1; emitir un mensaje de error</li>
+<li>Use expresiones regulares extendidas</li>
+<li>Procure que el c&#xF3;digo quede bien encapsulado</li>
+<li>Reescriba el c&#xF3;digo para que use las clases.</li>
+<li>Opcionalmente, si se desea se puede hacer que permita otras conversiones (por ejemplo, <code>metros</code> a <code>pulgadas</code>)</li>
+<li>Puede encontrar la asignaci&#xF3;n de esta tarea en <a href="https://classroom.github.com/group-assignment-invitations/56f6b297702591e8713c6fae890b84bc" target="_blank">Github Classroom</a></li>
+<li>En esta tarea no se pide que use pruebas, ni cubrimiento, ni  Karma ni Travis.</li>
 </ul>
-</div></div></div></sec>
 
                                 
                                 </section>
@@ -797,12 +808,12 @@ del libro  usando <code>LocalStrategy</code> y una base de datos</p>
 
             
                 
-                <a href="practicapassport.html" class="navigation navigation-prev " aria-label="Previous page: Práctica: Autenticación OAuth con Passport">
+                <a href="practicagitbook.html" class="navigation navigation-prev " aria-label="Previous page: Práctica: Tareas Iniciales">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="practicassl.html" class="navigation navigation-next " aria-label="Next page: Práctica: Añadir HTTPS al servidor del libro">
+                <a href="practicanm.html" class="navigation navigation-next " aria-label="Next page: Práctica: Creación de un Paquete NPM">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -813,7 +824,7 @@ del libro  usando <code>LocalStrategy</code> y una base de datos</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Passport y Base de Datos: LocalStrategy","level":"1.6.9","depth":2,"next":{"title":"Práctica: Añadir HTTPS al servidor del libro","level":"1.6.10","depth":2,"path":"practicas/practicassl.md","ref":"practicas/practicassl.md","articles":[]},"previous":{"title":"Práctica: Autenticación OAuth con Passport","level":"1.6.8","depth":2,"path":"practicas/practicapassport.md","ref":"practicas/practicapassport.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicapassportlocal.md","mtime":"2016-10-31T10:50:00.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-03T07:26:46.359Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: OOP","level":"1.6.2","depth":2,"next":{"title":"Práctica: Creación de un Paquete NPM","level":"1.6.3","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},"previous":{"title":"Práctica: Tareas Iniciales","level":"1.6.1","depth":2,"path":"practicas/practicagitbook.md","ref":"practicas/practicagitbook.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaoop.md","mtime":"2016-09-16T11:55:30.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-03T07:26:46.359Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
