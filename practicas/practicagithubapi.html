@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Práctica: Añadir HTTPS al servidor del libro · GitBook</title>
+        <title>Práctica: GitHub API, Heroku API · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -73,8 +73,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="practicapassport.html" />
     
-    <link rel="prev" href="practicapassportlocal.html" />
+    
+    <link rel="prev" href="practicaplugin2.html" />
     
 
     </head>
@@ -675,7 +677,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.7" data-path="practicagithubapi.html">
+        <li class="chapter active" data-level="1.6.7" data-path="practicagithubapi.html">
             
                 <a href="practicagithubapi.html">
             
@@ -714,7 +716,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.10" data-path="practicassl.html">
+        <li class="chapter " data-level="1.6.10" data-path="practicassl.html">
             
                 <a href="practicassl.html">
             
@@ -762,7 +764,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Práctica: Añadir HTTPS al servidor del libro</a>
+        <a href=".." >Práctica: GitHub API, Heroku API</a>
     </h1>
 </div>
 
@@ -774,13 +776,45 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="pr&#xE1;ctica-a&#xF1;adir-https-al-servidor-del-libro">Pr&#xE1;ctica: A&#xF1;adir HTTPS al servidor del libro</h2>
-<p>Configure el servidor del libro en su m&#xE1;quina 
-virtual para que funcion con HTTPS</p>
+                                <h2 id="pr&#xE1;ctica-github-api-heroku-api-y-ssh-en-javascript">Pr&#xE1;ctica: GitHub API, Heroku API y SSH en JavaScript</h2>
+<sec data-title="Descripci&#xF3;n" data-id="sectiondescripcion" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="descripci&#xF3;n">Descripci&#xF3;n<a class="pull-right section atTitle btn btn-default" target="sectiondescripcion"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="sectiondescripcion"><div class="panel-body">
+<h3 id="descripci&#xF3;n">Descripci&#xF3;n</h3>
+<h4 id="objetivo">Objetivo</h4>
+<p>El objetivo de esta pr&#xE1;ctica  es extender el <a href="practicanm.html">package NodeJS  publicado</a> en <a href="https://www.npmjs.com" target="_blank">npm</a> en una pr&#xE1;ctica anterior con una nueva funcionalidad
+que permita</p>
+<ul>
+<li>Crear un token para el programa haciendo uso de la <a href="https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization" target="_blank">Authorizations API</a>. <ul>
+<li>Repase la secci&#xF3;n OAuth del tutorial <a href="https://developer.github.com/guides/getting-started/" target="_blank">GitHub API: Getting Started</a>. </li>
+<li>Guarde ese token en <code>~/.gitbook-start/config.json</code> y &#xFA;selo para cualesquiera posteriores comunicaciones con la API de GitHub</li>
+</ul>
+</li>
+<li>Obtener el email y el nombre del autor</li>
+<li>Crear el repositorio del libro en GitHub</li>
+<li>Generar el libro</li>
+<li>Hacer un push del repositorio inicial, incluyendo las <code>gh-pages</code></li>
+<li>Mejore el plugin <code>gitbook-start-heroku-...</code> para que haciendo uso de la API de Heroku cree la aplicaci&#xF3;n en Heroku, intentando prescindir del <a href="https://devcenter.heroku.com/articles/heroku-command-line" target="_blank"><code>heroku-toolbelt</code></a></li>
+<li>Mejore el plugin <code>gitbook-start-iaas-...</code> para que haga uso de versiones de <code>ssh</code> enteramente escritas en JavaScript intentando prescindir de OpenSSH y del uso de comandos de la <code>bash</code></li>
+</ul>
+<h4 id="punto-de-partida">Punto de partida</h4>
+<p>El paquete se construye a partir de</p>
+<ul>
+<li>El c&#xF3;digo que haya desarrollado en las pr&#xE1;cticas:<ul>
+<li><a href="practicaplugin.html">Pr&#xE1;ctica: Nueva funcionalidad para el Paquete NPM: plugins</a> y</li>
+<li><a href="practicaplugin2.html">Pr&#xE1;ctica: Heroku plugin</a>.</li>
+</ul>
+</li>
+</ul>
 <h3 id="referencias">Referencias</h3>
 <ul>
-<li>V&#xE9;ase la seccion <a href="../apuntes/ssl/">SSL</a></li>
-</ul>
+<li><a href="../apuntes/rest/">REST y REST APIS</a></li>
+<li><a href="../apuntes/nodejspackages.html">Creaci&#xF3;n de Paquetes y M&#xF3;dulos en NodeJS</a></li>
+<li><a href="../apuntes/gulp/">Gulp</a></li>
+<li>Para analizar los argumentos pasados en l&#xED;nea de comandos un buen m&#xF3;dulo es <a href="https://github.com/substack/minimist" target="_blank">minimist</a></li>
+<li><a href="https://www.npmjs.com/package/ejs" target="_blank">ejs</a>
+para la creaci&#xF3;n de plantillas</li>
+<li><a href="../apuntes/fs.html">Paquetes - como <code>fs</code> - para el manejo de archivos en Node.JS</a></li></ul></div></div></div></sec>
+
+
 
                                 
                                 </section>
@@ -792,10 +826,14 @@ virtual para que funcion con HTTPS</p>
 
             
                 
-                <a href="practicapassportlocal.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Práctica: Passport y Base de Datos: LocalStrategy">
+                <a href="practicaplugin2.html" class="navigation navigation-prev " aria-label="Previous page: Práctica: gitbook-start. Plugin para heroku">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="practicapassport.html" class="navigation navigation-next " aria-label="Next page: Práctica: Autenticación OAuth con Passport">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -804,7 +842,7 @@ virtual para que funcion con HTTPS</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Añadir HTTPS al servidor del libro","level":"1.6.10","depth":2,"previous":{"title":"Práctica: Passport y Base de Datos: LocalStrategy","level":"1.6.9","depth":2,"path":"practicas/practicapassportlocal.md","ref":"practicas/practicapassportlocal.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicassl.md","mtime":"2016-11-02T20:33:26.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-03T09:06:11.228Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: GitHub API, Heroku API","level":"1.6.7","depth":2,"next":{"title":"Práctica: Autenticación OAuth con Passport","level":"1.6.8","depth":2,"path":"practicas/practicapassport.md","ref":"practicas/practicapassport.md","articles":[]},"previous":{"title":"Práctica: gitbook-start. Plugin para heroku","level":"1.6.6","depth":2,"path":"practicas/practicaplugin2.md","ref":"practicas/practicaplugin2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicagithubapi.md","mtime":"2016-11-01T16:05:43.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-03T09:06:11.228Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

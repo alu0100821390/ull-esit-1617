@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Práctica: Añadir HTTPS al servidor del libro · GitBook</title>
+        <title>Práctica: Autenticación OAuth con Passport · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -73,8 +73,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="practicapassportlocal.html" />
     
-    <link rel="prev" href="practicapassportlocal.html" />
+    
+    <link rel="prev" href="practicagithubapi.html" />
     
 
     </head>
@@ -688,7 +690,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.8" data-path="practicapassport.html">
+        <li class="chapter active" data-level="1.6.8" data-path="practicapassport.html">
             
                 <a href="practicapassport.html">
             
@@ -714,7 +716,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.10" data-path="practicassl.html">
+        <li class="chapter " data-level="1.6.10" data-path="practicassl.html">
             
                 <a href="practicassl.html">
             
@@ -762,7 +764,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Práctica: Añadir HTTPS al servidor del libro</a>
+        <a href=".." >Práctica: Autenticación OAuth con Passport</a>
     </h1>
 </div>
 
@@ -774,13 +776,55 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="pr&#xE1;ctica-a&#xF1;adir-https-al-servidor-del-libro">Pr&#xE1;ctica: A&#xF1;adir HTTPS al servidor del libro</h2>
-<p>Configure el servidor del libro en su m&#xE1;quina 
-virtual para que funcion con HTTPS</p>
+                                <h2 id="pr&#xE1;ctica-autenticaci&#xF3;n-oauth-con-passport">Pr&#xE1;ctica: Autenticaci&#xF3;n OAuth con Passport</h2>
+<sec data-title="Descripci&#xF3;n" data-id="sectiondescripcion" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="descripci&#xF3;n">Descripci&#xF3;n<a class="pull-right section atTitle btn btn-default" target="sectiondescripcion"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="sectiondescripcion"><div class="panel-body">
+<h3 id="objetivo">Objetivo:</h3>
+<p>El servidor prove&#xED;do por el plugin (sea <code>iaas</code>o <code>heroku</code>) deber&#xE1; autenticar que el lector
+del libro  pertenece  a una organizaci&#xF3;n dada de GitHub (por ejemplo <a href="https://github.com/ULL-ESIT-SYTW-1617" target="_blank">ULL-ESIT-SYTW-1617</a>). Si es el caso que pertenece podr&#xE1; seguir leyendo el libro, sino ser&#xE1; redirigido a la ruta de autenticaci&#xF3;n</p>
+<ul>
+<li>Puede partir de los repos de los plugins que ha usado en pr&#xE1;cticas anteriores o crear unos nuevos</li>
+</ul>
+</div></div></div></sec>
+<sec data-title="Ejemplos y Referencias" data-id="sectionreferencias" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="ejemplos-y-referencias">Ejemplos y Referencias<a class="pull-right section atTitle btn btn-default" target="sectionreferencias"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="sectionreferencias"><div class="panel-body">
 <h3 id="referencias">Referencias</h3>
 <ul>
-<li>V&#xE9;ase la seccion <a href="../apuntes/ssl/">SSL</a></li>
+<li>Secci&#xF3;n <a href="../apuntes/authentication/">OAuth y Passport</a> en los apuntes</li>
+<li>Secci&#xF3;n <a href="../apuntes/rest/">Rest y GitHub API</a> en los apuntes</li>
 </ul>
+<h3 id="ejemplos-y-ayudas">Ejemplos y Ayudas</h3>
+<ul>
+<li><a href="https://github.com/ULL-ESIT-SYTW-1617/express-4.x-github-example" target="_blank">GitHub repo demonstrating how to use Express 4.x and Passport to authenticate users using GitHub</a></li>
+<li><a href="https://github.com/ULL-ESIT-DSI-1617/express-4.x-facebook-example" target="_blank">GitHub repo demonstrating how to use Express 4.x and Passport to authenticate users using Facebook</a></li>
+<li><a href="https://developer.github.com/v3/orgs/members/#check-membership" target="_blank">Check membership of a user in a GitHub organization</a>: Check if a user is, publicly or privately, a member of the GitHub organization.<pre><code> GET /orgs/:org/members/:username
+</code></pre></li>
+<li>GitHub API<ul>
+<li><a href="https://developer.github.com/v3/orgs/members/#check-membership" target="_blank">Check membership of a user in a GitHub organization</a>: Check if a user is, publicly or privately, a member of the GitHub organization.</li>
+</ul>
+</li>
+<li><p>Octonode</p>
+<ul>
+<li><p>Get an organization&apos;s members (GET /orgs/ULL-ESIT-SYTW-1617/members)</p>
+<p>This query supports <a href="https://github.com/pksunkara/octonode/blob/master/#pagination" target="_blank">pagination</a>.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> ghme           = client.me();
+<span class="hljs-keyword">var</span> ghuser         = client.user(<span class="hljs-string">&apos;crguezl&apos;</span>);
+<span class="hljs-keyword">var</span> ghrepo         = client.repo(<span class="hljs-string">&apos;crguezl/ull-esit-1617&apos;</span>);
+<span class="hljs-keyword">var</span> ghorg          = client.org(<span class="hljs-string">&apos;ULL-ESIT-SYTW-1617&apos;</span>);
+
+ghorg.members(callback); <span class="hljs-comment">//array of github users</span>
+</code></pre>
+</li>
+<li><p>Check an organization member (GET /orgs/ULL-ESIT-SYTW-1617/members/crguezl)</p>
+<pre><code class="lang-js">ghorg.member(<span class="hljs-string">&apos;crguezl&apos;</span>, callback); <span class="hljs-comment">//boolean</span>
+</code></pre>
+</li>
+<li><p>Check a member&apos;s public membership in an org (GET /orgs/ULL-ESIT-SYTW-1617/public_members/crguezl)</p>
+<pre><code class="lang-js">ghorg.publicMember(<span class="hljs-string">&apos;crguezl&apos;</span>, callback); <span class="hljs-comment">//boolean</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</div></div></div></sec>
 
                                 
                                 </section>
@@ -792,10 +836,14 @@ virtual para que funcion con HTTPS</p>
 
             
                 
-                <a href="practicapassportlocal.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Práctica: Passport y Base de Datos: LocalStrategy">
+                <a href="practicagithubapi.html" class="navigation navigation-prev " aria-label="Previous page: Práctica: GitHub API, Heroku API">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="practicapassportlocal.html" class="navigation navigation-next " aria-label="Next page: Práctica: Passport y Base de Datos: LocalStrategy">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -804,7 +852,7 @@ virtual para que funcion con HTTPS</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Añadir HTTPS al servidor del libro","level":"1.6.10","depth":2,"previous":{"title":"Práctica: Passport y Base de Datos: LocalStrategy","level":"1.6.9","depth":2,"path":"practicas/practicapassportlocal.md","ref":"practicas/practicapassportlocal.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicassl.md","mtime":"2016-11-02T20:33:26.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-03T09:06:11.228Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: Autenticación OAuth con Passport","level":"1.6.8","depth":2,"next":{"title":"Práctica: Passport y Base de Datos: LocalStrategy","level":"1.6.9","depth":2,"path":"practicas/practicapassportlocal.md","ref":"practicas/practicapassportlocal.md","articles":[]},"previous":{"title":"Práctica: GitHub API, Heroku API","level":"1.6.7","depth":2,"path":"practicas/practicagithubapi.md","ref":"practicas/practicagithubapi.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicapassport.md","mtime":"2016-11-03T09:06:01.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-03T09:06:11.228Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
