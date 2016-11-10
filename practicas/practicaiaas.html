@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Práctica: LocalStrategy y Base de Datos: LocalStrategy · GitBook</title>
+        <title>Práctica: Despliegues en iaas y heroku · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -73,10 +73,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="practicassl.html" />
+    <link rel="next" href="practicaplugin.html" />
     
     
-    <link rel="prev" href="practicapassportlocal.html" />
+    <link rel="prev" href="practicanm.html" />
     
 
     </head>
@@ -715,7 +715,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="practicaiaas.html">
+        <li class="chapter active" data-level="1.6.4" data-path="practicaiaas.html">
             
                 <a href="practicaiaas.html">
             
@@ -793,7 +793,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.10" data-path="practicapassportlocalsequelize.html">
+        <li class="chapter " data-level="1.6.10" data-path="practicapassportlocalsequelize.html">
             
                 <a href="practicapassportlocalsequelize.html">
             
@@ -854,7 +854,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Práctica: LocalStrategy y Base de Datos: LocalStrategy</a>
+        <a href=".." >Práctica: Despliegues en iaas y heroku</a>
     </h1>
 </div>
 
@@ -866,34 +866,110 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="pr&#xE1;ctica-localstrategy-y-base-de-datos">Pr&#xE1;ctica: LocalStrategy y Base de Datos</h2>
-<sec data-title="Descripci&#xF3;n" data-id="sectiondescripcion" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="descripci&#xF3;n">Descripci&#xF3;n<a class="pull-right section atTitle btn btn-default" target="sectiondescripcion"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="sectiondescripcion"><div class="panel-body">
-<h3 id="objetivo">Objetivo:</h3>
-<p>El servidor prove&#xED;do por el plugin (sea <code>iaas</code>o <code>heroku</code>) deber&#xE1; autenticar al lector
-del libro  usando <code>LocalStrategy</code> y una base de datos en la que se guarda la informaci&#xF3;n acerca de los usuarios.</p>
-</div></div></div></sec>
-<sec data-title="Ejemplos y Referencias" data-id="sectionejemplos" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="ejemplos-y-referencias">Ejemplos y Referencias<a class="pull-right section atTitle btn btn-default" target="sectionejemplos"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="sectionejemplos"><div class="panel-body">
-<h3 id="ejemplos">Ejemplos</h3>
+                                <h2 id="pr&#xE1;ctica-despliegues-en-iaas-y-heroku">Pr&#xE1;ctica: Despliegues en iaas y heroku</h2>
+<h3 id="objetivos">Objetivos</h3>
+<p>El objetivo de esta pr&#xE1;ctica  es proporcionar un mecanismo de despliegue de un libro <a href="../apuntes/gitbooknotas/README.md">gitbook</a>
+a otros sites.</p>
+<h3 id="despliegue-en-heroku-sincronizaci&#xF3;n-autom&#xE1;tica-con-las-gh-pages">Despliegue en Heroku: Sincronizaci&#xF3;n Autom&#xE1;tica con las gh-pages</h3>
+<p>Se busca que un <code>push</code> a github produzca la actualizaci&#xF3;n
+autom&#xE1;tica de <a href="https://help.gitbook.com/" target="_blank">Heroku](../recursos/heroku.md) de manera parecida a como ocurre con gitboook.com</a>.</p>
 <ul>
-<li><a href="https://github.com/ULL-ESIT-SYTW-1617/express-4.x-local-example" target="_blank">Express 4.x app using Passport for authentication with username and password</a></li>
-<li><a href="https://github.com/madhums/node-express-mongoose-demo" target="_blank">A simple demo app using express, mongoose, passport for beginners</a>. V&#xE9;ase el <a href="http://nodejs-express-demo.herokuapp.com/" target="_blank">despliegue en Heroku</a></li>
-<li><a href="https://github.com/ga-wdi-lessons/express-passport-sequelize" target="_blank">An example app using express, sequelize and passport</a> and the corresponding <a href="https://vimeo.com/137368290" target="_blank">video in Vimeo</a><!-- - <div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%" src="http://player.vimeo.com/video/137368290" frameborder="0"></iframe></div> --></li>
-<li><p><a href="https://github.com/stribny/auth-quickstart" target="_blank">Authentication Quickstart with Express, Passport and Sequelize</a>: See the corresponding <a href="http://stribny.name/blog/2015/09/authentication-quickstart-with-express-passport-and-sequelize" target="_blank">blog</a> about this quick-start.</p>
+<li><p>Para lograr este objetivo usaremos la t&#xE9;cnica descrita
+en el art&#xED;culo <a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a>.</p>
 </li>
-<li><p>The purpose of this <a href="https://youtu.be/vDdJBpOhTNo" target="_blank">tutorial</a> is to show the basics of hashing a user&apos;s password, Sequelize validations, hooks, and basic access control:</p>
-<p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/vDdJBpOhTNo"></iframe></div></p>
+<li><p>En el tutorial <a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a> se usa PHP para el c&#xF3;digo del servidor (que en nuestro caso vamos a hacer que se ejecute en Heroku e iaas). Utilice NodeJS y  <a href="../apuntes/express/">Express</a> para escribir el servidor.</p>
+</li>
+<li><p>Escribiremos un servidor en express que sirve en Heroku los ficheros HTML est&#xE1;ticos generados a partir del libro y que adem&#xE1;s dispone de una ruta de sincronizaci&#xF3;n</p>
+<pre><code class="lang-javascript">app.post(<span class="hljs-string">&apos;/sync&apos;</span>, (request, response) =&gt; {
+...
+</code></pre>
+</li>
+<li>Este servidor se a&#xF1;ade al directorio <code>gh-pages</code> as&#xED; como el <code>Procfile</code> y un <code>package.json</code> adaptados a Heroku</li>
+<li><p>El directorio <code>gh-pages</code> se convierte as&#xED; en un repo separado con dos remotos: uno en GitHub y otro en Heroku</p>
+</li>
+<li><p>CAda vez que se hace un Es este segundo repositorio el que se sincroniza mediante un <code>webhook</code> que apunta a la ruta <code>/sync</code></p>
 </li>
 </ul>
+<h3 id="despliegue-en-iaasulles">Despliegue en iaas.ull.es</h3>
+<ul>
+<li>En <a href="../recursos/iaas.html">iaas.ull.es</a>, debido a que la IP de la m&#xE1;quina virtual es privada a la red de la ULL, la estrategia explicada en
+<a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a>
+no funciona.</li>
+<li><p>Para sincronizar con <a href="../recursos/iaas.html">iaas.ull.es</a> disponga un script que utilice <code>ssh</code> y/o <code>scp</code> para actualizar los ficheros necesarios al repositorio del libro en la m&#xE1;quina virtual.</p>
+</li>
+<li><p>Este ejemplo usando el comando <code>ssh</code> sugiere una forma de hacerlo:</p>
+</li>
+</ul>
+<pre><code class="lang-bash">[~/apuntesgitbook(master)]$ ssh sytw <span class="hljs-string">&apos;cd src/express-start; git ls-files&apos;</span>
+.gitignore
+README.md
+hello/hello.js
+hello/package.json
+hello/views/index.ejs
+routes/Rakefile
+routes/app.js
+routes/birds.js
+routes/gulpfile.js
+routes/package.json
+routes/public/images/kitten.jpg
+</code></pre>
+<p>usando este comando nos conectamos a la m&#xE1;quina virtual iaas <code>sytw</code> (previamente hemos hecho un alias ide la IP a <code>sytw</code> configurado en <code>~/.ssh/config</code>) y ejecutamos en la misma un comando que nos posiciona en el directorio adecuado y llama al comando <code>git</code></p>
+<ul>
+<li>Si se tiene establecida una pareja de claves SSH privada-p&#xFA;blica entre la m&#xE1;quina de desarrollo (que se supone en la red de la ULL) y la m&#xE1;quina virtual, es posible usar <code>ssh</code> para conectarse a la m&#xE1;quina virtual y hacer un <code>git pull</code> en el directorio adecuado.</li>
+<li>Esta soluci&#xF3;n tampoco trabaja si se est&#xE1; desarrollando en c9, ya que las m&#xE1;quinas de c9 no est&#xE1;n en la red de la ULL.</li>
+</ul>
+<p>Parta de los c&#xF3;digos escritos en las pr&#xE1;cticas anteriores.</p>
 <h3 id="referencias">Referencias</h3>
 <ul>
-<li><a href="../apuntes/authentication/">Authentication: OAuth y Passport</a></li>
-<li><a href="../apuntes/db/">Bases de Datos</a></li>
-<li><a href="https://github.com/saintedlama/passport-local-mongoose" target="_blank">Passport-Local Mongoose</a>
-is a <a href="http://mongoosejs.com/" target="_blank">Mongoose</a> <a href="http://mongoosejs.com/docs/plugins.html" target="_blank">plugin</a> 
-that simplifies building username and password login with <a href="http://passportjs.org" target="_blank">Passport</a></li>
-<li><a href="https://www.npmjs.com/package/passport-local-sequelize" target="_blank">passport-local-sequelize. Sequelize plugin that simplifies building username and password login with Passport</a></li>
+<li><a href="../apuntes/colaboracion/">Colaboraci&#xF3;n: The Perfect Work-flow with Git, GitHub, and SSH</a><ul>
+<li><a href="https://code.tutsplus.com/tutorials/the-perfect-workflow-with-git-github-and-ssh--net-19564" target="_blank">The Perfect Workflow, with Git, GitHub, and SSH</a></li>
 </ul>
-</div></div></div></sec>
+</li>
+<li><a href="../apuntes/express/">Express</a></li>
+<li><a href="../apuntes/processes/">Procesos: Ejecutando comandos Unix</a></li>
+<li><a href="../recursos/heroku.html">Heroku</a></li>
+<li><a href="../recursos/iaas.html">iaas</a></li>
+<li>Webhooks<ul>
+<li><a href="https://help.github.com/articles/about-webhooks/" target="_blank">About Webhooks</a></li>
+<li><a href="https://developer.github.com/webhooks/" target="_blank">GitHub Developer: Webhooks</a></li>
+</ul>
+</li>
+</ul>
+<p>Adem&#xE1;s repase las secciones utilizadas en las pr&#xE1;cticas anteriores:</p>
+<ul>
+<li><a href="../apuntes/nodejspackages.html">Creaci&#xF3;n de Paquetes y M&#xF3;dulos en NodeJS</a></li>
+<li><a href="../apuntes/gulp/">Gulp</a></li>
+<li>Estudie el paquete <a href="https://www.npmjs.com/package/ejs" target="_blank">ejs</a>
+para la creaci&#xF3;n de plantillas</li>
+<li>Estudie <a href="../apuntes/fs.html">los paquetes - como <code>fs</code> - para el manejo de archivos en Node.JS</a></li>
+<li>Como se usa el m&#xF3;dulo <a href="https://www.npmjs.com/package/gh-pages" target="_blank">gh-pages</a> para automatizar el despliegue en <code>gh-pages</code></li>
+<li>Como se despliega un libro en <a href="www.gitbook.com">www.gitbook.com</a>,</li>
+<li><a href="https://plugins.gitbook.com/" target="_blank">GitBook Plugins</a></li>
+</ul>
+<h3 id="preguntas-y-respuestas">Preguntas y Respuestas</h3>
+<ol>
+<li><p><em>No entendemos c&#xF3;mo debemos estructurar el directorio de nuestra app y c&#xF3;mo disponer el gitbook en &#xE9;l: &#xBF;debemos poner dentro del directorio <code>public/</code> las carpetas <code>scripts/</code>, <code>txt/</code>, <code>README.md</code>, etc?</em></p>
+<p>No. Lo que sirves son los HTML que est&#xE1;n en el directorio <code>gh-pages</code>.</p>
+<p>Ejecutas el servidor sirviendo como directorio de est&#xE1;ticos el directorio <code>gh-pages</code> que has generado con el <code>build</code></p>
+<p>En el servidor escribes:</p>
+<pre><code class="lang-javascript">app.use(express.static(<span class="hljs-string">&apos;gh-pages&apos;</span>));
+</code></pre>
+</li>
+<li><p><em>&#xBF;Que URL debo poner en <code>settings-&gt;webhooks</code> de mi repo de GitHub?</em></p>
+<p>Tu servidor sirve como directorio de est&#xE1;ticos el directorio <code>gh-pages</code> que has generado con el <code>build</code></p>
+<p>En el servidor escribes:</p>
+<pre><code class="lang-javascript">app.use(express.static(<span class="hljs-string">&apos;gh-pages&apos;</span>));
+</code></pre>
+<p>En tu servidor tienes una ruta que se encarga de la sincronizaci&#xF3;n:</p>
+<pre><code class="lang-javascript">app.get(<span class="hljs-string">&apos;/synchronize&apos;</span>, (request, response) =&gt; {
+<span class="hljs-comment">// ... call a bash process that makes a pull</span>
+<span class="hljs-comment">// to the gh-pages branch of the github repository</span>
+<span class="hljs-comment">// This is executed in the heroku servers, therefore</span>
+<span class="hljs-comment">// be sure the github remote is defined</span>
+});
+</code></pre>
+</li>
+</ol>
 
                                 
                                 </section>
@@ -905,12 +981,12 @@ that simplifies building username and password login with <a href="http://passpo
 
             
                 
-                <a href="practicapassportlocal.html" class="navigation navigation-prev " aria-label="Previous page: Práctica: Passport y LocalStrategy">
+                <a href="practicanm.html" class="navigation navigation-prev " aria-label="Previous page: Práctica: Creación de un Paquete NPM">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="practicassl.html" class="navigation navigation-next " aria-label="Next page: Práctica: Añadir HTTPS al servidor del libro">
+                <a href="practicaplugin.html" class="navigation navigation-next " aria-label="Next page: Práctica: Añadiendo plugins para los despliegues. iaas">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -921,7 +997,7 @@ that simplifies building username and password login with <a href="http://passpo
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: LocalStrategy y Base de Datos: LocalStrategy","level":"1.6.10","depth":2,"next":{"title":"Práctica: Añadir HTTPS al servidor del libro","level":"1.6.11","depth":2,"path":"practicas/practicassl.md","ref":"practicas/practicassl.md","articles":[]},"previous":{"title":"Práctica: Passport y LocalStrategy","level":"1.6.9","depth":2,"path":"practicas/practicapassportlocal.md","ref":"practicas/practicapassportlocal.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicapassportlocalsequelize.md","mtime":"2016-11-09T11:32:13.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-10T10:06:58.279Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.6.4","depth":2,"next":{"title":"Práctica: Añadiendo plugins para los despliegues. iaas","level":"1.6.5","depth":2,"path":"practicas/practicaplugin.md","ref":"practicas/practicaplugin.md","articles":[]},"previous":{"title":"Práctica: Creación de un Paquete NPM","level":"1.6.3","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaiaas.md","mtime":"2016-10-13T21:41:10.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-10T10:06:58.279Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
