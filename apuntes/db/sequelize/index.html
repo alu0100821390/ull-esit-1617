@@ -980,7 +980,75 @@ The file config/config.json already exists. Run <span class="hljs-string">&quot;
     &#x2514;&#x2500;&#x2500; layout.jade
 
 11 directories, 12 files
-</code></pre><h3 id="material-del-curso-de-miriadax-desarrollo-de-servicios-en-la-nube-con-html5-javascript-y-nodejs">Material del Curso de MiriadaX &quot;Desarrollo de servicios en la nube con HTML5, Javascript y node.js&quot;</h3>
+</code></pre><pre><code class="lang-javascript">[~<span class="hljs-regexp">/src/</span>javascript/learning/sequelize/exp-exa]$  cat config/config.json 
+{
+  <span class="hljs-string">&quot;development&quot;</span>: {
+    <span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;root&quot;</span>,
+    <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">&quot;database&quot;</span>: <span class="hljs-string">&quot;database_development&quot;</span>,
+    <span class="hljs-string">&quot;host&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;dialect&quot;</span>: <span class="hljs-string">&quot;mysql&quot;</span>
+  },
+  <span class="hljs-string">&quot;test&quot;</span>: {
+    <span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;root&quot;</span>,
+    <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">&quot;database&quot;</span>: <span class="hljs-string">&quot;database_test&quot;</span>,
+    <span class="hljs-string">&quot;host&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;dialect&quot;</span>: <span class="hljs-string">&quot;mysql&quot;</span>
+  },
+  <span class="hljs-string">&quot;production&quot;</span>: {
+    <span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;root&quot;</span>,
+    <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">&quot;database&quot;</span>: <span class="hljs-string">&quot;database_production&quot;</span>,
+    <span class="hljs-string">&quot;host&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;dialect&quot;</span>: <span class="hljs-string">&quot;mysql&quot;</span>
+  }
+}
+</code></pre>
+<pre><code class="lang-bash">~/src/javascript/learning/sequelize/exp-exa]$ node_modules/sequelize-cli/bin/sequelize model:create --name User --attributes username:string
+
+Sequelize [Node: 4.5.0, CLI: 2.4.0, ORM: 3.25.1]
+
+Loaded configuration file <span class="hljs-string">&quot;config/config.json&quot;</span>.
+Using environment <span class="hljs-string">&quot;development&quot;</span>.
+</code></pre>
+<pre><code class="lang-javascript">[~<span class="hljs-regexp">/src/</span>javascript/learning/sequelize/exp-exa]$ cat models/user.js 
+<span class="hljs-meta">&apos;use strict&apos;</span>;
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sequelize, DataTypes</span>) </span>{
+  <span class="hljs-keyword">var</span> User = sequelize.define(<span class="hljs-string">&apos;User&apos;</span>, {
+    username: DataTypes.STRING
+  }, {
+    classMethods: {
+      associate: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">models</span>) </span>{
+        <span class="hljs-comment">// associations can be defined here</span>
+      }
+    }
+  });
+  <span class="hljs-keyword">return</span> User;
+};
+</code></pre>
+<pre><code>[~/src/javascript/learning/sequelize/exp-exa]$ node_modules/.bin/sequelize model:create --name Task --attributes title:string
+
+Sequelize [Node: 4.5.0, CLI: 2.4.0, ORM: 3.25.1]
+
+Loaded configuration file &quot;config/config.json&quot;.
+Using environment &quot;development&quot;.
+</code></pre><pre><code class="lang-javascript">[~<span class="hljs-regexp">/src/</span>javascript/learning/sequelize/exp-exa]$ cat models/task.js 
+<span class="hljs-meta">&apos;use strict&apos;</span>;
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sequelize, DataTypes</span>) </span>{
+  <span class="hljs-keyword">var</span> Task = sequelize.define(<span class="hljs-string">&apos;Task&apos;</span>, {
+    title: DataTypes.STRING
+  }, {
+    classMethods: {
+      associate: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">models</span>) </span>{
+        <span class="hljs-comment">// associations can be defined here</span>
+      }
+    }
+  });
+  <span class="hljs-keyword">return</span> Task;
+};
+</code></pre>
+<h3 id="material-del-curso-de-miriadax-desarrollo-de-servicios-en-la-nube-con-html5-javascript-y-nodejs">Material del Curso de MiriadaX &quot;Desarrollo de servicios en la nube con HTML5, Javascript y node.js&quot;</h3>
 <ul>
 <li>La Base de Datos, Sequelize, Heroku, Autoload<ul>
 <li><a href="https://github.com/crguezl/miriada-upm-dsnh5jsnode/blob/master/traspas/transp_modulo7.pdf" target="_blank">Trasparencias: La Base de Datos, Sequelize, Heroku, Autoload</a></li>
@@ -1028,7 +1096,7 @@ The file config/config.json already exists. Run <span class="hljs-string">&quot;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Sequelize","level":"1.3.16.2","depth":3,"next":{"title":"Mongo","level":"1.3.16.3","depth":3,"path":"apuntes/db/mongo/README.md","ref":"apuntes/db/mongo/README.md","articles":[{"title":"MongoDB","level":"1.3.16.3.1","depth":4,"path":"apuntes/db/mongo/mongodb.md","ref":"apuntes/db/mongo/mongodb.md","articles":[]},{"title":"Mongoose","level":"1.3.16.3.2","depth":4,"path":"apuntes/db/mongo/mongoose.md","ref":"apuntes/db/mongo/mongoose.md","articles":[]}]},"previous":{"title":"Sqlite","level":"1.3.16.1","depth":3,"path":"apuntes/db/sqlite/README.md","ref":"apuntes/db/sqlite/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","-ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/db/sequelize/README.md","mtime":"2016-11-16T19:44:08.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-16T19:44:19.223Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Sequelize","level":"1.3.16.2","depth":3,"next":{"title":"Mongo","level":"1.3.16.3","depth":3,"path":"apuntes/db/mongo/README.md","ref":"apuntes/db/mongo/README.md","articles":[{"title":"MongoDB","level":"1.3.16.3.1","depth":4,"path":"apuntes/db/mongo/mongodb.md","ref":"apuntes/db/mongo/mongodb.md","articles":[]},{"title":"Mongoose","level":"1.3.16.3.2","depth":4,"path":"apuntes/db/mongo/mongoose.md","ref":"apuntes/db/mongo/mongoose.md","articles":[]}]},"previous":{"title":"Sqlite","level":"1.3.16.1","depth":3,"path":"apuntes/db/sqlite/README.md","ref":"apuntes/db/sqlite/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","-ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/db/sequelize/README.md","mtime":"2016-11-16T21:25:25.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-11-16T21:25:33.270Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
