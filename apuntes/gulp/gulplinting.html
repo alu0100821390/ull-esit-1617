@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Arquitectura REST y REST APIs · GitBook</title>
+        <title>gulp-linting · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="githubapitutorial.html" />
+    <link rel="next" href="../nodejspackages.html" />
     
     
-    <link rel="prev" href="../patterns/inversionofcontrolpattern.html" />
+    <link rel="prev" href="gulpghpages.html" />
     
 
     </head>
@@ -266,9 +266,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../gulp/">
+        <li class="chapter " data-level="1.3.3" data-path="./">
             
-                <a href="../gulp/">
+                <a href="./">
             
                     
                     Gulp
@@ -280,9 +280,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.3.1" data-path="../gulp/gulpghpages.html">
+        <li class="chapter " data-level="1.3.3.1" data-path="gulpghpages.html">
             
-                <a href="../gulp/gulpghpages.html">
+                <a href="gulpghpages.html">
             
                     
                     gulp gh pages
@@ -293,9 +293,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3.2" data-path="../gulp/gulplinting.html">
+        <li class="chapter active" data-level="1.3.3.2" data-path="gulplinting.html">
             
-                <a href="../gulp/gulplinting.html">
+                <a href="gulplinting.html">
             
                     
                     gulp-linting
@@ -486,9 +486,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.14" data-path="./">
+        <li class="chapter " data-level="1.3.14" data-path="../rest/">
             
-                <a href="./">
+                <a href="../rest/">
             
                     
                     Arquitectura REST y REST APIs
@@ -500,9 +500,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.14.1" data-path="githubapitutorial.html">
+        <li class="chapter " data-level="1.3.14.1" data-path="../rest/githubapitutorial.html">
             
-                <a href="githubapitutorial.html">
+                <a href="../rest/githubapitutorial.html">
             
                     
                     Getting Started with the GitHub API
@@ -934,7 +934,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Arquitectura REST y REST APIs</a>
+        <a href="../.." >gulp-linting</a>
     </h1>
 </div>
 
@@ -946,79 +946,57 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="http">HTTP</h2>
+                                <h3 id="gulp-linting">Gulp Linting</h3>
+<pre><code class="lang-javascript">(() =&gt; {
+    <span class="hljs-string">&apos;use strict&apos;</span>;
+
+    <span class="hljs-keyword">let</span> gulp        = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
+    <span class="hljs-keyword">let</span> nodemon     = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-nodemon&apos;</span>);
+    <span class="hljs-keyword">let</span> jshint      = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-jshint&apos;</span>);
+    <span class="hljs-keyword">let</span> scsslint    = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp-scss-lint&apos;</span>);
+
+    gulp.task(<span class="hljs-string">&apos;lint&apos;</span>, [<span class="hljs-string">&apos;lint:jshint&apos;</span>, <span class="hljs-string">&apos;lint:jscs&apos;</span>, <span class="hljs-string">&apos;lint:scss&apos;</span>]);
+
+    <span class="hljs-comment">// Tarea para pasar el JSHint a el c&#xF3;digo</span>
+    gulp.task(<span class="hljs-string">&apos;lint:jshint&apos;</span>, () =&gt; {
+        <span class="hljs-keyword">return</span> gulp.src([
+                <span class="hljs-string">&apos;gulpfile.js&apos;</span>,
+                <span class="hljs-string">&apos;public/js/**/*.js&apos;</span>,
+                <span class="hljs-string">&apos;routes/**/*.js&apos;</span>,
+                <span class="hljs-string">&apos;assets/modules/**/*.js&apos;</span>,
+                <span class="hljs-string">&apos;db/models/**/*.js&apos;</span>
+            ])
+            .pipe(jshint(<span class="hljs-string">&apos;.jshintrc&apos;</span>))
+            .pipe(jshint.reporter(<span class="hljs-string">&apos;jshint-stylish&apos;</span>));
+    });
+
+    <span class="hljs-comment">// Tarea para pasar el JSCS a el c&#xF3;digo</span>
+    gulp.task(<span class="hljs-string">&apos;lint:jscs&apos;</span>, () =&gt; {
+        <span class="hljs-keyword">return</span> gulp.src([
+                <span class="hljs-string">&apos;gulpfile.js&apos;</span>,
+                <span class="hljs-string">&apos;public/js/**/*.js&apos;</span>,
+                <span class="hljs-string">&apos;routes/**/*.js&apos;</span>,
+                <span class="hljs-string">&apos;assets/modules/**/*.js&apos;</span>,
+                <span class="hljs-string">&apos;db/models/**/*.js&apos;</span>
+            ])
+            .pipe(jscs())
+            .pipe(jscs.reporter());
+    });
+
+    <span class="hljs-comment">// Tarea para pasar el SCSS-Lint a el c&#xF3;digo</span>
+    gulp.task(<span class="hljs-string">&apos;lint:scss&apos;</span>, () =&gt; {
+        <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">&apos;assets/frontend/stylesheets/**/*.scss&apos;</span>)
+            .pipe(scsslint());
+    });
+})();
+</code></pre>
+<h4 id="v&#xE9;ase">V&#xE9;ase</h4>
 <ul>
-<li><a href="https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/" target="_blank">Anatomy of an HTTP Transaction in NodeJS</a></li>
-</ul>
-<h2 id="rest">REST</h2>
-<h3 id="videos-de-maurizio-marchese-sobre-rest">Videos de Maurizio Marchese sobre REST</h3>
-<ul>
-<li><a href="https://youtu.be/6m71jmyO_cA" target="_blank">Lesson 3: REST - Representational State Transfer (part 1) by Maurizio Marchese</a>. Universidad de Trento</li>
-<li><a href="https://youtu.be/ghQa2Zx1iYI" target="_blank">Lesson 4: A tutorial on REST-based services (part 1) by Maurizio Marchese</a>. Universidad de Trento</li>
-<li><a href="https://youtu.be/i3fwKhOL-dM" target="_blank">Lesson 4: A tutorial on REST-based services (part 2 by Maurizio Marchese)</a></li>
-</ul>
-<h3 id="introducci&#xF3;n-a-rest">Introducci&#xF3;n a REST</h3>
-<ul>
-<li><a href="https://youtu.be/LHJk_ISxHHc" target="_blank">What Is REST?</a> Youtube. Autor: Software Architect CA</li>
-<li><a href="https://youtu.be/P8nkBfysdZU" target="_blank">Charla de JJ Merelo sobre Node y la API de GitHub</a>. Video introductorio. Habla un poco de REST nada de la API de GitHub</li>
-<li><a href="https://youtu.be/e6h87rzeGJE" target="_blank">Section 1 Module 2 Part 3: What is Rest?</a>. V&#xED;deo introductorio en YouTube. Se concentra s&#xF3;lo en las partes mas usadas de REST como los esquemas de direcci&#xF3;n a los recursos y el uso uniforme de los m&#xE9;todos. Autor: Jules White</li>
-<li><a href="https://youtu.be/ZHw-cA9U78g" target="_blank">Create a REST API in JavaScript in 3 minutes</a> por Sven Anders Robbestad (V&#xED;deo en YouTube)</li>
-</ul>
-<h3 id="tutoriales-sobre-rest">Tutoriales sobre REST</h3>
-<ul>
-<li><a href="http://crguezl.github.io/apuntes-ruby/node567.html" target="_blank">Introducci&#xF3;n a REST</a> (Apuntes del profesor)</li>
-<li><a href="https://youtu.be/YTiR8chQ3zY" target="_blank">Curso MOOC Node.JS: Introducci&#xF3;n a REST</a> Video</li>
-<li><a href="restmiriadaX.pdf">Curso MOOC Node.JS: Introducci&#xF3;n a REST</a> Trasparencias en pdf (transp_modulo4.pdf p&#xE1;g. 31)</li>
-<li><a href="http://crguezl.github.io/apuntes-ruby/node568.html" target="_blank">Ejemplo de un servicio RESTfull en Sinatra</a></li>
-<li><a href="http://rest.elkstein.org/" target="_blank">Learn REST: A Tutorial</a></li>
-</ul>
-<h2 id="oauth-y-passport">OAuth y Passport</h2>
-<h3 id="oauth">OAuth</h3>
-<ul>
-<li><a href="http://nereida.deioc.ull.es/~lpp/perlexamples/node773.html" target="_blank">Introducci&#xF3;n a OAuth</a> (Apuntes del profesor)</li>
-</ul>
-<h3 id="passport">Passport</h3>
-<ul>
-<li><a href="https://github.com/ULL-ESIT-SYTW-1617/express-4.x-github-example" target="_blank">Example of how to use Express 4.x and Passport to authenticate users using GitHub</a></li>
-<li>V&#xE9;ase la secci&#xF3;n sobre <a href="../authentication/">OAuth</a> y Passport en estos apuntes</li>
-</ul>
-<h3 id="authentication-con-passport-via-gitbook">Authentication con Passport via GitBook</h3>
-<ul>
-<li><a href="https://github.com/GitbookIO/passport-gitbook" target="_blank">GitbookIO/passport-gitbook</a>: GitBook authentication strategy for Passport and Node.js.</li>
-<li><a href="http://sandrinodimattia.net/better-internal-documentation-with-gitbook-express-and-auth0/" target="_blank">Better internal documentation with GitBook, Express and Auth0</a><ul>
-<li><a href="https://github.com/sandrinodimattia/gitbook-express-auth0-boilerplate" target="_blank">sandrinodimattia/gitbook-express-auth0-boilerplate GitHub repo</a></li>
+<li><a href="https://github.com/spalger/gulp-jshint" target="_blank">gulp-jshint</a></li>
+<li><a href="https://github.com/ULL-ESIT-GRADOII-DSI/mongoose-y-populations-rafa-pedro-dani" target="_blank">Pr&#xE1;ctica de Rafa, pedro y Dani de Mongoose con Populations</a><ul>
+<li><a href="https://github.com/ULL-ESIT-GRADOII-DSI/mongoose-y-populations-rafa-pedro-dani/blob/master/gulpfile.js" target="_blank">gulpfile</a></li>
 </ul>
 </li>
-<li><a href="https://developer.gitbook.com/overview/oauth.html" target="_blank">GitBook Developer&apos;s: OAuth2</a></li>
-</ul>
-<h2 id="github-api">GitHub API</h2>
-<ul>
-<li><a href="githubapitutorial.html">Getting Started with the GitHub API</a> en estos apuntes</li>
-<li><a href="https://developer.github.com/guides/getting-started/" target="_blank">Getting Started with the GitHub API</a> en GitHub</li>
-<li>The <a href="https://developer.github.com/" target="_blank">github v3 api</a></li>
-<li><a href="https://youtu.be/x2fd8HHk5xM" target="_blank">Integrating with the GitHub API - GitHub Universe 2015
-</a> (V&#xED;deo en Youtube)</li>
-</ul>
-<h3 id="octonode">Octonode</h3>
-<ul>
-<li><a href="https://github.com/pksunkara/octonode" target="_blank">Octonode</a>: octonode is a library for nodejs to access the <a href="https://developer.github.com/" target="_blank">github v3 api</a></li>
-<li><a href="https://github.com/ULL-ESIT-SYTW-1617/octonodeexamples" target="_blank">Examples of how to use octonode ULL-ESIT-SYTW-1617/octonodeexamples</a></li>
-</ul>
-<h2 id="gitbook-api">GitBook API</h2>
-<ul>
-<li>The <a href="https://developer.gitbook.com/" target="_blank">GitBook API Reference</a>.
-The REST APIs provide programmatic access to read and write GitBook data. List books, edit content, proofread text, and more. The REST API identifies users using basic auth; responses are available in JSON.</li>
-<li>The <a href="https://www.npmjs.com/package/gitbook-api" target="_blank">gitbook-api
-API Client for GitBook
-(gitbook.com)</a></li>
-</ul>
-<h2 id="heroku-api">Heroku API</h2>
-<ul>
-<li><a href="https://devcenter.heroku.com/articles/platform-api-quickstart" target="_blank">Getting Started with the Platform API</a></li>
-<li><a href="https://devcenter.heroku.com/categories/platform-api" target="_blank">Platform API</a></li>
-<li><a href="https://devcenter.heroku.com/articles/platform-api-reference" target="_blank">Heroku API reference</a></li>
-<li><a href="https://github.com/heroku/node-heroku-client" target="_blank">A wrapper around the Heroku API for Node.js https://npmjs.org/package/heroku-client</a></li>
-<li><a href="https://devcenter.heroku.com/articles/mean-apps-restful-api" target="_blank">Create a Web App and RESTful API Server Using the MEAN Stack</a></li>
 </ul>
 
                                 
@@ -1031,12 +1009,12 @@ API Client for GitBook
 
             
                 
-                <a href="../patterns/inversionofcontrolpattern.html" class="navigation navigation-prev " aria-label="Previous page: Inversion of Control Pattern">
+                <a href="gulpghpages.html" class="navigation navigation-prev " aria-label="Previous page: gulp gh pages">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="githubapitutorial.html" class="navigation navigation-next " aria-label="Next page: Getting Started with the GitHub API">
+                <a href="../nodejspackages.html" class="navigation navigation-next " aria-label="Next page: Creación de Paquetes y Módulos en NodeJS">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1047,7 +1025,7 @@ API Client for GitBook
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Arquitectura REST y REST APIs","level":"1.3.14","depth":2,"next":{"title":"Getting Started with the GitHub API","level":"1.3.14.1","depth":3,"path":"apuntes/rest/githubapitutorial.md","ref":"apuntes/rest/githubapitutorial.md","articles":[]},"previous":{"title":"Inversion of Control Pattern","level":"1.3.13.3","depth":3,"path":"apuntes/patterns/inversionofcontrolpattern.md","ref":"apuntes/patterns/inversionofcontrolpattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","-ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/rest/README.md","mtime":"2016-11-15T15:56:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-17T10:15:12.913Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"gulp-linting","level":"1.3.3.2","depth":3,"next":{"title":"Creación de Paquetes y Módulos en NodeJS","level":"1.3.4","depth":2,"path":"apuntes/nodejspackages.md","ref":"apuntes/nodejspackages.md","articles":[]},"previous":{"title":"gulp gh pages","level":"1.3.3.1","depth":3,"path":"apuntes/gulp/gulpghpages.md","ref":"apuntes/gulp/gulpghpages.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","-ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/gulp/gulplinting.md","mtime":"2016-09-21T18:20:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-17T10:15:12.913Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
