@@ -1151,7 +1151,73 @@ bcrypt.hash(<span class="hljs-string">&quot;bacon&quot;</span>, <span class="hlj
 <li><p><a href="https://www.npmjs.com/package/dropbox" target="_blank">npm: dropbox</a></p>
 <ul>
 <li><a href="http://dropbox.github.io/dropbox-sdk-js/" target="_blank">Dropbox JavaScript SDK Documentation</a></li>
-<li><p><a href="https://github.com/dropbox/dropbox-sdk-js/tree/master/examples" target="_blank">Ejemplos</a>
+<li><p><a href="https://github.com/dropbox/dropbox-sdk-js/tree/master/examples/node" target="_blank">Ejemplos en Node.js</a></p>
+<ol>
+<li><a href="https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder" target="_blank">Get a token: click the &quot;Get Token&quot; button on the top right and copy the token</a></li>
+<li><a href="https://github.com/dropbox/dropbox-sdk-js/blob/master/examples/node/download.js" target="_blank">download.js</a>
+```javascript
+var Dropbox = require(&apos;dropbox&apos;);
+var fs = require(&apos;fs&apos;);
+var prompt = require(&apos;prompt&apos;);</li>
+</ol>
+<p>prompt.start();</p>
+<p>prompt.get({
+  properties: {</p>
+<pre><code>accessToken: {
+  description: &apos;Please enter an API V2 access token&apos;
+},
+sharedLink: {
+  description: &apos;Please enter a shared link to a file&apos;
+}
+</code></pre><p>  }
+}, function (error, result) {
+  var dbx = new Dropbox({ accessToken: result.accessToken });
+  dbx.sharingGetSharedLinkFile({ url: result.sharedLink })</p>
+<pre><code>.then(function (data) {
+  fs.writeFile(data.name, data.fileBinary, &apos;binary&apos;, function (err) {
+    if (err) { throw err; }
+    console.log(&apos;File: &apos; + data.name + &apos; saved.&apos;);
+  });
+})
+.catch(function (err) {
+  throw err;
+});
+</code></pre><p>});</p>
+<pre><code>3. [upload.js](https://github.com/dropbox/dropbox-sdk-js/blob/master/examples/node/upload.js)
+```javascript
+var Dropbox = require(&apos;dropbox&apos;);
+var fs = require(&apos;fs&apos;);
+var path = require(&apos;path&apos;);
+var prompt = require(&apos;prompt&apos;);
+
+prompt.start();
+
+prompt.get({
+  properties: {
+    accessToken: {
+      description: &apos;Please enter an API V2 access token&apos;
+    }
+  }
+}, function (error, result) {
+  var dbx = new Dropbox({ accessToken: result.accessToken });
+
+  fs.readFile(path.join(__dirname, &apos;/basic.js&apos;), &apos;utf8&apos;, function (err, contents) {
+    if (err) {
+      console.log(&apos;Error: &apos;, err);
+    }
+
+    // This uploads basic.js to the root of your dropbox
+    dbx.filesUpload({ path: &apos;/basic.js&apos;, contents: contents })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  });
+});
+</code></pre></li>
+<li><p><a href="https://github.com/dropbox/dropbox-sdk-js/tree/master/examples" target="_blank">Ejemplos en el browser</a>
 To run the examples in your development environment:</p>
 <ol>
 <li><a href="https://dropbox.github.io/dropbox-api-v2-explorer/#files_list_folder" target="_blank">Get a token: click the &quot;Get Token&quot; button on the top right and copy the token</a></li>
@@ -1199,7 +1265,7 @@ To run the examples in your development environment:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Passport y LocalStrategy","level":"1.6.9","depth":2,"next":{"title":"Práctica: LocalStrategy y Base de Datos: LocalStrategy","level":"1.6.10","depth":2,"path":"practicas/practicapassportlocalsequelize.md","ref":"practicas/practicapassportlocalsequelize.md","articles":[]},"previous":{"title":"Práctica: Autenticación OAuth con Passport","level":"1.6.8","depth":2,"path":"practicas/practicapassport.md","ref":"practicas/practicapassport.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","-ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicapassportlocal.md","mtime":"2016-11-17T19:29:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-17T19:30:11.577Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: Passport y LocalStrategy","level":"1.6.9","depth":2,"next":{"title":"Práctica: LocalStrategy y Base de Datos: LocalStrategy","level":"1.6.10","depth":2,"path":"practicas/practicapassportlocalsequelize.md","ref":"practicas/practicapassportlocalsequelize.md","articles":[]},"previous":{"title":"Práctica: Autenticación OAuth con Passport","level":"1.6.8","depth":2,"path":"practicas/practicapassport.md","ref":"practicas/practicapassport.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","-ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicapassportlocal.md","mtime":"2016-11-18T07:22:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-18T07:25:44.040Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1230,6 +1296,10 @@ To run the examples in your development environment:</p>
     
         
         <script src="../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-js-console/console-ui.js"></script>
         
     
         
