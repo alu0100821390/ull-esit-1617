@@ -2014,19 +2014,65 @@ requests?. Explique el funcionamiento de este c&#xF3;digo.
 <li>&#xBF;Quienes son los cuatro roles que aparecen en una autenticaci&#xF3;n con OAuth?<ol>
 <li>resource owner: An entity capable of granting access to a protected resource. When the resource owner is a person, it is referred to as an end-user. (El usuario)</li>
 <li>resource server: The server hosting the protected resources, capable of accepting and responding to protected resource requests using access tokens. (El servidor de Pinterest)</li>
-<li>client: An application making protected resource requests on behalf of the resource owner and with its authorization (por ejemplo, una app cliente en el tel&#xE9;fono de pinterest).<ul>
-<li>The term &quot; client&quot; does not imply any particular implementation characteristics (e.g., whether the application executes on a server, a desktop, or other devices).</li>
+<li>client: An application making protected resource requests on behalf of the resource owner and with its authorization (por ejemplo, un cliente de pinterest en el tel&#xE9;fono). The term &quot; client&quot; does not imply any particular implementation characteristics (e.g., whether the application executes on a server, a desktop, or other devices).</li>
+<li>authorization server: The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization (por ejemplo, Facebook, cuando nos autenticamos con Facebook)</li>
+</ol>
+</li>
+<li>&#xBF;Qu&#xE9; tres elementos de informaci&#xF3;n suelen ser necesarios a la hora de registrar nuestra aplicaci&#xF3;n ante un proveedor de  OAuth?<ul>
+<li>Before using OAuth with your application, you must register your application with the service.</li>
+<li>This is done through a registration form in the developer or API portion of the service&apos;s website, where you will provide the following information (and probably details about your application):<ol>
+<li>Application Name</li>
+<li>Application Website</li>
+<li>Redirect URI or Callback URL</li>
+</ol>
+</li>
 </ul>
 </li>
-<li>authorization server: The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization (por ejemplo, Facebook)</li>
-</ol>
+<li>&#xBF;Que se debe poner en <em>Redirect URI or Callback URL</em> cuando se est&#xE1; registrando nuestra aplicaci&#xF3;n?<ul>
+<li>The redirect URI is where the service will redirect the user after they authorize (or deny) your application, and therefore the part of your application that will handle authorization codes or access tokens.</li>
+</ul>
+</li>
+<li>Una vez que registramos la aplicaci&#xF3;n, el servicio provee las credenciales del cliente. &#xBF;En que consisten esas credenciales?<ul>
+<li>Once your application is registered, the service will issue client credentials in the form of a client identifier and a client secret.</li>
+<li>The Client ID is a publicly exposed string that is used by the service API to identify the application, and is also used to build authorization URLs that are presented to users.</li>
+<li>The Client Secret is used to authenticate the identity of the application to the service API when the application requests to access a user&apos;s account, and must be kept private between the application and the API.</li>
+</ul>
 </li>
 <li>&#xBF;Que es <em>passport</em>, que funcionalidades provee  y como funciona?<ul>
-<li>Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more.
-*</li>
+<li>Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more.</li>
 </ul>
 </li>
+<li>```
+var passport = require(&apos;passport&apos;);
+var Strategy = require(&apos;passport-github&apos;).Strategy;
+var github = require(&apos;octonode&apos;);
+....
+var datos_config = JSON.parse(JSON.stringify(config));</li>
 </ol>
+<p>passport.use(new Strategy({
+    clientID: datos<em>config.clientID,
+    clientSecret: datos_config.clientSecret,
+    callbackURL: callbackURL</em>
+  },
+  function(accessToken, refreshToken, profile, cb) {</p>
+<pre><code>  var token = datos_config.token;
+  var client = github.client(token);
+
+  var ghorg = client.org(&apos;ULL-ESIT-SYTW-1617&apos;);
+
+  ghorg.member(profile.username, (err,result) =&gt;
+  {
+      if(err) console.log(err);
+      console.log(&quot;Result:&quot;+result);
+      if(result == true)
+        return cb(null, profile);
+      else {
+        return cb(null,null);
+      }
+  });
+// return cb(null, profile);
+</code></pre><p>}));
+```</p>
 
                                 
                                 </section>
@@ -2054,7 +2100,7 @@ requests?. Explique el funcionamiento de este c&#xF3;digo.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Repasos","level":"1.4","depth":1,"next":{"title":"Recursos","level":"1.5","depth":1,"path":"recursos/README.md","ref":"recursos/README.md","articles":[{"title":"GitHub Education","level":"1.5.1","depth":2,"anchor":"#github-education","path":"recursos/README.md","ref":"recursos/README.md#github-education","articles":[]},{"title":"Servicios en la Nube","level":"1.5.2","depth":2,"ref":"","articles":[{"title":"iaas.ull.es","level":"1.5.2.1","depth":3,"path":"recursos/iaas.md","ref":"recursos/iaas.md","articles":[]},{"title":"Heroku","level":"1.5.2.2","depth":3,"path":"recursos/heroku.md","ref":"recursos/heroku.md","articles":[]},{"title":"Yellow Circle","level":"1.5.2.3","depth":3,"path":"recursos/yellow.md","ref":"recursos/yellow.md","articles":[]},{"title":"Azure in education","level":"1.5.2.4","depth":3,"path":"recursos/azure.md","ref":"recursos/azure.md","articles":[]},{"title":"c9","level":"1.5.2.5","depth":3,"path":"recursos/c9.md","ref":"recursos/c9.md","articles":[]}]}]},"previous":{"title":"Meteor","level":"1.3.21","depth":2,"path":"apuntes/meteor/README.md","ref":"apuntes/meteor/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","-ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"repasos/README.md","mtime":"2016-12-14T11:30:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-17T09:45:27.228Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Repasos","level":"1.4","depth":1,"next":{"title":"Recursos","level":"1.5","depth":1,"path":"recursos/README.md","ref":"recursos/README.md","articles":[{"title":"GitHub Education","level":"1.5.1","depth":2,"anchor":"#github-education","path":"recursos/README.md","ref":"recursos/README.md#github-education","articles":[]},{"title":"Servicios en la Nube","level":"1.5.2","depth":2,"ref":"","articles":[{"title":"iaas.ull.es","level":"1.5.2.1","depth":3,"path":"recursos/iaas.md","ref":"recursos/iaas.md","articles":[]},{"title":"Heroku","level":"1.5.2.2","depth":3,"path":"recursos/heroku.md","ref":"recursos/heroku.md","articles":[]},{"title":"Yellow Circle","level":"1.5.2.3","depth":3,"path":"recursos/yellow.md","ref":"recursos/yellow.md","articles":[]},{"title":"Azure in education","level":"1.5.2.4","depth":3,"path":"recursos/azure.md","ref":"recursos/azure.md","articles":[]},{"title":"c9","level":"1.5.2.5","depth":3,"path":"recursos/c9.md","ref":"recursos/c9.md","articles":[]}]}]},"previous":{"title":"Meteor","level":"1.3.21","depth":2,"path":"apuntes/meteor/README.md","ref":"apuntes/meteor/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","-ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"youtube":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"repasos/README.md","mtime":"2016-12-14T11:30:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-17T12:24:02.553Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
