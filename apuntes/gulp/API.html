@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Principios de Diseño · GitBook</title>
+        <title>API Documentation · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="./" />
+    <link rel="next" href="recipes/" />
     
     
-    <link rel="prev" href="codesmell.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -311,9 +311,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="../gulp/">
+        <li class="chapter " data-level="1.3.4" data-path="./">
             
-                <a href="../gulp/">
+                <a href="./">
             
                     
                     Gulp
@@ -325,9 +325,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.4.1" data-path="../gulp/API.html">
+        <li class="chapter active" data-level="1.3.4.1" data-path="API.html">
             
-                <a href="../gulp/API.html">
+                <a href="API.html">
             
                     
                     API Documentation
@@ -338,9 +338,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.2" data-path="../gulp/recipes/">
+        <li class="chapter " data-level="1.3.4.2" data-path="recipes/">
             
-                <a href="../gulp/recipes/">
+                <a href="recipes/">
             
                     
                     Recipes
@@ -364,9 +364,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.4" data-path="../gulp/gulpghpages.html">
+        <li class="chapter " data-level="1.3.4.4" data-path="gulpghpages.html">
             
-                <a href="../gulp/gulpghpages.html">
+                <a href="gulpghpages.html">
             
                     
                     gulp gh pages
@@ -377,9 +377,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4.5" data-path="../gulp/gulplinting.html">
+        <li class="chapter " data-level="1.3.4.5" data-path="gulplinting.html">
             
-                <a href="../gulp/gulplinting.html">
+                <a href="gulplinting.html">
             
                     
                     gulp-linting
@@ -486,9 +486,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.12" data-path="codesmell.html">
+        <li class="chapter " data-level="1.3.12" data-path="../patterns/codesmell.html">
             
-                <a href="codesmell.html">
+                <a href="../patterns/codesmell.html">
             
                     
                     Code Smells
@@ -499,9 +499,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.13" data-path="designprinciples.html">
+        <li class="chapter " data-level="1.3.13" data-path="../patterns/designprinciples.html">
             
-                <a href="designprinciples.html">
+                <a href="../patterns/designprinciples.html">
             
                     
                     Principios de Diseño
@@ -512,9 +512,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.14" data-path="./">
+        <li class="chapter " data-level="1.3.14" data-path="../patterns/">
             
-                <a href="./">
+                <a href="../patterns/">
             
                     
                     Patrones de Diseño
@@ -526,9 +526,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.14.1" data-path="strategypattern.html">
+        <li class="chapter " data-level="1.3.14.1" data-path="../patterns/strategypattern.html">
             
-                <a href="strategypattern.html">
+                <a href="../patterns/strategypattern.html">
             
                     
                     Strategy Pattern
@@ -539,9 +539,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.14.2" data-path="dependencyinjectionpattern.html">
+        <li class="chapter " data-level="1.3.14.2" data-path="../patterns/dependencyinjectionpattern.html">
             
-                <a href="dependencyinjectionpattern.html">
+                <a href="../patterns/dependencyinjectionpattern.html">
             
                     
                     Dependency Injection Pattern
@@ -552,9 +552,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.14.3" data-path="inversionofcontrolpattern.html">
+        <li class="chapter " data-level="1.3.14.3" data-path="../patterns/inversionofcontrolpattern.html">
             
-                <a href="inversionofcontrolpattern.html">
+                <a href="../patterns/inversionofcontrolpattern.html">
             
                     
                     Inversion of Control Pattern
@@ -1128,7 +1128,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Principios de Diseño</a>
+        <a href="../.." >API Documentation</a>
     </h1>
 </div>
 
@@ -1140,34 +1140,227 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="principios-de-dise&#xF1;o-solid">Principios de Dise&#xF1;o SOLID</h2>
-<h3 id="resumen">Resumen</h3>
+                                <h2 id="gulp-api-docs">gulp API docs</h2>
+<p>Jump to:
+  <a href="#gulpsrcglobs-options">gulp.src</a> |
+  <a href="#gulpdestpath-options">gulp.dest</a> |
+  <a href="#gulptaskname--deps--fn">gulp.task</a> |
+  <a href="#gulpwatchglob--opts-tasks-or-gulpwatchglob--opts-cb">gulp.watch</a></p>
+<h3 id="gulpsrcglobs-options">gulp.src(globs[, options])</h3>
+<p>Emits files matching provided glob or an array of globs.
+Returns a <a href="http://nodejs.org/api/stream.html" target="_blank">stream</a> of <a href="https://github.com/gulpjs/vinyl-fs" target="_blank">Vinyl files</a>
+that can be <a href="http://nodejs.org/api/stream.html#stream_readable_pipe_destination_options" target="_blank">piped</a>
+to plugins.</p>
+<pre><code class="lang-javascript">gulp.src(<span class="hljs-string">&apos;client/templates/*.jade&apos;</span>)
+  .pipe(jade())
+  .pipe(minify())
+  .pipe(gulp.dest(<span class="hljs-string">&apos;build/minified_templates&apos;</span>));
+</code></pre>
+<h4 id="globs">globs</h4>
+<p>Type: <code>String</code> or <code>Array</code></p>
+<p>Glob or array of globs to read. Globs use <a href="https://github.com/isaacs/node-glob" target="_blank">node-glob syntax</a> except that negation is fully supported.</p>
+<p>A glob that begins with <code>!</code> excludes matching files from the glob results up to that point. For example, consider this directory structure:</p>
+<pre><code>client/
+  a.js
+  bob.js
+  bad.js
+</code></pre><p>The following expression matches <code>a.js</code> and <code>bad.js</code>:</p>
+<pre><code>gulp.src([&apos;client/*.js&apos;, &apos;!client/b*.js&apos;, &apos;client/bad.js&apos;])
+</code></pre><h4 id="options">options</h4>
+<p>Type: <code>Object</code></p>
+<p>Options to pass to <a href="https://github.com/isaacs/node-glob" target="_blank">node-glob</a> through <a href="https://github.com/gulpjs/glob-stream" target="_blank">glob-stream</a>.</p>
+<p>gulp supports all <a href="https://github.com/isaacs/node-glob#options" target="_blank">options supported by node-glob</a> and <a href="https://github.com/gulpjs/glob-stream" target="_blank">glob-stream</a> except <code>ignore</code> and adds the following options.</p>
+<h5 id="optionsbuffer">options.buffer</h5>
+<p>Type: <code>Boolean</code>
+Default: <code>true</code></p>
+<p>Setting this to <code>false</code> will return <code>file.contents</code> as a stream and not buffer files. This is useful when working with large files. <strong>Note:</strong> Plugins might not implement support for streams.</p>
+<h5 id="optionsread">options.read</h5>
+<p>Type: <code>Boolean</code>
+Default: <code>true</code></p>
+<p>Setting this to <code>false</code> will return <code>file.contents</code> as null and not read the file at all.</p>
+<h5 id="optionsbase">options.base</h5>
+<p>Type: <code>String</code>
+Default: everything before a glob starts (see <a href="https://github.com/wearefractal/glob2base" target="_blank">glob2base</a>)</p>
+<p>E.g., consider <code>somefile.js</code> in <code>client/js/somedir</code>:</p>
+<pre><code class="lang-js">gulp.src(<span class="hljs-string">&apos;client/js/**/*.js&apos;</span>) <span class="hljs-comment">// Matches &apos;client/js/somedir/somefile.js&apos; and resolves `base` to `client/js/`</span>
+  .pipe(minify())
+  .pipe(gulp.dest(<span class="hljs-string">&apos;build&apos;</span>));  <span class="hljs-comment">// Writes &apos;build/somedir/somefile.js&apos;</span>
+
+gulp.src(<span class="hljs-string">&apos;client/js/**/*.js&apos;</span>, { base: <span class="hljs-string">&apos;client&apos;</span> })
+  .pipe(minify())
+  .pipe(gulp.dest(<span class="hljs-string">&apos;build&apos;</span>));  <span class="hljs-comment">// Writes &apos;build/js/somedir/somefile.js&apos;</span>
+</code></pre>
+<h3 id="gulpdestpath-options">gulp.dest(path[, options])</h3>
+<p>Can be piped to and it will write files. Re-emits all data passed to it so you can pipe to multiple folders.  Folders that don&apos;t exist will be created.</p>
+<pre><code class="lang-javascript">gulp.src(<span class="hljs-string">&apos;./client/templates/*.jade&apos;</span>)
+  .pipe(jade())
+  .pipe(gulp.dest(<span class="hljs-string">&apos;./build/templates&apos;</span>))
+  .pipe(minify())
+  .pipe(gulp.dest(<span class="hljs-string">&apos;./build/minified_templates&apos;</span>));
+</code></pre>
+<p>The write path is calculated by appending the file relative path to the given
+destination directory. In turn, relative paths are calculated against the file base.
+See <code>gulp.src</code> above for more info.</p>
+<h4 id="path">path</h4>
+<p>Type: <code>String</code> or <code>Function</code></p>
+<p>The path (output folder) to write files to. Or a function that returns it, the function will be provided a <a href="https://github.com/gulpjs/vinyl" target="_blank">vinyl File instance</a>.</p>
+<h4 id="options">options</h4>
+<p>Type: <code>Object</code></p>
+<h5 id="optionscwd">options.cwd</h5>
+<p>Type: <code>String</code>
+Default: <code>process.cwd()</code></p>
+<p><code>cwd</code> for the output folder, only has an effect if provided output folder is relative.</p>
+<h5 id="optionsmode">options.mode</h5>
+<p>Type: <code>String</code>
+Default: <code>0777</code></p>
+<p>Octal permission string specifying mode for any folders that need to be created for output folder.</p>
+<h3 id="gulptaskname--deps--fn">gulp.task(name [, deps] [, fn])</h3>
+<p>Define a task using <a href="https://github.com/robrich/orchestrator" target="_blank">Orchestrator</a>.</p>
+<pre><code class="lang-js">gulp.task(<span class="hljs-string">&apos;somename&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Do stuff</span>
+});
+</code></pre>
+<h4 id="name">name</h4>
+<p>Type: <code>String</code></p>
+<p>The name of the task. Tasks that you want to run from the command line should not have spaces in them.</p>
+<h4 id="deps">deps</h4>
+<p>Type: <code>Array</code></p>
+<p>An array of tasks to be executed and completed before your task will run.</p>
+<pre><code class="lang-js">gulp.task(<span class="hljs-string">&apos;mytask&apos;</span>, [<span class="hljs-string">&apos;array&apos;</span>, <span class="hljs-string">&apos;of&apos;</span>, <span class="hljs-string">&apos;task&apos;</span>, <span class="hljs-string">&apos;names&apos;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Do stuff</span>
+});
+</code></pre>
+<p><strong>Note:</strong> Are your tasks running before the dependencies are complete?  Make sure your dependency tasks are correctly using the async run hints: take in a callback or return a promise or event stream.</p>
+<p>You can also omit the function if you only want to run a bundle of dependency tasks:</p>
+<pre><code class="lang-js">gulp.task(<span class="hljs-string">&apos;build&apos;</span>, [<span class="hljs-string">&apos;array&apos;</span>, <span class="hljs-string">&apos;of&apos;</span>, <span class="hljs-string">&apos;task&apos;</span>, <span class="hljs-string">&apos;names&apos;</span>]);
+</code></pre>
+<p><strong>Note:</strong> The tasks will run in parallel (all at once), so don&apos;t assume that the tasks will start/finish in order.</p>
+<h4 id="fn">fn</h4>
+<p>Type: <code>Function</code></p>
+<p>The function performs the task&apos;s main operations. Generally this takes the form of:</p>
+<pre><code class="lang-js">gulp.task(<span class="hljs-string">&apos;buildStuff&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Do something that &quot;builds stuff&quot;</span>
+  <span class="hljs-keyword">var</span> stream = gulp.src(<span class="hljs-comment">/*some source path*/</span>)
+  .pipe(somePlugin())
+  .pipe(someOtherPlugin())
+  .pipe(gulp.dest(<span class="hljs-comment">/*some destination*/</span>));
+
+  <span class="hljs-keyword">return</span> stream;
+  });
+</code></pre>
+<h4 id="async-task-support">Async task support</h4>
+<p>Tasks can be made asynchronous if its <code>fn</code> does one of the following:</p>
+<h5 id="accept-a-callback">Accept a callback</h5>
+<pre><code class="lang-javascript"><span class="hljs-comment">// run a command in a shell</span>
+<span class="hljs-keyword">var</span> exec = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;child_process&apos;</span>).exec;
+gulp.task(<span class="hljs-string">&apos;jekyll&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
+  <span class="hljs-comment">// build Jekyll</span>
+  exec(<span class="hljs-string">&apos;jekyll build&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+    <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">return</span> cb(err); <span class="hljs-comment">// return error</span>
+    cb(); <span class="hljs-comment">// finished task</span>
+  });
+});
+
+<span class="hljs-comment">// use an async result in a pipe</span>
+gulp.task(<span class="hljs-string">&apos;somename&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
+  getFilesAsync(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, res</span>) </span>{
+    <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">return</span> cb(err);
+    <span class="hljs-keyword">var</span> stream = gulp.src(res)
+      .pipe(minify())
+      .pipe(gulp.dest(<span class="hljs-string">&apos;build&apos;</span>))
+      .on(<span class="hljs-string">&apos;end&apos;</span>, cb);
+  });
+});
+</code></pre>
+<h5 id="return-a-stream">Return a stream</h5>
+<pre><code class="lang-js">gulp.task(<span class="hljs-string">&apos;somename&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> stream = gulp.src(<span class="hljs-string">&apos;client/**/*.js&apos;</span>)
+    .pipe(minify())
+    .pipe(gulp.dest(<span class="hljs-string">&apos;build&apos;</span>));
+  <span class="hljs-keyword">return</span> stream;
+});
+</code></pre>
+<h5 id="return-a-promise">Return a promise</h5>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Q = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;q&apos;</span>);
+
+gulp.task(<span class="hljs-string">&apos;somename&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> deferred = Q.defer();
+
+  <span class="hljs-comment">// do async stuff</span>
+  setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    deferred.resolve();
+  }, <span class="hljs-number">1</span>);
+
+  <span class="hljs-keyword">return</span> deferred.promise;
+});
+</code></pre>
+<p><strong>Note:</strong> By default, tasks run with maximum concurrency -- e.g. it launches all the tasks at once and waits for nothing. If you want to create a series where tasks run in a particular order, you need to do two things:</p>
+<ul>
+<li>give it a hint to tell it when the task is done,</li>
+<li>and give it a hint that a task depends on completion of another.</li>
+</ul>
+<p>For these examples, let&apos;s presume you have two tasks, &quot;one&quot; and &quot;two&quot; that you specifically want to run in this order:</p>
 <ol>
-<li>SRP.  Single responsibility principle<ul>
-<li>a class should have only a single responsibility (i.e. only one potential change in the software&apos;s specification should be able to affect the specification of the class)</li>
-</ul>
+<li><p>In task &quot;one&quot; you add a hint to tell it when the task is done.  Either take in a callback and call it when you&apos;re
+done or return a promise or stream that the engine should wait to resolve or end respectively.</p>
 </li>
-<li>OCP.  Open/closed principle<ul>
-<li>software entities &#x2026; should be open for extension, but closed for modification.</li>
-</ul>
-</li>
-<li>LSP.  Liskov substitution principle<ul>
-<li>objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.</li>
-</ul>
-</li>
-<li>ISP.  Interface segregation principle<ul>
-<li>many client-specific interfaces are better than one general-purpose interface</li>
-</ul>
-</li>
-<li>DIP. Dependency inversion principle<ul>
-<li>one should depend upon Abstractions. Do not depend upon concretions</li>
-</ul>
+<li><p>In task &quot;two&quot; you add a hint telling the engine that it depends on completion of the first task.</p>
 </li>
 </ol>
-<h3 id="referencias">Referencias</h3>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design" target="_blank">SOLID (object-oriented design)</a></li>
-</ul>
+<p>So this example would look like this:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
+
+<span class="hljs-comment">// takes in a callback so the engine knows when it&apos;ll be done</span>
+gulp.task(<span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>) </span>{
+    <span class="hljs-comment">// do stuff -- async or otherwise</span>
+    cb(err); <span class="hljs-comment">// if err is not null and not undefined, the run will stop, and note that it failed</span>
+});
+
+<span class="hljs-comment">// identifies a dependent task must be complete before this one begins</span>
+gulp.task(<span class="hljs-string">&apos;two&apos;</span>, [<span class="hljs-string">&apos;one&apos;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// task &apos;one&apos; is done now</span>
+});
+
+gulp.task(<span class="hljs-string">&apos;default&apos;</span>, [<span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>]);
+</code></pre>
+<h3 id="gulpwatchglob--opts-tasks-or-gulpwatchglob--opts-cb">gulp.watch(glob [, opts], tasks) or gulp.watch(glob [, opts, cb])</h3>
+<p>Watch files and do something when a file changes. This always returns an EventEmitter that emits <code>change</code> events.</p>
+<h3 id="gulpwatchglob-opts-tasks">gulp.watch(glob[, opts], tasks)</h3>
+<h4 id="glob">glob</h4>
+<p>Type: <code>String</code> or <code>Array</code></p>
+<p>A single glob or array of globs that indicate which files to watch for changes.</p>
+<h4 id="opts">opts</h4>
+<p>Type: <code>Object</code></p>
+<p>Options, that are passed to <a href="https://github.com/shama/gaze" target="_blank"><code>gaze</code></a>.</p>
+<h4 id="tasks">tasks</h4>
+<p>Type: <code>Array</code></p>
+<p>Names of task(s) to run when a file changes, added with <code>gulp.task()</code></p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> watcher = gulp.watch(<span class="hljs-string">&apos;js/**/*.js&apos;</span>, [<span class="hljs-string">&apos;uglify&apos;</span>,<span class="hljs-string">&apos;reload&apos;</span>]);
+watcher.on(<span class="hljs-string">&apos;change&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;File &apos;</span> + event.path + <span class="hljs-string">&apos; was &apos;</span> + event.type + <span class="hljs-string">&apos;, running tasks...&apos;</span>);
+});
+</code></pre>
+<h3 id="gulpwatchglob-opts-cb">gulp.watch(glob[, opts, cb])</h3>
+<h4 id="glob">glob</h4>
+<p>Type: <code>String</code> or <code>Array</code></p>
+<p>A single glob or array of globs that indicate which files to watch for changes.</p>
+<h4 id="opts">opts</h4>
+<p>Type: <code>Object</code></p>
+<p>Options, that are passed to <a href="https://github.com/shama/gaze" target="_blank"><code>gaze</code></a>.</p>
+<h4 id="cbevent">cb(event)</h4>
+<p>Type: <code>Function</code></p>
+<p>Callback to be called on each change.</p>
+<pre><code class="lang-js">gulp.watch(<span class="hljs-string">&apos;js/**/*.js&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;File &apos;</span> + event.path + <span class="hljs-string">&apos; was &apos;</span> + event.type + <span class="hljs-string">&apos;, running tasks...&apos;</span>);
+});
+</code></pre>
+<p>The callback will be passed an object, <code>event</code>, that describes the change:</p>
+<h5 id="eventtype">event.type</h5>
+<p>Type: <code>String</code></p>
+<p>The type of change that occurred, either <code>added</code>, <code>changed</code>, <code>deleted</code> or <code>renamed</code>.</p>
+<h5 id="eventpath">event.path</h5>
+<p>Type: <code>String</code></p>
+<p>The path to the file that triggered the event.</p>
 
                                 
                                 </section>
@@ -1179,12 +1372,12 @@
 
             
                 
-                <a href="codesmell.html" class="navigation navigation-prev " aria-label="Previous page: Code Smells">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Gulp">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="./" class="navigation navigation-next " aria-label="Next page: Patrones de Diseño">
+                <a href="recipes/" class="navigation navigation-next " aria-label="Next page: Recipes">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1195,7 +1388,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Principios de Diseño","level":"1.3.13","depth":2,"next":{"title":"Patrones de Diseño","level":"1.3.14","depth":2,"path":"apuntes/patterns/README.md","ref":"apuntes/patterns/README.md","articles":[{"title":"Strategy Pattern","level":"1.3.14.1","depth":3,"path":"apuntes/patterns/strategypattern.md","ref":"apuntes/patterns/strategypattern.md","articles":[]},{"title":"Dependency Injection Pattern","level":"1.3.14.2","depth":3,"path":"apuntes/patterns/dependencyinjectionpattern.md","ref":"apuntes/patterns/dependencyinjectionpattern.md","articles":[]},{"title":"Inversion of Control Pattern","level":"1.3.14.3","depth":3,"path":"apuntes/patterns/inversionofcontrolpattern.md","ref":"apuntes/patterns/inversionofcontrolpattern.md","articles":[]}]},"previous":{"title":"Code Smells","level":"1.3.12","depth":2,"path":"apuntes/patterns/codesmell.md","ref":"apuntes/patterns/codesmell.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","-ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","-jazer","livereload"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"youtube":{},"livereload":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/patterns/designprinciples.md","mtime":"2016-10-12T16:17:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-05T12:18:42.545Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API Documentation","level":"1.3.4.1","depth":3,"next":{"title":"Recipes","level":"1.3.4.2","depth":3,"path":"apuntes/gulp/recipes/README.md","ref":"apuntes/gulp/recipes/README.md","articles":[]},"previous":{"title":"Gulp","level":"1.3.4","depth":2,"path":"apuntes/gulp/README.md","ref":"apuntes/gulp/README.md","articles":[{"title":"API Documentation","level":"1.3.4.1","depth":3,"path":"apuntes/gulp/API.md","ref":"apuntes/gulp/API.md","articles":[]},{"title":"Recipes","level":"1.3.4.2","depth":3,"path":"apuntes/gulp/recipes/README.md","ref":"apuntes/gulp/recipes/README.md","articles":[]},{"title":"Plugins","level":"1.3.4.3","depth":3,"url":"http://gulpjs.com/plugins/","ref":"http://gulpjs.com/plugins/","articles":[]},{"title":"gulp gh pages","level":"1.3.4.4","depth":3,"path":"apuntes/gulp/gulpghpages.md","ref":"apuntes/gulp/gulpghpages.md","articles":[]},{"title":"gulp-linting","level":"1.3.4.5","depth":3,"path":"apuntes/gulp/gulplinting.md","ref":"apuntes/gulp/gulplinting.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","-ace","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","-jazer","livereload"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"youtube":{},"livereload":{},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"video":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/gulp/API.md","mtime":"2017-02-05T11:48:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-05T12:18:42.545Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
