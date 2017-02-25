@@ -1539,7 +1539,41 @@ user previously entered into form fields </li>
 <li><strong>Persistent cookie</strong>: expires at a specific date or after a specific length of time.</li>
 </ul>
 <h3 id="ejemplo-simple">Ejemplo Simple</h3>
-<pre><code class="lang-javascript"><span class="hljs-built_in">Error</span>: file not found: <span class="hljs-regexp">/Users/</span>casiano/ull-esit<span class="hljs-number">-1617</span>/txt/apuntes/cookies/src/hello-cookie.js
+<pre><code class="lang-javascript"><span class="hljs-comment">// https://www.codementor.io/noddy/cookie-management-in-express-js-du107rmna</span>
+<span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;express&apos;</span>);
+<span class="hljs-keyword">var</span> cookieParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;cookie-parser&apos;</span>);
+<span class="hljs-keyword">var</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;util&apos;</span>);
+
+<span class="hljs-keyword">var</span> app = express();
+app.use(cookieParser());
+
+app.get(<span class="hljs-string">&apos;/cookie&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>)</span>{
+     res.cookie(<span class="hljs-string">&apos;cookie_name&apos;</span>, <span class="hljs-string">&apos;cookie_value&apos;</span>, {<span class="hljs-attr">expire</span> : <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>() + <span class="hljs-number">9999</span>}).send(
+       <span class="hljs-string">&quot;Cookie is set: goto to browser&apos;s console and write document.cookie.&quot;</span>);
+});
+
+app.get(<span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>{
+  res.send(<span class="hljs-string">&quot;visit localhost:8080/cookie&quot;</span>)
+});
+
+app.get(<span class="hljs-string">&apos;/show&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Cookies :  &quot;</span>, req.cookies);
+  res.send(<span class="hljs-string">&quot;Cookies :  &quot;</span>+util.inspect(req.cookies));
+});
+
+app.get(<span class="hljs-string">&apos;/clearcookie&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>{
+     res.clearCookie(<span class="hljs-string">&apos;cookie_name&apos;</span>);
+     res.send(<span class="hljs-string">&apos;Cookie deleted&apos;</span>);
+});
+
+<span class="hljs-keyword">var</span> server = app.listen(<span class="hljs-number">8080</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+
+  <span class="hljs-keyword">var</span> host = server.address().address
+  <span class="hljs-keyword">var</span> port = server.address().port
+
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Example app listening at http://%s:%s&apos;</span>, host, port)
+
+})
 </code></pre>
 <h3 id="recursos">Recursos</h3>
 <ul>
@@ -1609,7 +1643,7 @@ user previously entered into form fields </li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cookies","level":"1.3.16","depth":2,"next":{"title":"Authentication","level":"1.3.17","depth":2,"path":"apuntes/authentication/README.md","ref":"apuntes/authentication/README.md","articles":[]},"previous":{"title":"Getting Started with the GitHub API","level":"1.3.15.1","depth":3,"path":"apuntes/rest/githubapitutorial.md","ref":"apuntes/rest/githubapitutorial.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/cookies/README.md","mtime":"2017-02-25T21:08:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-25T21:08:38.548Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cookies","level":"1.3.16","depth":2,"next":{"title":"Authentication","level":"1.3.17","depth":2,"path":"apuntes/authentication/README.md","ref":"apuntes/authentication/README.md","articles":[]},"previous":{"title":"Getting Started with the GitHub API","level":"1.3.15.1","depth":3,"path":"apuntes/rest/githubapitutorial.md","ref":"apuntes/rest/githubapitutorial.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/cookies/README.md","mtime":"2017-02-25T21:10:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-25T21:12:04.702Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
