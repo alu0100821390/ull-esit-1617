@@ -1932,54 +1932,6 @@ app.get(<span class="hljs-string">&apos;/clearcookie&apos;</span>, <span class="
 
 })
 </code></pre>
-<h3 id="recursos">Recursos</h3>
-<ul>
-<li><a href="https://github.com/ULL-ESIT-DSI-1617/express-cookies-examples" target="_blank">Repositorio con ejemplos de uso de cookies en express</a></li>
-</ul>
-<h3 id="tutoriales">Tutoriales</h3>
-<ul>
-<li><a href="https://www.codementor.io/noddy/cookie-management-in-express-js-du107rmna" target="_blank">Cookie Management in Express</a> <ul>
-<li><a href="https://github.com/ULL-ESIT-DSI-1617/express-cookies-examples/blob/master/hello-cookie.js" target="_blank">hello-cookie.js</a></li>
-</ul>
-</li>
-<li><a href="http://www.codexpedia.com/node-js/a-very-basic-session-auth-in-node-js-with-express-js/" target="_blank">A very basic session auth in node.js with express.js</a></li>
-</ul>
-<h3 id="cookies-y-seguridad">Cookies y Seguridad</h3>
-<h4 id="cookieparsersecret-options">cookieParser(secret, options)</h4>
-<ul>
-<li><code>secret</code> a string or array used for signing cookies. <ul>
-<li>This is optional and if not specified, will not parse signed cookies. </li>
-<li>If a string is provided, this is used as the secret. </li>
-<li>If an array is provided, an attempt will be made to unsign the cookie with each secret in order.</li>
-</ul>
-</li>
-<li><code>options</code> an object that is passed to <code>cookie.parse</code> as the second option. See <a href="https://www.npmjs.org/package/cookie" target="_blank">cookie</a> for more information.<ul>
-<li><code>decode</code> a function to decode the value of the cookie</li>
-</ul>
-</li>
-</ul>
-<h4 id="httponly">HttpOnly</h4>
-<ul>
-<li><code>HttpOnly</code> is a flag that can be included in a <code>Set-Cookie</code> response header. </li>
-<li>The presence of this flag will tell browsers to not allow client side script access to the cookie (if the browser supports it). </li>
-<li>This is important because it helps protect your cookie data from malicious scripts and helps mitigate the most common XSS attacks.<ul>
-<li>Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted web sites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user.</li>
-</ul>
-</li>
-<li>Here is how you can tell Express to set your cookie using the HttpOnly flag:<pre><code class="lang-javascript">res.cookie(<span class="hljs-string">&apos;sessionid&apos;</span>, <span class="hljs-string">&apos;1&apos;</span>, { <span class="hljs-attr">httpOnly</span>: <span class="hljs-literal">true</span> });
-</code></pre>
-</li>
-</ul>
-<h4 id="secure">Secure</h4>
-<ul>
-<li>The Secure flag is included in a <code>Set-Cookie</code> response header. </li>
-<li>The presence of the secure flag tells web browsers to only send this cookie in requests going to HTTPS endpoints. </li>
-<li>This is very important, as the cookie information will not be sent on an unencrypted channel. </li>
-<li>This helps mitigate some exploits where your browser is redirected to the HTTP endpoint for a site rather than the HTTPS endpoint and thus potentially exposing your cookies to someone in the middle of the traffic.</li>
-<li>Here is how you can tell Express to set your cookie using the Secure flag:<pre><code class="lang-javascript">res.cookie(<span class="hljs-string">&apos;sessionid&apos;</span>, <span class="hljs-string">&apos;1&apos;</span>, { <span class="hljs-attr">secure</span>: <span class="hljs-literal">true</span> });
-</code></pre>
-</li>
-</ul>
 <h3 id="cookies-sin-express-ni-cookie-parser-http-nodejs">Cookies sin Express ni cookie-parser (HTTP NodeJS)</h3>
 <pre><code class="lang-javascript"><span class="hljs-comment">// https://www.npmjs.com/package/cookie</span>
 <span class="hljs-comment">/*
@@ -2050,6 +2002,54 @@ as part of an HTML form">query string</a> commonly includes fields added to a ba
 <li><a href="https://www.npmjs.com/package/cookie" target="_blank">cookie module</a></li>
 <li><a href="https://nodejs.org/api/http.html#http_response_setheader_name_value" target="_blank">response.setHeader(name, value)</a></li>
 <li><a href="https://en.wikipedia.org/wiki/HTTP_302" target="_blank">Wikipedia: HTTP 302. Redirection</a></li>
+</ul>
+<h3 id="recursos">Recursos</h3>
+<ul>
+<li><a href="https://github.com/ULL-ESIT-DSI-1617/express-cookies-examples" target="_blank">Repositorio con ejemplos de uso de cookies en express</a></li>
+</ul>
+<h3 id="tutoriales">Tutoriales</h3>
+<ul>
+<li><a href="https://www.codementor.io/noddy/cookie-management-in-express-js-du107rmna" target="_blank">Cookie Management in Express</a> <ul>
+<li><a href="https://github.com/ULL-ESIT-DSI-1617/express-cookies-examples/blob/master/hello-cookie.js" target="_blank">hello-cookie.js</a></li>
+</ul>
+</li>
+<li><a href="http://www.codexpedia.com/node-js/a-very-basic-session-auth-in-node-js-with-express-js/" target="_blank">A very basic session auth in node.js with express.js</a></li>
+</ul>
+<h3 id="cookies-y-seguridad">Cookies y Seguridad</h3>
+<h4 id="cookieparsersecret-options">cookieParser(secret, options)</h4>
+<ul>
+<li><code>secret</code> a string or array used for signing cookies. <ul>
+<li>This is optional and if not specified, will not parse signed cookies. </li>
+<li>If a string is provided, this is used as the secret. </li>
+<li>If an array is provided, an attempt will be made to unsign the cookie with each secret in order.</li>
+</ul>
+</li>
+<li><code>options</code> an object that is passed to <code>cookie.parse</code> as the second option. See <a href="https://www.npmjs.org/package/cookie" target="_blank">cookie</a> for more information.<ul>
+<li><code>decode</code> a function to decode the value of the cookie</li>
+</ul>
+</li>
+</ul>
+<h4 id="httponly">HttpOnly</h4>
+<ul>
+<li><code>HttpOnly</code> is a flag that can be included in a <code>Set-Cookie</code> response header. </li>
+<li>The presence of this flag will tell browsers to not allow client side script access to the cookie (if the browser supports it). </li>
+<li>This is important because it helps protect your cookie data from malicious scripts and helps mitigate the most common XSS attacks.<ul>
+<li>Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted web sites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user.</li>
+</ul>
+</li>
+<li>Here is how you can tell Express to set your cookie using the HttpOnly flag:<pre><code class="lang-javascript">res.cookie(<span class="hljs-string">&apos;sessionid&apos;</span>, <span class="hljs-string">&apos;1&apos;</span>, { <span class="hljs-attr">httpOnly</span>: <span class="hljs-literal">true</span> });
+</code></pre>
+</li>
+</ul>
+<h4 id="secure">Secure</h4>
+<ul>
+<li>The Secure flag is included in a <code>Set-Cookie</code> response header. </li>
+<li>The presence of the secure flag tells web browsers to only send this cookie in requests going to HTTPS endpoints. </li>
+<li>This is very important, as the cookie information will not be sent on an unencrypted channel. </li>
+<li>This helps mitigate some exploits where your browser is redirected to the HTTP endpoint for a site rather than the HTTPS endpoint and thus potentially exposing your cookies to someone in the middle of the traffic.</li>
+<li>Here is how you can tell Express to set your cookie using the Secure flag:<pre><code class="lang-javascript">res.cookie(<span class="hljs-string">&apos;sessionid&apos;</span>, <span class="hljs-string">&apos;1&apos;</span>, { <span class="hljs-attr">secure</span>: <span class="hljs-literal">true</span> });
+</code></pre>
+</li>
 </ul>
 <h4 id="query-string">Query String</h4>
 <p>A <a href="../../GLOSSARY.html#query-string" class="glossary-term" title="A query string is the part of a uniform resource locator (URL)
@@ -2123,7 +2123,7 @@ as part of an HTML form">query string</a> as an environment variable named <code
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cookies","level":"1.3.16","depth":2,"next":{"title":"Authentication","level":"1.3.17","depth":2,"path":"apuntes/authentication/README.md","ref":"apuntes/authentication/README.md","articles":[]},"previous":{"title":"Getting Started with the GitHub API","level":"1.3.15.1","depth":3,"path":"apuntes/rest/githubapitutorial.md","ref":"apuntes/rest/githubapitutorial.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/cookies/README.md","mtime":"2017-03-05T15:23:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-06T07:40:43.356Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cookies","level":"1.3.16","depth":2,"next":{"title":"Authentication","level":"1.3.17","depth":2,"path":"apuntes/authentication/README.md","ref":"apuntes/authentication/README.md","articles":[]},"previous":{"title":"Getting Started with the GitHub API","level":"1.3.15.1","depth":3,"path":"apuntes/rest/githubapitutorial.md","ref":"apuntes/rest/githubapitutorial.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/cookies/README.md","mtime":"2017-03-06T16:04:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-06T16:04:30.995Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
