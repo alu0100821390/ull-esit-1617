@@ -1964,9 +1964,12 @@ a si mismo.</p>
 <h3 id="requisitos">Requisitos</h3>
 <ol>
 <li>Douglas Crockford escribi&#xF3; su analizador l&#xE9;xico sin usar expresiones
-regulares. Reescriba el analizador l&#xE9;xico en <a href="https://github.com/douglascrockford/TDOP/blob/master/tokens.js" target="_blank">tokens.js</a> usando expresiones regulares.</li>
+regulares. Reescriba el analizador l&#xE9;xico en <a href="https://github.com/douglascrockford/TDOP/blob/master/tokens.js" target="_blank">tokens.js</a> usando expresiones regulares.<ul>
+<li>No se limite a copiar el fichero <code>tokens.js</code>: est&#xFA;dielo, enti&#xE9;ndalo y vaya modificando el <code>tokens.js</code> original de Crockford hasta obtener una soluci&#xF3;n basada en expresiones regulares</li>
+</ul>
+</li>
 <li>Evite que se hagan copias de la cadena siendo procesada. Mu&#xE9;vase
-dentro de la misma cadena usando <code>lastIndex</code>. Parta de la
+dentro de la misma cadena usando <code>lastIndex</code>. Tiene una
 soluci&#xF3;n dada por el profesor en <ul>
 <li><a href="https://github.com/crguezl/ull-etsii-grado-pl-minijavascript/blob/gh-pages/tokens.js" target="_blank">https://github.com/crguezl/ull-etsii-grado-pl-minijavascript/blob/gh-pages/tokens.js</a></li>
 </ul>
@@ -1974,19 +1977,27 @@ soluci&#xF3;n dada por el profesor en <ul>
 <li>Mejore la soluci&#xF3;n en <a href="https://github.com/crguezl/ull-etsii-grado-pl-minijavascript/tree/gh-pages" target="_blank"> https://github.com/crguezl/ull-etsii-grado-pl-minijavascript/tree/gh-pages</a></li>
 <li>Haga el despliegue de su aplicaci&#xF3;n en Heroku o en la m&#xE1;quina virtual del iaas</li>
 <li>Complete los apuntes en su GitBook describiendo las expresiones regulares y lo aprendido en esta pr&#xE1;ctica</li>
+<li><strong>Opcional</strong>: Use <code>sessions</code>para controlar quien accede a sus apuntes. Puede ver un ejemplo de como hacerlo en los ficheros:<ul>
+<li><a href="https://github.com/ULL-ESIT-DSI-1617/express-cookies-examples/blob/master/staticauth.js" target="_blank">staticauth.js</a></li>
+<li><a href="https://github.com/ULL-ESIT-DSI-1617/express-cookies-examples/tree/master/gbookexample" target="_blank">gbookexample</a></li>
+<li><a href="https://github.com/ULL-ESIT-DSI-1617/express-cookies-examples/blob/master/gbuild" target="_blank">gbuild</a></li>
+</ul>
+</li>
 </ol>
 <h3 id="recursos">Recursos</h3>
 <ol>
 <li>Una soluci&#xF3;n a esta pr&#xE1;ctica se encuentra en:<ul>
 <li><a href="https://github.com/crguezl/ull-etsii-grado-pl-minijavascript/tree/gh-pages" target="_blank">https://github.com/crguezl/ull-etsii-grado-pl-minijavascript/tree/gh-pages</a> en github.</li>
 <li>Veala en funcionamiento en <a href="http://crguezl.github.io/ull-etsii-grado-pl-minijavascript/" target="_blank">http://crguezl.github.io/ull-etsii-grado-pl-minijavascript/</a></li>
-<li>No se limite a copiar el fichero <code>tokens.js</code>: est&#xFA;dielo, enti&#xE9;ndalo y vaya modificando el <code>tokens.js</code> original de Crockford hasta obtener una soluci&#xF3;n basada en expresiones regulares</li>
+<li><strong>No se limite a copiar el fichero <code>tokens.js</code>: est&#xFA;dielo, enti&#xE9;ndalo y vaya modificando el <code>tokens.js</code> original de Crockford hasta obtener una soluci&#xF3;n basada en expresiones regulares</strong></li>
 </ul>
 </li>
 <li>El m&#xE9;todo <code>tokens</code> original retorna el array de tokens. Puede
 encontrarlo en <a href="https://github.com/crguezl/ull-etsii-grado-pl-minijavascript/blob/gh-pages/tokens.js" target="_blank">https://github.com/crguezl/ull-etsii-grado-pl-minijavascript/blob/gh-pages/tokens.js</a></li>
 <li>Para esta pr&#xE1;ctica es necesario familiarizarse con la forma en que
  funciona la OOP en JS. Vea este <a href="http://jsfiddle.net/casiano/Mw9dW/" target="_blank">jsfiddle</a></li>
+<li><a href="../apuntes/regexp/">Apuntes: Expresiones Regulares</a></li>
+<li><a href="http://eloquentjavascript.net/09_regexp.html" target="_blank">Eloquent JS: Chapter 9: Regular Expressions</a></li>
 </ol>
 <h3 id="notas-para-el-profesor">Notas para el Profesor</h3>
 <pre><code class="lang-bash">       [~/srcPLgrado/lexical_analysis_top_down_operator_precedence(gh-pages)]$ <span class="hljs-built_in">pwd</span> -P
@@ -2019,7 +2030,7 @@ encontrarlo en <a href="https://github.com/crguezl/ull-etsii-grado-pl-minijavasc
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Práctica: Analizador Léxico para Un Subconjunto de JavaScript","level":"1.6.9","depth":2,"next":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.6.10","depth":2,"path":"practicas/practicaiaas.md","ref":"practicas/practicaiaas.md","articles":[]},"previous":{"title":"Práctica: Creación de un Paquete NPM","level":"1.6.8","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaanalisislexicotdop.md","mtime":"2017-03-11T11:45:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-11T11:45:19.476Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Práctica: Analizador Léxico para Un Subconjunto de JavaScript","level":"1.6.9","depth":2,"next":{"title":"Práctica: Despliegues en iaas y heroku","level":"1.6.10","depth":2,"path":"practicas/practicaiaas.md","ref":"practicas/practicaiaas.md","articles":[]},"previous":{"title":"Práctica: Creación de un Paquete NPM","level":"1.6.8","depth":2,"path":"practicas/practicanm.md","ref":"practicas/practicanm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"practicas/practicaanalisislexicotdop.md","mtime":"2017-03-12T14:51:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-12T14:51:46.999Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
