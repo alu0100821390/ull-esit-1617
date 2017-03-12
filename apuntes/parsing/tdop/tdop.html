@@ -2501,50 +2501,42 @@ mutates a name token into a literal token.</p>
         x.value = v;
         <span class="hljs-keyword">return</span> x;
     };
+
+    constant(<span class="hljs-string">&quot;true&quot;</span>, <span class="hljs-literal">true</span>);
+    constant(<span class="hljs-string">&quot;false&quot;</span>, <span class="hljs-literal">false</span>);
+    constant(<span class="hljs-string">&quot;null&quot;</span>, <span class="hljs-literal">null</span>);
+
+    constant(<span class="hljs-string">&quot;pi&quot;</span>, <span class="hljs-number">3.141592653589793</span>);
 </code></pre>
-<pre><code class="lang-javascript">    constant(&quot;true&quot;, true);
-    constant(&quot;false&quot;, false);
-    constant(&quot;null&quot;, null);
-
-```javascript
-    constant(&quot;pi&quot;, 3.141592653589793);
-
-The `(literal)` symbol is the prototype for all string and number
-literals. The `nud` method of a literal token returns the token itself.
-
-```javascript
-    symbol(&quot;(literal)&quot;).nud = itself;
-
-Statements
-----------
-
-Pratt&apos;s original formulation worked with functional languages in which
+<p>The <code>(literal)</code> symbol is the prototype for all string and number
+literals. The <code>nud</code> method of a literal token returns the token itself.</p>
+<pre><code class="lang-javascript">    symbol(<span class="hljs-string">&quot;(literal)&quot;</span>).nud = itself;
+</code></pre>
+<h2 id="statements">Statements</h2>
+<p>Pratt&apos;s original formulation worked with functional languages in which
 everything is an expression. Most mainstream languages have statements
 that are not as nestable as expressions. We can easily handle statements
-by adding another method to tokens, the `std` (statement denotation). A
-`std` is like a `nud` except that it is used only at the beginning of a
-statement.
-
-The `statement` function parses one statement. If the current token has
-an `std` method, the token is reserved and the `std` is invoked.
+by adding another method to tokens, the <code>std</code> (statement denotation). A
+<code>std</code> is like a <code>nud</code> except that it is used only at the beginning of a
+statement.</p>
+<p>The <code>statement</code> function parses one statement. If the current token has
+an <code>std</code> method, the token is reserved and the <code>std</code> is invoked.
 Otherwise,we assume an expression statement terminated with a
 semi-colon. For reliability, we will reject an expression statement that
-is not an assignment or invocation.
-
-```javascript
-    var statement = function () {
-        var n = token, v;
-        if (n.std) {
+is not an assignment or invocation.</p>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> statement = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> n = token, v;
+        <span class="hljs-keyword">if</span> (n.std) {
             advance();
             scope.reserve(n);
-            return n.std();
+            <span class="hljs-keyword">return</span> n.std();
         }
-        v = expression(0);
-        if (!v.assignment &amp;&amp; v.id !== &quot;(&quot;) {
-            v.error(&quot;Bad expression statement.&quot;);
+        v = expression(<span class="hljs-number">0</span>);
+        <span class="hljs-keyword">if</span> (!v.assignment &amp;&amp; v.id !== <span class="hljs-string">&quot;(&quot;</span>) {
+            v.error(<span class="hljs-string">&quot;Bad expression statement.&quot;</span>);
         }
-        advance(&quot;;&quot;);
-        return v;
+        advance(<span class="hljs-string">&quot;;&quot;</span>);
+        <span class="hljs-keyword">return</span> v;
     };
 </code></pre>
 <p>The <code>statements</code> function parses statements until it sees <code>(end)</code> or <code>}</code>
@@ -2847,7 +2839,7 @@ paper.</a></p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Top Down Operator Precedence Analysis","level":"1.6.9.1","depth":3,"next":{"title":"Práctica: Autenticación usando sessions","level":"1.6.10","depth":2,"path":"practicas/practicasessions.md","ref":"practicas/practicasessions.md","articles":[]},"previous":{"title":"Práctica: Analizador Léxico para Un Subconjunto de JavaScript","level":"1.6.9","depth":2,"path":"practicas/practicaanalisislexicotdop.md","ref":"practicas/practicaanalisislexicotdop.md","articles":[{"title":"Top Down Operator Precedence Analysis","level":"1.6.9.1","depth":3,"path":"apuntes/parsing/tdop/tdop.md","ref":"apuntes/parsing/tdop/tdop.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/parsing/tdop/tdop.md","mtime":"2017-03-12T20:35:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-12T20:37:43.413Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Top Down Operator Precedence Analysis","level":"1.6.9.1","depth":3,"next":{"title":"Práctica: Autenticación usando sessions","level":"1.6.10","depth":2,"path":"practicas/practicasessions.md","ref":"practicas/practicasessions.md","articles":[]},"previous":{"title":"Práctica: Analizador Léxico para Un Subconjunto de JavaScript","level":"1.6.9","depth":2,"path":"practicas/practicaanalisislexicotdop.md","ref":"practicas/practicaanalisislexicotdop.md","articles":[{"title":"Top Down Operator Precedence Analysis","level":"1.6.9.1","depth":3,"path":"apuntes/parsing/tdop/tdop.md","ref":"apuntes/parsing/tdop/tdop.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/parsing/tdop/tdop.md","mtime":"2017-03-12T20:43:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-12T20:43:21.043Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
