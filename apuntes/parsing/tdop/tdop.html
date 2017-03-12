@@ -2050,19 +2050,21 @@ of tokens as we grow our parse tree.</p>
 <p>Every token, such as an operator or identifier, will inherit from a
 symbol. We will keep all of our symbols (which determine the types of
 tokens in our language) in a <code>symbol_table</code> object.</p>
-<pre><code>var symbol_table = {};
-</code></pre><p>The <code>original_symbol</code> object is the prototype for all other symbols. Its
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> symbol_table = {};
+</code></pre>
+<p>The <code>original_symbol</code> object is the prototype for all other symbols. Its
 methods will usually be overridden. (We will describe the role of <code>nud</code>
 and <code>led</code> and binding powers in the section on Precedence below).</p>
-<pre><code>var original_symbol = {
-    nud: function () {
-        this.error(&quot;Undefined.&quot;);
-    },
-    led: function (left) {
-        this.error(&quot;Missing operator.&quot;);
-    }
-};
-</code></pre><p>Let&apos;s define a function that makes symbols. It takes a symbol <code>id</code> and
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> original_symbol = {
+        <span class="hljs-attr">nud</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">this</span>.error(<span class="hljs-string">&quot;Undefined.&quot;</span>);
+        },
+        <span class="hljs-attr">led</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left</span>) </span>{
+            <span class="hljs-keyword">this</span>.error(<span class="hljs-string">&quot;Missing operator.&quot;</span>);
+        }
+    };
+</code></pre>
+<p>Let&apos;s define a function that makes symbols. It takes a symbol <code>id</code> and
 an optional binding power that defaults to 0 and returns a symbol object
 for that <code>id</code>. If the symbol already exists in the <code>symbol_table</code>, the
 function returns that symbol object. Otherwise, it makes a new symbol
@@ -2070,43 +2072,47 @@ object that inherits from the <code>original_symbol</code>, stores it in the sym
 table, and returns it. A symbol object initially contains an <code>id</code>, a
 value, a left binding power, and the stuff it inherits from the
 <code>original_symbol</code>.</p>
-<pre><code>var symbol = function (id, bp) {
-    var s = symbol_table[id];
-    bp = bp || 0;
-    if (s) {
-        if (bp &gt;= s.lbp) {
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> symbol = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id, bp</span>) </span>{
+        <span class="hljs-keyword">var</span> s = symbol_table[id];
+        bp = bp || <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">if</span> (s) {
+            <span class="hljs-keyword">if</span> (bp &gt;= s.lbp) {
+                s.lbp = bp;
+            }
+        } <span class="hljs-keyword">else</span> {
+            s = <span class="hljs-built_in">Object</span>.create(original_symbol);
+            s.id = s.value = id;
             s.lbp = bp;
+            symbol_table[id] = s;
         }
-    } else {
-        s = Object.create(original_symbol);
-        s.id = s.value = id;
-        s.lbp = bp;
-        symbol_table[id] = s;
-    }
-    return s;
-};
-</code></pre><p>The following symbols are popular separators and closers.</p>
-<pre><code>symbol(&quot;:&quot;);
-symbol(&quot;;&quot;);
-symbol(&quot;,&quot;);
-symbol(&quot;)&quot;);
-symbol(&quot;]&quot;);
-symbol(&quot;}&quot;);
-symbol(&quot;else&quot;);
-</code></pre><p>The <code>(end)</code> symbol indicates the end of the token stream. The <code>(name)</code>
+        <span class="hljs-keyword">return</span> s;
+    };
+</code></pre>
+<p>The following symbols are popular separators and closers.</p>
+<pre><code class="lang-javascript">    symbol(<span class="hljs-string">&quot;:&quot;</span>);
+    symbol(<span class="hljs-string">&quot;;&quot;</span>);
+    symbol(<span class="hljs-string">&quot;,&quot;</span>);
+    symbol(<span class="hljs-string">&quot;)&quot;</span>);
+    symbol(<span class="hljs-string">&quot;]&quot;</span>);
+    symbol(<span class="hljs-string">&quot;}&quot;</span>);
+    symbol(<span class="hljs-string">&quot;else&quot;</span>);
+</code></pre>
+<p>The <code>(end)</code> symbol indicates the end of the token stream. The <code>(name)</code>
 symbol is the prototype for new names, such as variable names. The
 parentheses that I&apos;ve included in the ids of these symbols avoid
 collisions with user-defined tokens.</p>
-<pre><code>symbol(&quot;(end)&quot;);
-symbol(&quot;(name)&quot;);
-</code></pre><h2 id="tokens">Tokens</h2>
+<pre><code class="lang-javascript">    symbol(<span class="hljs-string">&quot;(end)&quot;</span>);
+    symbol(<span class="hljs-string">&quot;(name)&quot;</span>);
+</code></pre>
+<h2 id="tokens">Tokens</h2>
 <p>We assume that the source text has been transformed into an array of
 simple token objects (<code>tokens</code>), each containing a <code>type</code> member
 (<code>&quot;name&quot;</code>, <code>&quot;string&quot;</code>, <code>&quot;number&quot;</code>, or <code>&quot;operator&quot;</code>), and a <code>value</code>
 member, which is a string or number.</p>
 <p>The <code>token</code> variable always contains the current token.</p>
-<pre><code>var token;
-</code></pre><p>The <code>advance</code> function makes a new token object from the next simple
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> token;
+</code></pre>
+<p>The <code>advance</code> function makes a new token object from the next simple
 token in the array and assigns it to the <code>token</code> variable. It can take
 an optional <code>id</code> parameter which it can check against the <code>id</code> of the
 previous token. The new token object&apos;s prototype is a <code>(name)</code> token in
@@ -2114,38 +2120,39 @@ the current scope or a symbol from the symbol table. The new token&apos;s
 <code>arity</code> is <code>&quot;name&quot;</code>, <code>&quot;literal&quot;</code>, or <code>&quot;operator&quot;</code>. Its <code>arity</code> may be
 changed later to <code>&quot;binary&quot;</code>, <code>&quot;unary&quot;</code>, or <code>&quot;statement&quot;</code> when we know
 more about the token&apos;s role in the program.</p>
-<pre><code>var advance = function (id) {
-    var a, o, t, v;
-    if (id &amp;&amp; token.id !== id) {
-        token.error(&quot;Expected &apos;&quot; + id + &quot;&apos;.&quot;);
-    }
-    if (token_nr &gt;= tokens.length) {
-        token = symbol_table[&quot;(end)&quot;];
-        return;
-    }
-    t = tokens[token_nr];
-    token_nr += 1;
-    v = t.value;
-    a = t.type;
-    if (a === &quot;name&quot;) {
-        o = scope.find(v);
-    } else if (a === &quot;operator&quot;) {
-        o = symbol_table[v];
-        if (!o) {
-            t.error(&quot;Unknown operator.&quot;);
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> advance = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id</span>) </span>{
+        <span class="hljs-keyword">var</span> a, o, t, v;
+        <span class="hljs-keyword">if</span> (id &amp;&amp; token.id !== id) {
+            token.error(<span class="hljs-string">&quot;Expected &apos;&quot;</span> + id + <span class="hljs-string">&quot;&apos;.&quot;</span>);
         }
-    } else if (a === &quot;string&quot; || a ===  &quot;number&quot;) {
-        a = &quot;literal&quot;;
-        o = symbol_table[&quot;(literal)&quot;];
-    } else {
-        t.error(&quot;Unexpected token.&quot;);
-    }
-    token = Object.create(o);
-    token.value = v;
-    token.arity = a;
-    return token;
-};
-</code></pre><h2 id="scope">Scope</h2>
+        <span class="hljs-keyword">if</span> (token_nr &gt;= tokens.length) {
+            token = symbol_table[<span class="hljs-string">&quot;(end)&quot;</span>];
+            <span class="hljs-keyword">return</span>;
+        }
+        t = tokens[token_nr];
+        token_nr += <span class="hljs-number">1</span>;
+        v = t.value;
+        a = t.type;
+        <span class="hljs-keyword">if</span> (a === <span class="hljs-string">&quot;name&quot;</span>) {
+            o = scope.find(v);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a === <span class="hljs-string">&quot;operator&quot;</span>) {
+            o = symbol_table[v];
+            <span class="hljs-keyword">if</span> (!o) {
+                t.error(<span class="hljs-string">&quot;Unknown operator.&quot;</span>);
+            }
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a === <span class="hljs-string">&quot;string&quot;</span> || a ===  <span class="hljs-string">&quot;number&quot;</span>) {
+            a = <span class="hljs-string">&quot;literal&quot;</span>;
+            o = symbol_table[<span class="hljs-string">&quot;(literal)&quot;</span>];
+        } <span class="hljs-keyword">else</span> {
+            t.error(<span class="hljs-string">&quot;Unexpected token.&quot;</span>);
+        }
+        token = <span class="hljs-built_in">Object</span>.create(o);
+        token.value = v;
+        token.arity = a;
+        <span class="hljs-keyword">return</span> token;
+    };
+</code></pre>
+<h2 id="scope">Scope</h2>
 <p>Most languages have some notation for defining new symbols (such as
 variable names). In a very simple language, when we encounter a new
 word, we might give it a definition and put it in the symbol table. In a
@@ -2156,79 +2163,84 @@ variable.</p>
 accessible. Scopes can be nested inside of other scopes. Variables
 defined in a scope are not visible outside of the scope.</p>
 <p>We will keep the current scope object in the <code>scope</code> variable.</p>
-<pre><code>var scope;
-</code></pre><p>The <code>original_scope</code> is the prototype for all scope objects. It contains
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> scope;
+</code></pre>
+<p>The <code>original_scope</code> is the prototype for all scope objects. It contains
 a <code>define</code> method that is used to define new variables in the scope. The
 <code>define</code> method transforms a name token into a variable token. It
 produces an error if the variable has already been defined in the scope
 or if the name has already been used as a reserved word.</p>
-<pre><code>var itself = function () {
-    return this;
-};
-
-var original_scope = {
-    define: function (n) {
-        var t = this.def[n.value];
-        if (typeof t === &quot;object&quot;) {
-            n.error(t.reserved ?
-                &quot;Already reserved.&quot; :
-                &quot;Already defined.&quot;);
-        }
-        this.def[n.value] = n;
-        n.reserved = false;
-        n.nud      = itself;
-        n.led      = null;
-        n.std      = null;
-        n.lbp      = 0;
-        n.scope    = scope;
-        return n;
-    },
-</code></pre><p>The <code>find</code> method is used to find the definition of a name. It starts
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> itself = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };
+</code></pre>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> original_scope = {
+        <span class="hljs-attr">define</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">n</span>) </span>{
+            <span class="hljs-keyword">var</span> t = <span class="hljs-keyword">this</span>.def[n.value];
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> t === <span class="hljs-string">&quot;object&quot;</span>) {
+                n.error(t.reserved ?
+                    <span class="hljs-string">&quot;Already reserved.&quot;</span> :
+                    <span class="hljs-string">&quot;Already defined.&quot;</span>);
+            }
+            <span class="hljs-keyword">this</span>.def[n.value] = n;
+            n.reserved = <span class="hljs-literal">false</span>;
+            n.nud      = itself;
+            n.led      = <span class="hljs-literal">null</span>;
+            n.std      = <span class="hljs-literal">null</span>;
+            n.lbp      = <span class="hljs-number">0</span>;
+            n.scope    = scope;
+            <span class="hljs-keyword">return</span> n;
+        },
+</code></pre>
+<p>The <code>find</code> method is used to find the definition of a name. It starts
 with the current scope and seeks, if necessary, back through the chain
 of parent scopes and ultimately to the symbol table. It returns
 <code>symbol_table[&quot;(name)&quot;]</code> if it cannot find a definition.</p>
 <p>The <code>find</code> method tests the values it finds to determine that they are
 not <code>undefined</code> (which would indicate an undeclared name) and not a
 function (which would indicate a collision with an inherited method).</p>
-<pre><code>    find: function (n) {
-            var e = this, o;
-            while (true) {
-                o = e.def[n];
-                if (o &amp;&amp; typeof o !== &apos;function&apos;) {
-                    return e.def[n];
+<pre><code class="lang-javascript">        find: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">n</span>) </span>{
+                <span class="hljs-keyword">var</span> e = <span class="hljs-keyword">this</span>, o;
+                <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+                    o = e.def[n];
+                    <span class="hljs-keyword">if</span> (o &amp;&amp; <span class="hljs-keyword">typeof</span> o !== <span class="hljs-string">&apos;function&apos;</span>) {
+                        <span class="hljs-keyword">return</span> e.def[n];
+                    }
+                    e = e.parent;
+                    <span class="hljs-keyword">if</span> (!e) {
+                        o = symbol_table[n];
+                        <span class="hljs-keyword">return</span> o &amp;&amp; <span class="hljs-keyword">typeof</span> o !== <span class="hljs-string">&apos;function&apos;</span> ?
+                                o : symbol_table[<span class="hljs-string">&quot;(name)&quot;</span>];
+                    }
                 }
-                e = e.parent;
-                if (!e) {
-                    o = symbol_table[n];
-                    return o &amp;&amp; typeof o !== &apos;function&apos; ?
-                            o : symbol_table[&quot;(name)&quot;];
-                }
-            }
+            },
+</code></pre>
+<p>The <code>pop</code> method closes a scope, giving focus back to the parent.</p>
+<pre><code class="lang-javascript">        pop: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            scope = <span class="hljs-keyword">this</span>.parent;
         },
-</code></pre><p>The <code>pop</code> method closes a scope, giving focus back to the parent.</p>
-<pre><code>    pop: function () {
-        scope = this.parent;
-    },
-</code></pre><p>The <code>reserve</code> method is used to indicate that a name has been used as a
+</code></pre>
+<p>The <code>reserve</code> method is used to indicate that a name has been used as a
 reserved word in the current scope.</p>
-<pre><code>    reserve: function (n) {
-        if (n.arity !== &quot;name&quot; || n.reserved) {
-            return;
-        }
-        var t = this.def[n.value];
-        if (t) {
-            if (t.reserved) {
-                return;
+<pre><code class="lang-javascript">        reserve: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">n</span>) </span>{
+            <span class="hljs-keyword">if</span> (n.arity !== <span class="hljs-string">&quot;name&quot;</span> || n.reserved) {
+                <span class="hljs-keyword">return</span>;
             }
-            if (t.arity === &quot;name&quot;) {
-                n.error(&quot;Already defined.&quot;);
+            <span class="hljs-keyword">var</span> t = <span class="hljs-keyword">this</span>.def[n.value];
+            <span class="hljs-keyword">if</span> (t) {
+                <span class="hljs-keyword">if</span> (t.reserved) {
+                    <span class="hljs-keyword">return</span>;
+                }
+                <span class="hljs-keyword">if</span> (t.arity === <span class="hljs-string">&quot;name&quot;</span>) {
+                    n.error(<span class="hljs-string">&quot;Already defined.&quot;</span>);
+                }
             }
+            <span class="hljs-keyword">this</span>.def[n.value] = n;
+            n.reserved = <span class="hljs-literal">true</span>;
         }
-        this.def[n.value] = n;
-        n.reserved = true;
-    }
-};
-</code></pre><p>We need a policy for reserved words. In some languages, words that are
+    };
+</code></pre>
+<p>We need a policy for reserved words. In some languages, words that are
 used structurally (such as <code>if</code>) are reserved and cannot be used as
 variable names. The flexibility of our parser allows us to have a more
 useful policy. For example, we can say that in any function, any name
@@ -2241,14 +2253,15 @@ irrelevant restrictions on the use of names.</p>
 <p>Whenever we want to establish a new scope for a function or a block we
 call the <code>new_scope</code> function, which makes a new instance of the
 original scope prototype.</p>
-<pre><code>var new_scope = function () {
-    var s = scope;
-    scope = Object.create(original_scope);
-    scope.def = {};
-    scope.parent = s;
-    return scope;
-};
-</code></pre><h2 id="precedence">Precedence</h2>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> new_scope = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> s = scope;
+        scope = <span class="hljs-built_in">Object</span>.create(original_scope);
+        scope.def = {};
+        scope.parent = s;
+        <span class="hljs-keyword">return</span> scope;
+    };
+</code></pre>
+<h2 id="precedence">Precedence</h2>
 <p>Tokens are objects that bear methods allowing them to make precedence
 decisions, match other tokens, and build trees (and in a more ambitious
 project, also check types and optimize and generate code). The basic
@@ -2285,19 +2298,20 @@ a <code>led</code> method. For example, <code>-</code> might be both a prefix op
 <p>The heart of Pratt&apos;s technique is the <code>expression</code> function. It takes a
 right binding power that controls how aggressively it binds to tokens on
 its right.</p>
-<pre><code>var expression = function (rbp) {
-    var left;
-    var t = token;
-    advance();
-    left = t.nud();
-    while (rbp &lt; token.lbp) {
-        t = token;
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> expression = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">rbp</span>) </span>{
+        <span class="hljs-keyword">var</span> left;
+        <span class="hljs-keyword">var</span> t = token;
         advance();
-        left = t.led(left);
+        left = t.nud();
+        <span class="hljs-keyword">while</span> (rbp &lt; token.lbp) {
+            t = token;
+            advance();
+            left = t.led(left);
+        }
+        <span class="hljs-keyword">return</span> left;
     }
-    return left;
-}
-</code></pre><p><code>expression</code> calls the <code>nud</code> method of the <code>token</code>. The <code>nud</code> is used to
+</code></pre>
+<p><code>expression</code> calls the <code>nud</code> method of the <code>token</code>. The <code>nud</code> is used to
 process literals, variables, and prefix operators. Then as long as the
 right binding power is less than the left binding power of the next
 token, the <code>led</code> method is invoked on the following token. The <code>led</code> is
@@ -2309,446 +2323,486 @@ weaves the token object into a tree whose two branches (<code>first</code> and
 <code>second</code>) are the operand to the left of the <code>+</code> and the operand to the
 right. The left operand is passed into the <code>led</code>, which then obtains the
 right operand by calling the <code>expression</code> function.</p>
-<pre><code>symbol(&quot;+&quot;, 50).led = function (left) {
-    this.first = left;
-    this.second = expression(50);
-    this.arity = &quot;binary&quot;;
-    return this;
-};
-</code></pre><p>The symbol for <code>*</code> is the same as <code>+</code> except for the <code>id</code> and binding
+<pre><code class="lang-javascript">    symbol(<span class="hljs-string">&quot;+&quot;</span>, <span class="hljs-number">50</span>).led = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left</span>) </span>{
+        <span class="hljs-keyword">this</span>.first = left;
+        <span class="hljs-keyword">this</span>.second = expression(<span class="hljs-number">50</span>);
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;binary&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };
+</code></pre>
+<p>The symbol for <code>*</code> is the same as <code>+</code> except for the <code>id</code> and binding
 powers. It has a higher binding power because it binds more tightly.</p>
-<pre><code>symbol(&quot;*&quot;, 60).led = function (left) {
-    this.first = left;
-    this.second = expression(60);
-    this.arity = &quot;binary&quot;;
-    return this;
-};
-</code></pre><p>Not all infix operators will be this similar, but many will, so we can
+<pre><code class="lang-javascript">    symbol(<span class="hljs-string">&quot;*&quot;</span>, <span class="hljs-number">60</span>).led = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left</span>) </span>{
+        <span class="hljs-keyword">this</span>.first = left;
+        <span class="hljs-keyword">this</span>.second = expression(<span class="hljs-number">60</span>);
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;binary&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };
+</code></pre>
+<p>Not all infix operators will be this similar, but many will, so we can
 make our work easier by defining an <code>infix</code> function that will help us
 make symbols for infix operators. The <code>infix</code> function takes an <code>id</code>, a
 binding power, and an optional <code>led</code> function. If a <code>led</code> function is
 not provided, the <code>infix</code> function supplies a default <code>led</code> that is
 useful in most cases.</p>
-<pre><code>var infix = function (id, bp, led) {
-    var s = symbol(id, bp);
-    s.led = led || function (left) {
-        this.first = left;
-        this.second = expression(bp);
-        this.arity = &quot;binary&quot;;
-        return this;
-    };
-    return s;
-}
-</code></pre><p>This allows a more declarative style for specifying infix operators:</p>
-<pre><code>infix(&quot;+&quot;, 50);
-infix(&quot;-&quot;, 50);
-infix(&quot;*&quot;, 60);
-infix(&quot;/&quot;, 60);
-</code></pre><p><code>===</code> is JavaScript&apos;s exact equality comparison operator.</p>
-<pre><code>infix(&quot;===&quot;, 40);
-infix(&quot;!==&quot;, 40);
-infix(&quot;&lt;&quot;, 40);
-infix(&quot;&lt;=&quot;, 40);
-infix(&quot;&gt;&quot;, 40);
-infix(&quot;&gt;=&quot;, 40);
-</code></pre><p>The ternary operator takes three expressions, separated by <code>?</code> and <code>:</code>.
-It is not an ordinary infix operator, so we need to supply its <code>led</code>
-function.</p>
-<pre><code>infix(&quot;?&quot;, 20, function (left) {
-    this.first = left;
-    this.second = expression(0);
-    advance(&quot;:&quot;);
-    this.third = expression(0);
-    this.arity = &quot;ternary&quot;;
-    return this;
-});
-</code></pre><p>The <code>.</code> operator is used to select a member of an object. The token on
-the right must be a name, but it will be used as a literal.</p>
-<pre><code>infix(&quot;.&quot;, 80, function (left) {
-    this.first = left;
-    if (token.arity !== &quot;name&quot;) {
-        token.error(&quot;Expected a property name.&quot;);
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> infix = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id, bp, led</span>) </span>{
+        <span class="hljs-keyword">var</span> s = symbol(id, bp);
+        s.led = led || <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left</span>) </span>{
+            <span class="hljs-keyword">this</span>.first = left;
+            <span class="hljs-keyword">this</span>.second = expression(bp);
+            <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;binary&quot;</span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+        };
+        <span class="hljs-keyword">return</span> s;
     }
-    token.arity = &quot;literal&quot;;
-    this.second = token;
-    this.arity = &quot;binary&quot;;
-    advance();
-    return this;
-});
-</code></pre><p>The <code>[</code> operator is used to dynamically select a member from an object
+</code></pre>
+<p>This allows a more declarative style for specifying infix operators:</p>
+<pre><code class="lang-javascript">    infix(<span class="hljs-string">&quot;+&quot;</span>, <span class="hljs-number">50</span>);
+    infix(<span class="hljs-string">&quot;-&quot;</span>, <span class="hljs-number">50</span>);
+    infix(<span class="hljs-string">&quot;*&quot;</span>, <span class="hljs-number">60</span>);
+    infix(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-number">60</span>);
+</code></pre>
+<p><code>===</code> is JavaScript&apos;s exact equality comparison operator.</p>
+<pre><code class="lang-javascript">    infix(<span class="hljs-string">&quot;===&quot;</span>, <span class="hljs-number">40</span>);
+    infix(<span class="hljs-string">&quot;!==&quot;</span>, <span class="hljs-number">40</span>);
+    infix(<span class="hljs-string">&quot;&lt;&quot;</span>, <span class="hljs-number">40</span>);
+    infix(<span class="hljs-string">&quot;&lt;=&quot;</span>, <span class="hljs-number">40</span>);
+    infix(<span class="hljs-string">&quot;&gt;&quot;</span>, <span class="hljs-number">40</span>);
+    infix(<span class="hljs-string">&quot;&gt;=&quot;</span>, <span class="hljs-number">40</span>);
+
+The ternary operator takes three expressions, separated by <span class="hljs-string">`?`</span> and <span class="hljs-string">`:`</span>.
+It is not an ordinary infix operator, so we need to supply its <span class="hljs-string">`led`</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>.
+
+```<span class="hljs-title">javascript</span>
+    <span class="hljs-title">infix</span>(<span class="hljs-params"><span class="hljs-string">&quot;?&quot;</span>, <span class="hljs-number">20</span>, function (left</span>) </span>{
+        <span class="hljs-keyword">this</span>.first = left;
+        <span class="hljs-keyword">this</span>.second = expression(<span class="hljs-number">0</span>);
+        advance(<span class="hljs-string">&quot;:&quot;</span>);
+        <span class="hljs-keyword">this</span>.third = expression(<span class="hljs-number">0</span>);
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;ternary&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<p>The <code>.</code> operator is used to select a member of an object. The token on
+the right must be a name, but it will be used as a literal.</p>
+<pre><code class="lang-javascript">    infix(<span class="hljs-string">&quot;.&quot;</span>, <span class="hljs-number">80</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left</span>) </span>{
+        <span class="hljs-keyword">this</span>.first = left;
+        <span class="hljs-keyword">if</span> (token.arity !== <span class="hljs-string">&quot;name&quot;</span>) {
+            token.error(<span class="hljs-string">&quot;Expected a property name.&quot;</span>);
+        }
+        token.arity = <span class="hljs-string">&quot;literal&quot;</span>;
+        <span class="hljs-keyword">this</span>.second = token;
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;binary&quot;</span>;
+        advance();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<p>The <code>[</code> operator is used to dynamically select a member from an object
 or array. The expression on the right must be followed by a closing <code>]</code>.</p>
-<pre><code>infix(&quot;[&quot;, 80, function (left) {
-    this.first = left;
-    this.second = expression(0);
-    this.arity = &quot;binary&quot;;
-    advance(&quot;]&quot;);
-    return this;
-});
-</code></pre><p>Those infix operators are left associative. We can also make right
+<pre><code class="lang-javascript">    infix(<span class="hljs-string">&quot;[&quot;</span>, <span class="hljs-number">80</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left</span>) </span>{
+        <span class="hljs-keyword">this</span>.first = left;
+        <span class="hljs-keyword">this</span>.second = expression(<span class="hljs-number">0</span>);
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;binary&quot;</span>;
+        advance(<span class="hljs-string">&quot;]&quot;</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<p>Those infix operators are left associative. We can also make right
 associative operators, such as short-circuiting logical operators, by
 reducing the right binding power.</p>
-<pre><code>var infixr = function (id, bp, led) {
-    var s = symbol(id, bp);
-    s.led = led || function (left) {
-        this.first = left;
-        this.second = expression(bp - 1);
-        this.arity = &quot;binary&quot;;
-        return this;
-    };
-    return s;
-}
-</code></pre><p>The <code>&amp;&amp;</code> operator returns the first operand if the first operand is
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> infixr = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id, bp, led</span>) </span>{
+        <span class="hljs-keyword">var</span> s = symbol(id, bp);
+        s.led = led || <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left</span>) </span>{
+            <span class="hljs-keyword">this</span>.first = left;
+            <span class="hljs-keyword">this</span>.second = expression(bp - <span class="hljs-number">1</span>);
+            <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;binary&quot;</span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+        };
+        <span class="hljs-keyword">return</span> s;
+    }
+</code></pre>
+<p>The <code>&amp;&amp;</code> operator returns the first operand if the first operand is
 falsy. Otherwise, it returns the second operand. The <code>||</code> operator
 returns the first operand if the first operand is truthy. Otherwise, it
 returns the second operand. (The falsy values are the number <code>0</code>, the
 empty string <code>&quot;&quot;</code>, and the values <code>false</code> and <code>null</code>. All other values
 (including all objects) are truthy.)</p>
-<pre><code>infixr(&quot;&amp;&amp;&quot;, 30);
-infixr(&quot;||&quot;, 30);
-</code></pre><h2 id="prefix-operators">Prefix Operators</h2>
+<pre><code class="lang-javascript">    infixr(<span class="hljs-string">&quot;&amp;&amp;&quot;</span>, <span class="hljs-number">30</span>);
+    infixr(<span class="hljs-string">&quot;||&quot;</span>, <span class="hljs-number">30</span>);
+</code></pre>
+<h2 id="prefix-operators">Prefix Operators</h2>
 <p>The code we used for right associative infix operators can be adapted
 for prefix operators. Prefix operators are right associative. A prefix
 does not have a left binding power because it does not bind to the left.
 Prefix operators can also sometimes be reserved words.</p>
-<pre><code>var prefix = function (id, nud) {
-    var s = symbol(id);
-    s.nud = nud || function () {
-        scope.reserve(this);
-        this.first = expression(70);
-        this.arity = &quot;unary&quot;;
-        return this;
-    };
-    return s;
-}
-
-prefix(&quot;-&quot;);
-prefix(&quot;!&quot;);
-prefix(&quot;typeof&quot;);
-</code></pre><p>The <code>nud</code> of <code>(</code> will call <code>advance(&quot;)&quot;)</code> to match a balancing <code>)</code>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> prefix = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id, nud</span>) </span>{
+        <span class="hljs-keyword">var</span> s = symbol(id);
+        s.nud = nud || <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            scope.reserve(<span class="hljs-keyword">this</span>);
+            <span class="hljs-keyword">this</span>.first = expression(<span class="hljs-number">70</span>);
+            <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;unary&quot;</span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+        };
+        <span class="hljs-keyword">return</span> s;
+    }
+</code></pre>
+<pre><code class="lang-javascript">    prefix(<span class="hljs-string">&quot;-&quot;</span>);
+    prefix(<span class="hljs-string">&quot;!&quot;</span>);
+    prefix(<span class="hljs-string">&quot;typeof&quot;</span>);
+</code></pre>
+<p>The <code>nud</code> of <code>(</code> will call <code>advance(&quot;)&quot;)</code> to match a balancing <code>)</code>
 token. The <code>(</code> token does not become part of the parse tree because the
 <code>nud</code> returns the inner expression.</p>
-<pre><code>prefix(&quot;(&quot;, function () {
-    var e = expression(0);
-    advance(&quot;)&quot;);
-    return e;
-});
-</code></pre><h2 id="assignment-operators">Assignment Operators</h2>
+<pre><code class="lang-javascript">    prefix(<span class="hljs-string">&quot;(&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> e = expression(<span class="hljs-number">0</span>);
+        advance(<span class="hljs-string">&quot;)&quot;</span>);
+        <span class="hljs-keyword">return</span> e;
+    });
+</code></pre>
+<h2 id="assignment-operators">Assignment Operators</h2>
 <p>We could use <code>infixr</code> to define our assignment operators, but we will
 make a specialized <code>assignment</code> function because we want it to do two
 extra bits of business: examine the left operand to make sure that it is
 a proper lvalue, and set an <code>assignment</code> member so that we can later
 quickly identify assignment statements.</p>
-<pre><code>var assignment = function (id) {
-    return infixr(id, 10, function (left) {
-        if (left.id !== &quot;.&quot; &amp;&amp; left.id !== &quot;[&quot; &amp;&amp;
-                left.arity !== &quot;name&quot;) {
-            left.error(&quot;Bad lvalue.&quot;);
-        }
-        this.first = left;
-        this.second = expression(9);
-        this.assignment = true;
-        this.arity = &quot;binary&quot;;
-        return this;
-    });
-};
-
-assignment(&quot;=&quot;);
-assignment(&quot;+=&quot;);
-assignment(&quot;-=&quot;);
-</code></pre><p>Notice that we have implemented a sort of inheritance pattern, where
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> assignment = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id</span>) </span>{
+        <span class="hljs-keyword">return</span> infixr(id, <span class="hljs-number">10</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left</span>) </span>{
+            <span class="hljs-keyword">if</span> (left.id !== <span class="hljs-string">&quot;.&quot;</span> &amp;&amp; left.id !== <span class="hljs-string">&quot;[&quot;</span> &amp;&amp;
+                    left.arity !== <span class="hljs-string">&quot;name&quot;</span>) {
+                left.error(<span class="hljs-string">&quot;Bad lvalue.&quot;</span>);
+            }
+            <span class="hljs-keyword">this</span>.first = left;
+            <span class="hljs-keyword">this</span>.second = expression(<span class="hljs-number">9</span>);
+            <span class="hljs-keyword">this</span>.assignment = <span class="hljs-literal">true</span>;
+            <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;binary&quot;</span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+        });
+    };
+</code></pre>
+<pre><code class="lang-javascript">    assignment(<span class="hljs-string">&quot;=&quot;</span>);
+    assignment(<span class="hljs-string">&quot;+=&quot;</span>);
+    assignment(<span class="hljs-string">&quot;-=&quot;</span>);
+</code></pre>
+<p>Notice that we have implemented a sort of inheritance pattern, where
 <code>assignment</code> returns the result of calling <code>infixr</code>, and <code>infixr</code>
 returns the result of calling <code>symbol</code>.</p>
 <h2 id="constants">Constants</h2>
 <p>The <code>constant</code> function builds constants into the language. The <code>nud</code>
 mutates a name token into a literal token.</p>
-<pre><code>var constant = function (s, v) {
-    var x = symbol(s);
-    x.nud = function () {
-        scope.reserve(this);
-        this.value = symbol_table[this.id].value;
-        this.arity = &quot;literal&quot;;
-        return this;
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> constant = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">s, v</span>) </span>{
+        <span class="hljs-keyword">var</span> x = symbol(s);
+        x.nud = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            scope.reserve(<span class="hljs-keyword">this</span>);
+            <span class="hljs-keyword">this</span>.value = symbol_table[<span class="hljs-keyword">this</span>.id].value;
+            <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;literal&quot;</span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+        };
+        x.value = v;
+        <span class="hljs-keyword">return</span> x;
     };
-    x.value = v;
-    return x;
-};
+</code></pre>
+<pre><code class="lang-javascript">    constant(&quot;true&quot;, true);
+    constant(&quot;false&quot;, false);
+    constant(&quot;null&quot;, null);
 
-constant(&quot;true&quot;, true);
-constant(&quot;false&quot;, false);
-constant(&quot;null&quot;, null);
+```javascript
+    constant(&quot;pi&quot;, 3.141592653589793);
 
-constant(&quot;pi&quot;, 3.141592653589793);
-</code></pre><p>The <code>(literal)</code> symbol is the prototype for all string and number
-literals. The <code>nud</code> method of a literal token returns the token itself.</p>
-<pre><code>symbol(&quot;(literal)&quot;).nud = itself;
-</code></pre><h2 id="statements">Statements</h2>
-<p>Pratt&apos;s original formulation worked with functional languages in which
+The `(literal)` symbol is the prototype for all string and number
+literals. The `nud` method of a literal token returns the token itself.
+
+```javascript
+    symbol(&quot;(literal)&quot;).nud = itself;
+
+Statements
+----------
+
+Pratt&apos;s original formulation worked with functional languages in which
 everything is an expression. Most mainstream languages have statements
 that are not as nestable as expressions. We can easily handle statements
-by adding another method to tokens, the <code>std</code> (statement denotation). A
-<code>std</code> is like a <code>nud</code> except that it is used only at the beginning of a
-statement.</p>
-<p>The <code>statement</code> function parses one statement. If the current token has
-an <code>std</code> method, the token is reserved and the <code>std</code> is invoked.
+by adding another method to tokens, the `std` (statement denotation). A
+`std` is like a `nud` except that it is used only at the beginning of a
+statement.
+
+The `statement` function parses one statement. If the current token has
+an `std` method, the token is reserved and the `std` is invoked.
 Otherwise,we assume an expression statement terminated with a
 semi-colon. For reliability, we will reject an expression statement that
-is not an assignment or invocation.</p>
-<pre><code>var statement = function () {
-    var n = token, v;
-    if (n.std) {
-        advance();
-        scope.reserve(n);
-        return n.std();
-    }
-    v = expression(0);
-    if (!v.assignment &amp;&amp; v.id !== &quot;(&quot;) {
-        v.error(&quot;Bad expression statement.&quot;);
-    }
-    advance(&quot;;&quot;);
-    return v;
-};
-</code></pre><p>The <code>statements</code> function parses statements until it sees <code>(end)</code> or <code>}</code>
+is not an assignment or invocation.
+
+```javascript
+    var statement = function () {
+        var n = token, v;
+        if (n.std) {
+            advance();
+            scope.reserve(n);
+            return n.std();
+        }
+        v = expression(0);
+        if (!v.assignment &amp;&amp; v.id !== &quot;(&quot;) {
+            v.error(&quot;Bad expression statement.&quot;);
+        }
+        advance(&quot;;&quot;);
+        return v;
+    };
+</code></pre>
+<p>The <code>statements</code> function parses statements until it sees <code>(end)</code> or <code>}</code>
 which signals the end of a block. The function returns a statement, an
 array of statements, or <code>null</code> if there were no statements present.</p>
-<pre><code>var statements = function () {
-    var a = [], s;
-    while (true) {
-        if (token.id === &quot;}&quot; || token.id === &quot;(end)&quot;) {
-            break;
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> statements = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> a = [], s;
+        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+            <span class="hljs-keyword">if</span> (token.id === <span class="hljs-string">&quot;}&quot;</span> || token.id === <span class="hljs-string">&quot;(end)&quot;</span>) {
+                <span class="hljs-keyword">break</span>;
+            }
+            s = statement();
+            <span class="hljs-keyword">if</span> (s) {
+                a.push(s);
+            }
         }
-        s = statement();
-        if (s) {
-            a.push(s);
-        }
-    }
-    return a.length === 0 ? null : a.length === 1 ? a[0] : a;
-};
-</code></pre><p>The <code>stmt</code> function is used to add statement symbols to the symbol
+        <span class="hljs-keyword">return</span> a.length === <span class="hljs-number">0</span> ? <span class="hljs-literal">null</span> : a.length === <span class="hljs-number">1</span> ? a[<span class="hljs-number">0</span>] : a;
+    };
+</code></pre>
+<p>The <code>stmt</code> function is used to add statement symbols to the symbol
 table. It takes a statement <code>id</code> and an <code>std</code> function.</p>
-<pre><code>var stmt = function (s, f) {
-    var x = symbol(s);
-    x.std = f;
-    return x;
-};
-</code></pre><p>The block statement wraps a pair of curly braces around a list of
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> stmt = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">s, f</span>) </span>{
+        <span class="hljs-keyword">var</span> x = symbol(s);
+        x.std = f;
+        <span class="hljs-keyword">return</span> x;
+    };
+</code></pre>
+<p>The block statement wraps a pair of curly braces around a list of
 statements, giving them a new scope. (JavaScript does not have block
 scope. Simplified JavaScript corrects that.)</p>
-<pre><code>stmt(&quot;{&quot;, function () {
-    new_scope();
-    var a = statements();
-    advance(&quot;}&quot;);
-    scope.pop();
-    return a;
-});
-</code></pre><p>The block function parses a block.</p>
-<pre><code>var block = function () {
-    var t = token;
-    advance(&quot;{&quot;);
-    return t.std();
-};
-</code></pre><p>The <code>var</code> statement defines one or more variables in the current block.
+<pre><code class="lang-javascript">    stmt(<span class="hljs-string">&quot;{&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        new_scope();
+        <span class="hljs-keyword">var</span> a = statements();
+        advance(<span class="hljs-string">&quot;}&quot;</span>);
+        scope.pop();
+        <span class="hljs-keyword">return</span> a;
+    });
+</code></pre>
+<p>The block function parses a block.</p>
+<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> block = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> t = token;
+        advance(<span class="hljs-string">&quot;{&quot;</span>);
+        <span class="hljs-keyword">return</span> t.std();
+    };
+</code></pre>
+<p>The <code>var</code> statement defines one or more variables in the current block.
 Each name can optionally be followed by <code>=</code> and an initializing
 expression.</p>
-<pre><code>stmt(&quot;var&quot;, function () {
-    var a = [], n, t;
-    while (true) {
-        n = token;
-        if (n.arity !== &quot;name&quot;) {
-            n.error(&quot;Expected a new variable name.&quot;);
+<pre><code class="lang-javascript">    stmt(<span class="hljs-string">&quot;var&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> a = [], n, t;
+        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+            n = token;
+            <span class="hljs-keyword">if</span> (n.arity !== <span class="hljs-string">&quot;name&quot;</span>) {
+                n.error(<span class="hljs-string">&quot;Expected a new variable name.&quot;</span>);
+            }
+            scope.define(n);
+            advance();
+            <span class="hljs-keyword">if</span> (token.id === <span class="hljs-string">&quot;=&quot;</span>) {
+                t = token;
+                advance(<span class="hljs-string">&quot;=&quot;</span>);
+                t.first = n;
+                t.second = expression(<span class="hljs-number">0</span>);
+                t.arity = <span class="hljs-string">&quot;binary&quot;</span>;
+                a.push(t);
+            }
+            <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;,&quot;</span>) {
+                <span class="hljs-keyword">break</span>;
+            }
+            advance(<span class="hljs-string">&quot;,&quot;</span>);
         }
-        scope.define(n);
-        advance();
-        if (token.id === &quot;=&quot;) {
-            t = token;
-            advance(&quot;=&quot;);
-            t.first = n;
-            t.second = expression(0);
-            t.arity = &quot;binary&quot;;
-            a.push(t);
-        }
-        if (token.id !== &quot;,&quot;) {
-            break;
-        }
-        advance(&quot;,&quot;);
-    }
-    advance(&quot;;&quot;);
-    return a.length === 0 ? null : a.length === 1 ? a[0] : a;
-});
-</code></pre><p>The <code>while</code> statement defines a loop. It contains an expression in
+        advance(<span class="hljs-string">&quot;;&quot;</span>);
+        <span class="hljs-keyword">return</span> a.length === <span class="hljs-number">0</span> ? <span class="hljs-literal">null</span> : a.length === <span class="hljs-number">1</span> ? a[<span class="hljs-number">0</span>] : a;
+    });
+</code></pre>
+<p>The <code>while</code> statement defines a loop. It contains an expression in
 parens and a block.</p>
-<pre><code>stmt(&quot;while&quot;, function () {
-    advance(&quot;(&quot;);
-    this.first = expression(0);
-    advance(&quot;)&quot;);
-    this.second = block();
-    this.arity = &quot;statement&quot;;
-    return this;
-});
-</code></pre><p>The <code>if</code> statement allows for conditional execution. If we see the
+<pre><code class="lang-javascript">    stmt(<span class="hljs-string">&quot;while&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        advance(<span class="hljs-string">&quot;(&quot;</span>);
+        <span class="hljs-keyword">this</span>.first = expression(<span class="hljs-number">0</span>);
+        advance(<span class="hljs-string">&quot;)&quot;</span>);
+        <span class="hljs-keyword">this</span>.second = block();
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;statement&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<p>The <code>if</code> statement allows for conditional execution. If we see the
 <code>else</code> symbol after the block, then we parse the next block or <code>if</code>
 statement.</p>
-<pre><code>stmt(&quot;if&quot;, function () {
-    advance(&quot;(&quot;);
-    this.first = expression(0);
-    advance(&quot;)&quot;);
-    this.second = block();
-    if (token.id === &quot;else&quot;) {
-        scope.reserve(token);
-        advance(&quot;else&quot;);
-        this.third = token.id === &quot;if&quot; ? statement() : block();
-    } else {
-        this.third = null;
-    }
-    this.arity = &quot;statement&quot;;
-    return this;
-});
-</code></pre><p>The <code>break</code> statement is used to break out of loops.</p>
-<pre><code>stmt(&quot;break&quot;, function () {
-    advance(&quot;;&quot;);
-    if (token.id !== &quot;}&quot;) {
-        token.error(&quot;Unreachable statement.&quot;);
-    }
-    this.arity = &quot;statement&quot;;
-    return this;
-});
-</code></pre><p>The <code>return</code> statement is used to return from functions. It can take an
+<pre><code class="lang-javascript">    stmt(<span class="hljs-string">&quot;if&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        advance(<span class="hljs-string">&quot;(&quot;</span>);
+        <span class="hljs-keyword">this</span>.first = expression(<span class="hljs-number">0</span>);
+        advance(<span class="hljs-string">&quot;)&quot;</span>);
+        <span class="hljs-keyword">this</span>.second = block();
+        <span class="hljs-keyword">if</span> (token.id === <span class="hljs-string">&quot;else&quot;</span>) {
+            scope.reserve(token);
+            advance(<span class="hljs-string">&quot;else&quot;</span>);
+            <span class="hljs-keyword">this</span>.third = token.id === <span class="hljs-string">&quot;if&quot;</span> ? statement() : block();
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.third = <span class="hljs-literal">null</span>;
+        }
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;statement&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<p>The <code>break</code> statement is used to break out of loops.</p>
+<pre><code class="lang-javascript">    stmt(<span class="hljs-string">&quot;break&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        advance(<span class="hljs-string">&quot;;&quot;</span>);
+        <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;}&quot;</span>) {
+            token.error(<span class="hljs-string">&quot;Unreachable statement.&quot;</span>);
+        }
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;statement&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<p>The <code>return</code> statement is used to return from functions. It can take an
 optional expression.</p>
-<pre><code>stmt(&quot;return&quot;, function () {
-    if (token.id !== &quot;;&quot;) {
-        this.first = expression(0);
-    }
-    advance(&quot;;&quot;);
-    if (token.id !== &quot;}&quot;) {
-        token.error(&quot;Unreachable statement.&quot;);
-    }
-    this.arity = &quot;statement&quot;;
-    return this;
-});
-</code></pre><h2 id="functions">Functions</h2>
+<pre><code class="lang-javascript">    stmt(<span class="hljs-string">&quot;return&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;;&quot;</span>) {
+            <span class="hljs-keyword">this</span>.first = expression(<span class="hljs-number">0</span>);
+        }
+        advance(<span class="hljs-string">&quot;;&quot;</span>);
+        <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;}&quot;</span>) {
+            token.error(<span class="hljs-string">&quot;Unreachable statement.&quot;</span>);
+        }
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;statement&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<h2 id="functions">Functions</h2>
 <p>Functions are executable object values. A function has an optional name
 (so that it can call itself recursively), a list of parameter names
 wrapped in parens, and a body that is a list of statements wrapped in
 curly braces. A function has its own scope.</p>
-<pre><code>prefix(&quot;function&quot;, function () {
-    var a = [];
-    new_scope();
-    if (token.arity === &quot;name&quot;) {
-        scope.define(token);
-        this.name = token.value;
-        advance();
-    }
-    advance(&quot;(&quot;);
-    if (token.id !== &quot;)&quot;) {
-        while (true) {
-            if (token.arity !== &quot;name&quot;) {
-                token.error(&quot;Expected a parameter name.&quot;);
-            }
+<pre><code class="lang-javascript">    prefix(<span class="hljs-string">&quot;function&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> a = [];
+        new_scope();
+        <span class="hljs-keyword">if</span> (token.arity === <span class="hljs-string">&quot;name&quot;</span>) {
             scope.define(token);
-            a.push(token);
+            <span class="hljs-keyword">this</span>.name = token.value;
             advance();
-            if (token.id !== &quot;,&quot;) {
-                break;
-            }
-            advance(&quot;,&quot;);
         }
-    }
-    this.first = a;
-    advance(&quot;)&quot;);
-    advance(&quot;{&quot;);
-    this.second = statements();
-    advance(&quot;}&quot;);
-    this.arity = &quot;function&quot;;
-    scope.pop();
-    return this;
-});
-</code></pre><p>Functions are invoked with the <code>(</code> operator. It can take zero or more
+        advance(<span class="hljs-string">&quot;(&quot;</span>);
+        <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;)&quot;</span>) {
+            <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+                <span class="hljs-keyword">if</span> (token.arity !== <span class="hljs-string">&quot;name&quot;</span>) {
+                    token.error(<span class="hljs-string">&quot;Expected a parameter name.&quot;</span>);
+                }
+                scope.define(token);
+                a.push(token);
+                advance();
+                <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;,&quot;</span>) {
+                    <span class="hljs-keyword">break</span>;
+                }
+                advance(<span class="hljs-string">&quot;,&quot;</span>);
+            }
+        }
+        <span class="hljs-keyword">this</span>.first = a;
+        advance(<span class="hljs-string">&quot;)&quot;</span>);
+        advance(<span class="hljs-string">&quot;{&quot;</span>);
+        <span class="hljs-keyword">this</span>.second = statements();
+        advance(<span class="hljs-string">&quot;}&quot;</span>);
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;function&quot;</span>;
+        scope.pop();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<p>Functions are invoked with the <code>(</code> operator. It can take zero or more
 comma separated arguments. We look at the left operand to detect
 expressions that cannot possibly be function values.</p>
-<pre><code>infix(&quot;(&quot;, 80, function (left) {
-    var a = [];
-    if (left.id === &quot;.&quot; || left.id === &quot;[&quot;) {
-        this.arity = &quot;ternary&quot;;
-        this.first = left.first;
-        this.second = left.second;
-        this.third = a;
-    } else {
-        this.arity = &quot;binary&quot;;
-        this.first = left;
-        this.second = a;
-        if ((left.arity !== &quot;unary&quot; || left.id !== &quot;function&quot;) &amp;&amp;
-                left.arity !== &quot;name&quot; &amp;&amp; left.id !== &quot;(&quot; &amp;&amp;
-                left.id !== &quot;&amp;&amp;&quot; &amp;&amp; left.id !== &quot;||&quot; &amp;&amp; left.id !== &quot;?&quot;) {
-            left.error(&quot;Expected a variable name.&quot;);
-        }
-    }
-    if (token.id !== &quot;)&quot;) {
-        while (true)  {
-            a.push(expression(0));
-            if (token.id !== &quot;,&quot;) {
-                break;
+<pre><code class="lang-javascript">    infix(<span class="hljs-string">&quot;(&quot;</span>, <span class="hljs-number">80</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left</span>) </span>{
+        <span class="hljs-keyword">var</span> a = [];
+        <span class="hljs-keyword">if</span> (left.id === <span class="hljs-string">&quot;.&quot;</span> || left.id === <span class="hljs-string">&quot;[&quot;</span>) {
+            <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;ternary&quot;</span>;
+            <span class="hljs-keyword">this</span>.first = left.first;
+            <span class="hljs-keyword">this</span>.second = left.second;
+            <span class="hljs-keyword">this</span>.third = a;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;binary&quot;</span>;
+            <span class="hljs-keyword">this</span>.first = left;
+            <span class="hljs-keyword">this</span>.second = a;
+            <span class="hljs-keyword">if</span> ((left.arity !== <span class="hljs-string">&quot;unary&quot;</span> || left.id !== <span class="hljs-string">&quot;function&quot;</span>) &amp;&amp;
+                    left.arity !== <span class="hljs-string">&quot;name&quot;</span> &amp;&amp; left.id !== <span class="hljs-string">&quot;(&quot;</span> &amp;&amp;
+                    left.id !== <span class="hljs-string">&quot;&amp;&amp;&quot;</span> &amp;&amp; left.id !== <span class="hljs-string">&quot;||&quot;</span> &amp;&amp; left.id !== <span class="hljs-string">&quot;?&quot;</span>) {
+                left.error(<span class="hljs-string">&quot;Expected a variable name.&quot;</span>);
             }
-            advance(&quot;,&quot;);
         }
-    }
-    advance(&quot;)&quot;);
-    return this;
-});
-</code></pre><p>The <code>this</code> symbol is a special variable. In a method invocation, it is
+        <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;)&quot;</span>) {
+            <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)  {
+                a.push(expression(<span class="hljs-number">0</span>));
+                <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;,&quot;</span>) {
+                    <span class="hljs-keyword">break</span>;
+                }
+                advance(<span class="hljs-string">&quot;,&quot;</span>);
+            }
+        }
+        advance(<span class="hljs-string">&quot;)&quot;</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<p>The <code>this</code> symbol is a special variable. In a method invocation, it is
 the reference to the object.</p>
-<pre><code>symbol(&quot;this&quot;).nud = function () {
-    scope.reserve(this);
-    this.arity = &quot;this&quot;;
-    return this;
-};
-</code></pre><h2 id="object-literals">Object Literals</h2>
+<pre><code class="lang-javascript">    symbol(<span class="hljs-string">&quot;this&quot;</span>).nud = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        scope.reserve(<span class="hljs-keyword">this</span>);
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;this&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    };
+</code></pre>
+<h2 id="object-literals">Object Literals</h2>
 <p>An array literal is a set of square brackets around zero or more
 comma-separated expressions. Each of the expressions is evaluated, and
 the results are collected into a new array.</p>
-<pre><code>prefix(&quot;[&quot;, function () {
-    var a = [];
-    if (token.id !== &quot;]&quot;) {
-        while (true) {
-            a.push(expression(0));
-            if (token.id !== &quot;,&quot;) {
-                break;
+<pre><code class="lang-javascript">    prefix(<span class="hljs-string">&quot;[&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> a = [];
+        <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;]&quot;</span>) {
+            <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+                a.push(expression(<span class="hljs-number">0</span>));
+                <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;,&quot;</span>) {
+                    <span class="hljs-keyword">break</span>;
+                }
+                advance(<span class="hljs-string">&quot;,&quot;</span>);
             }
-            advance(&quot;,&quot;);
         }
-    }
-    advance(&quot;]&quot;);
-    this.first = a;
-    this.arity = &quot;unary&quot;;
-    return this;
-});
-</code></pre><p>An object literal is a set of curly braces around zero or more
+        advance(<span class="hljs-string">&quot;]&quot;</span>);
+        <span class="hljs-keyword">this</span>.first = a;
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;unary&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<p>An object literal is a set of curly braces around zero or more
 comma-separated pairs. A pair is a key/expression pair separated by a
 colon (<code>:</code>). The key is a literal or a name which is treated as a
 literal.</p>
-<pre><code>prefix(&quot;{&quot;, function () {
-    var a = [];
-    if (token.id !== &quot;}&quot;) {
-        while (true) {
-            var n = token;
-            if (n.arity !== &quot;name&quot; &amp;&amp; n.arity !== &quot;literal&quot;) {
-                token.error(&quot;Bad key.&quot;);
+<pre><code class="lang-javascript">    prefix(<span class="hljs-string">&quot;{&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> a = [];
+        <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;}&quot;</span>) {
+            <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+                <span class="hljs-keyword">var</span> n = token;
+                <span class="hljs-keyword">if</span> (n.arity !== <span class="hljs-string">&quot;name&quot;</span> &amp;&amp; n.arity !== <span class="hljs-string">&quot;literal&quot;</span>) {
+                    token.error(<span class="hljs-string">&quot;Bad key.&quot;</span>);
+                }
+                advance();
+                advance(<span class="hljs-string">&quot;:&quot;</span>);
+                <span class="hljs-keyword">var</span> v = expression(<span class="hljs-number">0</span>);
+                v.key = n.value;
+                a.push(v);
+                <span class="hljs-keyword">if</span> (token.id !== <span class="hljs-string">&quot;,&quot;</span>) {
+                    <span class="hljs-keyword">break</span>;
+                }
+                advance(<span class="hljs-string">&quot;,&quot;</span>);
             }
-            advance();
-            advance(&quot;:&quot;);
-            var v = expression(0);
-            v.key = n.value;
-            a.push(v);
-            if (token.id !== &quot;,&quot;) {
-                break;
-            }
-            advance(&quot;,&quot;);
         }
-    }
-    advance(&quot;}&quot;);
-    this.first = a;
-    this.arity = &quot;unary&quot;;
-    return this;
-});
-</code></pre><h2 id="things-to-do-and-think-about">Things to Do and Think About</h2>
+        advance(<span class="hljs-string">&quot;}&quot;</span>);
+        <span class="hljs-keyword">this</span>.first = a;
+        <span class="hljs-keyword">this</span>.arity = <span class="hljs-string">&quot;unary&quot;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+</code></pre>
+<h2 id="things-to-do-and-think-about">Things to Do and Think About</h2>
 <p>The tree could be passed to a code generator, or it could be passed to
 an interpreter. Very little computation is required to produce the tree.
 And as we saw, very little effort was required to write the programming
@@ -2793,7 +2847,7 @@ paper.</a></p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Top Down Operator Precedence Analysis","level":"1.6.9.1","depth":3,"next":{"title":"Práctica: Autenticación usando sessions","level":"1.6.10","depth":2,"path":"practicas/practicasessions.md","ref":"practicas/practicasessions.md","articles":[]},"previous":{"title":"Práctica: Analizador Léxico para Un Subconjunto de JavaScript","level":"1.6.9","depth":2,"path":"practicas/practicaanalisislexicotdop.md","ref":"practicas/practicaanalisislexicotdop.md","articles":[{"title":"Top Down Operator Precedence Analysis","level":"1.6.9.1","depth":3,"path":"apuntes/parsing/tdop/tdop.md","ref":"apuntes/parsing/tdop/tdop.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/parsing/tdop/tdop.md","mtime":"2017-03-12T20:11:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-12T20:13:39.343Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Top Down Operator Precedence Analysis","level":"1.6.9.1","depth":3,"next":{"title":"Práctica: Autenticación usando sessions","level":"1.6.10","depth":2,"path":"practicas/practicasessions.md","ref":"practicas/practicasessions.md","articles":[]},"previous":{"title":"Práctica: Analizador Léxico para Un Subconjunto de JavaScript","level":"1.6.9","depth":2,"path":"practicas/practicaanalisislexicotdop.md","ref":"practicas/practicaanalisislexicotdop.md","articles":[{"title":"Top Down Operator Precedence Analysis","level":"1.6.9.1","depth":3,"path":"apuntes/parsing/tdop/tdop.md","ref":"apuntes/parsing/tdop/tdop.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/parsing/tdop/tdop.md","mtime":"2017-03-12T20:35:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-12T20:37:43.413Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
