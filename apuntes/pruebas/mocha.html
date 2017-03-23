@@ -2086,7 +2086,69 @@
 <li><a href="http://mochajs.org/#getting-started" target="_blank">Getting Started</a></li>
 </ul>
 </li>
+<li><a href="http://crguezl.github.io/pl-html/node9.html#SECTION041200190000000000000" target="_blank">Mocha y Chai en los apuntes</a></li>
 </ul>
+<h3 id="mocha-options">Mocha Options</h3>
+<pre><code class="lang-bash">[~/srcPLgrado/eloquentjsegg(master)]$ node_modules/.bin/mocha --help
+
+  Usage: mocha [debug] [options] [files]
+
+
+  Commands:
+
+    init &lt;path&gt;  initialize a client-side mocha setup at &lt;path&gt;
+
+  Options:
+
+    -h, --help                              output usage information
+    -V, --version                           output the version number
+    -A, --async-only                        force all tests to take a callback (async) or <span class="hljs-built_in">return</span> a promise
+    -c, --colors                            force enabling of colors
+    -C, --no-colors                         force disabling of colors
+    -G, --growl                             <span class="hljs-built_in">enable</span> growl notification support
+    -O, --reporter-options &lt;k=v,k2=v2,...&gt;  reporter-specific options
+    -R, --reporter &lt;name&gt;                   specify the reporter to use
+    -S, --sort                              sort <span class="hljs-built_in">test</span> files
+    -b, --bail                              bail after first <span class="hljs-built_in">test</span> failure
+    <span class="hljs-_">-d</span>, --debug                             <span class="hljs-built_in">enable</span> node<span class="hljs-string">&apos;s debugger, synonym for node --debug
+    -g, --grep &lt;pattern&gt;                    only run tests matching &lt;pattern&gt;
+    -f, --fgrep &lt;string&gt;                    only run tests containing &lt;string&gt;
+    -gc, --expose-gc                        expose gc extension
+    -i, --invert                            inverts --grep and --fgrep matches
+    -r, --require &lt;name&gt;                    require the given module
+    -s, --slow &lt;ms&gt;                         &quot;slow&quot; test threshold in milliseconds [75]
+    -t, --timeout &lt;ms&gt;                      set test-case timeout in milliseconds [2000]
+    -u, --ui &lt;name&gt;                         specify user-interface (bdd|tdd|qunit|exports)
+    -w, --watch                             watch files for changes
+    --check-leaks                           check for global variable leaks
+    --full-trace                            display the full stack trace
+    --compilers &lt;ext&gt;:&lt;module&gt;,...          use the given module(s) to compile files
+    --debug-brk                             enable node&apos;</span>s debugger breaking on the first line
+    --globals &lt;names&gt;                       allow the given comma-delimited global [names]
+    --es_staging                            <span class="hljs-built_in">enable</span> all staged features
+    --harmony&lt;_classes,_generators,...&gt;     all node --harmony* flags are available
+    --preserve-symlinks                     Instructs the module loader to preserve symbolic links when resolving and caching modules
+    --icu-data-dir                          include ICU data
+    --inline-diffs                          display actual/expected differences inline within each string
+    --inspect                               activate devtools <span class="hljs-keyword">in</span> chrome
+    --interfaces                            display available interfaces
+    --no-deprecation                        silence deprecation warnings
+    --no-exit                               require a clean shutdown of the event loop: mocha will not call process.exit
+    --no-timeouts                           disables timeouts, given implicitly with --debug
+    --opts &lt;path&gt;                           specify opts path
+    --perf-basic-prof                       <span class="hljs-built_in">enable</span> perf linux profiler (basic support)
+    --prof                                  <span class="hljs-built_in">log</span> statistical profiling information
+    --log-timer-events                      Time events including external callbacks
+    --recursive                             include sub directories
+    --reporters                             display available reporters
+    --retries &lt;<span class="hljs-built_in">times</span>&gt;                       <span class="hljs-built_in">set</span> numbers of time to retry a failed <span class="hljs-built_in">test</span> <span class="hljs-keyword">case</span>
+    --throw-deprecation                     throw an exception anytime a deprecated <span class="hljs-keyword">function</span> is used
+    --trace                                 trace <span class="hljs-keyword">function</span> calls
+    --trace-deprecation                     show stack traces on deprecations
+    --use_strict                            enforce strict mode
+    --watch-extensions &lt;ext&gt;,...            additional extensions to monitor with --watch
+    --delay                                 <span class="hljs-built_in">wait</span> <span class="hljs-keyword">for</span> async suite definition
+</code></pre>
 <h2 id="should">Should </h2>
 <ul>
 <li><a href="https://www.npmjs.com/package/should" target="_blank">Should npm</a></li>
@@ -2124,7 +2186,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mocha","level":"1.3.23.1","depth":3,"next":{"title":"Travis","level":"1.3.23.2","depth":3,"path":"apuntes/pruebas/travis.md","ref":"apuntes/pruebas/travis.md","articles":[]},"previous":{"title":"Pruebas","level":"1.3.23","depth":2,"path":"apuntes/pruebas/README.md","ref":"apuntes/pruebas/README.md","articles":[{"title":"Mocha","level":"1.3.23.1","depth":3,"path":"apuntes/pruebas/mocha.md","ref":"apuntes/pruebas/mocha.md","articles":[]},{"title":"Travis","level":"1.3.23.2","depth":3,"path":"apuntes/pruebas/travis.md","ref":"apuntes/pruebas/travis.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/pruebas/mocha.md","mtime":"2017-03-23T20:43:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-23T20:44:12.480Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Mocha","level":"1.3.23.1","depth":3,"next":{"title":"Travis","level":"1.3.23.2","depth":3,"path":"apuntes/pruebas/travis.md","ref":"apuntes/pruebas/travis.md","articles":[]},"previous":{"title":"Pruebas","level":"1.3.23","depth":2,"path":"apuntes/pruebas/README.md","ref":"apuntes/pruebas/README.md","articles":[{"title":"Mocha","level":"1.3.23.1","depth":3,"path":"apuntes/pruebas/mocha.md","ref":"apuntes/pruebas/mocha.md","articles":[]},{"title":"Travis","level":"1.3.23.2","depth":3,"path":"apuntes/pruebas/travis.md","ref":"apuntes/pruebas/travis.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["include","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/pruebas/mocha.md","mtime":"2017-03-23T20:56:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-23T20:58:18.270Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
