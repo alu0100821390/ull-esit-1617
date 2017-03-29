@@ -1,0 +1,106 @@
+\subsection{Preguntas de Repaso de Mocha,
+Chai}\label{preguntas-de-repaso-de-mocha-chai}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  ¿Como creamos el directorio con el esqueleto inicial para las pruebas
+  con mocha? 
+\item
+  Rellene lo que falta en estas pruebas del código del conversor de
+  temperatura:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{var} \NormalTok{assert = }\OtherTok{chai}\NormalTok{.}\FunctionTok{______}\NormalTok{;}
+
+\FunctionTok{suite}\NormalTok{(}\StringTok{'temperature'}\NormalTok{, }\KeywordTok{function}\NormalTok{() \{}
+    \FunctionTok{test}\NormalTok{(}\StringTok{'[1,\{a: 2\}] == [1,\{a: 2\}]'}\NormalTok{, }\KeywordTok{function}\NormalTok{() \{}
+      \OtherTok{assert}\NormalTok{.}\FunctionTok{_________}\NormalTok{([}\DecValTok{1}\NormalTok{, \{}\DataTypeTok{a}\NormalTok{:}\DecValTok{2}\NormalTok{\}], [}\DecValTok{1}\NormalTok{, \{}\DataTypeTok{a}\NormalTok{:}\DecValTok{2}\NormalTok{\}]);}
+    \NormalTok{\});}
+    \FunctionTok{test}\NormalTok{(}\StringTok{'5X = error'}\NormalTok{, }\KeywordTok{function}\NormalTok{() \{}
+        \OtherTok{original}\NormalTok{.}\FunctionTok{value} \NormalTok{= }\StringTok{"5X"}\NormalTok{;}
+        \FunctionTok{calculate}\NormalTok{();}
+        \OtherTok{assert}\NormalTok{.}\FunctionTok{_____}\NormalTok{(}\OtherTok{converted}\NormalTok{.}\FunctionTok{innerHTML}\NormalTok{, }\OtherTok{/ERROR/}\NormalTok{);}
+    \NormalTok{\});}
+\NormalTok{\});}
+\KeywordTok{var} \NormalTok{assert = }\OtherTok{chai}\NormalTok{.}\FunctionTok{assert}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Este es un fichero \texttt{test/index.html} apto para ejecutar las
+  pruebas con Mocha y Chai en la práctica de la Temperatura. Rellene las
+  partes que faltan:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{[~/srcPLgrado/temperature(karma)]$ cat tests/index.html}
+\DataTypeTok{<!DOCTYPE }\NormalTok{html}\DataTypeTok{>}
+\KeywordTok{<html>}
+  \KeywordTok{<head>}
+    \KeywordTok{<title>}\NormalTok{Mocha}\KeywordTok{</title>}
+    \KeywordTok{<meta}\OtherTok{ http-equiv=}\StringTok{"Content-Type"}\OtherTok{ content=}\StringTok{"text/html; charset=UTF-8"}\KeywordTok{>}
+    \KeywordTok{<meta}\OtherTok{ name=}\StringTok{"viewport"}\OtherTok{ content=}\StringTok{"width=device-width, initial-scale=1.0"}\KeywordTok{>}
+    \KeywordTok{<link}\OtherTok{ rel=}\StringTok{"stylesheet"}\OtherTok{ href=}\StringTok{"mocha.css"} \KeywordTok{/>}
+  \KeywordTok{</head>}
+  \KeywordTok{<body>}
+    \KeywordTok{<div}\OtherTok{ id=}\StringTok{"_____"}\KeywordTok{></div>}   \CommentTok{<!-- para la salida de las pruebas -->}
+    \KeywordTok{<input}\OtherTok{ id=}\StringTok{"original"}\OtherTok{ placeholder=}\StringTok{"32F"}\OtherTok{ size=}\StringTok{"50"}\KeywordTok{>}
+    \KeywordTok{<span}\OtherTok{ class=}\StringTok{"output"}\OtherTok{ id=}\StringTok{"converted"}\KeywordTok{></span>}
+
+    \KeywordTok{<script}\OtherTok{ src=}\StringTok{"________"}\KeywordTok{></script>}
+    \KeywordTok{<script}\OtherTok{ src=}\StringTok{"________"}\KeywordTok{></script>}
+    \KeywordTok{<script}\OtherTok{ src=}\StringTok{"../temperature.js"}\KeywordTok{></script>}
+    \KeywordTok{<script>}\OtherTok{mocha}\NormalTok{.}\FunctionTok{_____}\NormalTok{(}\StringTok{'___'}\NormalTok{)<}\OtherTok{/script>}
+\OtherTok{    <script src="tests.js"></script}\NormalTok{>}
+
+    \NormalTok{<script>}
+      \OtherTok{mocha}\NormalTok{.}\FunctionTok{___}\NormalTok{();}
+    \NormalTok{<}\OtherTok{/script>}
+\OtherTok{  </body}\NormalTok{>}
+\NormalTok{<}\OtherTok{/html>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Rellene las partes que faltan del fichero con las pruebas TDD en Mocha
+  y Chai para la práctica de la temperatura:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+        \NormalTok{[~}\OtherTok{/srcPLgrado/temperature}\NormalTok{(karma)]$ cat tests/}\OtherTok{tests}\NormalTok{.}\FunctionTok{js}
+        \KeywordTok{var} \NormalTok{assert = }\OtherTok{____}\NormalTok{.}\FunctionTok{assert}\NormalTok{;}
+
+        \FunctionTok{_____}\NormalTok{(}\StringTok{'temperature'}\NormalTok{, }\KeywordTok{function}\NormalTok{() \{}
+
+            \FunctionTok{____}\NormalTok{(}\StringTok{'32F = 0C'}\NormalTok{, }\KeywordTok{function}\NormalTok{() \{}
+                \OtherTok{original}\NormalTok{.}\FunctionTok{value} \NormalTok{= }\StringTok{"32F"}\NormalTok{;}
+                \FunctionTok{calculate}\NormalTok{();}
+                \OtherTok{assert}\NormalTok{.}\FunctionTok{_________}\NormalTok{(}\OtherTok{converted}\NormalTok{.}\FunctionTok{innerHTML}\NormalTok{, }\StringTok{"0.0 Celsius"}\NormalTok{);}
+            \NormalTok{\});}
+        \NormalTok{\});}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  ¿Como puedo ejecutar las pruebas escritas usando Mocha y Chai usando
+  el comando \texttt{npm test}?. (no se asume el uso de Karma en esta
+  pregunta) Explique como hacerlo.
+\end{enumerate}
