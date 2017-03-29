@@ -2443,6 +2443,22 @@ some of the most basic are:</p>
 <li><a href="istanbul.html">Istanbul</a><h3 id="browsersync">Browsersync</h3>
 </li>
 </ul>
+<p>Keep multiple browsers and devices in sync when building websites.
+Change your code and the page is auto-reloaded. Live reloading works
+across many browsers and devices.</p>
+<p>BrowserSync creates a small server. Next, it injects a javascript
+file on every page; This file makes use of WebSockets to communicate
+between the server and the client to watch changes to your code or
+browser action. As soon as BrowserSync detects an action it performs
+a page reload.</p>
+<h4 id="v&#xE9;ase">V&#xE9;ase</h4>
+<ul>
+<li><a href="https://scotch.io/tutorials/how-to-use-browsersync-for-faster-development" target="_blank">How to Use BrowserSync for Faster Development</a></li>
+<li><a href="https://www.browsersync.io/" target="_blank">Browsersync</a></li>
+<li><a href="https://www.browsersync.io/docs/gulp/" target="_blank">Browsersync con Gulp</a></li>
+<li><a href="http://jpsierens.com/tutorial-livereload-nodemon-gulp/" target="_blank">Tutorial &#x2013; How to use Livereload with Nodemon in Gulp to Automatically Reload your Browser and Restart your App</a></li>
+</ul>
+<h4 id="gulpfilejs-de-ejemplo-para-uso-con-browser-sync">Gulpfile.js de Ejemplo para uso con browser-sync</h4>
 <pre><code class="lang-javascript">(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
     <span class="hljs-string">&apos;use strict&apos;</span>;
 
@@ -2481,16 +2497,10 @@ some of the most basic are:</p>
 
 })();
 </code></pre>
-<h4 id="a-quick-introduction-to-browsersync">A Quick Introduction to BrowserSync</h4>
+<h4 id="v&#xED;deo-a-quick-introduction-to-browsersync">V&#xED;deo: A Quick Introduction to BrowserSync</h4>
 <p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/heNWfzc7ufQ"></iframe></div></p>
-<h4 id="using-gulp-sass-and-browser-sync-for-you-front-end-web-development">Using Gulp, SASS and Browser-Sync for you front end web development</h4>
+<h4 id="v&#xED;deo-using-gulp-sass-and-browser-sync-for-you-front-end-web-development">V&#xED;deo: Using Gulp, SASS and Browser-Sync for you front end web development</h4>
 <p><div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;"><iframe frameborder="0" allowfullscreen style="border: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="//www.youtube.com/embed/Rv5f_v5gqw4"></iframe></div></p>
-<h4 id="v&#xE9;ase">V&#xE9;ase</h4>
-<ul>
-<li><a href="https://www.browsersync.io/" target="_blank">Browsersync</a></li>
-<li><a href="https://www.browsersync.io/docs/gulp/" target="_blank">Browsersync con Gulp</a></li>
-<li><a href="http://jpsierens.com/tutorial-livereload-nodemon-gulp/" target="_blank">Tutorial &#x2013; How to use Livereload with Nodemon in Gulp to Automatically Reload your Browser and Restart your App</a></li>
-</ul>
 
                                 
                                 </section>
@@ -2518,7 +2528,7 @@ some of the most basic are:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pruebas","level":"22.1","depth":1,"next":{"title":"Mocha","level":"22.2","depth":1,"path":"apuntes/pruebas/mocha.md","ref":"apuntes/pruebas/mocha.md","articles":[]},"previous":{"title":"Repaso: Preguntas de ecma6","level":"21.1","depth":1,"path":"repasos/ecma6.md","ref":"repasos/ecma6.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","katex","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/pruebas/README.md","mtime":"2017-03-29T14:56:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-29T19:02:34.601Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pruebas","level":"22.1","depth":1,"next":{"title":"Mocha","level":"22.2","depth":1,"path":"apuntes/pruebas/mocha.md","ref":"apuntes/pruebas/mocha.md","articles":[]},"previous":{"title":"Repaso: Preguntas de ecma6","level":"21.1","depth":1,"path":"repasos/ecma6.md","ref":"repasos/ecma6.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include","katex","include-codeblock","ace","-autocover","-layout","youtube","video","highlight","sectionx","code-highlighter","copy-code-button","page-toc","-toc","-latex-codecogs","-emphasize","collapsible-menu","js-console","codetabs","es6tabs-stage-0","-jazer"],"root":"txt","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"code-highlighter":{},"collapsible-menu":{},"ace":{},"youtube":{},"es6tabs":{"presets":["es2015","stage-0"]},"include":{},"toc":{"addClass":"true","className":"toc"},"search":{"maxIndexSize":1000000},"autocover":{"title":"Apuntes del Curso 2016/2017: Procesadores de Lenguajes, Desarrollo de Sistemas Informáticos y Sistemas y Tecnologías Web","author":"Casiano","pluginsConfig":{"autocover":{"font":{"size":null,"family":"Impact","color":"#FFF"},"size":{"w":1800,"h":2360},"background":{"color":"#09F"}}}},"page-toc":{"position":"before-first","selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4"},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"sectionx":{},"highlight":{},"copy-code-button":{},"es6tabs-stage-0":{"presets":["es2015","react"]},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"apuntes/pruebas/README.md","mtime":"2017-03-29T14:56:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-29T20:04:31.807Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
