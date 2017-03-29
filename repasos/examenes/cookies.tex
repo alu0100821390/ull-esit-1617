@@ -1,0 +1,97 @@
+\subsection{Preguntas de Repaso de
+Cookies}\label{preguntas-de-repaso-de-cookies}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Defina y explique el concepto de Cookie
+\item
+  Defina y explique el concepto de Cookie para la Gestión de una Sesión
+\item
+  Defina y explique el concepto de Cookie para la Autenticación en un
+  Website
+\item
+  ¿Que es un secure cookie? (cookie seguro)
+\end{enumerate}
+
+A secure cookie has the secure attribute enabled and is only used via
+HTTPS, ensuring that the cookie is always encrypted when transmitting
+from client to server. This makes the cookie less likely to be exposed
+to cookie theft via eavesdropping. 4. ¿Como se llama el middleware
+express que me facilita el manejo de los cookies? ¿Cual es el código
+para poner en funcionamiento dicho middleware?
+
+\begin{verbatim}
+% cookie-parser
+% var cookieParser = require('cookie-parser');
+% app.use(cookieParser());
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\item
+  Dentro de un middleware express ¿Cómo se llama el método del objeto
+  \texttt{res} que me permite establecer un cookie? ¿Que argumentos
+  recibe?
+
+\begin{verbatim}
+%   res.cookie('cookie_name', 'cookie_value', {expire : new Date() + 9999}).send(
+%      "Cookie is set: goto to browser's console and write document.cookie.");
+\end{verbatim}
+\item
+  ¿Que método del objeto \texttt{request} me permite ver los cookies
+  establecidos?
+
+\begin{verbatim}
+console.log("Cookies :  ", req.cookies);
+\end{verbatim}
+\item
+  ¿Como borro un cookie en el servidor express?
+
+\begin{verbatim}
+res.clearCookie('cookie_name');
+\end{verbatim}
+\item
+  ¿Que es la Query String? Ponga un ejemplo de Query String
+\end{enumerate}
+
+On the World Wide Web, a query string is the part of a uniform resource
+locator (URL) containing data that does not fit conveniently into a
+hierarchical path structure. The query string commonly includes fields
+added to a base URL by a Web browser or other client application, for
+example as part of an HTML form. A typical URL containing a query string
+is as follows:
+
+\begin{verbatim}
+http://example.com/over/there?name=ferret
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\item
+  If a form is embedded in an HTML page as follows:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{<form}\OtherTok{ action=}\StringTok{"/hello"}\OtherTok{ method=}\StringTok{"get"}\KeywordTok{>}
+  \KeywordTok{<input}\OtherTok{ type=}\StringTok{"text"}\OtherTok{ name=}\StringTok{"first"} \KeywordTok{/>}
+  \KeywordTok{<input}\OtherTok{ type=}\StringTok{"text"}\OtherTok{ name=}\StringTok{"second"} \KeywordTok{/>}
+  \KeywordTok{<input}\OtherTok{ type=}\StringTok{"submit"} \KeywordTok{/>}
+\KeywordTok{</form>}
+\end{Highlighting}
+\end{Shaded}
+
+  and the user inserts the strings \texttt{this is a field} and
+  \texttt{was it clear already} in the two text fields and presses the
+  \texttt{submit} button, the handler of the route \texttt{/hello} (the
+  route specified by the \texttt{action} attribute of the form element
+  in the above example) will receive a query string. Write down the
+  query string it receives
+\end{enumerate}
+
+\begin{verbatim}
+first=this+is+a+field&second=was+it+clear+already
+\end{verbatim}

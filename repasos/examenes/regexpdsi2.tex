@@ -1,0 +1,43 @@
+\subsection{Preguntas de Repaso de Expresiones
+Regulares}\label{preguntas-de-repaso-de-expresiones-regulares}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Escriba una expresión JavaScript que permita reemplazar todas las
+  apariciones de palabras consecutivas repetidas (como
+  \texttt{hello hello}) por una sóla aparición de la misma
+\item
+  ¿Cual es la salida?
+
+\begin{verbatim}
+> "bb".match(/b|bb/)
+
+> "bb".match(/bb|b/)
+\end{verbatim}
+
+  Justifique su respuesta.
+\item
+  El siguiente fragmento de código tiene por objetivo escapar las
+  entidades HTML para que no sean intérpretadas como código HTML.
+  Rellene las partes que faltan.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{var} \NormalTok{entityMap = \{}
+    \StringTok{"&"}\NormalTok{: }\StringTok{"&___;"}\NormalTok{,}
+    \StringTok{"<"}\NormalTok{: }\StringTok{"&__;"}\NormalTok{,}
+    \StringTok{">"}\NormalTok{: }\StringTok{"&__;"}\NormalTok{,}
+    \StringTok{'"'}\NormalTok{: }\StringTok{'&quot;'}\NormalTok{,}
+    \StringTok{"'"}\NormalTok{: }\StringTok{'&#39;'}\NormalTok{,}
+    \StringTok{"/"}\NormalTok{: }\StringTok{'&#x2F;'}
+  \NormalTok{\};}
+
+\KeywordTok{function} \FunctionTok{escapeHtml}\NormalTok{(string) \{}
+  \KeywordTok{return} \FunctionTok{String}\NormalTok{(string).}\FunctionTok{replace}\NormalTok{(}\OtherTok{/_________/g}\NormalTok{, }\KeywordTok{function} \NormalTok{(s) \{}
+    \KeywordTok{return} \NormalTok{____________;}
+  \NormalTok{\});}
+\end{Highlighting}
+\end{Shaded}
+
