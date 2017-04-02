@@ -1,5 +1,5 @@
-\subsection{Preguntas de Repaso de Mocha,
-Chai}\label{preguntas-de-repaso-de-mocha-chai}
+\subsection{Preguntas de Repaso de Pruebas con Mocha, Chai y
+Should}\label{preguntas-de-repaso-de-pruebas-con-mocha-chai-y-should}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -8,27 +8,24 @@ Chai}\label{preguntas-de-repaso-de-mocha-chai}
   ¿Como creamos el directorio con el esqueleto inicial para las pruebas
   con mocha? 
 \item
-  Rellene lo que falta en estas pruebas del código del conversor de
-  temperatura:
+  En este ejemplo se usa Chai assert. Rellene lo que falta en estas
+  pruebas del código del conversor de temperatura:
 \end{enumerate}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{var} \NormalTok{assert = }\OtherTok{chai}\NormalTok{.}\FunctionTok{______}\NormalTok{;}
+\begin{verbatim}
+var assert = chai.______;
 
-\FunctionTok{suite}\NormalTok{(}\StringTok{'temperature'}\NormalTok{, }\KeywordTok{function}\NormalTok{() \{}
-    \FunctionTok{test}\NormalTok{(}\StringTok{'[1,\{a: 2\}] == [1,\{a: 2\}]'}\NormalTok{, }\KeywordTok{function}\NormalTok{() \{}
-      \OtherTok{assert}\NormalTok{.}\FunctionTok{_________}\NormalTok{([}\DecValTok{1}\NormalTok{, \{}\DataTypeTok{a}\NormalTok{:}\DecValTok{2}\NormalTok{\}], [}\DecValTok{1}\NormalTok{, \{}\DataTypeTok{a}\NormalTok{:}\DecValTok{2}\NormalTok{\}]);}
-    \NormalTok{\});}
-    \FunctionTok{test}\NormalTok{(}\StringTok{'5X = error'}\NormalTok{, }\KeywordTok{function}\NormalTok{() \{}
-        \OtherTok{original}\NormalTok{.}\FunctionTok{value} \NormalTok{= }\StringTok{"5X"}\NormalTok{;}
-        \FunctionTok{calculate}\NormalTok{();}
-        \OtherTok{assert}\NormalTok{.}\FunctionTok{_____}\NormalTok{(}\OtherTok{converted}\NormalTok{.}\FunctionTok{innerHTML}\NormalTok{, }\OtherTok{/ERROR/}\NormalTok{);}
-    \NormalTok{\});}
-\NormalTok{\});}
-\KeywordTok{var} \NormalTok{assert = }\OtherTok{chai}\NormalTok{.}\FunctionTok{assert}\NormalTok{;}
-\end{Highlighting}
-\end{Shaded}
+suite('temperature', function() {
+    test('[1,{a: 2}] == [1,{a: 2}]', function() {
+      assert._________([1, {a:2}], [1, {a:2}]);
+    });
+    test('5X = error', function() {
+        original.value = "5X";
+        calculate();
+        assert._____(converted.innerHTML, /ERROR/);
+    });
+});
+\end{verbatim}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -36,39 +33,46 @@ Chai}\label{preguntas-de-repaso-de-mocha-chai}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   Este es un fichero \texttt{test/index.html} apto para ejecutar las
-  pruebas con Mocha y Chai en la práctica de la Temperatura. Rellene las
-  partes que faltan:
+  pruebas con Mocha y Chai en la práctica de la Temperatura en un
+  navegador. Rellene las partes que faltan
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    Sugerencias: El id es el usado por mocha para producir su salida de
+    las pruebas, es necesario cargar \texttt{chai} y \texttt{mocha} y
+    establecer el estilo de pruebas (\texttt{tdd}, \texttt{bdd}, etc.) y
+    por útlimo ejecutar \texttt{mocha}
+  \end{itemize}
 \end{enumerate}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{[~/srcPLgrado/temperature(karma)]$ cat tests/index.html}
-\DataTypeTok{<!DOCTYPE }\NormalTok{html}\DataTypeTok{>}
-\KeywordTok{<html>}
-  \KeywordTok{<head>}
-    \KeywordTok{<title>}\NormalTok{Mocha}\KeywordTok{</title>}
-    \KeywordTok{<meta}\OtherTok{ http-equiv=}\StringTok{"Content-Type"}\OtherTok{ content=}\StringTok{"text/html; charset=UTF-8"}\KeywordTok{>}
-    \KeywordTok{<meta}\OtherTok{ name=}\StringTok{"viewport"}\OtherTok{ content=}\StringTok{"width=device-width, initial-scale=1.0"}\KeywordTok{>}
-    \KeywordTok{<link}\OtherTok{ rel=}\StringTok{"stylesheet"}\OtherTok{ href=}\StringTok{"mocha.css"} \KeywordTok{/>}
-  \KeywordTok{</head>}
-  \KeywordTok{<body>}
-    \KeywordTok{<div}\OtherTok{ id=}\StringTok{"_____"}\KeywordTok{></div>}   \CommentTok{<!-- para la salida de las pruebas -->}
-    \KeywordTok{<input}\OtherTok{ id=}\StringTok{"original"}\OtherTok{ placeholder=}\StringTok{"32F"}\OtherTok{ size=}\StringTok{"50"}\KeywordTok{>}
-    \KeywordTok{<span}\OtherTok{ class=}\StringTok{"output"}\OtherTok{ id=}\StringTok{"converted"}\KeywordTok{></span>}
+\begin{verbatim}
+[~/srcPLgrado/temperature(karma)]$ cat tests/index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mocha.css" />
+  </head>
+  <body>
+    <div id="_____"></div>   <!-- para la salida de las pruebas -->
+    <input id="original" placeholder="32F" size="50">
+    <span class="output" id="converted"></span>
 
-    \KeywordTok{<script}\OtherTok{ src=}\StringTok{"________"}\KeywordTok{></script>}
-    \KeywordTok{<script}\OtherTok{ src=}\StringTok{"________"}\KeywordTok{></script>}
-    \KeywordTok{<script}\OtherTok{ src=}\StringTok{"../temperature.js"}\KeywordTok{></script>}
-    \KeywordTok{<script>}\OtherTok{mocha}\NormalTok{.}\FunctionTok{_____}\NormalTok{(}\StringTok{'___'}\NormalTok{)<}\OtherTok{/script>}
-\OtherTok{    <script src="tests.js"></script}\NormalTok{>}
+    <script src="________"></script>
+    <script src="________"></script>
+    <script src="../temperature.js"></script>
+    <script>mocha._____('___')</script>
+    <script src="tests.js"></script>
 
-    \NormalTok{<script>}
-      \OtherTok{mocha}\NormalTok{.}\FunctionTok{___}\NormalTok{();}
-    \NormalTok{<}\OtherTok{/script>}
-\OtherTok{  </body}\NormalTok{>}
-\NormalTok{<}\OtherTok{/html>}
-\end{Highlighting}
-\end{Shaded}
+    <script>
+      mocha.___();
+    </script>
+  </body>
+</html>
+\end{verbatim}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -79,21 +83,19 @@ Chai}\label{preguntas-de-repaso-de-mocha-chai}
   y Chai para la práctica de la temperatura:
 \end{enumerate}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-        \NormalTok{[~}\OtherTok{/srcPLgrado/temperature}\NormalTok{(karma)]$ cat tests/}\OtherTok{tests}\NormalTok{.}\FunctionTok{js}
-        \KeywordTok{var} \NormalTok{assert = }\OtherTok{____}\NormalTok{.}\FunctionTok{assert}\NormalTok{;}
+\begin{verbatim}
+        [~/srcPLgrado/temperature(karma)]$ cat tests/tests.js
+        var assert = ____.assert;
 
-        \FunctionTok{_____}\NormalTok{(}\StringTok{'temperature'}\NormalTok{, }\KeywordTok{function}\NormalTok{() \{}
+        _____('temperature', function() {
 
-            \FunctionTok{____}\NormalTok{(}\StringTok{'32F = 0C'}\NormalTok{, }\KeywordTok{function}\NormalTok{() \{}
-                \OtherTok{original}\NormalTok{.}\FunctionTok{value} \NormalTok{= }\StringTok{"32F"}\NormalTok{;}
-                \FunctionTok{calculate}\NormalTok{();}
-                \OtherTok{assert}\NormalTok{.}\FunctionTok{_________}\NormalTok{(}\OtherTok{converted}\NormalTok{.}\FunctionTok{innerHTML}\NormalTok{, }\StringTok{"0.0 Celsius"}\NormalTok{);}
-            \NormalTok{\});}
-        \NormalTok{\});}
-\end{Highlighting}
-\end{Shaded}
+            ____('32F = 0C', function() {
+                original.value = "32F";
+                calculate();
+                assert._________(converted.innerHTML, "0.0 Celsius");
+            });
+        });
+\end{verbatim}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -104,3 +106,23 @@ Chai}\label{preguntas-de-repaso-de-mocha-chai}
   el comando \texttt{npm test}?. (no se asume el uso de Karma en esta
   pregunta) Explique como hacerlo.
 \end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  El siguiente ejemplo corresponde al ejemplo de pruebas que vimos para
+  la renderización de una tabla correspondiente al capítulo \emph{The
+  Secret Life Of Objects} que usa \texttt{mocha}y \texttt{should}.
+  Rellena las partes que faltan:
+\end{enumerate}
+
+\begin{verbatim}
+________("drawTable", function() {
+  __("must draw the checkerboard correctly", function() {
+    /* There are 5 columns and 5 rows and a white space between columns*/
+    drawTable(checkerboard()).should._____(/^(([# ]{2}(\s|$)){5}){5}$/);
+  })
+});
+\end{verbatim}
